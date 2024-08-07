@@ -176,35 +176,6 @@
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
-  id: JobClown
-  groups:
-  - Inventory # Corvax-Loadouts
-  - GroupTankHarness
-  - ClownHead
-  - ClownJumpsuit
-  - ClownBackpack
-  - ClownOuterClothing
-  - ClownShoes
-  - Glasses
-  - Medals #backmen
-  - SurvivalClown
-  - Trinkets
-
-- type: roleLoadout
-  id: JobMime
-  groups:
-  - Inventory # Corvax-Loadouts
-  - GroupTankHarness
-  - MimeHead
-  - MimeMask
-  - MimeJumpsuit
-  - MimeBackpack
-  - MimeOuterClothing
-  - Glasses
-  - Medals #backmen
-  - Trinkets
-
-- type: roleLoadout
   id: JobMusician
   groups:
   - Inventory # Corvax-Loadouts
@@ -606,12 +577,6 @@
   groups:
   - Survival
   - GroupSpeciesBreathTool
-  - GroupTankHarness
-
-- type: roleLoadout
-  id: RoleSurvivalClown
-  groups:
-  - SurvivalClown
   - GroupTankHarness
 
 - type: roleLoadout

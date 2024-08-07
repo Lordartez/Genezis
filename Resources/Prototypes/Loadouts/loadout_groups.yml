@@ -434,16 +434,6 @@
   - JesterShoes
 
 - type: loadoutGroup
-  id: SurvivalClown
-  name: loadout-group-survival-clown
-  minLimit: 2
-  hidden: true
-  loadouts:
-  - EmergencyNitrogenClown
-  - EmergencyOxygenClown
-  - LoadoutSpeciesEVANitrogen
-
-- type: loadoutGroup
   id: MimeHead
   name: loadout-group-mime-head
   minLimit: 0

@@ -28,9 +28,11 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 3
-  - type: StealthOnMove
-    passiveVisabilityRate: -0.45
-    movementVisibilityRate: 0.15
+  - type: Stealth
+    lastVisibility: 0.23
+    minVisibility: -1.5
+    examineThreshold: 0.9
+    mirage: false
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
@@ -40,11 +42,6 @@
       types:
         Blunt: 5
         Structural: 5
-  - type: Stealth
-    lastVisibility: 0.23
-    minVisibility: -1.5
-    examineThreshold: 0.9
-    mirage: false
 
 
 #СПАВНЕР
