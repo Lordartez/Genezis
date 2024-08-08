@@ -1,5 +1,4 @@
 - type: entity
-  parent: BaseMobFlesh
   id: MobFastCorpse
   name: Сталкер
   description: Мертвец чьё тело подверглось сильному разложению, тем не менее он стал легче и быстрее.
@@ -21,18 +20,90 @@
     allowedStates:
     - Alive
     - Dead
+  - type: NpcFactionMember
+    factions:
+    - Flesh
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Flesh
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 1
+  - type: Internals
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      100: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: Damageable
+    damageContainer: Spirit
+    damageModifierSet: Spirit
+  - type: Actions
+  - type: Alerts
+  - type: MindContainer
+  - type: CombatMode
+    speedModifierThresholds:
+      60: 0.7
+      80: 0.5
+  - type: Stamina
+    critThreshold: 100
+  - type: RotationVisuals
+    defaultRotation: 0
+    horizontalRotation: 0
+  - type: InputMover
+  - type: MobMover
+  - type: Examiner
+  - type: StatusEffects
+    allowed:
+    - SlowedDown
+    - Stutter
+    - Electrocution
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
+    - SeeAll
+    - Flashed
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+      Acidic: [Touch, Ingestion]
+  - type: PointLight
+    color: "#419ba3"
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
     baseSprintSpeed: 3
   - type: Stealth
-    lastVisibility: 0.23
-    minVisibility: -1.5
-    examineThreshold: 0.9
-    mirage: false
+    lastVisibility: 0.33
+  - type: StealthOnMove
+    passiveVisibilityRate: -0.37
+    movementVisibilityRate: 0.20
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
