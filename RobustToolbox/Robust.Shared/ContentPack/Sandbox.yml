@@ -507,7 +507,6 @@ Types:
     IAsyncStateMachine: { All: True }
     InternalsVisibleToAttribute: { All: True }
     InterpolatedStringHandlerAttribute: { All: True }
-    InterpolatedStringHandlerArgumentAttribute: { All: True }
     IsByRefLikeAttribute: { All: True }
     IsExternalInit: { All: True }
     IsReadOnlyAttribute: { All: True }
