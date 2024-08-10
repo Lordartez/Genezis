@@ -6,7 +6,7 @@ Space Station 14 это ремейк SS13, который работает на 
 
 ## Ссылки
 
-[Наш Discord](https://backmen.ru/discord) | [Наша Вики](https://wiki.backmen.ru) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Клиент без Steam](https://spacestation14.io/about/nightlies/) | [Основной репозиторий](https://github.com/space-wizards/space-station-14) | [Репозиторий corvax](https://github.com/space-syndicate/space-station-14)
+[Наш Discord](https://backmen.ru/discord) | [Наша Вики](https://wiki.backmen.ru) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Клиент без пива](https://spacestation14.io/about/nightlies/) | [Основной репозиторий](https://github.com/space-wizards/space-station-14) | [Репозиторий corvax](https://github.com/space-syndicate/space-station-14)
 
 ## Документация
 
