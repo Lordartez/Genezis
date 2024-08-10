@@ -1,0 +1,39 @@
+﻿- type: job
+  parent: CMJobBase
+  id: CMSurvivor
+  name: cm-job-name-survivor
+  description: cm-job-description-survivor
+  playTimeTracker: CMJobSurvivor
+  startingGear: CMGearSurvivor
+  icon: "CMJobIconEmpty"
+  joinNotifyCrew: false
+  supervisors: cm-job-supervisors-nobody
+  accessGroups:
+  - Colonist
+  hasIcon: false
+  hidden: true # TODO RMC14
+
+- type: startingGear
+  id: CMGearSurvivor
+  equipment:
+    jumpsuit: CMJumpsuitColonist
+    back: CMSatchel
+    shoes: CMBootsBrown
+    id: CMIDCardColonist
+    ears: CMHeadsetColony
+
+- type: entity
+  parent: CMSpawnPointJobBase
+  id: CMSpawnPointSurvivor
+  name: survivor spawn point
+  components:
+  - type: SpawnPoint
+    job_id: CMSurvivor
+  - type: Sprite
+    layers:
+    - sprite: Markers/jobs.rsi
+      state: green
+    - state: survivor
+
+- type: playTimeTracker
+  id: CMJobSurvivor

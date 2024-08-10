@@ -1,0 +1,16 @@
+﻿- type: job
+  abstract: true
+  id: CMJobBase
+  isCM: true
+  canBeAntag: false
+
+- type: job
+  abstract: true
+  parent: CMJobBase
+  id: CMJobSquadBase
+  hasSquad: true
+
+- type: department
+  abstract: true
+  id: CMDepartmentBase
+  isCM: true

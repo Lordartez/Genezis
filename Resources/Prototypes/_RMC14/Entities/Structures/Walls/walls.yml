@@ -58,6 +58,47 @@
   - type: StaticPrice
     price: 150
 
+- type: entity
+  parent: CMBaseWall
+  id: CMWallSuperReinforced
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Walls/rwall.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Walls/rwall.rsi
+  - type: Tag
+    tags:
+    - Wall
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 9000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    key: walls
+    base: rwall
+
+# Indestructible
+- type: entity
+  parent: CMBaseWallInvincible
+  id: CMWallReinforcedHeavy
+  name: heavy reinforced hull
+  description: A huge chunk of ultra-reinforced metal used to separate rooms. Looks virtually indestructible.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Walls/rwall.rsi
+  - type: Icon
+    sprite: _RMC14/Structures/Walls/rwall.rsi
+  - type: Tag
+    tags:
+      - Wall
+  - type: IconSmooth
+    key: walls
+    base: rwall
+
 # TODO RMC14 temp hull, breakable only after hijack
 
 # Shuttle

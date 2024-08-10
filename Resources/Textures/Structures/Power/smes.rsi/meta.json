@@ -1,58 +1,77 @@
 {
-    "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from cmss13 at https://github.com/cmss13-devs/cmss13/blob/6f8162a66bed3a5aa38587d30ae95242fcf038e7/icons/obj/structures/machinery/power.dmi",
-    "size": {
-      "x": 32,
-      "y": 32
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/9c7d509354ee030300f63c701da63c17928c3b3b and modified by Swept",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "smes"
     },
-    "states": [
-      {
-        "name": "smes-crit",
-        "delays": [
-          [
-            0.2,
-            0.2,
-            0.2,
-            0.2
-          ]
+		{
+      "name": "static"
+    },
+    {
+      "name": "smes-open"
+    },
+    {
+      "name": "smes-oc0"
+    },
+    {
+      "name": "smes-oc1",
+      "delays": [
+        [
+          0.5,
+          0.5
         ]
-      },
-      {
-        "name": "smes-op1"
-      },
-      {
-        "name": "smes-op2"
-      },
-      {
-        "name": "smes-og1"
-      },
-      {
-        "name": "smes-og2"
-      },
-      {
-        "name": "smes-og3"
-      },
-      {
-        "name": "smes-og4"
-      },
-      {
-        "name": "smes-og5"
-      },
-      {
-        "name": "smes-op0"
-      },
-      {
-        "name": "smes-oc2"
-      },
-      {
-        "name": "smes-oc1"
-      },
-      {
-        "name": "smes-oc0"
-      },
-      {
-        "name": "smes"
-      }
-    ]
-  }
+      ]
+    },
+    {
+      "name": "smes-oc2",
+      "delays": [
+        [
+          0.5,
+          0.5
+        ]
+      ]
+    },
+    {
+      "name": "smes-og1",
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "smes-og2"
+    },
+    {
+      "name": "smes-og3"
+    },
+    {
+      "name": "smes-og4"
+    },
+    {
+      "name": "smes-og5"
+    },
+    {
+      "name": "smes-op0"
+    },
+    {
+      "name": "smes-op1",
+      "delays": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "name": "smes-op2"
+    }
+  ]
+}
