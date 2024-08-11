@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Content.Shared": {
+      "commandName": "Project",
+      "nativeDebugging": true,
+      "sqlDebugging": true
+    }
+  }
+}
