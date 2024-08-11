@@ -1,4 +1,4 @@
-<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg" /></p>
+<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://github.com/Lordartez/Genezis/blob/master/Resources/Textures/Logo/logo.png" /></p>
 
 Space Station 14 это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
 
@@ -6,7 +6,7 @@ Space Station 14 это ремейк SS13, который работает на 
 
 ## Ссылки
 
-[Наш Discord](https://backmen.ru/discord) | [Наша Вики](https://wiki.backmen.ru) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Клиент без Steam](https://spacestation14.io/about/nightlies/) | [Основной репозиторий](https://github.com/space-wizards/space-station-14) | [Репозиторий corvax](https://github.com/space-syndicate/space-station-14)
+[Наш Discord](https://backmen.ru/discord) | [Наша Вики](https://wiki.backmen.ru) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Клиент без пива](https://spacestation14.io/about/nightlies/) | [Основной репозиторий](https://github.com/space-wizards/space-station-14) | [Репозиторий corvax](https://github.com/space-syndicate/space-station-14)
 
 ## Документация
 
