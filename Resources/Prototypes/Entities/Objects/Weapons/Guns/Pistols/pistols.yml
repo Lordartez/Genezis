@@ -68,13 +68,23 @@
     price: 500
 
 - type: entity
-  name: viper
+  name: Гепард
   parent: BaseWeaponPistol
-  id: WeaponPistolViper
-  description: A small, easily concealable, but somewhat underpowered gun. Retrofitted with a fully automatic receiver. Uses .35 auto ammo.
+  id: WeaponPistolСheetah
+  description: Пистолет-пулемёт калибра .35 мм, производящийся корпорацией Триглав и созданный на основе автоматической винтовки.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+  - type: Gun
+    minAngle: 1
+    maxAngle: 20
+    angleIncrease: 8
+    angleDecay: 9
+    fireRate: 4
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      params:
+        volume: -14
     availableModes:
     - FullAuto
     - SemiAuto
