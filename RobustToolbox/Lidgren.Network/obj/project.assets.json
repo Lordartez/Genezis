@@ -1,0 +1,146 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net8.0": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Lordartez\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Всякий хлам\\Project-Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
+      "projectName": "SpaceWizards.Lidgren.Network",
+      "projectPath": "D:\\Всякий хлам\\Project-Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
+      "packagesPath": "C:\\Users\\Lordartez\\.nuget\\packages\\",
+      "outputPath": "D:\\Всякий хлам\\Project-Genezis\\RobustToolbox\\Lidgren.Network\\obj\\",
+      "projectStyle": "PackageReference",
+      "centralPackageVersionsManagementEnabled": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "D:\\Всякий хлам\\Project-Genezis\\NuGet.Config",
+        "C:\\Users\\Lordartez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet-eng/nuget/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "centralPackageVersions": {
+          "BenchmarkDotNet": "0.13.12",
+          "DiscordRichPresence": "1.2.1.24",
+          "ILReader.Core": "1.0.0.4",
+          "JetBrains.Annotations": "2023.3.0",
+          "JetBrains.Profiler.Api": "1.4.0",
+          "Linguini.Bundle": "0.8.1",
+          "Microsoft.CodeAnalysis.Analyzer.Testing": "1.1.1",
+          "Microsoft.CodeAnalysis.Analyzers": "3.3.4",
+          "Microsoft.CodeAnalysis.Common": "4.8.0",
+          "Microsoft.CodeAnalysis.CSharp": "4.8.0",
+          "Microsoft.CodeAnalysis.CSharp.Analyzer.Testing.NUnit": "1.1.1",
+          "Microsoft.CodeAnalysis.CSharp.CodeFix.Testing.NUnit": "1.1.1",
+          "Microsoft.CodeAnalysis.CSharp.Features": "4.8.0",
+          "Microsoft.CodeAnalysis.CSharp.Scripting": "4.8.0",
+          "Microsoft.CodeAnalysis.CSharp.Workspaces": "4.8.0",
+          "Microsoft.CodeAnalysis.Workspaces.Common": "4.8.0",
+          "Microsoft.CodeCoverage": "17.8.0",
+          "Microsoft.Data.Sqlite.Core": "8.0.0",
+          "Microsoft.DotNet.RemoteExecutor": "8.0.0-beta.24059.4",
+          "Microsoft.EntityFrameworkCore.Design": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection": "8.0.0",
+          "Microsoft.Extensions.Logging": "8.0.0",
+          "Microsoft.Extensions.ObjectPool": "8.0.0",
+          "Microsoft.Extensions.Primitives": "8.0.0",
+          "Microsoft.ILVerification": "8.0.0",
+          "Microsoft.IO.RecyclableMemoryStream": "3.0.0",
+          "Microsoft.NET.ILLink.Tasks": "8.0.0",
+          "Microsoft.NET.Test.Sdk": "17.8.0",
+          "Microsoft.Win32.Registry": "5.0.0",
+          "Moq": "4.20.70",
+          "Nett": "0.15.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.0",
+          "NUnit": "4.0.1",
+          "NUnit.Analyzers": "3.10.0",
+          "NUnit3TestAdapter": "4.5.0",
+          "OpenTK.OpenAL": "4.7.7",
+          "OpenToolkit.Graphics": "4.0.0-pre9.1",
+          "Pidgin": "3.2.2",
+          "PolySharp": "1.14.1",
+          "prometheus-net": "8.2.1",
+          "prometheus-net.DotNetRuntime": "4.4.0",
+          "Robust.Natives": "0.1.1",
+          "Robust.Natives.Cef": "120.1.9",
+          "Robust.Shared.AuthLib": "0.1.2",
+          "Serilog": "3.1.1",
+          "Serilog.Sinks.Loki": "4.0.0-beta3",
+          "SharpZstd.Interop": "1.5.2-beta2",
+          "SixLabors.ImageSharp": "3.1.4",
+          "SpaceWizards.HttpListener": "0.1.1",
+          "SpaceWizards.NFluidsynth": "0.1.1",
+          "SpaceWizards.SharpFont": "1.0.2",
+          "SpaceWizards.Sodium": "0.2.1",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.7",
+          "SQLitePCLRaw.provider.sqlite3": "2.1.7",
+          "System.Memory": "4.5.5",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0",
+          "TerraFX.Interop.Windows": "10.0.22621.5",
+          "TerraFX.Interop.Xlib": "6.4.0",
+          "VorbisPizza": "1.3.0",
+          "YamlDotNet": "13.7.1"
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
