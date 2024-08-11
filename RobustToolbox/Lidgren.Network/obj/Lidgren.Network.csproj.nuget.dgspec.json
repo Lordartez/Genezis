@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Всякий хлам\\БэкАп\\Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {}
+    "D:\\Всякий хлам\\Project-Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {}
   },
   "projects": {
-    "D:\\Всякий хлам\\БэкАп\\Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
+    "D:\\Всякий хлам\\Project-Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Всякий хлам\\БэкАп\\Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
+        "projectUniqueName": "D:\\Всякий хлам\\Project-Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
         "projectName": "SpaceWizards.Lidgren.Network",
-        "projectPath": "D:\\Всякий хлам\\БэкАп\\Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
+        "projectPath": "D:\\Всякий хлам\\Project-Genezis\\RobustToolbox\\Lidgren.Network\\Lidgren.Network.csproj",
         "packagesPath": "C:\\Users\\Lordartez\\.nuget\\packages\\",
-        "outputPath": "D:\\Всякий хлам\\БэкАп\\Genezis\\RobustToolbox\\Lidgren.Network\\obj\\",
+        "outputPath": "D:\\Всякий хлам\\Project-Genezis\\RobustToolbox\\Lidgren.Network\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "D:\\Всякий хлам\\БэкАп\\Genezis\\NuGet.Config",
+          "D:\\Всякий хлам\\Project-Genezis\\NuGet.Config",
           "C:\\Users\\Lordartez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
