@@ -1,0 +1,81 @@
+﻿- type: entity
+  parent: BaseMobFleshCult
+  name: Мясной паразит
+  id: MobParasite
+  components:
+    - type: FleshMob
+      soundDeath: "/Audio/Animals/Flesh/flesh_worm_dead.ogg"
+      deathMobSpawnId: "MobFleshWorm"
+      deathMobSpawnCount: 0
+    - type: FleshWorm
+      paralyzeTime: 3
+      chansePounce: 33
+      damage:
+        types:
+          Piercing: 2
+      actionWormJump: ActionWormJump
+    - type: Sprite
+      sprite: Mobs/Aliens/FleshCult/flesh_cult_mobs.rsi
+      drawdepth: SmallMobs
+      noRot: true
+      layers:
+        - map: [ "enum.DamageStateVisualLayers.Base" ]
+          state: worm
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: worm
+        Critical:
+          Base: worm_dead
+        Dead:
+          Base: worm_dead
+    - type: Vocal
+      sounds:
+        Unsexed: FleshWormEmote
+    - type: Item
+      sprite: Mobs/Aliens/FleshCult/flesh_cult_mobs.rsi
+      heldPrefix: worm
+      size: Normal
+    - type: Clothing
+      quickEquip: false
+      sprite: Mobs/Aliens/FleshCult/flesh_cult_mobs.rsi
+      equippedPrefix: worm
+      slots:
+        - MASK
+    - type: Physics
+      bodyType: Dynamic
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.2
+          density: 100
+          mask:
+            - SmallMobMask
+          layer:
+            - SmallMobLayer
+    - type: Speech
+    - type: Bloodstream
+      bloodMaxVolume: 10
+      bloodReagent: Blood
+    - type: MeleeWeapon
+      hidden: true
+      soundHit:
+        path: /Audio/Effects/bite.ogg
+      angle: 0
+      animation: WeaponArcBite
+      damage:
+        types:
+          Piercing: 2
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        25: Dead
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 4
+    - type: Tag
+      tags:
+        - Flesh
+        - CannotSuicide

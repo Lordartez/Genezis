@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "size": {
+    "x": 75,
+    "y": 100
+  },
+  "states": [
+    {
+      "name": "Hive"
+    }
+  ]
+}
