@@ -92,6 +92,64 @@
             max: 8
 
 - type: entity
+  id: MeatTree
+  description: Да, это мясное дерево.
+  abstract: true
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: Objects/Decoration/Flora/flora_meat_tree.rsi
+    drawdepth: Overdoors
+    offset: 0,0.9
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.4,0.35,0.4"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FoodMeat
+  - type: MeleeSound
+    soundGroups:
+      Brute:
+        path: /Audio/Effects/chop.ogg
+        params:
+          variation: 0.05
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/tree_fell.ogg
+          params:
+            volume: 5
+            variation: 0.05
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodMeat:
+            min: 2
+            max: 6
+
+- type: entity
   parent: BaseTree
   id: BaseTreeSnow
   abstract: true
@@ -323,6 +381,14 @@
   components:
   - type: Sprite
     state: tree06
+
+- type: entity
+  parent: MeatTree
+  id: MeatTree01
+  name: мясное дерево
+  components:
+  - type: Sprite
+    state: icon
 
 - type: entity
   parent: BaseTreeSnow
