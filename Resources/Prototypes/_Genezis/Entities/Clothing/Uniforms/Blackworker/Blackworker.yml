@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: Blackworker
+  name: Костюм чернорабочего
+  description: Костюм выдаваемый корпорацией Триглав, сотрудникам, что не определились с работой.
+  components:
+  - type: Sprite
+    sprite: Genezis/Clothing/Uniforms/Jumpsuits/Blackworker.rsi
+    state: icon
+  - type: Clothing
+    sprite: Genezis/Clothing/Uniforms/Jumpsuits/Blackworker.rsi

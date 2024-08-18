@@ -156,10 +156,9 @@
   id: PassengerJumpsuit
   name: loadout-group-passenger-jumpsuit
   loadouts:
-  - GreyJumpsuit
+  - Blackworker
   - GreyJumpskirt
   - AncientJumpsuit
-  - RainbowJumpsuit
 
 - type: loadoutGroup
   id: PassengerFace

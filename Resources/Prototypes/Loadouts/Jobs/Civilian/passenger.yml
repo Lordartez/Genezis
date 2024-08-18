@@ -24,13 +24,13 @@
 # Jumpsuits
 # Grey
 - type: loadout
-  id: GreyJumpsuit
-  equipment: GreyJumpsuit
+  id: Blackworker
+  equipment: Blackworker
 
 - type: startingGear
-  id: GreyJumpsuit
+  id: Blackworker
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorGrey
+    jumpsuit: Blackworker
 
 - type: loadout
   id: GreyJumpskirt
