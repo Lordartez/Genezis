@@ -31,7 +31,7 @@
         - WallLayer
   - type: Damageable
     damageContainer: Inorganic
-    damageModifierSet: FoodMeat
+    damageModifierSet: Wood
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -60,6 +60,6 @@
         acts: [ "Destruction" ]
       - !type:SpawnEntitiesBehavior
         spawn:
-          FoodMeat:
+          FoodMeatRotten:
             min: 2
             max: 6
