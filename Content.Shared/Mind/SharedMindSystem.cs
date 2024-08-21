@@ -153,20 +153,8 @@ public abstract class SharedMindSystem : EntitySystem
             return;
 
         var dead = _mobState.IsDead(uid);
-
-        // start-backmen: SAI
-        var mind = CompOrNull<MindComponent>(mindContainer.Mind);
-
-        var remoteMind = CompOrNull<VisitingMindComponent>(uid);
-        if (remoteMind != null)
-        {
-            mind = CompOrNull<MindComponent>(remoteMind.MindId);
-        }
-
-        var hasUserId = mind?.UserId;
-        var hasSession = mind?.Session;
-
-        // end-backmen: SAI
+        var hasUserId = CompOrNull<MindComponent>(mindContainer.Mind)?.UserId;
+        var hasSession = CompOrNull<MindComponent>(mindContainer.Mind)?.Session;
 
         if (dead && hasUserId == null)
             args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-dead-and-irrecoverable", ("ent", uid))}[/color]");
@@ -178,21 +166,19 @@ public abstract class SharedMindSystem : EntitySystem
             args.PushMarkup($"[color=mediumpurple]{Loc.GetString("comp-mind-examined-catatonic", ("ent", uid))}[/color]");
         else if (hasSession == null)
             args.PushMarkup($"[color=yellow]{Loc.GetString("comp-mind-examined-ssd", ("ent", uid))}[/color]");
-
-        // start-backmen: SAI
-        if(remoteMind != null) args.PushMarkup($"[color=red]{Loc.GetString("comp-mind-examined-remote-controlled")}[/color]");
-        // end-backmen: SAI
     }
 
+    /// <summary>
+    /// Checks to see if the user's mind prevents them from suicide
+    /// Handles the suicide event without killing the user if true
+    /// </summary>
     private void OnSuicide(EntityUid uid, MindContainerComponent component, SuicideEvent args)
     {
         if (args.Handled)
             return;
 
         if (TryComp(component.Mind, out MindComponent? mind) && mind.PreventSuicide)
-        {
-            args.BlockSuicideAttempt(true);
-        }
+            args.Handled = true;
     }
 
     public EntityUid? GetMind(EntityUid uid, MindContainerComponent? mind = null)
@@ -386,7 +372,7 @@ public abstract class SharedMindSystem : EntitySystem
         if (Resolve(mindId, ref mind))
         {
             var query = GetEntityQuery<T>();
-            foreach (var uid in mind.AllObjectives)
+            foreach (var uid in mind.Objectives)
             {
                 if (query.TryGetComponent(uid, out objective))
                 {
