@@ -1,0 +1,70 @@
+- type: entity
+  id: BarrelBeer
+  parent: StorageTank
+  name: бочка
+  description: Бочка для хранения реагентов и напитков.
+  suffix: Пустая
+  components:
+    - type: Sprite
+      sprite: SS220/Structures/Storage/Tanks/barrel.rsi
+      state: barrel
+
+- type: entity
+  parent: BarrelBeer
+  id: BarrelBeerFull
+  description: Эта бочка полна пива! Только не говорите дворфам...
+  suffix: Полная, Пиво
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        tank:
+          reagents:
+            - ReagentId: Beer
+              Quantity: 1500
+
+- type: entity
+  id: BarrelRustEmpty
+  parent: StorageTank
+  name: ржавая бочка
+  description: Эта бочка стояла тут так долго, что покрылась слоем ржавчины. Возможно, она всё ещё что-то хранит в себе.
+  suffix: Пустой
+  components:
+  - type: StaticPrice
+    price: 500
+  - type: Sprite
+    sprite: SS220/Structures/Storage/Tanks/rust_barrel.rsi
+    state: barrel
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 1000
+
+- type: entity
+  id: BarrelRustWeldingFuelFull
+  parent: BarrelRustEmpty
+  suffix: Заполненный, Сварочное топливо
+  components:
+  - type: PacifismDangerousAttack
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 120 # ~ 5 tile radius
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 1000
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 1000
+
+- type: entity
+  id: BarrelRustWaterFull
+  parent: BarrelRustEmpty
+  suffix: Заполненный, Вода
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        maxVol: 1000
+        reagents:
+        - ReagentId: Water
+          Quantity: 1000
