@@ -15,7 +15,7 @@
           Piercing: 2
       actionWormJump: ActionWormJump
     - type: Sprite
-      sprite: Mobs/Aliens/FleshCult/flesh_cult_mobs.rsi
+      sprite: Genezis/Mobs/Aliens/Parasite.rsi
       drawdepth: SmallMobs
       noRot: true
       layers:
@@ -33,12 +33,12 @@
       sounds:
         Unsexed: FleshWormEmote
     - type: Item
-      sprite: Mobs/Aliens/FleshCult/flesh_cult_mobs.rsi
+      sprite: Genezis/Mobs/Aliens/Parasite.rsi
       heldPrefix: worm
       size: Normal
     - type: Clothing
       quickEquip: false
-      sprite: Mobs/Aliens/FleshCult/flesh_cult_mobs.rsi
+      sprite: Genezis/Mobs/Aliens/Parasite.rsi
       equippedPrefix: worm
       slots:
         - MASK
