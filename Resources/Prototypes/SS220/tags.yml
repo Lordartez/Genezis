@@ -1,0 +1,86 @@
+- type: Tag
+  id: DeathNettle
+
+- type: Tag
+  id: DeusAmbrosia
+
+- type: Tag
+  id: MeatSlime
+
+- type: Tag
+  id: SecDogWearable
+
+- type: Tag
+  id: ReactionCleanable
+
+- type: Tag
+  id: GrenadeDusterArta
+
+- type: Tag
+  id: MagazineGrenadeArta
+
+# READD-VEHICLES
+- type: Tag
+  id: JanicartKeys
+
+- type: Tag
+  id: VehicleKey
+######
+
+# ss220 shlepi
+- type: Tag
+  id: ElWyccoAxe
+
+- type: Tag
+  id: Meatwheat
+
+# ss220 detective-camera
+- type: Tag
+  id: DetectiveCamera
+
+- type: Tag
+  id: MindSlave
+
+# SS220-JianSword
+- type: Tag
+  id: JianSword
+
+- type: Tag
+  id: ThermalImplant
+
+# SS220 Hand/Foot Wraps begin
+- type: Tag
+  id: Handwraps
+
+- type: Tag
+  id: Footwraps
+# SS220 Hand/Foot Wraps end
+
+# SS220-Cards
+- type: Tag
+  id: GameCard
+
+# FractWarEbent
+- type: Tag
+  id: CartridgeIron_MG34
+
+- type: Tag
+  id: MagazineIron_MG34
+
+- type: Tag
+  id: BlasterPowerCell
+
+- type: Tag
+  id: MagazinePistolSubMachineGunUssp_PPSh
+
+# SS220-CentcomFashion
+
+- type: Tag
+  id: MinamotoNoYorimitsu
+
+# handmade gun buff
+- type: Tag
+  id: PowerCellHigh
+
+- type: Tag
+  id: WeaponFlareGun

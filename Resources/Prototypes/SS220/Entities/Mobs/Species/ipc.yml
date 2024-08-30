@@ -1,6 +1,6 @@
 - type: entity
   save: false
-  name: Урист МсКПБ
+  name: Урист МсАвтоматон
   parent: # технически нам требуется несколько веток из-за повторной реализации BaseMobSpeciesOrganic, но без органики
   - MobBloodstream
   - MobRespirator
@@ -79,16 +79,16 @@
       specificHeat: 46
       coldDamage:
         types:
-          Cold: 1
+          Cold: 0
           Heat: -2
       heatDamage:
         types:
           Heat: 2
-          Cold: -1
+          Cold: 0
     - type: Respirator
       damage:
         types:
-          Heat: 0.25 # нет воздуха для охлаждения
+          Heat: 0.0 # нет воздуха для охлаждения
           Asphyxiation: -1 # TODO FIX DEATHGASPS
       damageRecovery:
         types:
@@ -108,7 +108,7 @@
     - type: Barotrauma
       damage:
         types:
-          Heat: 0.25 # IPC не могут хорошо излучать, они полагаются на воздушное охлаждение
+          Heat: 0.0 # IPC не могут хорошо излучать, они полагаются на воздушное охлаждение
     - type: SlowOnDamage
       speedModifierThresholds:
         70: 0.6

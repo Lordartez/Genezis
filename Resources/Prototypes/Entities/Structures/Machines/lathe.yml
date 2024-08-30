@@ -347,6 +347,7 @@
       - SapphireRing
       - GoldenRing
       - DeviceQuantumSpinInverter
+      - ThermalVisorRND # SS220 Thermals
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -390,6 +391,7 @@
       - WeaponLaserCannon
       - WeaponLaserCarbine
       - WeaponXrayCannon
+      - ClothingEyesThermalGlassesSecurity #SS220 Thermals
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -821,6 +823,7 @@
       - ClothingHeadHelmetInsulated
       - ShellSoulbreaker
       - WeaponXrayCannon
+      - ClothingEyesThermalGlassesSecurity #SS220 Thermals
   - type: MaterialStorage
     whitelist:
       tags:
@@ -1275,7 +1278,7 @@
     staticRecipes:
     - MaterialSheetMeat
     - SheetPaper
-    
+
 - type: entity
   id: ProtolatheCash
   parent: BaseLathe
@@ -1283,7 +1286,7 @@
   description: Распечатывает "фальшивые", неофициальные кредиты, в обход систем и бюррократии, за счет бумаги и некоторых связных материалов
   components:
   - type: Sprite
-    sprite: Backmen/Structures/Machines/protoprint.rsi 
+    sprite: Backmen/Structures/Machines/protoprint.rsi
     snapCardinals: true
     layers:
     - state: icon

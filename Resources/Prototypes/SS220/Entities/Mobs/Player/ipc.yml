@@ -1,6 +1,6 @@
 - type: entity
   save: false
-  name: Урист МсКПБ
+  name: Урист МсАвтоматон
   parent: BaseMobIPC
   id: MobIPC
   components:
