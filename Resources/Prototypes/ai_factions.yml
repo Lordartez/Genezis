@@ -142,3 +142,10 @@
   - SpecialForce
   - CombineForce
   - CentralCommand
+
+- type: npcFaction
+  id: XenoSlime
+  hostile:
+  - Passive
+  - PetsNT
+  - Zombie

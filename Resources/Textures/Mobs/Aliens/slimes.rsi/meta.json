@@ -4,7 +4,7 @@
   "copyright": "Taken from the tgstation at https://github.com/tgstation/tgstation/blob/bb89e65aebb14d6ba0ce7fc43363fbc3f1279e79/icons/mob/simple/slimes.dmi",
   "size": {
     "x": 32,
-    "y": 32
+    "y": 64
   },
   "states": [
     {
@@ -18,6 +18,30 @@
     },
     {
       "name": "blue_adult_slime_dead"
+    },
+    {
+      "name": "red_adult_slime",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "red_adult_slime_dead"
+    },
+    {
+      "name": "dark_blue_adult_slime",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "dark_blue_adult_slime_dead"
     },
     {
       "name": "green_adult_slime",
@@ -42,6 +66,55 @@
 	},
 	{
       "name": "yellow_adult_slime_dead"
+    },
+
+    {
+      "name": "grey_adult_slime",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "grey_adult_slime_dead"
+    },
+    {
+      "name": "white_adult_slime",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "white_adult_slime_dead"
+    },
+    {
+      "name": "purple_adult_slime",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "purple_adult_slime_dead"
+    },
+    {
+      "name": "orange_adult_slime",
+      "delays": [
+        [
+          0.3,
+          0.3
+        ]
+      ]
+    },
+    {
+      "name": "orange_adult_slime_dead"
     },
 	{
       "name": "aslime-_3",

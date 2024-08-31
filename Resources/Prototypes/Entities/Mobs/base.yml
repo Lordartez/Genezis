@@ -94,6 +94,7 @@
       - ActionCritFakeDeath
       - ActionCritLastWords
   - type: Deathgasp
+  - type: XenoFood
   - type: HealthExaminable
     examinableTypes:
     - Blunt
