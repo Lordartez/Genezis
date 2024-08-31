@@ -276,6 +276,7 @@
     - Dropper
     - ClothingEyesGlassesChemical
     dynamicRecipes:
+      - WeaponPlasmaCutter
       - PowerDrill
       - MiningDrill
       - AnomalyScanner
