@@ -92,6 +92,3 @@
     slots:
     - idcard
     sprite: _RMC14/Objects/CMIDs/lanyard.rsi
-
-- type: entity
-  id: FactionMarine
