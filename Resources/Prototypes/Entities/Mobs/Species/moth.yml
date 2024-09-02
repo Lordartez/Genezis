@@ -9,6 +9,7 @@
     species: Moth
     hideLayersOnEquip:
     - HeadTop
+  - type: Absorbable
   - type: Hunger
   - type: Thirst
   - type: Icon

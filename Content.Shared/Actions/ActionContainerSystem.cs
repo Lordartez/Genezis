@@ -237,6 +237,12 @@ public sealed class ActionContainerSystem : EntitySystem
 
         DebugTools.AssertOwner(uid, comp);
         comp ??= EnsureComp<ActionsContainerComponent>(uid);
+
+        if (!TryComp<MetaDataComponent>(actionId, out var actionData))
+            return false;
+        if (!TryPrototype(actionId, out var actionProto, actionData))
+            return false;
+
         if (!_container.Insert(actionId, comp.Container))
         {
             Log.Error($"Failed to insert action {ToPrettyString(actionId)} into {ToPrettyString(uid)}");

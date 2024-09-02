@@ -149,3 +149,11 @@
   - Passive
   - PetsNT
   - Zombie
+
+- type: npcFaction
+  id: Changeling
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Zombie
+  - Revolutionary

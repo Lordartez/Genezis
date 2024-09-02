@@ -11,6 +11,7 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: Absorbable
   - type: Hunger
   - type: Puller
     needsHands: false
