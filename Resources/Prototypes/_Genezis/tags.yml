@@ -6,3 +6,12 @@
 
 - type: Tag
   id: SheetPlasma
+
+- type: Tag
+  id: LaserBolt
+
+- type: Tag
+  id: BulletBolt
+
+- type: Tag
+  id: KineticBolt

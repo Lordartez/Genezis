@@ -1,0 +1,975 @@
+- type: entity
+  id: BigLaser
+  name: Боевая корабельная лазерная установка
+  parent: ConstructibleMachine
+  description: Боевой корабельный лазер, предназначенный для крейсеров и линкоров
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/emitter.rsi
+    layers:
+    - state: emitter
+      scale: "2, 2"
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+      scale: "2, 2"
+    - state: unlock # Corvax-Resprite
+      scale: "2, 2"
+      shader: unshaded
+#      visible: false # Corvax-Resprite
+      map: ["enum.StorageVisualLayers.Lock"]
+  - type: Emitter
+    boltType: LaserBolt
+    fireBurstSize: 2
+    fireRateMultiplier: 1
+    baseFireInterval: 1
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 2
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: Audio/Genezis/Shuttle/lasershot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1000
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: Machine
+    board: EmitterCircuitboard
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: BigKinetic
+  name: Боевая корабельная кинетическая установка
+  parent: ConstructibleMachine
+  description: Боевая кинетическая пушка, предназначенный для крейсеров и линкоров
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/kinetic.rsi
+    layers:
+    - state: emitter
+      scale: "2, 2"
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+      scale: "2, 2"
+    - state: unlock # Corvax-Resprite
+      scale: "2, 2"
+      shader: unshaded
+#      visible: false # Corvax-Resprite
+      map: ["enum.StorageVisualLayers.Lock"]
+  - type: Emitter
+    boltType: KineticBolt
+    fireBurstSize: 2
+    fireRateMultiplier: 1
+    baseFireInterval: 1
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 2
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: Audio/Genezis/Shuttle/kineticshot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1000
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: Machine
+    board: EmitterCircuitboard
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: BigBullet
+  name: Боевой корабельный пулемет
+  parent: ConstructibleMachine
+  description: Боевой корабельный пулемет, предназначенный для крейсеров и линкоров
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/bullet.rsi
+    layers:
+    - state: emitter
+      scale: "2, 2"
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+      scale: "2, 2"
+    - state: unlock # Corvax-Resprite
+      scale: "2, 2"
+      shader: unshaded
+#      visible: false # Corvax-Resprite
+      map: ["enum.StorageVisualLayers.Lock"]
+  - type: Emitter
+    boltType: BulletBolt
+    fireBurstSize: 2
+    fireRateMultiplier: 1
+    baseFireInterval: 1
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 2
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: Audio/Genezis/Shuttle/bulletshot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1000
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: Machine
+    board: EmitterCircuitboard
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: SmallLaser
+  name: Боевая стационарная лазерная установка
+  parent: ConstructibleMachine
+  description: Боевой стационарный лазер, предназначенный для небольших штурмовых кораблей
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/emitter.rsi
+    layers:
+    - state: emitter
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+    - state: unlock # Corvax-Resprite
+      shader: unshaded
+#      visible: false # Corvax-Resprite
+      map: ["enum.StorageVisualLayers.Lock"]
+  - type: Emitter
+    boltType: LaserBoltSmall
+    fireBurstSize: 5
+    fireRateMultiplier: 5
+    baseFireInterval: 0.2
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 4
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: Audio/Genezis/Shuttle/lasershot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: Machine
+    board: EmitterCircuitboard
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: SmallKinetic
+  name: Боевая стационарная кинетическая установка
+  parent: ConstructibleMachine
+  description: Боевая кинетическая установка, предназначенная для небольших штурмовых кораблей.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/kinetic.rsi
+    layers:
+    - state: emitter
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+    - state: unlock # Corvax-Resprite
+      shader: unshaded
+#      visible: false # Corvax-Resprite
+      map: ["enum.StorageVisualLayers.Lock"]
+  - type: Emitter
+    boltType: KineticBoltSmall
+    fireBurstSize: 5
+    fireRateMultiplier: 5
+    baseFireInterval: 0.2
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 4
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: Audio/Genezis/Shuttle/kineticshot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: Machine
+    board: EmitterCircuitboard
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: SmallBullet
+  name: Боевой стационарный пулемет
+  parent: ConstructibleMachine
+  description: Боевой стационарный пулемет, предназначенный для небольших штурмовых кораблей
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/bullet.rsi
+    layers:
+    - state: emitter
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+    - state: unlock # Corvax-Resprite
+      shader: unshaded
+#      visible: false # Corvax-Resprite
+      map: ["enum.StorageVisualLayers.Lock"]
+  - type: Emitter
+    boltType: BulletBoltSmall
+    fireBurstSize: 5
+    fireRateMultiplier: 5
+    baseFireInterval: 0.2
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 4
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: Audio/Genezis/Shuttle/bulletshot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: Machine
+    board: EmitterCircuitboard
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: ShieldLaser
+  name: Энергетический щит
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  description: Энергетический щит, отражающий лазерные снаряды
+  components:
+    - type: Clickable
+    - type: Pullable
+    - type: Anchorable
+    - type: Tag
+      tags:
+        - Wall
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+    - type: Airtight
+    - type: Sprite
+      sprite: Structures/Magic/forcewall.rsi
+      state: forcewall
+    - type: Icon
+      sprite: Structures/Magic/forcewall.rsi
+      state: forcewall
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 2000
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+    - type: Reflect
+      enabled: true
+      reflectProb: 0.99
+      spread: 75
+      reflects: Energy
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Shield
+
+- type: entity
+  parent: WallPlastitaniumIndestructible
+  id: ArmorWall
+  name: Бронепластина
+  suffix: ""
+  description: Пластины, особенно защищенные от огнестрельного оружия, но плохо работают против всего остального
+  components:
+    - type: Tag
+      tags:
+        - Wall
+        - RCDDeconstructWhitelist
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 2000
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+    - type: Anchorable
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Armor
+
+- type: entity
+  parent: WallPlastitaniumIndestructible
+  id: KineticWall
+  name: Кинетическая пластина
+  suffix: ""
+  description: Пластины, особенно защищенные от кинетического оружия, но плохо работают против всего остального
+  components:
+    - type: Sprite
+      sprite: Genezis/Structures/Shuttle/laserglass.rsi
+    - type: Icon
+      sprite: Genezis/Structures/Shuttle/laserglass.rsi
+    - type: IconSmooth
+      key: walls
+      base: plastitanium
+    - type: Tag
+      tags:
+        - Wall
+        - RCDDeconstructWhitelist
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 2000
+          behaviors:
+            - !type:DoActsBehavior
+              acts: [ "Destruction" ]
+    - type: Anchorable
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Kinetic
+
+- type: entity
+  parent: BaseWall
+  id: MixedWall
+  name: Смешанная бронепластина
+  description: Пластины, обладающей средней защитой от всего вооружения
+  components:
+  - type: Tag
+    tags:
+      - Wall
+      - RCDDeconstructWhitelist
+  - type: Sprite
+    sprite: Structures/Walls/riveted.rsi
+  - type: Icon
+    sprite: Structures/Walls/riveted.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    key: walls
+    base: riveted
+  - type: Anchorable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Mixed
+
+- type: entity
+  id: SmallThruster
+  name: Небольшой боевой двигатель
+  description: Двигатель, с усиленной тягой.
+  parent: BaseThruster
+  components:
+  - type: Thruster
+    thrust: 500
+    baseThrust: 500
+  - type: ApcPowerReceiver
+    powerLoad: 3000
+  - type: Sprite
+    sprite: Structures/Shuttles/thruster.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+
+- type: entity
+  id: MediumThruster
+  name: Средний боевой двигатель
+  description: Двигатель, с усиленной тягой.
+  parent: BaseThruster
+  components:
+  - type: Thruster
+    thrust: 2000
+    baseThrust: 2000
+  - type: ApcPowerReceiver
+    powerLoad: 10000
+  - type: Sprite
+    sprite: Structures/Shuttles/thruster.rsi
+    layers:
+    - state: base
+      map: ["enum.ThrusterVisualLayers.Base"]
+      scale: "2, 2"
+    - state: thrust
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      scale: "2, 2"
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      scale: "2, 2"
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+
+- type: entity
+  id: BigThruster
+  name: Большой боевой двигатель
+  description: Двигатель, с усиленной тягой.
+  parent: BaseThruster
+  components:
+  - type: Thruster
+    thrust: 5000
+    baseThrust: 5000
+  - type: ApcPowerReceiver
+    powerLoad: 20000
+  - type: Sprite
+    sprite: Structures/Shuttles/thruster.rsi
+    layers:
+    - state: base
+      scale: "3, 3"
+      map: ["enum.ThrusterVisualLayers.Base"]
+    - state: thrust
+      scale: "3, 3"
+      map: ["enum.ThrusterVisualLayers.ThrustOn"]
+      shader: unshaded
+      visible: false
+    - state: thrust_burn_unshaded
+      scale: "3, 3"
+      map: ["enum.ThrusterVisualLayers.ThrustingUnshaded"]
+      shader: unshaded
+      visible: false
+      offset: 0, 1
+
+#- type: cargoProduct
+#  id: biglaser
+#  icon:
+#    sprite: /Uploaded/spaceship/emitter.rsi
+#    state: emitter
+#  product: BigLaser
+#  cost: 50000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: bigkinetic
+#  icon:
+#    sprite: /Uploaded/spaceship/kinetic.rsi
+#    state: emitter
+#  product: BigKinetic
+#  cost: 50000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: bigbullet
+#  icon:
+#    sprite: /Uploaded/spaceship/bullet.rsi
+#    state: emitter
+#  product: BigBullet
+#  cost: 50000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: smalllaser
+#  icon:
+#    sprite: /Uploaded/spaceship/emitter.rsi
+#    state: emitter
+#  product: SmallLaser
+#  cost: 10000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: smallkinetic
+#  icon:
+#    sprite: /Uploaded/spaceship/kinetic.rsi
+#    state: emitter
+#  product: SmallKinetic
+#  cost: 10000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: smallbullet
+#  icon:
+#    sprite: /Uploaded/spaceship/bullet.rsi
+#    state: emitter
+#  product: SmallBullet
+#  cost: 10000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: smallThruster
+#  icon:
+#    sprite: Structures/Shuttles/thruster.rsi
+#    state: base
+#  product: SmallThruster
+#  cost: 5000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: mediumThruster
+#  icon:
+#    sprite: Structures/Shuttles/thruster.rsi
+#    state: base
+#  product: MediumThruster
+#  cost: 20000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: bigThruster
+#  icon:
+#    sprite: Structures/Shuttles/thruster.rsi
+#    state: base
+#  product: BigThruster
+#  cost: 50000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: shield
+#  icon:
+#     sprite: Structures/Magic/forcewall.rsi
+#     state: forcewall
+#  product: ShieldLaser
+#  cost: 3000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: kineticWall
+#  icon:
+#    sprite: /Uploaded/spaceship/laserglass.rsi
+#    state: full
+#  product: KineticWall
+#  cost: 3000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: armorWall
+#  icon:
+#    sprite: Structures/Walls/plastitanium.rsi
+#    state: full
+#  product: ArmorWall
+#  cost: 3000
+#  category: Shuttle
+#  group: market
+
+#- type: cargoProduct
+#  id: mixedWall
+#  icon:
+#    sprite: Structures/Walls/riveted.rsi
+#    state: full
+#  product: MixedWall
+#  cost: 3000
+#  category: Shuttle
+#  group: market
