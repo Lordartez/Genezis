@@ -11,25 +11,13 @@
   path: /Textures/ADT/LobbyScreens/backgrounds/cube.rsi
 
 - type: animatedLobbyScreen
-  id: MilkywayLobbyScreen
-  path: /Textures/ADT/LobbyScreens/backgrounds/milkyway.rsi
-
-#- type: animatedLobbyScreen
-#  id: NativeLobbyScreen
-#  path: White/Lobby/backgrounds/native.rsi
+  id: NativeLobbyScreen
+  path: White/Lobby/backgrounds/native.rsi
 
 - type: animatedLobbyScreen
   id: CentcommLobbyScreen
   path: /Textures/ADT/LobbyScreens/backgrounds/centcomm.rsi
 
 - type: animatedLobbyScreen
-  id: VangoghLobbyScreen
-  path: /Textures/ADT/LobbyScreens/backgrounds/vangogh.rsi
-
-#- type: animatedLobbyScreen
-#  id: ThirdLobbyScreen
-#  path: Ohio/Lobby/backgrounds/3.rsi
-
-#- type: animatedLobbyScreen
-#  id: FifthLobbyScreen
-#  path: Ohio/Lobby/backgrounds/5.rsi
+  id: syndicateLobbyScreen
+  path: /Textures/ADT/LobbyScreens/backgrounds/syndicate.rsi
