@@ -226,7 +226,6 @@
         - Impassable
         - BulletImpassable
   - type: Projectile
-    soundHit: Audio/Genezis/Shuttle/bullethit.ogg
     damage:
       types:
         Piercing: 500
@@ -265,7 +264,6 @@
         - Impassable
         - BulletImpassable
   - type: Projectile
-    soundHit: Audio/Genezis/Shuttle/laserimpact.ogg
     damage:
       types:
         Heat: 50
@@ -303,7 +301,6 @@
         - Impassable
         - BulletImpassable
   - type: Projectile
-    soundHit: Audio/Genezis/Shuttle/laserimpact.ogg
     damage:
       types:
         Blunt: 50
@@ -342,7 +339,6 @@
         - Impassable
         - BulletImpassable
   - type: Projectile
-    soundHit: Audio/Genezis/Shuttle/bullethit.ogg
     damage:
       types:
         Piercing: 50

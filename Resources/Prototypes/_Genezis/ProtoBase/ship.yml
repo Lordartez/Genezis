@@ -50,7 +50,7 @@
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/emitter.ogg
+      path: /Audio/Weapons/lasershot.ogg
   - type: PowerConsumer
     voltage: Apc
   - type: NodeContainer
@@ -88,8 +88,6 @@
   - type: Pullable
   - type: Rotatable
   - type: Appearance
-  - type: Machine
-    board: EmitterCircuitboard
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice
@@ -146,12 +144,12 @@
     baseFireBurstDelayMax: 2
   - type: Gun
     showExamineText: false
-    fireRate: 10
+    fireRate: 10 #just has to be fast enough to keep up with upgrades
     selectedMode: SemiAuto
     availableModes:
       - SemiAuto
     soundGunshot:
-      path: Audio/Genezis/Shuttle/kineticshot.ogg
+      path: /Audio/Weapons/kineticshot.ogg
   - type: PowerConsumer
     voltage: Apc
   - type: NodeContainer
@@ -174,6 +172,402 @@
       - trigger:
           !type:DamageTrigger
           damage: 500
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metal_break2.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: BigBullet
+  name: Боевой корабельный пулемет
+  parent: ConstructibleMachine
+  description: Боевой корабельный пулемет, предназначенный для крейсеров и линкоров
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/bullet.rsi
+    layers:
+    - state: emitter # Corvax-Resprite
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+    - state: unlock # Corvax-Resprite
+      shader: unshaded
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: Emitter
+    boltType: BulletBolt
+    fireBurstSize: 2
+    fireRateMultiplier: 1
+    baseFireInterval: 1
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 2
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/bulletshot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1000
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 500
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: SmallLaser
+  name: Боевая стационарная лазерная установка
+  parent: ConstructibleMachine
+  description: Боевой стационарный лазер, предназначенный для небольших штурмовых кораблей
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/emitter.rsi
+    layers:
+    - state: emitter # Corvax-Resprite
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+    - state: unlock # Corvax-Resprite
+      shader: unshaded
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: Emitter
+    boltType: LaserBoltSmall
+    fireBurstSize: 5
+    fireRateMultiplier: 5
+    baseFireInterval: 0.2
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 4
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/lasershot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: SmallKinetic
+  name: Боевая стационарная кинетическая установка
+  parent: ConstructibleMachine
+  description: Боевая кинетическая установка, предназначенная для небольших штурмовых кораблей.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/kinetic.rsi
+    layers:
+    - state: emitter # Corvax-Resprite
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+    - state: unlock # Corvax-Resprite
+      shader: unshaded
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: Emitter
+    boltType: KineticBoltSmall
+    fireBurstSize: 5
+    fireRateMultiplier: 5
+    baseFireInterval: 0.2
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 4
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/kineticshot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path: /Audio/Effects/metalbreak.ogg
+        - !type:SpawnEntitiesBehavior
+          spawn:
+            SheetSteel1:
+              min: 5
+              max: 5
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Anchorable
+  - type: Pullable
+  - type: Rotatable
+  - type: Appearance
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+      - On
+      - Off
+      - Toggle
+
+- type: entity
+  id: SmallBullet
+  name: Боевой стационарный пулемет
+  parent: ConstructibleMachine
+  description: Боевой стационарный пулемет, предназначенный для небольших штурмовых кораблей
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 400
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Genezis/Structures/Shuttle/bullet.rsi
+    layers:
+    - state: emitter # Corvax-Resprite
+    - state: beam
+      shader: unshaded
+      visible: false
+      map: ["enum.EmitterVisualLayers.Lights"]
+    - state: unlock # Corvax-Resprite
+      shader: unshaded
+      map: ["enum.LockVisualLayers.Lock"]
+  - type: Emitter
+    boltType: BulletBoltSmall
+    fireBurstSize: 5
+    fireRateMultiplier: 5
+    baseFireInterval: 0.2
+    baseFireBurstDelayMin: 1
+    baseFireBurstDelayMax: 4
+  - type: Gun
+    showExamineText: false
+    fireRate: 10
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/bulletshot.ogg
+  - type: PowerConsumer
+    voltage: Apc
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      input:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]
+      - trigger:
+          !type:DamageTrigger
+          damage: 200
         behaviors:
         - !type:PlaySoundBehavior
           sound:
