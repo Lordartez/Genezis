@@ -6,6 +6,7 @@ shipwrecked-too-many-ready-players = Слишком много игроков б
 shipwrecked-no-one-ready = Нет готовых игроков! Невозможно начать игру с режимом Кораблекрушение.
 shipwrecked-shuttle-announcement = Анонс транспортного шаттла от { $sender }: { $message }
 department-Shipwrecked-description = Экипаж после кораблекрушения
+department-Shipwrecked = Кораблекрушение
 
 ## Round End
 
@@ -33,7 +34,7 @@ passenger-manifest-end-line = -< КОНЕЦ МАНИФЕСТА >-
 job-name-explorer = исследователь
 job-description-explorer = Составление карт неизвестной планеты для обеспечения безопасности и успешного исследования.
 job-name-freelancer = наёмник
-job-description-freelancer = Универсальный профи, возьмется за любую работу. Не забудьте заплатить!
+job-description-freelancer = Универсальный профи, возьмется за любую работу.
 job-name-student = студент
 job-description-student = Студент который готовится к экзаменам.
 job-supervisors-generic = ваши работодатели

@@ -45,13 +45,16 @@
   alias:
   - greenshift
   - shittersafarideluxeedition
+  - schiffbruch
   name: greenshift-title
   showInVote: false #4boring4vote
   description: greenshift-description
+  supportedMaps: ShipwreckedPool
   rules:
   - BasicRoundstartVariation
   - WageScheduler #backmen: currency
   - GameRuleMeteorScheduler
+  - Shipwrecked
 
 - type: gamePreset
   id: Secret

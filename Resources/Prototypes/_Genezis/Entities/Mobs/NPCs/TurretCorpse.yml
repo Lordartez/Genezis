@@ -1,6 +1,6 @@
 - type: entity
   id: MobTurretCorpse
-  parent: [ SimpleSpaceMobBase, FlyingMobBase ]
+  parent: MobXeno
   name: Плевальщик
   description: Тело этого мертвеца подверглось мутации, оно распухло и нарастило желочные мешки.
   components:
@@ -19,27 +19,11 @@
     tags:
     - DoorBumpOpener
     - Flesh
-  - type: HTN
-    rootTask:
-      task: SimpleHostileCompound
-    blackboard:
-      NavClimb: !type:Bool
-        true
-      NavSmash: !type:Bool
-        true
   - type: Physics
     bodyType: KinematicController
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 0.35
-        density: 50
-        mask:
-        - MobMask
-        layer:
-        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.4
+    baseSprintSpeed: 0.7
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -56,33 +40,38 @@
     thresholds:
       0: Alive
       50: Dead
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 1.0
-    baseSprintSpeed: 1.2
-  - type: ProjectileBatteryAmmoProvider
-    proto: WatcherBolt
-    fireCost: 50
-  - type: BatterySelfRecharger
-    autoRecharge: true
-    autoRechargeRate: 50
-  - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.75
+  - type: BasicEntityAmmoProvider
+    proto: BulletAcid
+    capacity: 1
+    count: 1
   - type: Gun
-    fireRate: 0.5
+    fireRate: 0.75
     useKey: false
-    selectedMode: SemiAuto
+    selectedMode: FullAuto
     availableModes:
-    - SemiAuto
-    soundGunshot: /Audio/Weapons/Guns/Gunshots/taser2.ogg
-  - type: CombatMode
-  - type: InteractionPopup
-    successChance: 0.3
-    interactSuccessString: petting-success-slimes
-    interactFailureString: petting-failure-generic
-    interactSuccessSound:
-      path: /Audio/Animals/lizard_happy.ogg
-
+      - FullAuto
+    soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 235
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 #СПАВНЕР
 - type: entity

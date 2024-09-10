@@ -39,8 +39,8 @@
 
 - type: job
   id: SAIShip
-  name: job-name-sai-ship
-  description: job-description-sai-ship
+  name: ИИ военного типа
+  description: Военный ИИ этого шаттла.
   playTimeTracker: JobSAIShip
   requirements:
   - !type:OverallPlaytimeRequirement

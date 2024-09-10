@@ -1,8 +1,8 @@
 {
   "version": 1,
   "size": {
-    "x": 128,
-    "y": 128
+    "x": 64,
+    "y": 64
   },
   "license": "CC-BY-SA-3.0",
   "copyright": "Made by brainfood1183 (github) for ss14",
@@ -11,8 +11,7 @@
       "name": "dead"
     },
     {
-      "name": "abomination",
-      "directions": 4
+      "name": "abomination"
     }
   ]
 }

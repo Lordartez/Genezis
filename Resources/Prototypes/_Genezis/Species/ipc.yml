@@ -1,6 +1,6 @@
 - type: species
   id: IPC
-  name: КПБ
+  name: Автоматон
   roundStart: true
   prototype: MobIPC
   sprites: MobIPCSprites
