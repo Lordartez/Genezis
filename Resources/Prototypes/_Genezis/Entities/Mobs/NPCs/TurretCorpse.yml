@@ -1,0 +1,119 @@
+- type: entity
+  id: MobTurretCorpse
+  parent: [ SimpleSpaceMobBase, FlyingMobBase ]
+  name: Плевальщик
+  description: Тело этого мертвеца подверглось мутации, оно распухло и нарастило желочные мешки.
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: Genezis/Mobs/Demons/TurretCorpse.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: abomination
+  - type: NpcFactionMember
+    factions:
+    - Flesh
+    - SimpleHostile
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Flesh
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 1
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: base
+        BaseUnshaded: unshaded
+      Dead:
+        Base: dead
+        BaseUnshaded: dead-unshaded
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.0
+    baseSprintSpeed: 1.2
+  - type: ProjectileBatteryAmmoProvider
+    proto: WatcherBolt
+    fireCost: 50
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: Gun
+    fireRate: 0.5
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: CombatMode
+  - type: InteractionPopup
+    successChance: 0.3
+    interactSuccessString: petting-success-slimes
+    interactFailureString: petting-failure-generic
+    interactSuccessSound:
+      path: /Audio/Animals/lizard_happy.ogg
+
+
+#СПАВНЕР
+- type: entity
+  name: спавнер плевальщик
+  id: SpawnerMobTurretCorpse
+  parent: MarkerBase
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobTurretCorpse
+
+- type: entity
+  name: периодический спавнер Плевальщик
+  id: SpawnerTimedMobTurretCorpse
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Genezis/Mobs/Demons/FastCorpse.rsi
+          state: abomination
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - MobTurretCorpse
+      # round ~90m
+      # one spawner should only spawn ~5 mice for sanity reasons
+      # therefore 18m
+      # use 50% chance for randomness and balance with halved interval
+      chance: 0.5
+      intervalSeconds: 240
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1

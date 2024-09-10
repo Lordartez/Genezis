@@ -404,7 +404,7 @@ namespace Content.Shared.CCVar
         ///     Set to 0 or a negative number to disable.
         /// </summary>
         public static readonly CVarDef<int> RoundStartFailShutdownCount =
-            CVarDef.Create("game.round_start_fail_shutdown_count", 5, CVar.SERVERONLY | CVar.SERVER);
+            CVarDef.Create("game.round_start_fail_shutdown_count", 0, CVar.SERVERONLY | CVar.SERVER);
 #endif
 
         /// <summary>
@@ -471,24 +471,24 @@ namespace Content.Shared.CCVar
         /// The avatar to use for the webhook. Should be an URL.
         /// </summary>
         public static readonly CVarDef<string> DiscordAHelpAvatar =
-            CVarDef.Create("discord.ahelp_avatar", string.Empty, CVar.SERVERONLY);
+            CVarDef.Create("discord.ahelp_avatar", "https://cdn.discordapp.com/attachments/1106728912865738752/1282355431037210684/Nian.png?ex=66df0e0f&is=66ddbc8f&hm=3f24ab6082ba615958fc232dc8d3fee4bd2256e0f8a41b84ed90c95ee07fac7b&", CVar.SERVERONLY);
 
         /// <summary>
         /// URL of the Discord webhook which will relay all custom votes. If left empty, disables the webhook.
         /// </summary>
         public static readonly CVarDef<string> DiscordVoteWebhook =
-            CVarDef.Create("discord.vote_webhook", string.Empty, CVar.SERVERONLY);
+            CVarDef.Create("discord.vote_webhook", "https://discord.com/api/webhooks/1282354477382500352/bzhyJffiASuVNLKoUkhd3tfpJXoORKmencr1d73ohANVFlglohouW6d652LiuTnHZ1EL", CVar.SERVERONLY);
 
         /// URL of the Discord webhook which will relay round restart messages.
         /// </summary>
         public static readonly CVarDef<string> DiscordRoundUpdateWebhook =
-            CVarDef.Create("discord.round_update_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+            CVarDef.Create("discord.round_update_webhook", "https://discord.com/api/webhooks/1282354477382500352/bzhyJffiASuVNLKoUkhd3tfpJXoORKmencr1d73ohANVFlglohouW6d652LiuTnHZ1EL", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
         /// <summary>
         /// Role id for the Discord webhook to ping when the round ends.
         /// </summary>
         public static readonly CVarDef<string> DiscordRoundEndRoleWebhook =
-            CVarDef.Create("discord.round_end_role", string.Empty, CVar.SERVERONLY);
+            CVarDef.Create("discord.round_end_role", "1273091460937551933", CVar.SERVERONLY);
 
         /*
          * Tips

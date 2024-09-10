@@ -16,6 +16,7 @@
   weight: -10
   roles:
   - Bartender
+  - Psychologist
   - Borg
   - Botanist
   - Boxer
@@ -72,7 +73,6 @@
   - ChiefMedicalOfficer
   - MedicalDoctor
   - MedicalIntern
-  - Psychologist
   - Paramedic
   accountNumber: 1319 #backmen: currency
 

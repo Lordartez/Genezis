@@ -10,13 +10,13 @@
   id: CubeLobbyScreen
   path: /Textures/ADT/LobbyScreens/backgrounds/cube.rsi
 
-- type: animatedLobbyScreen
-  id: NativeLobbyScreen
-  path: White/Lobby/backgrounds/native.rsi
+#- type: animatedLobbyScreen
+#  id: NativeLobbyScreen
+#  path: /Textures/ADT/LobbyScreens/backgrounds/native.rsi
 
-- type: animatedLobbyScreen
-  id: CentcommLobbyScreen
-  path: /Textures/ADT/LobbyScreens/backgrounds/centcomm.rsi
+#- type: animatedLobbyScreen
+#  id: CentcommLobbyScreen
+#  path: /Textures/ADT/LobbyScreens/backgrounds/centcomm.rsi
 
 - type: animatedLobbyScreen
   id: syndicateLobbyScreen

@@ -39,9 +39,6 @@ public sealed class CMCVars : CVars
     public static readonly CVarDef<bool> CMPlayVoicelinesSlime =
         CVarDef.Create("cm.play_voicelines_slime", true, CVar.REPLICATED | CVar.CLIENT | CVar.ARCHIVE);
 
-    public static readonly CVarDef<string> CMOocWebhook =
-        CVarDef.Create("cm.ooc_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
-
     public static readonly CVarDef<int> CMMaxHeavyAttackTargets =
         CVarDef.Create("cm.max_heavy_attack_targets", 3, CVar.REPLICATED | CVar.SERVER);
 
