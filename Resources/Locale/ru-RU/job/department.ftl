@@ -1,4 +1,4 @@
-department-Cargo = Отдел снабжения
+department-Cargo = Департамент внешних операций
 department-Civilian = Отдел обслуживания
 department-Command = Управление "Триглав"
 department-Engineering = Стройбат

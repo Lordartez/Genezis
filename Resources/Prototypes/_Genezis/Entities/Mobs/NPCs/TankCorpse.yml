@@ -25,8 +25,8 @@
       0: Alive
       500: Dead
   - type: MovementSpeedModifier
-    baseWalkSpeed: 0.2
-    baseSprintSpeed: 0.5
+    baseWalkSpeed: 0.4
+    baseSprintSpeed: 0.6
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg

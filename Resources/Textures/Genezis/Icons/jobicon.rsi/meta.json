@@ -1,13 +1,36 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
+    "copyright": "Made by Darvest (Discord)",
+
     "size": {
         "x": 8,
         "y": 8
     },
     "states": [
         {
+            "name": "Cargotechnikan_Triglav"
+        },
+        {
             "name": "LavaMiner"
+        },
+        {
+            "name": "Operator_Triglav"
+        },
+        {
+            "name": "SecurityOfficer_Triglav"
+        },
+        {
+            "name": "Triglav"
+        },
+        {
+            "name": "Triglav_control"
+        },
+        {
+            "name": "Triglav_pred"
+        },
+        {
+            "name": "Worker_Triglav"
         }
-  ]
+    ]
 }

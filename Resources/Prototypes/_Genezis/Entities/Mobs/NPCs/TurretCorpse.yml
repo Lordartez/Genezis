@@ -91,7 +91,7 @@
     - type: Sprite
       layers:
         - state: blue
-        - sprite: Genezis/Mobs/Demons/FastCorpse.rsi
+        - sprite: Genezis/Mobs/Demons/TurretCorpse.rsi
           state: abomination
         - state: timed
     - type: Timer

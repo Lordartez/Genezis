@@ -1,0 +1,74 @@
+- type: entity
+  parent: BaseMobFlesh
+  id: MobMinerCorpse
+  name: Проклятый
+  description: Ужасный симбиот человека и паразита.
+  components:
+  - type: Sprite
+    sprite: Genezis/Mobs/Demons/MinerCorpse.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: AliveMiner
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: AliveMiner
+      Dead:
+        Base: dead
+  - type: PointLight
+    color: "#419ba3"
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      600: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.5
+    baseSprintSpeed: 0.8
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Blunt: 35
+        Structural: 35
+
+
+#СПАВНЕР
+- type: entity
+  name: спавнер проклятого
+  id: SpawnerMobMinerCorpse
+  parent: MarkerBase
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobMinerCorpse
+
+- type: entity
+  name: периодический спавнер проклятого
+  id: SpawnerTimedMobMinerCorpse
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Genezis/Mobs/Demons/MinerCorpse.rsi
+          state: AliveMiner
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - MobMinerCorpse
+      # round ~90m
+      # one spawner should only spawn ~5 mice for sanity reasons
+      # therefore 18m
+      # use 50% chance for randomness and balance with halved interval
+      chance: 0.5
+      intervalSeconds: 240
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1

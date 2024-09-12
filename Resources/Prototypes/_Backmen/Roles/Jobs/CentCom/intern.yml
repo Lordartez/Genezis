@@ -5,7 +5,7 @@
   playTimeTracker: JobCentralCommandAssistant
   setPreference: true
   startingGear: CentComInternGear
-  icon: JobIconServiceWorker
+  icon: JobIconWorker_Triglav
   supervisors: job-supervisors-centcommembers
   canBeAntag: false
   weight: 1
@@ -45,6 +45,13 @@
   maxBankBalance: 250
   wageDepartment: CentCom
   wage: 75
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconWorker_Triglav
+  icon:
+    sprite: /Textures/Genezis/Icons/jobicon.rsi
+    state: Worker_Triglav
 
 - type: startingGear
   id: CentComInternGear

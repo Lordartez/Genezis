@@ -1,0 +1,11 @@
+- files: ["arachnid.ogg",]
+  license: "CC-BY-4.0"
+  copyright: "Some site in the internet"
+
+- files: [
+    "new_1.ogg",
+    "new_2.ogg",
+    "new_3.ogg",
+    "new_4.ogg",
+    "new_5.ogg",
+  ]

@@ -5,7 +5,7 @@
   playTimeTracker: JobCentralCommandOperator
   setPreference: true
   startingGear: OperatorGavna
-  icon: JobIconNanotrasen
+  icon: JobIconOperator_Triglav
   supervisors: job-supervisors-hoh
   canBeAntag: false
   weight: 1
@@ -47,7 +47,12 @@
   wageDepartment: CentCom
   wage: 75
 
-
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconOperator_Triglav
+  icon:
+    sprite: /Textures/Genezis/Icons/jobicon.rsi
+    state: Operator_Triglav
 
 - type: entity
   parent: CentcomPDABackmen

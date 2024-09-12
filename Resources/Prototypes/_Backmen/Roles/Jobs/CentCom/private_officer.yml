@@ -5,7 +5,7 @@
   playTimeTracker: JobCentralCommandSecOfficer
   setPreference: true
   startingGear: CentComPrivateOfficerGear
-  icon: JobIconSecurityOfficer
+  icon: JobIconSecurityOfficer_Triglav
   supervisors: job-supervisors-centcomSecGavna
   canBeAntag: false
   weight: 1
@@ -45,6 +45,13 @@
   maxBankBalance: 250
   wageDepartment: CentCom
   wage: 75
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconSecurityOfficer_Triglav
+  icon:
+    sprite: /Textures/Genezis/Icons/jobicon.rsi
+    state: SecurityOfficer_Triglav
 
 - type: startingGear
   id: CentComPrivateOfficerGear

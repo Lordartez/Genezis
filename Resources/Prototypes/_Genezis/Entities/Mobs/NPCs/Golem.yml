@@ -1,0 +1,149 @@
+﻿- type: entity
+  name: Каменный голем
+  description: Существо, что состоит из руд и камня. Можно раздробить его для получения выгоды.
+  parent:
+  - BaseSimpleMob
+  - MobCombat
+  id: MobGolem
+  components:
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+      - Passive
+  - type: Body
+    prototype: Animal
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: HellSpawn
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1350
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SteelOre1:
+            min: 2
+            max: 4
+          GoldOre1:
+            min: 2
+            max: 4
+          Diamond:
+            min: 1
+            max: 4
+          ArtifactFragment:
+            min: 2
+            max: 4
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 0.2
+    baseSprintSpeed: 0.5
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Genezis/Mobs/Aliens/golem.rsi
+    layers:
+      - state: golem
+        map: ["enum.DamageStateVisualLayers.Base"]
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: golem
+      Dead:
+        Base: dead
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      760: 0.4
+      580: 0.1
+  - type: MobPrice
+    price: 1000
+  - type: Perishable
+  - type: Reflect
+    reflectProb: 0.7
+    reflects:
+      - Energy
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.9
+        density: 300
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: Tag
+    tags:
+      - CannotSuicide
+      - DoorBumpOpener
+      - FootstepSound
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1350: Dead
+  - type: MeleeWeapon
+    attackRate: 0.6
+    hidden: true
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage:
+      types:
+        Blunt: 150
+        Structural: 70
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepThud
+
+
+#СПАВНЕР
+- type: entity
+  name: спавнер голема
+  id: SpawnerMobGolem
+  parent: MarkerBase
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGolem
+
+- type: entity
+  name: периодический спавнер голема
+  id: SpawnerTimedMobGolem
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Genezis/Mobs/Aliens/golem.rsi
+          state: golem
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - MobGolem
+      # round ~90m
+      # one spawner should only spawn ~5 mice for sanity reasons
+      # therefore 18m
+      # use 50% chance for randomness and balance with halved interval
+      chance: 0.5
+      intervalSeconds: 240
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1

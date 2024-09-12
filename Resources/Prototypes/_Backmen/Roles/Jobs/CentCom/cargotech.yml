@@ -50,8 +50,8 @@
   parent: JobIcon
   id: JobIconCCCargoTech
   icon:
-    sprite: /Textures/Backmen/Icons/jobicon.rsi
-    state: CargoTechnician
+    sprite: /Textures/Genezis/Icons/jobicon.rsi
+    state: Cargotechnikan_Triglav
 
 
 - type: entity

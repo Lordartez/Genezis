@@ -1,74 +1,74 @@
 - type: speechSounds
   id: Bass
   saySound:
-    path: /Audio/Voice/Talk/speak_4.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/speak_4_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/speak_4_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Baritone
   saySound:
-    path: /Audio/Voice/Talk/speak_1.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/speak_1_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/speak_1_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Tenor
   saySound:
-    path: /Audio/Voice/Talk/speak_3.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/speak_3_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/speak_3_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Alto
   saySound:
-    path: /Audio/Voice/Talk/speak_2.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/speak_2_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/speak_2_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Squeak
   saySound:
-    path: /Audio/Animals/mouse_squeak.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Animals/mouse_squeak.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Animals/mouse_squeak.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Vending
   saySound:
-    path: /Audio/Machines/vending_jingle.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Machines/vending_jingle.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Machines/vending_jingle.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Borg
   saySound:
-    path: /Audio/Voice/Talk/Silicon/borg.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/Silicon/borg_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/Silicon/borg_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: SyndieBorg
   saySound:
-    path: /Audio/Voice/Talk/Silicon/syndieborg.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/Silicon/syndieborg_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/Silicon/syndieborg_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Pai
@@ -82,56 +82,56 @@
 - type: speechSounds
   id: Monkey
   saySound:
-    path: /Audio/Animals/monkey_scream.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Animals/monkey_scream.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Animals/monkey_scream.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Parrot
   saySound:
-    path: /Audio/Animals/parrot_raught.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Animals/parrot_raught.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Animals/parrot_raught.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Lizard
   saySound:
-    path: /Audio/Voice/Talk/lizard.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/lizard_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/lizard_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Slime
   saySound:
-    path: /Audio/Voice/Talk/slime.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/slime_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/slime_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Vox
   saySound:
-    path: /Audio/Voice/Talk/vox.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/vox_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/vox_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Arachnid
   saySound:
-    path: /Audio/Voice/Talk/arachnid.ogg
+    path: /Audio/Genezis/Voice/Talk/new_1.ogg
   askSound:
-    path: /Audio/Voice/Talk/arachnid_ask.ogg
+    path: /Audio/Genezis/Voice/Talk/new_2.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/arachnid_exclaim.ogg
+    path: /Audio/Genezis/Voice/Talk/new_5.ogg
 
 - type: speechSounds
   id: Cat

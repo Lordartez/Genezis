@@ -48,8 +48,8 @@
   parent: JobIcon
   id: JobIconNanotrasenHighOfficer
   icon:
-    sprite: /Textures/Backmen/Icons/jobicon.rsi
-    state: Nanotrasen
+    sprite: /Textures/Genezis/Icons/jobicon.rsi
+    state: Triglav
 
 - type: entity
   parent: CentcomPDABackmen

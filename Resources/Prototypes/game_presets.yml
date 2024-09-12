@@ -45,7 +45,6 @@
   alias:
   - greenshift
   - shittersafarideluxeedition
-  - schiffbruch
   name: greenshift-title
   showInVote: false #4boring4vote
   description: greenshift-description
@@ -54,7 +53,6 @@
   - BasicRoundstartVariation
   - WageScheduler #backmen: currency
   - GameRuleMeteorScheduler
-  - Shipwrecked
 
 - type: gamePreset
   id: Secret

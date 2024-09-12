@@ -5,7 +5,7 @@
   playTimeTracker: JobCentralCommandSecGavna
   setPreference: true
   startingGear: HeadOfSecurityCentComGear
-  icon: JobIconCCHeadOfSecurity
+  icon: JobIconTriglav_control
   supervisors: job-supervisors-hoh
   canBeAntag: false
   weight: 1
@@ -50,10 +50,10 @@
 
 - type: statusIcon
   parent: JobIcon
-  id: JobIconCCHeadOfSecurity
+  id: JobIconTriglav_control
   icon:
-    sprite: /Textures/Backmen/Icons/jobicon.rsi
-    state: Security
+    sprite: /Textures/Genezis/Icons/jobicon.rsi
+    state: Triglav_control
 
 - type: startingGear
   id: HeadOfSecurityCentComGear
