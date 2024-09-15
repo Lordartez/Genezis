@@ -1,13 +1,6 @@
 ﻿- type: inventoryTemplate
   id: ipc
   slots:
-    - name: shoes
-      slotTexture: shoes
-      slotFlags: FEET
-      stripTime: 3
-      uiWindowPos: 1,3
-      strippingWindowPos: 1,3
-      displayName: Shoes
     - name: outerClothing
       slotTexture: suit
       slotFlags: OUTERCLOTHING

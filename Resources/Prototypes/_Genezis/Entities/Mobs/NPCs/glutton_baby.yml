@@ -71,6 +71,10 @@
       behaviors:
       - !type:GibBehavior { }
   - type: NonSpreaderZombie
+  - type: TimedDespawn
+    lifetime: 680.0
+  - type: SpawnOnDespawn
+    prototype: MobGlutton
 
 #СПАВНЕР
 - type: entity

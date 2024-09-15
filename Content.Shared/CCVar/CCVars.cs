@@ -840,7 +840,7 @@ namespace Content.Shared.CCVar
         /// Whether to erase a player's chat messages and their entity from the game when banned.
         /// </summary>
         public static readonly CVarDef<bool> ServerBanErasePlayer =
-            CVarDef.Create("admin.server_ban_erase_player", false, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("admin.server_ban_erase_player", true, CVar.ARCHIVE | CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
         ///     Minimum players sharing a connection required to create an alert. -1 to disable the alert.

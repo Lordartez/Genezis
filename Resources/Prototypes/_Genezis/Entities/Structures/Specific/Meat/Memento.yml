@@ -1,0 +1,52 @@
+- type: entity
+  id: Memento
+  parent: BaseStructure
+  name: Рунный столб
+  description: Значение и смысл этого строения неизвестно.
+  components:
+    - type: Sprite
+      noRot: true
+      sprite: Genezis/Structures/Meat/Memento.rsi
+      layers:
+        - state: Memento
+    - type: Icon
+      sprite: Genezis/Structures/Meat/Memento.rsi
+      state: Memento
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        slips:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.3,-0.3,0.3,0.3"
+          hard: false
+          layer:
+          - SlipLayer
+        fix1:
+          hard: false
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.4,-0.4,0.4,0.4"
+          layer:
+          - MidImpassable
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 180
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Appearance
+    - type: PointLight
+      radius: 4
+      energy: 1
+    - type: AmbientSound
+      volume: -2
+      range: 5
+      sound:
+        path: /Audio/Ambience/Objects/anomaly_generator.ogg

@@ -1,0 +1,50 @@
+- type: entity
+  id: MeatPile
+  parent: BaseStructure
+  name: Столб скорби
+  description: Нагромождение черепов различных рас, смысл этого безумия неизвестен.
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Genezis/Misc/meathit.ogg"
+    - type: Sprite
+      noRot: true
+      sprite: Genezis/Structures/Meat/MeatPile.rsi
+      layers:
+        - state: MeatPile
+    - type: Icon
+      sprite: Genezis/Structures/Meat/MeatPile.rsi
+      state: MeatPile
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        slips:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.3,-0.3,0.3,0.3"
+          hard: false
+          layer:
+          - SlipLayer
+        fix1:
+          hard: false
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.4,-0.4,0.4,0.4"
+          layer:
+          - MidImpassable
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 80
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Appearance
+
