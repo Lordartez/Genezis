@@ -1,0 +1,110 @@
+- type: entity
+  id: MeatGail
+  parent: BaseStructure
+  name: Жёлчный пузырь
+  description: Полностью развитый жёлчный пузырь. Хоть он так и называется, но его выделения не опасны для жизни хоть и имеют галлюциногенные вещества.
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Genezis/Misc/meathit.ogg"
+    - type: Sprite
+      noRot: true
+      sprite: Genezis/Structures/Meat/Gail.rsi
+      layers:
+        - state: Gail
+    - type: Icon
+      sprite: Genezis/Structures/Meat/Gail.rsi
+      state: Gail
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.3,-0.3,0.3,0.3"
+          density: 50
+          mask:
+            - MachineMask
+          layer:
+            - MachineLayer
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 250
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Appearance
+    - type: AmbientSound
+      volume: -2
+      range: 4
+      sound:
+        path: /Audio/Genezis/AmbientSound/HiveSound.ogg
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - ShadowKudzu
+      chance: 0.95
+      intervalSeconds: 40
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 2
+    - type: Tag
+      tags:
+        - SpookyFog
+
+- type: entity
+  id: MeatGailBaby
+  parent: BaseStructure
+  name: Растущий жёлчный пузырь
+  description: Всё ещё растущий жёлчный пузырь, не выделяет галлюциногенные вещества.
+  components:
+    - type: MeleeSound
+      soundGroups:
+        Brute:
+          path:
+            "/Audio/Genezis/Misc/meathit.ogg"
+    - type: Sprite
+      noRot: true
+      sprite: Genezis/Structures/Meat/Gail_alt.rsi
+      layers:
+        - state: Gail
+    - type: Icon
+      sprite: Genezis/Structures/Meat/Gail_alt.rsi
+      state: Gail
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.3,-0.3,0.3,0.3"
+          density: 50
+          mask:
+            - MachineMask
+          layer:
+            - MachineLayer
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 250
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Appearance
+    - type: AmbientSound
+      volume: -2
+      range: 4
+      sound:
+        path: /Audio/Genezis/AmbientSound/HiveSound.ogg

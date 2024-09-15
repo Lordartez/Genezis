@@ -55,16 +55,7 @@
       walkSpeedModifier: 0.2
       sprintSpeedModifier: 0.2
     - type: Appearance
-    - type: GenericVisualizer
-      visuals:
-        enum.ElectrifiedVisuals.IsPowered:
-          enum.ElectrifiedLayers.Powered:
-            True: { visible: True }
-            False: { visible: False }
     - type: AnimationPlayer
-    - type: Construction
-      graph: BarbedWire
-      node: BarbedWire
     - type: StepTrigger
       intersectRatio: 0.01
     - type: Slippery

@@ -1,0 +1,6 @@
+﻿- type: decal
+  id: BrickTileDarkBox
+  tags: ["station", "markings"]
+  sprite:
+    sprite: Decals/bricktile.rsi
+    state: dark_box
