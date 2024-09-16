@@ -18,6 +18,8 @@ using Content.Shared.Mobs.Systems;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.Movement.Pulling.Components;
 
 namespace Content.Server.Body.Systems;
 
@@ -57,6 +59,13 @@ public sealed class RespiratorSystem : EntitySystem
     private void OnUnpaused(Entity<RespiratorComponent> ent, ref EntityUnpausedEvent args)
     {
         ent.Comp.NextUpdate += args.PausedTime;
+    }
+
+    public bool CanBreathe(EntityUid uid)
+    {
+        if (TryComp<PullableComponent>(uid, out var pullable) && pullable.GrabStage == GrabStage.Suffocate)
+            return false;
+        return true;
     }
 
     public override void Update(float frameTime)
@@ -103,7 +112,7 @@ public sealed class RespiratorSystem : EntitySystem
             }
             else
             // end-backmen: blob zombie
-            if (respirator.Saturation < respirator.SuffocationThreshold)
+            if (respirator.Saturation < respirator.SuffocationThreshold || !CanBreathe(uid))
             {
                 if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown)
                 {
