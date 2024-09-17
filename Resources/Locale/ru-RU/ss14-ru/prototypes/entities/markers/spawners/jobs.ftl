@@ -95,5 +95,5 @@ ent-SpawnPointReporter = репортёр
     .desc = { ent-SpawnPointJobBase.desc }
 ent-SpawnPointPsychologist = психолог
     .desc = { ent-SpawnPointJobBase.desc }
-ent-SpawnPointZookeeper = зоотехник
+ent-SpawnPointZookeeper = ксенобиолог
     .desc = { ent-SpawnPointJobBase.desc }

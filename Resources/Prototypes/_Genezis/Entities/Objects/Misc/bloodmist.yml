@@ -1,6 +1,6 @@
 ﻿- type: entity
-  name: dark haze
-  id: ShadowKudzu
+  name: странный туман
+  id: bloodmist
   parent: [ BaseKudzu, BaseShadow ]
   components:
     - type: Physics
@@ -14,18 +14,8 @@
         color: "#793a80dd"
         map: [base]
     - type: Kudzu
-      growthTickChance: 0.2
-      spreadChance: 0.99
-    - type: RandomSpawner
-      deleteSpawnerAfterSpawn: false
-      rareChance: 0.05
-      offset: 0.2
-      chance: 0.45
-      prototypes:
-      - ShadowBasaltRandom
-      rarePrototypes:
-      - ShadowPortal
-      - ShadowKudzuLootSpawner
+      growthTickChance: 01
+      spreadChance: 0.10
     - type: Tag
       tags:
         - HideContextMenu

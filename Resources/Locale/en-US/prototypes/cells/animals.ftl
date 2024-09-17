@@ -1,0 +1,14 @@
+cell-Murine-name = мышиный
+cell-Galliform-name = галлиформный
+cell-Bovine-name = бычий
+cell-Feliform-name = кошачий
+cell-Canid-name = псовая
+cell-Ursine-name = медвежий
+cell-Cyprinid-name = карповые
+cell-CartilaginousCyprinid-name = хрящевой карповый
+cell-Ophidic-name = офидный
+cell-Anura-name = анура
+cell-Caudata-name = хвостатые
+cell-Atypical-name = atypical
+cell-Aphid-name = тля
+cell-Pseudoarachnoid-name = псевдоарахноидальный

@@ -42,7 +42,7 @@
         GlassBeaker:
           amount: 2
           defaultPrototype: Beaker
-          
+
 - type: entity
   id: ProtolatheCashMachineCircuitboard
   parent: BaseMachineCircuitboard
@@ -1269,3 +1269,43 @@
       Steel: 2
       Glass: 5
       Cable: 2
+
+- type: entity
+  id: CellSequencerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: машинная плата секвенатора клеток
+  description: машинная плата для секвенатора клеток.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: CellSequencer
+    stackRequirements:
+      Plasma: 5
+      MatterBin: 1
+      Glass: 1
+      Steel: 2
+    tagRequirements:
+      Dish:
+        amount: 2
+        defaultPrototype: PetriDish
+
+- type: entity
+  id: CellularFusionCircuitboard
+  parent: BaseMachineCircuitboard
+  name: машинная плата слиятеля клеток
+  description:  машинная плата для слиятеля клеток.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: CellularFusion
+    stackRequirements:
+      Plasma: 5
+      MatterBin: 1
+      Glass: 1
+      Steel: 2
+    tagRequirements:
+      Dish:
+        amount: 2
+        defaultPrototype: PetriDish
