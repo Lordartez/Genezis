@@ -2,8 +2,8 @@
 cellular-fusion-menu-title = Клеточное слияние
 
 # Menu labels
-cellular-fusion-menu-cell-a-label = Удаленная ячейка А
-cellular-fusion-menu-cell-b-label = Удаленная ячейка B
+cellular-fusion-menu-cell-a-label = Внутренняя ячейка А
+cellular-fusion-menu-cell-b-label = Внутренняя ячейка B
 
 cellular-fusion-menu-cell-a-no-selected-label = Ячейка А не выбрана
 cellular-fusion-menu-cell-b-no-selected-label = Ячейка B не выбрана

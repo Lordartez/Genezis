@@ -2,28 +2,7 @@
   id: DefaultRuleset
   name: guide-entry-rules
   ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
-
-- type: guideEntry
-  id: CoreRuleset
-  name: guide-entry-rules-core-only
-  ruleEntry: true
-  priority: 0
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenCoreOnlyRules.xml"
-
-- type: guideEntry
-  id: StandardRuleset
-  name: guide-entry-rules-lrp
-  ruleEntry: true
-  priority: 5
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenLRPRules.xml"
-
-- type: guideEntry
-  id: MRPRuleset
-  name: guide-entry-rules-mrp
-  ruleEntry: true
-  priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenMRPRules.xml"
+  text: "/ServerInfo/Genezis/Guidebook/ServerRules/RulesGenezis.xml"
 
 - type: guideEntry
   id: RoleTypes

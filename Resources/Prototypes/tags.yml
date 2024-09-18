@@ -1362,4 +1362,7 @@
 - type: Tag
   id: Dish
 
+- type: Tag
+  id: SyringeGunAmmo
+
 # ALPHABETICAL

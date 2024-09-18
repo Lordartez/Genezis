@@ -1,6 +1,6 @@
 ﻿- type: decal
-  id: BrickTileDarkBox
+  id: Meatcross
   tags: ["station", "markings"]
   sprite:
-    sprite: Decals/bricktile.rsi
-    state: dark_box
+    sprite: /Genezis/Decals/Meat.rsi
+    state: meatcross

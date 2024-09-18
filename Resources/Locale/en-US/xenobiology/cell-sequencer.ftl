@@ -2,14 +2,14 @@
 cell-sequencer-menu-title = Секвенатор клеток
 
 # Menu labels
-cell-sequencer-menu-inside-label = Внутри
-cell-sequencer-menu-remote-label = Удаленно
+cell-sequencer-menu-inside-label = Внутри вставленного объекта
+cell-sequencer-menu-remote-label = Внутри устройства
 cell-sequencer-menu-no-selected-label = Клетка не выбрана
 
 cell-sequencer-menu-cell-name-label = Имя: {$name}
 cell-sequencer-menu-cell-color-label = Цвет: [color={$color}]{$color}[/color]
 cell-sequencer-menu-cell-stability-label = Стабильность: {$stability}%
-cell-sequencer-menu-cell-remote-label = Удаленно: {$remote}
+cell-sequencer-menu-cell-remote-label = Внутри устройства: {$remote}
 cell-sequencer-menu-cell-cost-label = Стоимость: {$cost} плазмы
 cell-sequencer-menu-cell-material-label = Материал: {$material} плазмы
 
@@ -23,8 +23,8 @@ cell-sequencer-menu-add-button = Добавить
 cell-sequencer-menu-add-tooltip-info = Добавить.
 cell-sequencer-menu-remove-button = Убрать
 cell-sequencer-menu-remove-tooltip-info = Убрать.
-cell-sequencer-menu-replace-button = Заменить
-cell-sequencer-menu-replace-tooltip-info = Заменить.
+cell-sequencer-menu-replace-button = Извлечь
+cell-sequencer-menu-replace-tooltip-info = Извлечь.
 
 # Popups
 cell-sequencer-no-connect = Нет связи с сервером!

@@ -9,6 +9,6 @@ cell-CartilaginousCyprinid-name = хрящевой карповый
 cell-Ophidic-name = офидный
 cell-Anura-name = анура
 cell-Caudata-name = хвостатые
-cell-Atypical-name = atypical
+cell-Atypical-name = нетипичный
 cell-Aphid-name = тля
 cell-Pseudoarachnoid-name = псевдоарахноидальный

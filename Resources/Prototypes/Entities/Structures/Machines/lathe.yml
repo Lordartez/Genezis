@@ -50,7 +50,7 @@
   - type: ResearchClient
   - type: TechnologyDatabase
 
-# a lathe that can be sped up with space lube / slowed down with glue
+# a lathe that can be speed up with space lube / slowed down with glue
 - type: entity
   abstract: true
   parent: BaseLathe
@@ -819,6 +819,7 @@
       - WeaponDisablerSMG
       - WeaponLaserCannon
       - WeaponLaserCarbine
+      - WeaponTemperatureGun
       - WeaponLaserPistol
       - WeaponLaserCarbinePractice
       - InsulativeHeadcage
@@ -937,6 +938,7 @@
       - MedkitAdvanced
       - MedkitRadiation
       - MedkitCombat
+      - LauncherSyringe
       - Scalpel
       - Retractor
       - Cautery
