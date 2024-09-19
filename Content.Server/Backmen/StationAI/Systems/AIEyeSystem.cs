@@ -53,8 +53,6 @@ public sealed class AIEyePowerSystem : EntitySystem
 
         SubscribeLocalEvent<StationAIComponent, GetSiliconLawsEvent>(OnGetLaws);
 
-        SubscribeLocalEvent<StationAIComponent, PowerChangedEvent>(OnPowerChange);
-
         SubscribeLocalEvent<AIEyeComponent, AIEyeCampActionEvent>(OnOpenUiCams);
     }
 
@@ -72,35 +70,6 @@ public sealed class AIEyePowerSystem : EntitySystem
     {
         _uiSystem.CloseUis(ent.Owner);
         _cameraSystem.RemoveActiveCamera(ent);
-    }
-
-    private void OnPowerChange(EntityUid uid, StationAIComponent component, ref PowerChangedEvent args)
-    {
-        if (HasComp<AIEyeComponent>(uid) || TerminatingOrDeleted(uid))
-        {
-            return;
-        }
-
-        foreach (var (actionId,action) in _actions.GetActions(uid))
-        {
-            _actions.SetEnabled(actionId, args.Powered);
-        }
-
-        if (!args.Powered && component.ActiveEye.IsValid())
-        {
-            QueueDel(component.ActiveEye);
-            component.ActiveEye = EntityUid.Invalid;
-        }
-
-        if (!args.Powered)
-        {
-            EnsureComp<ReplacementAccentComponent>(uid).Accent = "dwarf";
-            _uiSystem.CloseUis(uid);
-        }
-        else
-        {
-            RemCompDeferred<ReplacementAccentComponent>(uid);
-        }
     }
 
     [ValidatePrototypeId<SiliconLawsetPrototype>]

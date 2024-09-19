@@ -1,7 +1,7 @@
 ﻿- type: entity
   abstract: true
-  id: CMVinesBase
-  name: vines
+  id: StrangeVinesBase
+  name: лозы
   placement:
     mode: SnapgridCenter
     snap:
@@ -79,10 +79,10 @@
     sprintSpeedModifier: 0.8
 
 - type: entity
-  parent: CMVinesBase
-  id: CMVinesLight
-  name: vines
-  description: A mass of twisted vines.
+  parent: StrangeVinesBase
+  id: StrangeVinesLight
+  name: лозы
+  description: Странная масса дрожащих лоз.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/vines.rsi
@@ -95,10 +95,10 @@
         light_3: ""
 
 - type: entity
-  parent: CMVinesBase
-  id: CMVinesHeavy
-  name: vines
-  description: A thick, coiled mass of twisted vines.
+  parent: StrangeVinesBase
+  id: strangeVinesHeavy
+  name: лозы
+  description: Крупная, масса дрожащих лоз.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/vines.rsi

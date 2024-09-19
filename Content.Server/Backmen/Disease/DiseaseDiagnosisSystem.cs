@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server.Backmen.Disease.Components;
 using Content.Server.Backmen.Disease.Server;
 using Content.Server.Nutrition.Components;
@@ -43,8 +43,6 @@ public sealed class DiseaseDiagnosisSystem : EntitySystem
         SubscribeLocalEvent<DiseaseSwabComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<DiseaseDiagnoserComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
         SubscribeLocalEvent<DiseaseVaccineCreatorComponent, AfterInteractUsingEvent>(OnAfterInteractUsingVaccine);
-        // Visuals
-        SubscribeLocalEvent<DiseaseMachineComponent, PowerChangedEvent>(OnPowerChanged);
         // Private Events
         SubscribeLocalEvent<DiseaseDiagnoserComponent, DiseaseMachineFinishedEvent>(OnDiagnoserFinished);
         SubscribeLocalEvent<DiseaseSwabComponent, DiseaseSwabDoAfterEvent>(OnSwabDoAfter);
@@ -264,13 +262,6 @@ public sealed class DiseaseDiagnosisSystem : EntitySystem
 
         _appearance.SetData(uid, DiseaseMachineVisuals.IsOn, isOn, appearance);
         _appearance.SetData(uid, DiseaseMachineVisuals.IsRunning, isRunning, appearance);
-    }
-    /// <summary>
-    /// Makes sure the machine is visually off/on.
-    /// </summary>
-    private void OnPowerChanged(EntityUid uid, DiseaseMachineComponent component, ref PowerChangedEvent args)
-    {
-        UpdateAppearance(uid, args.Powered, false);
     }
 
     /// <summary>

@@ -19,6 +19,7 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared.Power;
 using Content.Server.Administration.Logs;
 using Content.Shared.Database;
 

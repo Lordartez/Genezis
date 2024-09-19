@@ -1,7 +1,12 @@
 using Content.Shared.Actions;
+using Content.Shared.CombatMode;
+using Content.Shared.Mind;
 using Content.Shared.MouseRotator;
 using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
+using Robust.Shared.Audio; // Ataraxia
+using Robust.Shared.Audio.Systems; // Ataraxia
+using Robust.Shared.GameObjects; // Ataraxia
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -10,9 +15,11 @@ namespace Content.Shared.CombatMode;
 public abstract class SharedCombatModeSystem : EntitySystem
 {
     [Dependency] protected readonly IGameTiming Timing = default!;
-    [Dependency] private   readonly INetManager _netMan = default!;
-    [Dependency] private   readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private   readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly INetManager _netMan = default!;
+    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!; // Ataraxia
 
     public override void Initialize()
     {
@@ -50,9 +57,13 @@ public abstract class SharedCombatModeSystem : EntitySystem
         if (!_netMan.IsClient || !Timing.IsFirstTimePredicted)
             return;
 
-        var msg = component.IsInCombatMode ? "action-popup-combat-enabled" : "action-popup-combat-disabled";
-        _popup.PopupEntity(Loc.GetString(msg), args.Performer, args.Performer);
+        // Ataraxia START
+        _audio.PlayPvs(component.IsInCombatMode ? "/Audio/_Ataraxia/Effects/CombatMode/on.ogg" : "/Audio/_Ataraxia/Effects/CombatMode/off.ogg", uid);
+
+        //        var msg = component.IsInCombatMode ? "action-popup-combat-enabled" : "action-popup-combat-disabled";
+        //        _popup.PopupEntity(Loc.GetString(msg), args.Performer, args.Performer);
     }
+    // Ataraxia END
 
     public void SetCanDisarm(EntityUid entity, bool canDisarm, CombatModeComponent? component = null)
     {
@@ -82,7 +93,7 @@ public abstract class SharedCombatModeSystem : EntitySystem
             _actionsSystem.SetToggled(component.CombatToggleActionEntity, component.IsInCombatMode);
 
         // Change mouse rotator comps if flag is set
-        if (!component.ToggleMouseRotator || IsNpc(entity))
+        if (!component.ToggleMouseRotator || IsNpc(entity) && !_mind.TryGetMind(entity, out _, out _))
             return;
 
         SetMouseRotatorComponents(entity, value);

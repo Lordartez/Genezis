@@ -14,3 +14,20 @@
     - HighRiskItem
   - type: StealTarget
     stealGroup: HandTeleporter
+
+- type: entity
+  id: HandTeleporterAdmeme
+  suffix: Admeme
+  parent: BaseItem
+  name: межпространственный телепорт
+  description: Позволяет открывать стабильные портальные врата, не ограниченные расстоянием
+  components:
+  - type: Sprite
+    sprite: /Textures/Objects/Devices/hand_teleporter.rsi
+    layers:
+    - state: icon
+      color: green
+  - type: HandTeleporter
+    firstPortalPrototype: PortalGatewayBlue
+    secondPortalPrototype: PortalGatewayOrange
+    allowPortalsOnDifferentGrids: true

@@ -10,6 +10,8 @@ using Content.Server.Light.Components;
 using Content.Server.Power.Components;
 using Content.Shared.Audio;
 using Content.Shared.Damage;
+using Content.Shared.Power;
+using Content.Shared.Power.Components;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;

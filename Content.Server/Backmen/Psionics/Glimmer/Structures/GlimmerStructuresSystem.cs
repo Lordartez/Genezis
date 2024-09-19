@@ -19,18 +19,10 @@ public sealed class GlimmerStructuresSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<AnomalyVesselComponent, PowerChangedEvent>(OnAnomalyVesselPowerChanged);
-
         SubscribeLocalEvent<GlimmerSourceComponent, AnomalyPulseEvent>(OnAnomalyPulse);
         SubscribeLocalEvent<GlimmerSourceComponent, AnomalySupercriticalEvent>(OnAnomalySupercritical);
 
         _apcPower = GetEntityQuery<ApcPowerReceiverComponent>();
-    }
-
-    private void OnAnomalyVesselPowerChanged(EntityUid uid, AnomalyVesselComponent component, ref PowerChangedEvent args)
-    {
-        if (TryComp<GlimmerSourceComponent>(component.Anomaly, out var glimmerSource))
-            glimmerSource.Active = args.Powered;
     }
 
     private void OnAnomalyPulse(EntityUid uid, GlimmerSourceComponent component, ref AnomalyPulseEvent args)

@@ -5,6 +5,7 @@ using Content.Server.Atmos.Piping.Components;
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
+using Content.Server.Power.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Piping;
 using Content.Shared.Atmos.Piping.Binary.Components;
@@ -66,6 +67,7 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
         private void OnPumpUpdated(EntityUid uid, GasPressurePumpComponent pump, ref AtmosDeviceUpdateEvent args)
         {
             if (!pump.Enabled
+                || (TryComp<ApcPowerReceiverComponent>(uid, out var power) && !power.Powered)
                 || !_nodeContainer.TryGetNodes(uid, pump.InletName, pump.OutletName, out PipeNode? inlet, out PipeNode? outlet))
             {
                 _ambientSoundSystem.SetAmbience(uid, false);
@@ -154,7 +156,8 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
             if (!Resolve(uid, ref pump, ref appearance, false))
                 return;
 
-            _appearance.SetData(uid, PumpVisuals.Enabled, pump.Enabled, appearance);
+            bool pumpOn = pump.Enabled && (TryComp<ApcPowerReceiverComponent>(uid, out var power) && power.Powered);
+            _appearance.SetData(uid, PumpVisuals.Enabled, pumpOn, appearance);
         }
     }
 }

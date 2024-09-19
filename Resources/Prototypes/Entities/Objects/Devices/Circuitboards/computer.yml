@@ -406,3 +406,23 @@
       state: cpu_science
     - type: ComputerBoard
       prototype: ComputerRoboticsControl
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StationGatewayControlCircuitboard
+  name: материнская плата консоли управления вратами
+  description: Компьютерная печатная плата для пульта управления вратами.
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: ComputerGatewayStation
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: SyndicateGatewayControlCircuitboard
+  name: материнская плата консоли управления вратами синдиката
+  description: Компьютерная печатная плата для пульта управления вратами.
+  components:
+    - type: ComputerBoard
+      prototype: ComputerGatewaySyndicate

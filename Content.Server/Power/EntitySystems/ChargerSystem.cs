@@ -8,6 +8,7 @@ using Content.Shared.Emp;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Power.Components;
 using Content.Shared.Storage.Components;
 using Robust.Server.Containers;
 using Content.Shared.Whitelist;
@@ -201,7 +202,7 @@ internal sealed class ChargerSystem : EntitySystem
 
         return CellChargerStatus.Charging;
     }
-    
+
     private void TransferPower(EntityUid uid, EntityUid targetEntity, ChargerComponent component, float frameTime)
     {
         if (!TryComp(uid, out ApcPowerReceiverComponent? receiverComponent))

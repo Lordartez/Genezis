@@ -63,7 +63,6 @@ namespace Content.Server.Backmen.Psionics.Glimmer
 
             SubscribeLocalEvent<SharedGlimmerReactiveComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<SharedGlimmerReactiveComponent, ComponentRemove>(OnComponentRemove);
-            SubscribeLocalEvent<SharedGlimmerReactiveComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<SharedGlimmerReactiveComponent, GlimmerTierChangedEvent>(OnTierChanged);
             SubscribeLocalEvent<SharedGlimmerReactiveComponent, GetVerbsEvent<AlternativeVerb>>(AddShockVerb);
             SubscribeLocalEvent<SharedGlimmerReactiveComponent, DamageChangedEvent>(OnDamageChanged);
@@ -152,16 +151,6 @@ namespace Content.Server.Backmen.Psionics.Glimmer
         private void OnComponentRemove(EntityUid uid, SharedGlimmerReactiveComponent component, ComponentRemove args)
         {
             UpdateEntityState(uid, component, GlimmerTier.Minimal, -1 * (int) LastGlimmerTier);
-        }
-
-        /// <summary>
-        /// If the Entity has RequiresApcPower set to true, this will force an
-        /// update to the entity's state.
-        /// </summary>
-        private void OnPowerChanged(EntityUid uid, SharedGlimmerReactiveComponent component, ref PowerChangedEvent args)
-        {
-            if (component.RequiresApcPower)
-                UpdateEntityState(uid, component, LastGlimmerTier, 0);
         }
 
         /// <summary>

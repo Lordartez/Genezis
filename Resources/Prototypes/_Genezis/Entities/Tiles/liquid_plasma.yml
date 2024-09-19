@@ -24,13 +24,13 @@
   - type: SyncSprite
   - type: Clickable
   - type: Sprite
-    sprite: /Genezis/Tiles/Planet/liquid_plasma.rsi
+    sprite: Genezis/Tiles/Planet/liquid_plasma.rsi
     drawdepth: BelowFloor
     layers:
     - state: plasma
       shader: unshaded
   - type: Icon
-    sprite: /Genezis/Tiles/Planet/liquid_plasma.rsi
+    sprite: Genezis/Tiles/Planet/liquid_plasma.rsi
     state: full
   - type: IconSmooth
     key: floor
