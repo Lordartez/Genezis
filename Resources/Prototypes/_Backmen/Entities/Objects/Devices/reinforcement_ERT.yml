@@ -42,7 +42,7 @@
   - type: GhostRoleMobSpawner
     prototype: MobHumanERTSecurityReadyV3
   - type: GhostRole
-    name: ОБР офицер безопасности
+    name: ОБР Штурмовик безопасности
     description: Солдат или же охранник Epsilon - 11, прошедший небольшую подготовку и готовый стрелять во все что движеться, я бы не доверил ему даже водяной пистолетик.
 
 - type: entity

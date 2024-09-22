@@ -7,6 +7,8 @@
     damage:
       types:
         Piercing: 40
+  - type: CMArmorPiercing
+    amount: 5
 
 - type: entity
   parent: BulletRifle10x24mm
@@ -17,3 +19,17 @@
     damage:
       types:
         Piercing: 30
+  - type: CMArmorPiercing
+    amount: 40
+
+- type: entity
+  parent: BaseBullet
+  id: BulletRifleM4SPRA19
+  noSpawn: true
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 58
+  - type: CMArmorPiercing
+    amount: 35

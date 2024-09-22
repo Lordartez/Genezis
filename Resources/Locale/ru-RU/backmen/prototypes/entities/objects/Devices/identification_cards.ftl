@@ -25,7 +25,7 @@ ent-DeliveryIDCard = ID карта доставщика
 ent-UEGrepIDCard = ID карта представителя ОПЗ
     .desc = { ent-IDCardStandard.desc }
 
-ent-UEGoffIDCard = ID карта офицера ОПЗ
+ent-UEGoffIDCard = ID карта Штурмовика ОПЗ
     .desc = { ent-IDCardStandard.desc }
 
 ent-IdCardIOG = ID карта сотрудника ИОГ.

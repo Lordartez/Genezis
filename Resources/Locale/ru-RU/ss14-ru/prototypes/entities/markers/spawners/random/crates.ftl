@@ -5,5 +5,5 @@ ent-CrateFilledSpawner = спавнер полный ящик
     .desc = { ent-MarkerBase.desc }
 ent-LootSpawnerRandomCrateEngineering = спавнер случайный инженерный ящик
     .desc = { ent-MarkerBase.desc }
-ent-LootSpawnerRandomCrateSecurity = спавнер случайный ящик службы безопасности
+ent-LootSpawnerRandomCrateSecurity = спавнер случайный ящик Отдела контроля
     .desc = { ent-MarkerBase.desc }

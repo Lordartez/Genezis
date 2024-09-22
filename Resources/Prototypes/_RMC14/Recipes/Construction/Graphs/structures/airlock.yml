@@ -15,7 +15,7 @@
         doAfter: 2
 
   - node: assembly
-    entity: CMAirlockAssembly
+    entity: AltAirlockAssembly
     actions:
     - !type:SnapToGrid {}
     - !type:SetAnchor {}
@@ -50,7 +50,7 @@
         doAfter: 2
 
   - node: electronics
-    entity: CMAirlockAssembly
+    entity: AltAirlockAssembly
     actions:
     - !type:AppearanceChange
     edges:
@@ -72,7 +72,7 @@
         doAfter: 5
 
   - node: wired
-    entity: CMAirlockAssembly
+    entity: AltAirlockAssembly
     actions:
     - !type:AppearanceChange
     edges:
@@ -116,7 +116,7 @@
 
     ## Glass
   - node: glassAssembly
-    entity: CMAirlockAssembly
+    entity: AltAirlockAssembly
     actions:
     - !type:SnapToGrid {}
     - !type:SetAnchor {}
@@ -159,7 +159,7 @@
         doAfter: 2
 
   - node: glassElectronics
-    entity: CMAirlockAssembly
+    entity: AltAirlockAssembly
     actions:
     - !type:AppearanceChange
     edges:
@@ -181,7 +181,7 @@
         doAfter: 5
 
   - node: glassWired
-    entity: CMAirlockAssembly
+    entity: AltAirlockAssembly
     actions:
     - !type:AppearanceChange
     edges:

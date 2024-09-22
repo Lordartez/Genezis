@@ -1,6 +1,6 @@
 - type: entity
   id: RMCGrille
-  parent: CMBaseStructure
+  parent: AltBaseStructure
   name: grille
   description: A flimsy lattice of metal rods.
   components:
@@ -86,7 +86,7 @@
 
 - type: entity
   id: RMCGrilleBroken
-  parent: CMBaseStructure
+  parent: AltBaseStructure
   name: grille
   description: A flimsy lattice of metal rods. It has seen better days.
   components:

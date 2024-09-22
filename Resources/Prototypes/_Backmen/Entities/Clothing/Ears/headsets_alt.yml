@@ -35,7 +35,7 @@
   parent: [ClothingHeadsetAlt,ShowSecurityIcons]
   id: ClothingHeadsetCentComCCAlt
   suffix: CentCom
-  name: Гарнитура офицера ЦК
+  name: Гарнитура Штурмовика ЦК
   description: Стандартная гарнитура ЦК.
   components:
   - type: ContainerFill

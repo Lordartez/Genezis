@@ -102,12 +102,6 @@ public sealed class ShadowkinDarkSwapSystem : EntitySystem
             return;
         }
 
-        _stamina.TakeStaminaDamage(ent,
-            Math.Abs(distance),
-            staminaComponent,
-            visual: false,
-            source: ent,
-            chaosDamage: true);
         staminaComponent.NextUpdate = _timing.CurTime + TimeSpan.FromSeconds(staminaComponent.Cooldown);
     }
 
@@ -139,13 +133,6 @@ public sealed class ShadowkinDarkSwapSystem : EntitySystem
                 continue;
             }
 
-            if (currentTime > comp.NextStaminaDmg)
-            {
-                _stamina.TakeStaminaDamage(uid, 6, stamina, uid, chaosDamage: true);
-                comp.NextStaminaDmg = currentTime + TimeSpan.FromSeconds(2);
-                stamina.NextUpdate = _timing.CurTime + TimeSpan.FromSeconds(2);
-                Dirty(uid, stamina);
-            }
         }
     }
 

@@ -14,8 +14,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatCapGerman
-  name: Фуражка немецкого офицера
-  description: Довольно старая фуражка офицера руководящего немецкими войсками
+  name: Фуражка немецкого Штурмовика
+  description: Довольно старая фуражка Штурмовика руководящего немецкими войсками
   components:
     - type: Sprite
       sprite: Backmen/Clothing/Head/Hats/germancapofficerbel.rsi
@@ -25,8 +25,8 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatCapOfficerSoviet
-  name: Фуражка Советского Офицера
-  description: Современная версия фуражки офицера руководящего войсками СССП
+  name: Фуражка Советского Штурмовика
+  description: Современная версия фуражки Штурмовика руководящего войсками СССП
   components:
     - type: Sprite
       sprite: Backmen/Clothing/Head/Hats/sovietcapbel.rsi
@@ -172,14 +172,14 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatCapSec
-  name: Фуражка офицера СБ
+  name: Фуражка Штурмовика СБ
   description: Фуражка сотрудника СБ, имеет эмблему НТ.
   components:
     - type: Sprite
       sprite: Backmen/Clothing/Head/Hats/seccap.rsi
     - type: Clothing
       sprite: Backmen/Clothing/Head/Hats/seccap.rsi
-      
+
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretVet
@@ -190,7 +190,7 @@
       sprite: Backmen/Clothing/Head/Hats/beretvet.rsi
     - type: Clothing
       sprite: Backmen/Clothing/Head/Hats/beretvet.rsi
-      
+
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatChapa
@@ -272,7 +272,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatMVDBeret
   name: берет полиции ОПЗ
-  description: Берет офицеров полиции ОПЗ, имеет эмблему министерства внутренних дел ОПЗ.
+  description: Берет Штурмовиков полиции ОПЗ, имеет эмблему министерства внутренних дел ОПЗ.
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Head/Hats/mvdberet.rsi
@@ -302,7 +302,7 @@
   parent: ClothingHeadHatBeretHoS
   id: ClothingHeadHatBeretMobileTaskForce
   name: берет отдела специальных операций
-  description: Черный берет с вышитой командирской эмблемой. Для офицеров, которые предпочитают стиль безопасности.
+  description: Черный берет с вышитой командирской эмблемой. Для Штурмовиков, которые предпочитают стиль безопасности.
 
 - type: entity
   parent: ClothingMaskBase
@@ -390,7 +390,7 @@
     sprite: Backmen/Clothing/Head/Masks/balaclawa.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Head/Masks/balaclawa.rsi
-    
+
 - type: entity # backmen
   parent: ClothingHeadBase
   id: ClothingHeadJeester
@@ -401,7 +401,7 @@
     sprite: Backmen/Clothing/Head/Hats/jeester.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Head/Hats/jeester.rsi
-    
+
 - type: entity # backmen
   parent: ClothingHeadBase
   id: ClothingHeadPlet

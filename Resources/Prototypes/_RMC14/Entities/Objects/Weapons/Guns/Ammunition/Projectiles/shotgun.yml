@@ -41,12 +41,16 @@
     damage:
       types:
         Blunt: 70
+  - type: CMArmorPiercing
+    amount: 20
 
 - type: entity
   parent: CMPelletShotgunBase
   id: CMPelletShotgunIncendiary
   name: incendiary slug
   components:
+  - type: CMArmorPiercing
+    amount: 20
   - type: Projectile
     damage:
       types:
@@ -73,6 +77,8 @@
   id: CMPelletShotgunFlechette
   name: flechette shell
   components:
+  - type: CMArmorPiercing
+    amount: 35
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/shotgun_projectiles.rsi
     layers:

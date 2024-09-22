@@ -13,14 +13,14 @@ ent-ClothingUniformJumpsuitGachi = мужской костюм
 ent-GermanSuit = форма Немецкого Солдата
     .desc = Военная форма немецких войск.
 
-ent-GermanOfficerSuit = форма немецкого офицера
-    .desc = Форма которую носят немецкие офицеры.
+ent-GermanOfficerSuit = форма немецкого Штурмовика
+    .desc = Форма которую носят немецкие Штурмовикы.
 
 ent-SovietSoldierUniformSuit = униформа солдата СССП
     .desc = Опрятная форма бойца фракции СССП.
 
-ent-SovietOfficerUniformSuit = униформа офицера СССП
-    .desc = Опрятная форма офицера фракции СССП.
+ent-SovietOfficerUniformSuit = униформа Штурмовика СССП
+    .desc = Опрятная форма Штурмовика фракции СССП.
 
 ent-ElPresidenteNanotrasenSuit = костюм Президента Nanotrasen
     .desc = Великолепно опрятный, элегантный и очень дорогой президента корпорации.
@@ -94,5 +94,5 @@ ent-ClothingUniformSkirtMailCarrier = спортивная юбка почтал
 ent-ClothingUniformJumpsuitUEG = водолазка представителя ОПЗ
     .desc = Лёгкая и комфортная водолазка
 
-ent-ClothingUniformJumpsuitUEGofficer = униформа офицера ОПЗ
+ent-ClothingUniformJumpsuitUEGofficer = униформа Штурмовика ОПЗ
     .desc = Униформа с безполезным камуфляжем. Лучше не связыватся с её обладателями

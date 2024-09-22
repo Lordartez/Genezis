@@ -1,7 +1,7 @@
 ﻿- type: entity
-  parent: RMCShutterBase
-  id: RMCPodDoor
-  name: podlock
+  parent: AltShutterBase
+  id: AltPodDoor
+  name: динамическая защита
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Shutters/poddoor.rsi
@@ -35,15 +35,15 @@
     price: 280
 
 - type: entity
-  parent: RMCPodDoor
-  id: RMCPodDoorAlmayer
+  parent: AltPodDoor
+  id: AltPodDoorAlmayer
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Shutters/Almayer/poddoor.rsi
 
 - type: entity
-  parent: RMCPodDoorAlmayer
-  id: RMCPodDoorAlmayerOpen
+  parent: AltPodDoorAlmayer
+  id: AltPodDoorAlmayerOpen
   suffix: Open
   components:
   - type: Door
@@ -58,29 +58,29 @@
     enabled: false
 
 - type: entity
-  parent: RMCPodDoor
-  id: RMCPodDoorAlmayerBlack
+  parent: AltPodDoor
+  id: AltPodDoorAlmayerBlack
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Shutters/Almayer/almayer_poddoor.rsi
 
 - type: entity
-  parent: RMCPodDoor
-  id: RMCPodDoorAlmayerWhite
+  parent: AltPodDoor
+  id: AltPodDoorAlmayerWhite
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Shutters/Almayer/white_almayer_poddoor.rsi
 
 - type: entity
-  parent: RMCPodDoor
-  id: RMCPodDoorAI
+  parent: AltPodDoor
+  id: AltPodDoorAI
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Shutters/Almayer/ai_door.rsi
 
 - type: entity
-  parent: RMCPodDoor
-  id: RMCPodDoorAIWhite
+  parent: AltPodDoor
+  id: AltPodDoorAIWhite
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Shutters/Almayer/white_ai_door.rsi

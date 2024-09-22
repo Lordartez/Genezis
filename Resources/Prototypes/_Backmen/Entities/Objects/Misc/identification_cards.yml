@@ -150,7 +150,7 @@
 - type: entity
   parent: IDCardStandard
   id: UEGoffIDCard
-  name: ID карта офицера ОПЗ
+  name: ID карта Штурмовика ОПЗ
   components:
     - type: Sprite
       sprite: Backmen/Objects/Misc/id_cards.rsi
@@ -162,7 +162,7 @@
         - AllAccess
         - CentCom
     - type: IdCard
-      jobTitle: Офицер ОПЗ
+      jobTitle: Штурмовик ОПЗ
 
 - type: entity
   name: ID карта Броне-Пехотного Оперативника Спецвойск
@@ -338,7 +338,7 @@
 - type: entity
   parent: CentcomIDCard
   id: IDSFO
-  name: ID Офицера СП
+  name: ID Штурмовика СП
   description: Карта, необходимая для доступа в различные области станции.
   components:
   - type: Sprite
@@ -349,7 +349,7 @@
   - type: Item
     heldPrefix: gold
   - type: IdCard
-    jobTitle: Офицер Специальный Операций
+    jobTitle: Штурмовик Специальный Операций
     jobIcon: JobIconNanotrasenOSO
   - type: Access
     groups:

@@ -85,7 +85,7 @@
     enabled: false
 
 - type: entity
-  parent: CMBaseStructure
+  parent: AltBaseStructure
   id: RMCInflatableWallBroken
   name: popped inflatable wall
   description: This used to be an inflatable wall, now it's just a mess of plastic.

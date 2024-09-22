@@ -8,7 +8,7 @@
 
 - type: accessLevel
   id: CCOfficer
-  name: ЦК Офицеры
+  name: ЦК Штурмовикы
 
 - type: accessLevel
   id: CCAdmiral

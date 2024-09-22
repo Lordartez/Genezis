@@ -1,7 +1,7 @@
 ent-ClothingMaskGas = противогаз
     .desc = Закрывающая лицо маска, которую можно подключить к дыхательному баллону.
 ent-ClothingMaskGasSecurity = противогаз СБ
-    .desc = Стандартный противогаз Службы безопасности.
+    .desc = Стандартный противогаз Отдела контроля.
 # Corvax-HiddenDesc-Start
 ent-ClothingMaskGasSyndicate = чёрный боевой противогаз
     .suffix = Синдикат
@@ -9,7 +9,7 @@ ent-ClothingMaskGasSyndicate = чёрный боевой противогаз
 # Corvax-HiddenDesc-End
 ent-ClothingMaskGasAtmos = атмос-противогаз
     .desc = Улучшенный противогаз, используемый атмосферными техниками. Огнеупорный!
-ent-ClothingMaskGasCaptain = противогаз капитана
+ent-ClothingMaskGasCaptain = противогаз Главнокомандующего
     .desc = В Nanotrasen решили срезать углы и перекрасить запасной атмос-противогаз, только никому об этом не говорите.
 ent-ClothingMaskGasCentcom = противогаз Центком
     .desc = Золотой с зелёным. Роскошно! Это поможет вам, пока вы сидите в своём офисе.
@@ -41,7 +41,7 @@ ent-ClothingMaskCluwne = лицо и волосы клувеня
     .desc = Проклятые лицо и волосы клувеня.
     .suffix = Неснимаемый
 ent-ClothingMaskGasSwat = противогаз спецназа
-    .desc = Элитный противогаз Службы безопасности.
+    .desc = Элитный противогаз Отдела контроля.
 ent-ClothingMaskGasMerc = противогаз наёмника
     .desc = Немного устаревший, но надёжный противогаз военного образца.
 ent-ClothingMaskGasERT = противогаз ОБР

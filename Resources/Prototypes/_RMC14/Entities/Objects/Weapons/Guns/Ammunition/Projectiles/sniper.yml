@@ -13,6 +13,8 @@
     damage:
       types:
         Piercing: 70
+  - type: CMArmorPiercing
+    amount: 50
 
 # TODO RMC14 incendiary
 - type: entity
@@ -26,6 +28,8 @@
       types:
         Piercing: 50
         Heat: 10
+  - type: CMArmorPiercing
+    amount: 20
 
 # TODO RMC14 slow
 - type: entity
@@ -38,6 +42,8 @@
     damage:
       types:
         Piercing: 55
+  - type: CMArmorPiercing
+    amount: 0
 
 - type: entity
   parent: CMBulletSniper10x28mm
@@ -49,3 +55,5 @@
     damage:
       types:
         Piercing: 125
+  - type: CMArmorPiercing
+    amount: 50

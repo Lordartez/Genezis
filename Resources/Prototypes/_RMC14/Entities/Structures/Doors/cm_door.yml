@@ -1,8 +1,8 @@
 ﻿- type: entity
   abstract: true
   parent: BaseStructure
-  id: CMBaseDoor
-  name: door
+  id: AltBaseDoor
+  name: шлюз
   placement:
     mode: SnapgridCenter
   components:
@@ -138,7 +138,7 @@
 
 - type: entity
   abstract: true
-  id: CMBaseDoorConstructible
+  id: AltBaseDoorConstructible
   components:
   - type: Construction
     graph: Airlock

@@ -1,6 +1,5 @@
 using Content.Shared.GatewayStation;
 using Robust.Client.UserInterface;
-using Serilog;
 
 namespace Content.Client.GatewayStation;
 
@@ -29,7 +28,7 @@ public sealed class StationGatewayBoundUserInterface : BoundUserInterface
         }
 
         _menu = this.CreateWindow<StationGatewayWindow>();
-        _menu.Set(stationName, gridUid);
+        _menu.Set(this, stationName, gridUid);
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -40,8 +39,13 @@ public sealed class StationGatewayBoundUserInterface : BoundUserInterface
         {
             case StationGatewayState st:
                 EntMan.TryGetComponent<TransformComponent>(Owner, out var xform);
-                _menu?.ShowGateways(st.Gateways, Owner, xform?.Coordinates);
+                _menu?.ShowGateways(st, Owner, xform?.Coordinates);
                 break;
         }
+    }
+
+    public void SendGatewayLinkChangeMessage(NetEntity? gate)
+    {
+        SendMessage(new StationGatewayGateClickMessage(gate));
     }
 }

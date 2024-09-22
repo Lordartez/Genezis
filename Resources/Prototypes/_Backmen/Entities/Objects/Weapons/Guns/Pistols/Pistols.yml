@@ -2,7 +2,7 @@
   name: Пистолет Макарова
   parent: BaseWeaponPistol
   id: WeaponPistolMakarovsssp
-  description: Пистолет Макарова, популярен среди офицерского состава СССП, использует .35 калибр
+  description: Пистолет Макарова, популярен среди Штурмовикского состава СССП, использует .35 калибр
   components:
   - type: Sprite
     sprite: Backmen/Objects/Weapons/Guns/Pistols/makarovbel.rsi

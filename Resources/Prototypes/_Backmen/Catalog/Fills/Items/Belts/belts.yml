@@ -329,7 +329,7 @@
 
 - type: entity
   name: пояс охраны спецсил
-  description: Может вмещать различное снаряжение службы безопасности, такое как наручники и вспышки.
+  description: Может вмещать различное снаряжение Отдела контроля, такое как наручники и вспышки.
   parent: ClothingBeltSecurity
   id: ClothingBeltSecuritySuper
   components:

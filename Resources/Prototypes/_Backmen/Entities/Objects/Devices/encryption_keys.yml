@@ -61,7 +61,7 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyCentComOfficer
-  name: ключ шифрования Центрального Офицера
+  name: ключ шифрования Центрального Штурмовика
   description: An encryption key used by captain's bosses.
   components:
   - type: EncryptionKey
@@ -139,7 +139,7 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyCentComOBR
-  name: ключ шифрования офицера ОБР
+  name: ключ шифрования Штурмовика ОБР
   description: An encryption key used by captain's bosses.
   components:
   - type: EncryptionKey

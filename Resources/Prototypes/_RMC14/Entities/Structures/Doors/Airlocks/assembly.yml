@@ -1,6 +1,6 @@
 - type: entity
   parent: AirlockAssembly
-  id: CMAirlockAssembly
+  id: AltAirlockAssembly
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/airlock_assemblies.rsi

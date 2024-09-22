@@ -9,7 +9,7 @@
     allowSpeech: true
     allowMovement: true
     name: "Рокси"
-    description: "Собака службы безопасности. Издевайтесь над офицерами, чтобы погладить их по голове и преследовать жестоких преступников по пятам"
+    description: "Собака Отдела контроля. Издевайтесь над Штурмовиками, чтобы погладить их по голове и преследовать жестоких преступников по пятам"
     requirements:
     - !type:DepartmentTimeRequirement
       department: Security

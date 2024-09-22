@@ -1,24 +1,5 @@
 - type: entity
   parent: BaseComputer
-  id: ComputerAlert
-  name: alerts computer
-  description: Used to access the station's automated alert system.
-  components:
-  - type: Computer
-    board: AlertsComputerCircuitboard
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: alert-2
-    - map: ["computerLayerKeys"]
-      state: atmos_key
-
-- type: entity
-  parent: BaseComputer
   id: ComputerEmergencyShuttle
   name: emergency shuttle console
   description: Handles authorization to early launch the shuttle.
@@ -33,6 +14,8 @@
     interfaces:
         enum.EmergencyConsoleUiKey.Key:
           type: EmergencyConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -54,6 +37,8 @@
     interfaces:
         enum.ShuttleConsoleUiKey.Key:
           type: ShuttleConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
   - type: RadarConsole
   - type: WorldLoader
     radius: 256
@@ -96,6 +81,8 @@
       state: shuttle
     - map: ["computerLayerKeys"]
       state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: Computer
     board: ShuttleConsoleCircuitboard
 
@@ -115,6 +102,8 @@
       state: syndishuttle
     - map: ["computerLayerKeys"]
       state: syndie_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: Tag
     tags:
       - Syndicate
@@ -145,6 +134,8 @@
       state: shuttle
     - map: ["computerLayerKeys"]
       state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: DroneConsole
     components:
       - type: CargoShuttle
@@ -207,12 +198,16 @@
       state: helm
     - map: ["computerLayerKeys"]
       state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: ActivatableUI
     key: enum.IFFConsoleUiKey.Key
   - type: UserInterface
     interfaces:
         enum.IFFConsoleUiKey.Key:
           type: IFFConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
   - type: Computer
     board: ComputerIFFCircuitboard
 
@@ -233,6 +228,8 @@
     interfaces:
         enum.IFFConsoleUiKey.Key:
           type: IFFConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
   - type: Computer
     board: ComputerIFFSyndicateCircuitboard
 
@@ -252,6 +249,8 @@
       state: power_monitor
     - map: ["computerLayerKeys"]
       state: power_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -273,6 +272,8 @@
     interfaces:
       enum.PowerMonitoringConsoleUiKey.Key:
         type: PowerMonitoringConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
 
 - type: entity
   parent: BaseComputer
@@ -290,6 +291,8 @@
       state: medcomp
     - map: ["computerLayerKeys"]
       state: med_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -308,6 +311,8 @@
     interfaces:
       enum.CriminalRecordsConsoleKey.Key:
         type: CriminalRecordsConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: ActivatableUI
     key: enum.CriminalRecordsConsoleKey.Key
   - type: Sprite
@@ -320,6 +325,8 @@
       state: explosive
     - map: ["computerLayerKeys"]
       state: security_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -343,6 +350,8 @@
     interfaces:
         enum.GeneralStationRecordConsoleKey.Key:
           type: GeneralStationRecordConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
   - type: ActivatableUI
     key: enum.GeneralStationRecordConsoleKey.Key
   - type: PointLight
@@ -371,6 +380,8 @@
       state: crew
     - map: ["computerLayerKeys"]
       state: med_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: PointLight
     radius: 1.5
     energy: 1.6
@@ -383,117 +394,14 @@
     interfaces:
         enum.CrewMonitoringUIKey.Key:
           type: CrewMonitoringBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
   - type: CrewMonitoringConsole
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
   - type: WirelessNetworkConnection
     range: 1200
-
-
-
-- type: entity
-  parent: BaseComputer
-  id: ComputerGatewayStation
-  name: консоль управления вратами объекта
-  description: Используется для мониторинга работы системы телепортации объекта.
-  components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: gateway_station
-    - map: ["computerLayerKeys"]
-      state: telesci_key
-  - type: ApcPowerReceiver
-    powerLoad: 500
-  - type: PointLight
-    radius: 1.5
-    energy: 1.6
-    color: "#3493c2"
-  - type: Computer
-    board: StationGatewayControlCircuitboard
-  - type: ActivatableUIRequiresAccess
-  - type: ActivatableUI
-    key: enum.StationGatewayUIKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.StationGatewayUIKey.Key:
-        type: StationGatewayBoundUserInterface
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-  - type: StationGatewayConsole
-  - type: Storage
-    grid:
-    - 0,0,4,2
-    maxItemSize: Tiny
-    storageOpenSound: /Audio/Machines/door_lock_off.ogg
-    storageCloseSound: /Audio/Machines/door_lock_on.ogg
-    storageInsertSound: /Audio/Machines/id_insert.ogg
-    storageRemoveSound: /Audio/Machines/id_swipe.ogg
-    whitelist:
-      tags:
-      - GatewayChip
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
-      board: !type:Container
-        showEnts: False
-        occludes: True
-        ents: []
-  - type: AccessReader
-    access: [["Command"]]
-  - type: Lock
-    unlockOnClick: false
-
-- type: entity
-  parent: ComputerGatewayStation
-  id: ComputerGatewayStationFilled
-  suffix: Filled, All Chips
-  components:
-  - type: ContainerFill
-    containers:
-      storagebase:
-      - GatewayChipStation
-      - GatewayChipSalvage
-      - GatewayChipMedical
-      - GatewayChipEngineering
-      - GatewayChipSecurity
-      - GatewayChipScience
-      - GatewayChipCargo
-
-- type: entity
-  parent: ComputerGatewayStation
-  id: ComputerGatewaySyndicate
-  name: консоль управления вратами синдиката
-  components:
-  - type: Sprite
-    layers:
-    - map: ["computerLayerBody"]
-      state: computer
-    - map: ["computerLayerKeyboard"]
-      state: generic_keyboard
-    - map: ["computerLayerScreen"]
-      state: gateway_syndicate
-    - map: ["computerLayerKeys"]
-      state: syndie_key
-  - type: PointLight
-    color: "#c61414"
-  - type: Computer
-    board: SyndicateGatewayControlCircuitboard
-  - type: AccessReader
-    access: [["SyndicateAgent"]]
-  - type: StationGatewayConsole
-    gatewayColor: "#c61414"
-
-
-
 
 - type: entity
   parent: BaseComputer
@@ -511,6 +419,8 @@
       state: rdcomp
     - map: ["computerLayerKeys"]
       state: rd_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: ResearchClient
   - type: ResearchConsole
   - type: ActiveRadio
@@ -525,6 +435,8 @@
         type: ResearchConsoleBoundUserInterface
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: Computer
@@ -555,6 +467,8 @@
       state: artifact
     - map: ["computerLayerKeys"]
       state: tech_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: ResearchClient
   - type: AnalysisConsole
     reportEntityId: PaperArtifactAnalyzer
@@ -573,6 +487,8 @@
         type: AnalysisConsoleBoundUserInterface
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: Computer
@@ -616,6 +532,8 @@
     interfaces:
       enum.IdCardConsoleUiKey.Key:
         type: IdCardConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: CrewManifestViewer
     ownerKey: enum.IdCardConsoleUiKey.Key
   - type: Sprite
@@ -628,6 +546,8 @@
       state: id
     - map: ["computerLayerKeys"]
       state: id_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: Computer
     board: IDComputerCircuitboard
   - type: PointLight
@@ -675,6 +595,8 @@
       state: comm
     - map: ["computerLayerKeys"]
       state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: AccessReader
     access: [[ "Command" ]]
   - type: CommunicationsConsole
@@ -687,6 +609,8 @@
     interfaces:
       enum.CommunicationsConsoleUiKey.Key:
         type: CommunicationsConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Computer
     board: CommsComputerCircuitboard
   - type: PointLight
@@ -694,8 +618,8 @@
     energy: 1.6
     color: "#3c5eb5"
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: StrongMetallic
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
 
 - type: entity
   parent: ComputerComms
@@ -713,6 +637,8 @@
       state: comm_syndie
     - map: ["computerLayerKeys"]
       state: syndie_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: AccessReader
     access: [[ "NuclearOperative" ]]
   - type: CommunicationsConsole
@@ -744,6 +670,8 @@
       state: solar_screen
     - map: ["computerLayerKeys"]
       state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: SolarControlConsole
   - type: ActivatableUI
     key: enum.SolarControlConsoleUiKey.Key
@@ -751,6 +679,8 @@
     interfaces:
       enum.SolarControlConsoleUiKey.Key:
         type: SolarControlConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Computer
     board: SolarControlComputerCircuitboard
   - type: PointLight
@@ -774,6 +704,8 @@
       state: solar_screen
     - map: ["computerLayerKeys"]
       state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: RadarConsole
   - type: ActivatableUI
     key: enum.RadarConsoleUiKey.Key
@@ -781,6 +713,8 @@
     interfaces:
         enum.RadarConsoleUiKey.Key:
           type: RadarConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
   - type: Computer
     board: RadarConsoleCircuitboard
   - type: PointLight
@@ -804,6 +738,8 @@
       state: supply
     - map: ["computerLayerKeys"]
       state: tech_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: CargoShuttleConsole
   - type: ActivatableUI
     key: enum.CargoConsoleUiKey.Shuttle
@@ -811,6 +747,8 @@
     interfaces:
       enum.CargoConsoleUiKey.Shuttle:
         type: CargoShuttleConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Computer
     board: CargoShuttleComputerCircuitboard
   - type: PointLight
@@ -839,6 +777,8 @@
       state: request
     - map: ["computerLayerKeys"]
       state: tech_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: CargoOrderConsole
   - type: BankClient
   - type: ActiveRadio
@@ -850,6 +790,8 @@
     interfaces:
       enum.CargoConsoleUiKey.Orders:
         type: CargoOrderConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Computer
     board: CargoRequestComputerCircuitboard
   - type: PointLight
@@ -887,6 +829,8 @@
       state: bounty
     - map: ["computerLayerKeys"]
       state: tech_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: CargoBountyConsole
   - type: ActivatableUI
     key: enum.CargoConsoleUiKey.Bounty
@@ -894,6 +838,8 @@
     interfaces:
       enum.CargoConsoleUiKey.Bounty:
         type: CargoBountyConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Computer
     board: CargoBountyComputerCircuitboard
   - type: PointLight
@@ -905,6 +851,7 @@
   - type: GuideHelp
     guides:
     - CargoBounties
+    - Cargo
 
 - type: entity
   parent: BaseComputer
@@ -926,6 +873,8 @@
       state: dna
     - map: ["computerLayerKeys"]
       state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: ApcPowerReceiver
     powerLoad: 3100 #We want this to fail first so I transferred most of the scanner and pod's power here. (3500 in total)
   - type: Computer
@@ -945,12 +894,14 @@
     interfaces:
         enum.CloningConsoleUiKey.Key:
           type: CloningConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
   - type: Speech
     speechVerb: Robotic
     speechSounds: Pai
   - type: Damageable
-    damageContainer: Inorganic
-    damageModifierSet: StrongMetallic
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
   - type: GuideHelp
     guides:
     - Cloning
@@ -971,6 +922,8 @@
           state: mining
         - map: ["computerLayerKeys"]
           state: tech_key
+        - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+          state: generic_panel_open
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -981,6 +934,10 @@
           computerLayerKeys:
             True: { visible: true, shader: unshaded }
             False: { visible: true }
+        enum.WiresVisuals.MaintenancePanelState:
+          enum.WiresVisualLayers.MaintenancePanel:
+            True: { visible: false }
+            False: { visible: true }
     - type: SalvageExpeditionConsole
     - type: ActivatableUI
       key: enum.SalvageConsoleUiKey.Expedition
@@ -989,6 +946,8 @@
       interfaces:
         enum.SalvageConsoleUiKey.Expedition:
           type: SalvageExpeditionConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
     - type: Computer
       board: SalvageExpeditionsComputerCircuitboard
     - type: PointLight
@@ -1016,6 +975,8 @@
       state: cameras
     - map: ["computerLayerKeys"]
       state: tech_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: Computer
     board: SurveillanceCameraMonitorCircuitboard
   - type: DeviceNetwork
@@ -1034,6 +995,8 @@
     interfaces:
         enum.SurveillanceCameraMonitorUiKey.Key:
           type: SurveillanceCameraMonitorBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
 
 - type: entity
   parent: BaseComputer
@@ -1051,6 +1014,8 @@
       state: cameras
     - map: ["computerLayerKeys"]
       state: tech_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: Computer
     board: SurveillanceWirelessCameraMonitorCircuitboard
   - type: DeviceNetwork
@@ -1071,12 +1036,14 @@
     interfaces:
         enum.SurveillanceCameraMonitorUiKey.Key:
           type: SurveillanceCameraMonitorBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
 
 - type: entity
   id: ComputerPalletConsole
   parent: BaseComputer
   name: cargo sale computer
-  description: Used to sell goods loaded onto cargo pallets
+  description: Used to sell goods loaded onto cargo pallets.
   components:
   - type: Sprite
     layers:
@@ -1088,17 +1055,20 @@
       state: request
     - map: ["computerLayerKeys"]
       state: tech_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: Anchorable
     flags:
     - Anchorable
   - type: CargoPalletConsole
-    cashType: BillOfExchange
   - type: ActivatableUI
     key: enum.CargoPalletConsoleUiKey.Sale
   - type: UserInterface
     interfaces:
       enum.CargoPalletConsoleUiKey.Sale:
         type: CargoPalletConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: Computer
     board: CargoSaleComputerCircuitboard
   - type: PointLight
@@ -1125,12 +1095,14 @@
       state: service
     - map: ["computerLayerKeys"]
       state: service_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: Computer
     board: ComputerMassMediaCircuitboard
   - type: DeviceNetworkRequiresPower
   - type: NewsWriter
   - type: AccessReader
-    access: [[ "Command" ]]
+    access: [[ "Service" ]]
   - type: ActivatableUI
     key: enum.NewsWriterUiKey.Key
   - type: ActivatableUIRequiresVision
@@ -1140,6 +1112,8 @@
     interfaces:
         enum.NewsWriterUiKey.Key:
           type: NewsWriterBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
 
 - type: entity
   parent: BaseComputer
@@ -1160,6 +1134,8 @@
           state: sensors
         - map: ["computerLayerKeys"]
           state: atmos_key
+        - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+          state: generic_panel_open
     - type: PointLight
       radius: 1.5
       energy: 1.6
@@ -1173,6 +1149,8 @@
       interfaces:
         enum.SensorMonitoringConsoleUiKey.Key:
           type: SensorMonitoringConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
     - type: DeviceNetwork
       deviceNetId: AtmosDevices
       receiveFrequencyId: AtmosMonitor
@@ -1200,6 +1178,8 @@
       state: robot
     - map: ["computerLayerKeys"]
       state: rd_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: RoboticsConsole
   - type: ActiveRadio
     channels:
@@ -1210,6 +1190,8 @@
     interfaces:
       enum.RoboticsConsoleUiKey.Key:
         type: RoboticsConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: ApcPowerReceiver
     powerLoad: 1000
   - type: DeviceNetwork

@@ -1,41 +1,41 @@
 # Basic
 - type: entity
-  parent: CMWindoor
-  id: CMWindoorKitchen
+  parent: AltWindoor
+  id: AltWindoorKitchen
   suffix: Kitchen, Locked
   components:
   - type: AccessReader
-    access: [["CMAccessKitchen"]]
+    access: [["Kitchen"]]
 
 # Secure
 - type: entity
-  parent: CMWindoorSecure
-  id: CMWindoorSecureBrig
+  parent: AltWindoorSecure
+  id: AltWindoorSecureBrig
   suffix: Brig, Locked
   components:
   - type: AccessReader
-    access: [["CMAccessBrig"]]
+    access: [["Brig"]]
 
 - type: entity
-  parent: CMWindoorSecure
-  id: CMWindoorSecurerRequisitions
+  parent: AltWindoorSecure
+  id: AltWindoorSecurerRequisitions
   suffix: Requisitions, Locked
   components:
   - type: AccessReader
-    access: [["CMAccessRequisitions"]]
+    access: [["Cargo"]]
 
 - type: entity
-  parent: CMWindoorSecure
-  id: CMWindoorSecureMedical
+  parent: AltWindoorSecure
+  id: AltWindoorSecureMedical
   suffix: Medical, Locked
   components:
   - type: AccessReader
-    access: [["CMAccessMedical"]]
+    access: [["Medical"]]
 
 - type: entity
-  parent: CMWindoorSecure
-  id: CMWindoorSecureEngineering
+  parent: AltWindoorSecure
+  id: AltWindoorSecureEngineering
   suffix: Engineering, Locked
   components:
   - type: AccessReader
-    access: [["CMAccessEngineering"]]
+    access: [["Engineering"]]

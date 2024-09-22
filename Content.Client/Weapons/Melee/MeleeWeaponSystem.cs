@@ -244,4 +244,5 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (Exists(ent) && Exists(entWeapon))
             DoLunge(ent, entWeapon, ev.Angle, ev.LocalPos, ev.Animation);
     }
+
 }

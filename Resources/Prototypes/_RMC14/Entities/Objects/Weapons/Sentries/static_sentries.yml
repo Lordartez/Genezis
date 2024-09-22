@@ -1,0 +1,79 @@
+﻿- type: entity
+  parent: BaseStructure
+  abstract: true
+  id: RMCBaseTurret
+  name: turret
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Actions
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 60
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: _RMC14/Objects/Weapons/Sentries/normal_sentry.rsi
+    drawdepth: Mobs
+    layers:
+    - state: normal_uac_sentry_on
+  - type: InteractionPopup
+    interactDelay: 0.2
+    successChance: 0.8
+    interactSuccessString: petting-success-generic
+    interactFailureString: petting-failure-generic
+    interactSuccessSound:
+      path: /Audio/Effects/double_beep.ogg
+  - type: CombatMode
+    toggleMouseRotator: false
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/gun_sentry.ogg
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  # TODO: Power ammo provider?
+  - type: BallisticAmmoProvider
+    cycleable: false
+    proto: CMCartridgeSentry10x50mm
+    capacity: 99999
+  - type: HTN
+    rootTask:
+        task: TurretCompound
+    blackboard:
+        RotateSpeed: !type:Single
+          3.141
+        SoundTargetInLOS: !type:SoundPathSpecifier
+          path: /Audio/Effects/double_beep.ogg
+  - type: MouseRotator
+    angleTolerance: 5
+    rotationSpeed: 180
+    simple4DirMode: false
+  - type: NoRotateOnInteract
+  - type: NoRotateOnMove
+  - type: GunIFF
+    enabled: true
+    intrinsic: true
+
+- type: entity
+  parent: RMCBaseTurret
+  id: RMCTurretGaussSpaceborne
+  name: UA-577 spaceborne gauss turret
+  description: A fully-automated defence turret with mid-range targeting capabilities. Armed with a modified M32-S Autocannon and an internal belt feed.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: MarineIFF

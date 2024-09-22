@@ -24,7 +24,7 @@
 - type: entity
   parent: ClothingOuterBaseLarge
   id: ClothingOuterArmorBlueshieldCarapace
-  name: "Бронежилет офицера Синего Щита"
+  name: "Бронежилет Штурмовика Синего Щита"
   description: "Бронежилет для защиты глав. Сделан из лучших материалов, что бы пережить даже взрыв ядерной бомбы! (Защита владельца не гарантирована)"
   components:
   - type: Sprite
@@ -251,4 +251,3 @@
         Heat: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.80
-   

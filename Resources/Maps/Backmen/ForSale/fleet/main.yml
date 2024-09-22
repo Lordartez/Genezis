@@ -11742,7 +11742,7 @@ entities:
       pos: 4.5,22.5
       parent: 1
     - type: FaxMachine
-      name: Офицер Спец.Операций
+      name: Штурмовик Спец.Операций
   - uid: 2906
     components:
     - type: Transform
@@ -18479,7 +18479,7 @@ entities:
   - uid: 3024
     components:
     - type: MetaData
-      name: Шкаф офицера ОБР
+      name: Шкаф Штурмовика ОБР
     - type: Transform
       pos: 25.5,22.5
       parent: 1
@@ -18521,7 +18521,7 @@ entities:
   - uid: 3025
     components:
     - type: MetaData
-      name: Шкаф офицера ОБР
+      name: Шкаф Штурмовика ОБР
     - type: Transform
       pos: 26.5,22.5
       parent: 1

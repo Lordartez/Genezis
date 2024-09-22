@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseFigurine
   id: ToyFigurineBlueShield
-  name: фигурка офицера "Синий Щит"
-  description: Фигурка, изображающая офицера "Синий Щит", который с лёгкостью защитит вас от фигурок ядерных оперативников.
+  name: фигурка Штурмовика "Синий Щит"
+  description: Фигурка, изображающая Штурмовика "Синий Щит", который с лёгкостью защитит вас от фигурок ядерных оперативников.
   components:
   - type: Sprite
     sprite: SS220/Objects/Fun/figurines.rsi

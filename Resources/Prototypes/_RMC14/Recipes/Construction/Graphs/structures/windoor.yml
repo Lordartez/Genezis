@@ -1,6 +1,6 @@
 ﻿- type: constructionGraph
   parent: RMC
-  id: CMWindoor
+  id: AltWindoor
   start: start
   graph:
   - node: start
@@ -15,7 +15,7 @@
         doAfter: 2
 
   - node: assembly
-    entity: CMWindoorAssembly
+    entity: AltWindoorAssembly
     actions:
     - !type:SnapToGrid {}
     - !type:SetAnchor {}
@@ -48,7 +48,7 @@
         doAfter: 4
 
   - node: wired
-    entity: CMWindoorAssembly
+    entity: AltWindoorAssembly
     edges:
     - to: electronics
       conditions:
@@ -72,7 +72,7 @@
         doAfter: 4
 
   - node: electronics
-    entity: CMWindoorAssembly
+    entity: AltWindoorAssembly
     edges:
     - to: windoor
       conditions:
@@ -89,7 +89,7 @@
         doAfter: 4
 
   - node: windoor
-    entity: CMWindoor
+    entity: AltWindoor
     edges:
     - to: wired
       conditions:
@@ -106,7 +106,7 @@
 
   ## Secure windoor
   - node: assemblySecure
-    entity: CMWindoorAssemblySecure
+    entity: AltWindoorAssemblySecure
     actions:
     - !type:SnapToGrid { }
     - !type:SetAnchor { }
@@ -133,7 +133,7 @@
         doAfter: 10
 
   - node: wiredSecure
-    entity: CMWindoorAssemblySecure
+    entity: AltWindoorAssemblySecure
     edges:
     - to: electronicsSecure
       conditions:
@@ -157,7 +157,7 @@
         doAfter: 4
 
   - node: electronicsSecure
-    entity: CMWindoorAssemblySecure
+    entity: AltWindoorAssemblySecure
     edges:
     - to: windoorSecure
       conditions:
@@ -174,7 +174,7 @@
         doAfter: 4
 
   - node: windoorSecure
-    entity: CMWindoorSecure
+    entity: AltWindoorSecure
     edges:
     - to: wiredSecure
       conditions:

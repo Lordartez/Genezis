@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: BaseWindoor
-  id: CMWindoor
-  name: glass door
-  description: A window, that is also a door. A windoor if you will.
+  id: AltWindoor
+  name: раздвижное окно
+  description: Окно, а также дверь. Раздвижная окно-дверь если коротко.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Windoors/windoor.rsi
@@ -25,7 +25,7 @@
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       visible: false
   - type: Construction
-    graph: CMWindoor
+    graph: AltWindoor
     node: windoor
     containers:
     - board
@@ -35,12 +35,20 @@
   - type: ApcPowerReceiver
     powerLoad: 0
     needsPower: false
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronics ]
+  - type: AccessReader
+    containerAccessProvider: board
+  - type: ContainerContainer
+    containers:
+      board: !type:Container
 
 - type: entity
   parent: BaseSecureWindoor
-  id: CMWindoorSecure
-  name: secure glass door
-  description: A thick chunk of tempered glass on metal track. Probably more robust than you.
+  id: AltWindoorSecure
+  name: раздвижное бронеокно
+  description: Это и прочное окно, и раздвижная дверь.
   components:
   - type: Sprite
     sprite: _RMC14/Structures/Doors/Windoors/secure.rsi
@@ -63,7 +71,7 @@
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       visible: false
   - type: Construction
-    graph: CMWindoor
+    graph: AltWindoor
     node: windoorSecure
     containers:
     - board

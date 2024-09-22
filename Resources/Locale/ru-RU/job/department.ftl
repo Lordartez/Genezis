@@ -5,4 +5,4 @@ department-Engineering = Стройбат
 department-Medical = Медсанчасть
 department-Security = Отдел контроля
 department-Science = Научно-исследовательское отделение
-department-Specific = На определённых станциях
+department-Specific = На определённых картах

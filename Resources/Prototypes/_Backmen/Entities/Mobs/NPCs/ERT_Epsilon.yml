@@ -35,7 +35,7 @@
 # ERT Security
 - type: entity
   noSpawn: true
-  name: Еpsilon - 11 офицер безопасности ОБР
+  name: Еpsilon - 11 Штурмовик безопасности ОБР
   parent: MobHumanERTSecurityEVAV3
   suffix: МТФ Egg
   id: MobHumanERTSecurityReadyV3
@@ -196,7 +196,7 @@
 
 # ERT Security
 - type: entity
-  name: Epsilon - 11 офицер безопасности ОБР
+  name: Epsilon - 11 Штурмовик безопасности ОБР
   parent: MobHuman
   suffix: МТФ
   id: MobHumanERTSecurityEVAV3
@@ -221,7 +221,7 @@
     allowMovement: true
     allowSpeech: true
     makeSentient: true
-    name: ОБР офицер безопасности
+    name: ОБР Штурмовик безопасности
     description: Солдат или же охранник Epsilon - 11, прошедший небольшую подготовку и готовый стрелять во все что движеться, я бы не доверил ему даже водяной пистолетик.
     raffle:
       settings: default

@@ -8,7 +8,7 @@
     makeSentient: true
     allowSpeech: true
     allowMovement: true
-    name: "собака Службы Безопасности"
+    name: "собака Отдела контроля"
     description: "Помогите отделу охраны, кусая злодеев и лая на все, что движется."
   - type: GhostTakeoverAvailable
   - type: CombatMode

@@ -105804,7 +105804,7 @@ entities:
   - uid: 4587
     components:
     - type: MetaData
-      name: подстанция Службы Безопасности
+      name: подстанция Отдела контроля
     - type: Transform
       pos: -24.5,50.5
       parent: 1

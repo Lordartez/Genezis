@@ -1553,6 +1553,10 @@
             "directions": 4
         },
         {
+            "name": "generic_panel_open",
+            "directions": 4
+        },
+        {
             "name": "teleport",
             "directions": 4,
             "delays": [

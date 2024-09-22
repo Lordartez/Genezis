@@ -72979,7 +72979,7 @@ entities:
       pos: -12.5,-19.5
       parent: 2
     - type: FaxMachine
-      name: Кабинет ГСБ
+      name: Кабинет Мародер
   - uid: 5032
     components:
     - type: Transform
@@ -73023,8 +73023,8 @@ entities:
       pos: 26.5,25.5
       parent: 2
     - type: FaxMachine
-      name: Каюта Капитана
-      destinationAddress: Каюта Капитана
+      name: Каюта Главнокомандующего
+      destinationAddress: Каюта Главнокомандующего
   - uid: 5038
     components:
     - type: Transform

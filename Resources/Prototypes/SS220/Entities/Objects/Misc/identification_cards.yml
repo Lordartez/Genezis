@@ -39,11 +39,11 @@
 - type: entity
   parent: CentcomIDCard
   id: FieldOfficerIDCard
-  name: ID карта Полевого Офицера ЦК
+  name: ID карта Полевого Штурмовика ЦК
   description: Карта, необходимая для доступа в различные части станций и кораблей.
   components:
     - type: IdCard
-      jobTitle: Полевой Офицер ЦК
+      jobTitle: Полевой Штурмовик ЦК
     - type: Access
       groups:
       - AllAccess # SS220 Fast fix access
@@ -52,11 +52,11 @@
 - type: entity
   parent: CentcomIDCard
   id: OfficerCentCommIDCard
-  name: ID карта Офицера ЦК
+  name: ID карта Штурмовика ЦК
   description: Карта, необходимая для доступа в различные части станций и кораблей.
   components:
     - type: IdCard
-      jobTitle: Офицер ЦК
+      jobTitle: Штурмовик ЦК
     - type: Access
       groups:
       - AllAccess # SS220 Fast fix access

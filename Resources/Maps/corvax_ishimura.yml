@@ -81887,14 +81887,14 @@ entities:
   - uid: 29383
     components:
     - type: MetaData
-      name: Каюта капитана
+      name: Каюта Главнокомандующего
     - type: Transform
       pos: 57.5,13.5
       parent: 2
     - type: NavMapBeacon
-      text: Каюта капитана
+      text: Каюта Главнокомандующего
     - type: WarpPoint
-      location: Каюта капитана
+      location: Каюта Главнокомандующего
 - proto: DefaultStationBeaconCargoBay
   entities:
   - uid: 9705
@@ -82097,9 +82097,9 @@ entities:
       pos: 32.5,-2.5
       parent: 2
     - type: NavMapBeacon
-      text: Офис ГСБ
+      text: Офис Мародер
     - type: WarpPoint
-      location: Офис ГСБ
+      location: Офис Мародер
 - proto: DefaultStationBeaconJanitorsCloset
   entities:
   - uid: 9724
@@ -92422,7 +92422,7 @@ entities:
       pos: 33.5,-0.5
       parent: 2
     - type: FaxMachine
-      name: Кабинет ГСБ
+      name: Кабинет Мародер
   - uid: 11166
     components:
     - type: Transform
@@ -92443,8 +92443,8 @@ entities:
       pos: 37.5,-3.5
       parent: 2
     - type: FaxMachine
-      name: Офис ГСБ
-      destinationAddress: Офис ГСБ
+      name: Офис Мародер
+      destinationAddress: Офис Мародер
   - uid: 11169
     components:
     - type: Transform
@@ -92523,7 +92523,7 @@ entities:
       pos: 56.5,11.5
       parent: 2
     - type: FaxMachine
-      name: Офис капитана
+      name: Офис Главнокомандующего
 - proto: FaxMachineSyndie
   entities:
   - uid: 11179
@@ -139591,7 +139591,7 @@ entities:
       content: >
         ЖУРНАЛ СМЕРТЕЙ НА БОРТУ
 
-        ДАЛЛАС, A. (СТАРШИЙ МЕДИЦИНСКИЙ ОФИЦЕР)
+        ДАЛЛАС, A. (СТАРШИЙ МЕДИЦИНСКИЙ Штурмовик)
 
         Число погибших растет. Пока достоверно известно о смерти:
 
@@ -156246,7 +156246,7 @@ entities:
   - uid: 19922
     components:
     - type: MetaData
-      name: знак "зоотехник"
+      name: знак "Ксенобиолог"
     - type: Transform
       pos: -65.5,14.5
       parent: 2

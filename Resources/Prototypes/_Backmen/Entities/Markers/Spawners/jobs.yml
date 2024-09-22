@@ -81,7 +81,7 @@
 - type: entity
   id: SpawnPointBKCCSecOfficer
   parent: SpawnPointJobBase
-  name: ЦК Приватный Офицер СБ
+  name: ЦК Приватный Штурмовик СБ
   components:
     - type: SpawnPoint
       job_id: BKCCSecOfficer

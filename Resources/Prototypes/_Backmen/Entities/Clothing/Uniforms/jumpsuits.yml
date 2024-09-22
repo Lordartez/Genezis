@@ -34,8 +34,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: GermanOfficerSuit
-  name: Форма немецкого офицера
-  description: Форма которую носят немецкие офицеры
+  name: Форма немецкого Штурмовика
+  description: Форма которую носят немецкие Штурмовикы
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Uniforms/jumpsuit/officergermanbel.rsi
@@ -56,8 +56,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: SovietOfficerUniformSuit
-  name: Униформа офицера СССП
-  description: Опрятная форма офицера фракции СССП
+  name: Униформа Штурмовика СССП
+  description: Опрятная форма Штурмовика фракции СССП
   components:
   - type: Sprite
     sprite: Backmen/Clothing/Uniforms/jumpsuit/officerssspsuitbel.rsi
@@ -353,7 +353,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitUEGofficer
-  name: Униформа офицера ОПЗ
+  name: Униформа Штурмовика ОПЗ
   description: Униформа с безполезным камуфляжем. Лучше не связыватся с её обладателями
   components:
   - type: Sprite
@@ -386,8 +386,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitprivateofficer
-  name: Униформа Приватного Офицера СБ ЦК
-  description: Полевая униформа Приватного Офицера СБ ЦК
+  name: Униформа Приватного Штурмовика СБ ЦК
+  description: Полевая униформа Приватного Штурмовика СБ ЦК
   components:
     - type: Sprite
       sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-private_officer.rsi
@@ -397,8 +397,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitseniorofficer
-  name: Униформа Старшего Офицера ЦК
-  description: Полевая униформа Старшего Офицера ЦК
+  name: Униформа Старшего Штурмовика ЦК
+  description: Полевая униформа Старшего Штурмовика ЦК
   components:
     - type: Sprite
       sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer.rsi
@@ -408,8 +408,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitseniorofficeruniform
-  name: Парадная Униформа Старшего Офицера ЦК
-  description: Парадная униформа Старшего Офицера ЦК
+  name: Парадная Униформа Старшего Штурмовика ЦК
+  description: Парадная униформа Старшего Штурмовика ЦК
   components:
     - type: Sprite
       sprite: Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer_uniform.rsi
@@ -610,7 +610,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/biker.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/biker.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCenK # Backmen
@@ -621,7 +621,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/uni.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/uni.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitDecSerii # Backmen
@@ -632,7 +632,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/dec.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/dec.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSWAT # Backmen
@@ -654,7 +654,7 @@
       sprite: Backmen/Clothing/Uniforms/jumpsuit/marine_suit.rsi
     - type: Clothing
       sprite: Backmen/Clothing/Uniforms/jumpsuit/marine_suit.rsi
-      
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitPants # Backmen
@@ -665,8 +665,8 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/pants.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/pants.rsi
-    
-      
+
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitVergil # Backmen
@@ -677,7 +677,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/vergil.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/vergil.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitJeester # Backmen
@@ -688,7 +688,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/jeester.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/jeester.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitdirF # Backmen
@@ -699,7 +699,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/dirF.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/dirF.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitWorkerViF # Backmen
@@ -710,7 +710,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/worker.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/worker.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCamo # Backmen
@@ -721,7 +721,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/camo.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/camo.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCamoB # Backmen
@@ -732,7 +732,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/camo_b.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/camo_b.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitUnder # Backmen
@@ -743,7 +743,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/under.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/under.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCloth # Backmen
@@ -754,7 +754,7 @@
     sprite: Backmen/Clothing/Uniforms/jumpsuit/cloth.rsi
   - type: Clothing
     sprite: Backmen/Clothing/Uniforms/jumpsuit/cloth.rsi
-    
+
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitTGMCwhite # Backmen

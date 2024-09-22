@@ -40347,7 +40347,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       nameSet: True
-      id: Каюта капитана
+      id: Каюта Главнокомандующего
   - uid: 7021
     components:
     - type: Transform
@@ -40391,7 +40391,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       nameSet: True
-      id: комната ГСБ
+      id: комната Мародер
   - uid: 7156
     components:
     - type: Transform

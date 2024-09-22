@@ -1,4 +1,4 @@
-﻿# riot
+# riot
 - type: entity
   parent: ClothingHeadBase
   id: ArmorHelmetRiot
@@ -9,7 +9,10 @@
     sprite: _RMC14/Objects/Clothing/Head/Helmets/riot.rsi
   - type: Clothing
     sprite: _RMC14/Objects/Clothing/Head/Helmets/riot.rsi
-
+  - type: CMArmor
+    armor: 20 # 30 melee, 10 bullet
+    explosionArmor: 0
+  - type: CMHardArmor
 
 - type: entity
   parent: ArmorHelmetRiot

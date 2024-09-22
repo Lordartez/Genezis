@@ -7,4 +7,4 @@ ent-ClothingHeadsetFleet = Флотская гарнитура
 ent-ClothingHeadsetUEG = Гарнитура ОПЗ
     .desc = Гарнитура используемая представителями ОПЗ
 ent-ClothingHeadsetUEGofficer = Гарнитура охраны ОПЗ
-    .desc = Гарнитура используемая офицерами ОПЗ
+    .desc = Гарнитура используемая Штурмовиками ОПЗ

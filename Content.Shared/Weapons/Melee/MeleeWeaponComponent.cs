@@ -13,6 +13,12 @@ namespace Content.Shared.Weapons.Melee;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState, AutoGenerateComponentPause]
 public sealed partial class MeleeWeaponComponent : Component
 {
+    /// <summary>
+    /// Defines if the primary attack should be a wide swing
+    /// </summary>
+    // TODO RMC14 move this out and reset the file to upstream once source gen is fixed
+    [DataField]
+    public bool WidePrimary;
     // TODO: This is becoming bloated as shit.
     // This should just be its own component for alt attacks.
     /// <summary>
@@ -72,7 +78,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public bool ResistanceBypass = false;
-    
+
     /// <summary>
     /// Base damage for this weapon. Can be modified via heavy damage or other means.
     /// </summary>

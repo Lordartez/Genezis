@@ -13855,7 +13855,7 @@ entities:
   - uid: 17245
     components:
     - type: MetaData
-      name: ЛКП ГСБ
+      name: ЛКП Мародер
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -24.5,-3.5
@@ -56503,7 +56503,7 @@ entities:
       pos: -20.5,-3.5
       parent: 2
     - type: NavMapBeacon
-      text: Кабинет ГСБ
+      text: Кабинет Мародер
 - proto: DefaultStationBeaconLawOffice
   entities:
   - uid: 6233
@@ -56568,7 +56568,7 @@ entities:
       pos: 8.5,4.5
       parent: 17265
     - type: NavMapBeacon
-      text: Каторга, комната офицеров
+      text: Каторга, комната Штурмовиков
 - proto: DefaultStationBeaconService
   entities:
   - uid: 19034
@@ -61286,8 +61286,8 @@ entities:
       pos: -21.5,-3.5
       parent: 2
     - type: FaxMachine
-      name: Кабинет главы службы безопасности
-      destinationAddress: Кабинет ГСБ
+      name: Кабинет Мародер
+      destinationAddress: Кабинет Мародер
   - uid: 6866
     components:
     - type: Transform
@@ -61386,8 +61386,8 @@ entities:
       pos: -39.5,-12.5
       parent: 2
     - type: FaxMachine
-      name: Кабинет капитана
-      destinationAddress: Кабинет капитана
+      name: Кабинет Главнокомандующего
+      destinationAddress: Кабинет Главнокомандующего
 - proto: FenceMetalGate
   entities:
   - uid: 6877

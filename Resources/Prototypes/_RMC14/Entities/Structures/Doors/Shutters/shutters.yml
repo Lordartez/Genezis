@@ -1,9 +1,9 @@
 - type: entity
-  parent: CMBaseStructureCorrodible
-  id: RMCShutterBase
+  parent: AltBaseStructureCorrodible
+  id: AltShutterBase
   abstract: true
-  name: shutters
-  description: That looks like it doesn't open easily.
+  name: ставни
+  description: Выглядит так будто её так просто не открыть.
   placement:
     mode: SnapgridCenter
   components:
@@ -64,12 +64,12 @@
   # TODO RMC14 Add linkable buttons and open/close logic to the shutters, thanks
 
 - type: entity
-  parent: RMCShutterBase
-  id: RMCShutterAlmayer
+  parent: AltShutterBase
+  id: AltShutterAlmayer
 
 - type: entity
-  parent: RMCShutterAlmayer
-  id: RMCShutterAlmayerOpen
+  parent: AltShutterAlmayer
+  id: AltShutterAlmayerOpen
   suffix: Open
   components:
   - type: Door

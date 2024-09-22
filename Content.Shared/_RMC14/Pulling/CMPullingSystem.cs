@@ -1,4 +1,5 @@
-﻿using Content.Shared.IdentityManagement;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Events;
@@ -61,22 +62,13 @@ public sealed class CMPullingSystem : EntitySystem
 
         _stun.TryParalyze(user, ent.Comp.Duration, true);
 
-        foreach (var session in Filter.Pvs(user).Recipients)
-        {
-            if (session.AttachedEntity is not { } recipient)
-                continue;
+        var puller = user;
+        var pulled = target;
+        var othersMessage = Loc.GetString("rmc-pull-paralyze-others", ("puller", puller), ("pulled", pulled));
+        var selfMessage = Loc.GetString("rmc-pull-paralyze-self", ("puller", puller), ("pulled", pulled));
 
-            var puller = Identity.Name(user, EntityManager, recipient);
-            var pulled = Identity.Name(ent, EntityManager, recipient);
-            var message = $"{puller} tried to pull {pulled} but instead gets a tail swipe to the head!";
-
-            if (args.PullerUid == recipient)
-                _popup.PopupClient(message, user, recipient, PopupType.MediumCaution);
-            else
-                _popup.PopupEntity(message, user, recipient, PopupType.MediumCaution);
-        }
+        _popup.PopupPredicted(selfMessage, othersMessage, puller, puller, PopupType.MediumCaution);
     }
-
     private void OnSlowPullStarted(Entity<SlowOnPullComponent> ent, ref PullStartedMessage args)
     {
         if (ent.Owner == args.PulledUid)
@@ -97,13 +89,24 @@ public sealed class CMPullingSystem : EntitySystem
 
     private void OnPullingSlowedMovementSpeed(Entity<PullingSlowedComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
     {
-        if (TryComp(ent, out PullerComponent? puller) &&
-            TryComp(puller.Pulling, out SlowOnPullComponent? slow))
+        if (HasComp<BypassInteractionChecksComponent>(ent) ||
+            !TryComp(ent, out PullerComponent? puller) ||
+            !TryComp(puller.Pulling, out SlowOnPullComponent? slow))
         {
-            args.ModifySpeed(slow.Multiplier, slow.Multiplier);
+            return;
         }
-    }
 
+        foreach (var slowdown in slow.Slowdowns)
+        {
+            if (_whitelist.IsWhitelistPass(slowdown.Whitelist, ent))
+            {
+                args.ModifySpeed(slowdown.Multiplier, slowdown.Multiplier);
+                return;
+            }
+        }
+
+        args.ModifySpeed(slow.Multiplier, slow.Multiplier);
+    }
     private void OnPullWhitelistPullAttempt(Entity<PullWhitelistComponent> ent, ref PullAttemptEvent args)
     {
         if (args.Cancelled || ent.Owner == args.PulledUid)

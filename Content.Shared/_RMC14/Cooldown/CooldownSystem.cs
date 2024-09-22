@@ -1,4 +1,4 @@
-﻿using Content.Shared.Actions;
+using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
 
 namespace Content.Shared._RMC14.Cooldown;
@@ -9,10 +9,10 @@ public sealed class CooldownSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<ActionSharedCooldownComponent, ActionPerformedEvent>(OnActionPerformed);
+        SubscribeLocalEvent<ActionSharedCooldown2Component, ActionPerformedEvent>(OnActionPerformed);
     }
 
-    private void OnActionPerformed(Entity<ActionSharedCooldownComponent> ent, ref ActionPerformedEvent args)
+    private void OnActionPerformed(Entity<ActionSharedCooldown2Component> ent, ref ActionPerformedEvent args)
     {
         if (!_actions.TryGetActionData(ent, out var action) ||
             action.UseDelay is not { } delay ||
@@ -23,7 +23,7 @@ public sealed class CooldownSystem : EntitySystem
 
         foreach (var (id, _) in _actions.GetActions(args.Performer))
         {
-            if (TryComp(id, out ActionSharedCooldownComponent? other) &&
+            if (TryComp(id, out ActionSharedCooldown2Component? other) &&
                 ent.Comp.Id == other.Id)
             {
                 _actions.SetIfBiggerCooldown(id, delay);

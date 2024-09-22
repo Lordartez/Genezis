@@ -6,6 +6,6 @@ ent-FaxMachineCentcom = факс дальнего действия Центко�
 ent-FaxMachineSyndie = факс дальнего действия Синдиката
     .suffix = Синдикат
     .desc = { ent-FaxMachineBase.desc }
-ent-FaxMachineCaptain = факс дальнего действия капитана
+ent-FaxMachineCaptain = факс дальнего действия Главнокомандующего
     .suffix = ЯдерныеКоды
     .desc = { ent-FaxMachineBase.desc }

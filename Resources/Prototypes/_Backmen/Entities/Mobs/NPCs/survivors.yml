@@ -53,7 +53,7 @@
     randomizeName: true
 
 - type: entity
-  name: Выживший Офицер
+  name: Выживший Штурмовик
   suffix: Survival
   parent: MobHuman
   id: MobHumanSurvivalSecurity

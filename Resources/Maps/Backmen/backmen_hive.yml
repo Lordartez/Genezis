@@ -58582,7 +58582,7 @@ entities:
       pos: 108.5,-1.5
       parent: 1
     - type: WarpPoint
-      location: Каюта капитана
+      location: Каюта Главнокомандующего
 - proto: DefaultStationBeaconCargoBay
   entities:
   - uid: 16730
@@ -58715,7 +58715,7 @@ entities:
       pos: 78.5,16.5
       parent: 1
     - type: WarpPoint
-      location: Комната главы службы безопасности
+      location: Комната Мародер
 - proto: DefaultStationBeaconJanitorsCloset
   entities:
   - uid: 18015
@@ -69197,7 +69197,7 @@ entities:
       pos: 103.5,0.5
       parent: 1
     - type: FaxMachine
-      name: Офис Капитана
+      name: Офис Главнокомандующего
 - proto: FigureSpawner
   entities:
   - uid: 3970

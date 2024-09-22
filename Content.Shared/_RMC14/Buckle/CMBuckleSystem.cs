@@ -1,4 +1,4 @@
-﻿using Content.Shared.Buckle.Components;
+using Content.Shared.Buckle.Components;
 using Robust.Shared.Physics.Events;
 
 namespace Content.Shared._RMC14.Buckle;
@@ -8,20 +8,6 @@ public sealed class CMBuckleSystem : EntitySystem
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
 
     private readonly HashSet<EntityUid> _intersecting = new();
-
-    public override void Initialize()
-    {
-        SubscribeLocalEvent<BuckleClimbableComponent, StrappedEvent>(OnBuckleClimbableStrapped);
-
-        SubscribeLocalEvent<ActiveBuckleClimbingComponent, PreventCollideEvent>(OnBuckleClimbablePreventCollide);
-    }
-
-    private void OnBuckleClimbableStrapped(Entity<BuckleClimbableComponent> ent, ref StrappedEvent args)
-    {
-        var active = EnsureComp<ActiveBuckleClimbingComponent>(args.Buckle);
-        active.Strap = ent;
-        Dirty(args.Buckle, active);
-    }
 
     private void OnBuckleClimbablePreventCollide(Entity<ActiveBuckleClimbingComponent> ent, ref PreventCollideEvent args)
     {

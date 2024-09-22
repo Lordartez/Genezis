@@ -137,7 +137,7 @@
   - type: Clothing
     equippedState: equipped-unter
   - type: IdCard
-    jobTitle: Младший унтер-офицер
+    jobTitle: Младший унтер-Штурмовик
     jobIcon: JobIconShtab
   - type: Access
     tags:
@@ -154,7 +154,7 @@
   - type: Clothing
     equippedState: equipped-unter2
   - type: IdCard
-    jobTitle: Унтер-офицер
+    jobTitle: Унтер-Штурмовик
     jobIcon: JobIconShtab
   - type: Access
     tags:
@@ -171,7 +171,7 @@
   - type: Clothing
     equippedState: equipped-unter3
   - type: IdCard
-    jobTitle: Штаб-офицер
+    jobTitle: Штаб-Штурмовик
     jobIcon: JobIconShtab
   - type: Access
     tags:

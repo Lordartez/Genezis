@@ -117,8 +117,8 @@
 - type: construction
   parent: RMC
   name: windoor
-  id: CMWindoor
-  graph: CMWindoor
+  id: AltWindoor
+  graph: AltWindoor
   startNode: start
   targetNode: windoor
   category: construction-category-cm-structures
@@ -135,8 +135,8 @@
 - type: construction
   parent: RMC
   name: secure windoor
-  id: CMWindoorSecure
-  graph: CMWindoor
+  id: AltWindoorSecure
+  graph: AltWindoor
   startNode: start
   targetNode: windoorSecure
   category: construction-category-cm-structures

@@ -198,7 +198,7 @@
 
 # ERT Security
 - type: entity
-  name: Theta - 9 офицер безопасности ОБР
+  name: Theta - 9 Штурмовик безопасности ОБР
   suffix: МТФ
   parent: MobHuman
   id: MobHumanERTSecurityEVAV2_1
@@ -223,7 +223,7 @@
     allowMovement: true
     allowSpeech: true
     makeSentient: true
-    name: ОБР офицер безопасности
+    name: ОБР Штурмовик безопасности
     description: Солдат или же охранник Theta - 9, прошедший небольшую подготовку и готовый стрелять во все что движеться, я бы не доверил ему даже водяной пистолетик.
     raffle:
       settings: default

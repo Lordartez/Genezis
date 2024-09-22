@@ -7,3 +7,16 @@
   - type: UseDelay
     delay: 0
   - type: WieldDelay
+  - type: EmitSoundOnPickup
+    sound:
+      collection: RMCEquipGun
+  - type: EmitSoundOnLand
+    sound:
+      collection: RMCRustleGun
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 5
+  - type: GunIFF
+    enabled: false

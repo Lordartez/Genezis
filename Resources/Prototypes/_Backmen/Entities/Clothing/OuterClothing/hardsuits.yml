@@ -134,7 +134,7 @@
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitUEG
   name: Скафандр С.О.Н
-  description: Обычный скафандр С.О.Н который выдаётся оперативникам С.О.Н и некоторым офицерам ОПЗ
+  description: Обычный скафандр С.О.Н который выдаётся оперативникам С.О.Н и некоторым Штурмовикам ОПЗ
   components:
   - type: Sprite
     sprite: Backmen/Clothing/OuterClothing/Hardsuits/ueg-hardsuit.rsi

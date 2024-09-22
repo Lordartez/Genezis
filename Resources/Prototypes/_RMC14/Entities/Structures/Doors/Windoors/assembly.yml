@@ -1,8 +1,8 @@
 ﻿- type: entity
-  parent: CMBaseStructureCorrodible
-  id: CMWindoorAssembly
-  name: windoor assembly
-  description: It opens, it closes, and you can see through it!
+  parent: AltBaseStructureCorrodible
+  id: AltWindoorAssembly
+  name: каркас раздвижного окна
+  description: Открывается и закрывается, а также ты можешь видеть через неё.
   placement:
     mode: SnapgridCenter
   components:
@@ -46,14 +46,14 @@
 #            min: 1
 #            max: 1
   - type: Construction
-    graph: CMWindoor
+    graph: AltWindoor
     node: assembly
 
 - type: entity
-  parent: CMWindoorAssembly
-  id: CMWindoorAssemblySecure
-  name: secure windoor assembly
-  description: It opens, it closes, and you can see through it! This one looks tough.
+  parent: AltWindoorAssembly
+  id: AltWindoorAssemblySecure
+  name: каркас раздвижного бронеокна
+  description: Открывается и закрывается, а также ты можешь видеть через неё.
   components:
   - type: Sprite
     state: secure_assembly01
@@ -76,6 +76,6 @@
 #            min: 1
 #            max: 1
   - type: Construction
-    graph: CMWindoor
+    graph: AltWindoor
     node: assemblySecure
 

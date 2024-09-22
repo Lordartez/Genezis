@@ -1,3 +1,3 @@
-ent-ClothingUniformJumpsuitHoSOld = старый комбинезон главы службы безопасности
+ent-ClothingUniformJumpsuitHoSOld = старый комбинезон Мародер
     .desc = Довольно старая вещь для этих времён, навевающая старые воспоминания...
     .suffix = { "" }

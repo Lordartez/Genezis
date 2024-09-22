@@ -11,6 +11,9 @@
       - WhitelistChameleon
   - type: StaticPrice
     price: 10
+  - type: Clothing
+    equipDelay: 2
+    unequipDelay: 2
 
 - type: entity
   abstract: true
@@ -18,12 +21,18 @@
   components:
     - type: Geiger
       attachedToSuit: true
+    - type: Clothing
+      equipDelay: 2
+      unequipDelay: 2
 
 - type: entity
   abstract: true
   id: AllowSuitStorageClothing
   components:
   - type: AllowSuitStorage
+  - type: Clothing
+    equipDelay: 2
+    unequipDelay: 2
 
 - type: entity
   abstract: true
@@ -33,6 +42,9 @@
     whitelist:
       tags:
       - GasTank
+  - type: Clothing
+    equipDelay: 2
+    unequipDelay: 2
 
 # for clothing that has a single item slot to insert and alt click out.
 # inheritors add a whitelisted slot named item
@@ -44,6 +56,9 @@
   - type: ContainerContainer
     containers:
       item: !type:ContainerSlot
+  - type: Clothing
+    equipDelay: 2
+    unequipDelay: 2
 
 # a piece of clothing that has explosion resistance *for its contents*, not the wearer
 - type: entity
@@ -57,6 +72,9 @@
   - type: GroupExamine
   - type: Armor
     modifiers: {}
+  - type: Clothing
+    equipDelay: 2
+    unequipDelay: 2
 
 # for clothing that can be toggled, like magboots
 - type: entity
@@ -66,3 +84,6 @@
   - type: ItemToggle
     onUse: false # can't really wear it like that
   - type: ToggleClothing
+  - type: Clothing
+    equipDelay: 2
+    unequipDelay: 2

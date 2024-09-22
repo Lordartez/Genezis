@@ -20,7 +20,7 @@ ent-IDCardCentComGavnaOperator = Id карта оператора "Тригла�
 
 ent-CCCargoPDA = КПК грузчика "Триглав"
     .desc = { ent-CentcomPDABackmen.desc }
-ent-IDCardCentComCargoBackmen = ID карта ЦК "Триглав"
+ent-IDCardCentComCargoBackmen = ID карта грузчика "Триглав"
     .desc = { ent-CentcomIDCardDeathsquad.desc }
 
 ent-CentcomInternPDABackmen = КПК Ассистента "Триглав"

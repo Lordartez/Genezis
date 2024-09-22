@@ -1,7 +1,7 @@
 ﻿- type: entity
-  id: RMCPodDoorButton
-  name: button
-  description: A remote control-switch for a door.
+  id: AltPodDoorButton
+  name: кнопка
+  description: Кнопка для динамичной защиты.
   placement:
     mode: SnapgridCenter
     snap:

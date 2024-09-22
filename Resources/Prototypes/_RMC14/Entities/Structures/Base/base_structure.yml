@@ -1,15 +1,14 @@
 ﻿- type: entity
   parent: BaseStructure
-  id: CMBaseStructure
+  id: AltBaseStructure
   abstract: true
   placement:
     mode: SnapgridCenter
 
 - type: entity
   parent:
-  - CMBaseStructure
-  - CMCorrodible
-  id: CMBaseStructureCorrodible
+  - AltBaseStructure
+  id: AltBaseStructureCorrodible
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -23,11 +22,6 @@
   components:
   - type: CMIconSmooth
   - type: MeleeSound
-
-- type: entity
-  id: CMCorrodible
-  abstract: true
-
 
 # BaseWall
 - type: entity

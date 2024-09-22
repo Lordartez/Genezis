@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatOfficerFieldUniform
-  name: полевая форма Офицера Флота NanoTrasen
+  name: полевая форма Штурмовика Флота NanoTrasen
   description: Парадный плащ, разработанный в качестве массового варианта формы Верховного Главнокомандующего. У этой униформы нет тех же защитных свойств, что и у оригинала, но она все ещё является довольно удобным и стильным предметом гардероба.
   components:
   - type: Sprite

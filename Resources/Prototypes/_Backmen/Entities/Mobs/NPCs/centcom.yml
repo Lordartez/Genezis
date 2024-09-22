@@ -46,7 +46,7 @@
       state: centcom
     - type: GhostRole
       name: Оператор ЦК
-      description: Оператор центрального командования, выполняет приказы офицера цк и координирует действия станции.
+      description: Оператор центрального командования, выполняет приказы Штурмовика цк и координирует действия станции.
       whitelistRequired: true
       raffle:
         settings: default
@@ -75,7 +75,7 @@
 - type: entity
   name: Overwatch
   parent: [MobHumanCombine,ShowSecurityIcons]
-  suffix: CentCom Офицер специальный операций
+  suffix: CentCom Штурмовик специальный операций
   id: MobHumanSFOfficer
   components:
   - type: Icon
@@ -86,8 +86,8 @@
     allowMovement: true
     allowSpeech: true
     makeSentient: true
-    name: Офицер Специальных Операций
-    description: Офицер Специальных Операций, руководитель департамента специальных операций в секторе.
+    name: Штурмовик Специальных Операций
+    description: Штурмовик Специальных Операций, руководитель департамента специальных операций в секторе.
     raffle:
       settings: default
     requirements:

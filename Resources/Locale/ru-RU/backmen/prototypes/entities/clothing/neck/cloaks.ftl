@@ -4,7 +4,7 @@ ent-ClothingNeckCloakPirate = плащ пирата
 ent-ClothingNeckCloakOrden = плащ Красного ордена
     .desc = Плащ ордена Красного Дракона! Этот плащ был создан древним культом, и по сей день никто не знает, как он попал на станцию.
 
-ent-ClothingNeckCloakSssp = плащ офицера СССП
+ent-ClothingNeckCloakSssp = плащ Штурмовика СССП
     .desc = Награжден за заслуги перед СССП. Ты самый лучший. Ты не сможешь этого скрыть.
 
 ent-ClothingNeckCloakmeibe = плащ лучшего инженера

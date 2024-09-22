@@ -50,7 +50,7 @@
   parent: ClothingHeadset
   id: ClothingHeadsetUEGofficer
   name: Гарнитура охраны ОПЗ
-  description: Гарнитура используемая офицерами ОПЗ
+  description: Гарнитура используемая Штурмовиками ОПЗ
   components:
   - type: ContainerFill
     containers:

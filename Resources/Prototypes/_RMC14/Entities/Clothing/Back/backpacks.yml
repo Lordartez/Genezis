@@ -15,6 +15,9 @@
     - state: closed
       map: [ "closedLayer" ]
   - type: Appearance
+  - type: CMStorageVisualizer
+    storageClosed: closedLayer
+    storageOpen: openLayer
   - type: Clothing
     quickEquip: false
     slots:
@@ -40,12 +43,21 @@
   - type: ExplosionResistance
     damageCoefficient: 0
     worn: false
+  - type: InteractedBlacklist
+    blacklist:
+      components:
+      - Xeno
 
 - type: entity
   parent: CMPersonalStorageBase
   id: CMBackpack
   name: backpack
   description: You wear this on your back and put items into it.
+  components:
+  - type: StorageOpenDoAfter
+    skipInHand: true
+  - type: StorageCloseOnMove
+    skipInHand: true
 
 - type: entity
   parent: CMBackpack

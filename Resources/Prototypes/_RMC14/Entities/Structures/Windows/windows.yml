@@ -1,6 +1,6 @@
 ﻿- type: entity
   abstract: true
-  parent: CMBaseStructureCorrodible
+  parent: AltBaseStructureCorrodible
   id: RMCBaseWindowFrame
   name: "window frame"
   description: A big hole in the wall that used to sport a large window. Can be vaulted through.
@@ -37,7 +37,7 @@
 
 - type: entity
   abstract: true
-  parent: CMBaseStructureCorrodible
+  parent: AltBaseStructureCorrodible
   id: CMBaseWindow # TODO RMC14 this needs to be 2 separate entities eventually
   placement:
     mode: SnapgridCenter
