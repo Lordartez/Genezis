@@ -156,7 +156,6 @@
       - id: RubberStampDetective
       - id: HoloprojectorSecurity
       - id: BoxEvidenceMarkers
-      - id: BoxTapeRecorder
 
 - type: entity
   id: ClosetBombFilled
