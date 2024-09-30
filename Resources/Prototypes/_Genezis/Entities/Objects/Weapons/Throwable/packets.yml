@@ -23,8 +23,8 @@
 - type: entity
   parent: CMPacketBase
   id: CMPacketGrenadeHighExplosive
-  name: HEDP grenade packet
-  description: It contains three HEDP high explosive grenades.
+  name: Пакет гранат HEDP
+  description: Может содержать три фугасные гранаты HEDP.
   components:
   - type: Sprite
     state: hedp_packet
@@ -32,8 +32,8 @@
 - type: entity
   parent: CMPacketGrenadeHighExplosive
   id: CMPacketGrenadeHighExplosiveFilled
-  name: HEDP grenade packet
-  suffix: Filled
+  name: Пакет гранат HEDP
+  suffix: Заполненный
   components:
   - type: StorageFill
     contents:
@@ -43,8 +43,8 @@
 - type: entity
   parent: CMPacketBase
   id: CMPacketGrenadeFrag
-  name: HEFA grenade packet
-  description: It contains three HEFA grenades. Don't tell the HEFA order.
+  name: Пакет гранат HEFA
+  description: Может содержать три гранаты HEFA. Не говорите приказ HEFA.
   components:
   - type: Sprite
     state: hefa_packet
@@ -52,8 +52,8 @@
 - type: entity
   parent: CMPacketGrenadeFrag
   id: CMPacketGrenadeFragFilled
-  name: HEFA grenade packet
-  suffix: Filled
+  name: Пакет гранат HEFA
+  suffix: Заполненный
   components:
   - type: StorageFill
     contents:

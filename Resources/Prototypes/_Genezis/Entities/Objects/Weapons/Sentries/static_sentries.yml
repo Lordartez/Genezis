@@ -2,7 +2,7 @@
   parent: BaseStructure
   abstract: true
   id: RMCBaseTurret
-  name: turret
+  name: турель
   components:
   - type: Clickable
   - type: InteractionOutline
@@ -70,8 +70,8 @@
 - type: entity
   parent: RMCBaseTurret
   id: RMCTurretGaussSpaceborne
-  name: UA-577 spaceborne gauss turret
-  description: A fully-automated defence turret with mid-range targeting capabilities. Armed with a modified M32-S Autocannon and an internal belt feed.
+  name: UA-577 космическая турель Гаусса
+  description: Полностью автоматизированная защитная турель с возможностью наведения на среднюю дальность. Вооружена модифицированной автопушкой М32-С.
   components:
   - type: NpcFactionMember
     factions:

@@ -1,7 +1,7 @@
 # Used for PVS loading
 - type: entity
   id: CMScopingChunkLoader
-  name: SCOPING CHUNK LOADER YOU SHOULD NOT SEE THIS
+  name: ЗАГРУЗКА ЧАНКА ВЫ НЕ ДОЛЖНЫ ВИДИТЬ ЭТО
   noSpawn: true
   components:
     - type: Eye

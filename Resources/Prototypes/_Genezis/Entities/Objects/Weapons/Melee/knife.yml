@@ -1,8 +1,8 @@
 - type: entity
   parent: [ BaseKnife ]
   id: RMCM5Bayonet
-  name: "M5 'Night Raider' bayonet"
-  description: The standard-issue bayonet of the Marines. You can slide this knife into your boots. # TODO RMC14 , or attach it to the end of a rifle.
+  name: штык-нож М5 "Ночной рейдер"
+  description: Стандартный штык-нож штурмовиков, вы можете вставить этот нож в свои ботинки.
   components:
   - type: Clothing
     slots:
@@ -35,10 +35,10 @@
     prefix: bayonet
 
 - type: entity
-  name: M11 throwing knife
+  name: метательный нож М11
   parent: BaseKnife
   id: CMM11Knife
-  description: A military knife designed to be thrown at the enemy.
+  description: Военный нож, предназначенный для метания в противника.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Melee/m11_knife.rsi
@@ -70,8 +70,8 @@
 - type: entity
   parent: BaseKnife
   id: CMM2132Machete
-  name: M2132 machete
-  description: Latest issue of the Marine Machete.
+  name: мачете M2132
+  description: Последняя модель из серии игрушек для вояк.
   components:
   - type: Clothing
     slots: [ belt ]

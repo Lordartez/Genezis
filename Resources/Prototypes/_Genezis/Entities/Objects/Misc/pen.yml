@@ -1,6 +1,3 @@
-# © SS220, An EULA/CLA with a hosting restriction, full text: https://raw.githubusercontent.com/SerbiaStrong-220/space-station-14/master/CLA.txt
-
-
 - type: entity
   name: ручка Центрального Командования
   description: Утонченный стиль, неповторимая эргономичность, цвет чернил, - всё это - достоинства этой ручки. Она предназначена для лучших и создана лучшими.
@@ -10,3 +7,36 @@
   - type: Sprite
     sprite: SS220/Objects/Tools/pen.rsi
     state: centcommnew_pen
+
+# PENS
+
+- type: entity
+  parent: Pen
+  id: CMPen
+  name: pen
+  description: It's a normal black ink pen.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Misc/paper.rsi
+    state: pen
+  - type: Item
+    size: Tiny
+    sprite: _RMC14/Objects/Misc/paper.rsi
+
+- type: entity
+  parent: CMPen
+  id: CMPenClicky # TODO RMC14 make it clicky
+  name: WEYA pen
+  description: It's a WEYA brand extra clicky black ink pen.
+
+- type: entity
+  parent: CMPen
+  id: CMPenFountain
+  name: fountain pen
+  description: A lavish testament to the ingenuity of AEGIS' craftsmanship, this fountain pen is a paragon of design and functionality. Detailed with golden accents and intricate mechanics, the pen allows for a swift change between a myriad of ink colors with a simple twist. A product of precision engineering, each mechanism inside the pen is designed to provide a seamless, effortless transition from one color to the next, creating an instrument of luxurious versatility.
+  components:
+  - type: Sprite
+    sprite: _RMC14/Objects/Misc/paper.rsi
+    state: fountain_pen
+  - type: Item
+    sprite: _RMC14/Objects/Misc/paper.rsi

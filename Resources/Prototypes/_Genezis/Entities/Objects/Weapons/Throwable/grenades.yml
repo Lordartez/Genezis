@@ -2,8 +2,8 @@
   abstract: true
   parent: GrenadeBase
   id: CMGrenadeBase
-  name: grenade
-  description: Duck and cover.
+  name: граната
+  description: Бросай и прячься.
   components:
   - type: Explosive
     explosionType: RMC
@@ -22,8 +22,8 @@
 - type: entity
   parent: CMGrenadeBase
   id: CMGrenadeHighExplosive
-  name: M40 HEDP grenade
-  description: High-Explosive Dual-Purpose. A small, but deceptively strong blast grenade that has been phasing out the M15 HE grenades alongside the M40 HEFA. Capable of being loaded in grenade launchers, or thrown by hand.
+  name: граната M40 HEDP
+  description: Граната фугасная двойного назначения. Маленькая, но обманчиво мощная фугасная граната, можно заряжать в гранатометы или бросать вручную.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/m40hedp.rsi
@@ -43,8 +43,8 @@
 - type: entity
   parent: CMGrenadeBase
   id: CMGrenadeSmoke
-  name: M40 smoke grenade
-  description: The M40 HSDP is a small, but powerful smoke grenade. Based off the same platform as the M40 HEDP. It is set to detonate in 2 seconds.
+  name: дымовая граната M40
+  description: M40 HSDP — небольшая, но мощная дымовая граната. Основана на той же платформе, что и M40 HEDP. Она настроен на детонацию через 2 секунды.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/m40smoke.rsi
@@ -67,8 +67,8 @@
 - type: entity
   parent: CMGrenadeHighExplosive
   id: CMGrenadeFrag
-  name: M40 HEFA grenade
-  description: High-Explosive Fragmenting-Antipersonnel. A small, but deceptively strong fragmentation grenade that has been phasing out the M15 fragmentation grenades alongside the M40 HEDP. Capable of being loaded in grenade launchers, or thrown by hand.
+  name: граната M40 HEFA
+  description: Осколочно-фугасно-противопехотная. Маленькая, но обманчиво мощная осколочная граната, можно заряжать в гранатометы или бросать вручную.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Grenades/m40hefa.rsi

@@ -1,7 +1,7 @@
 ﻿- type: entity
   id: CMFloorShallowWaterEntity
-  name: shallow water
-  description: ""
+  name: мелководье
+  description: Просто вода
   placement:
     mode: SnapgridCenter
     snap:
@@ -52,8 +52,8 @@
 - type: entity
   parent: CMFloorShallowWaterEntity
   id: CMFloorDeepWaterEntity
-  name: deep water
-  description: ""
+  name: глубокая вода
+  description: А тут глубоко
   components:
   - type: Sprite
     sprite: _RMC14/Tiles/planet/water.rsi
