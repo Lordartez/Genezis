@@ -23,6 +23,11 @@
   copyright: "https://freesound.org/people/Defaultv/"
   source: "https://freesound.org/people/Defaultv/sounds/534362/"
 
+- files: ["robot_scream.ogg"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "by Fox-McCloud"
+  source: "https://github.com/ParadiseSS13/Paradise/blob/04e65c74969fb2c7f96db0a903747c18b990bfea/sound/goonstation/voice/robot_scream.ogg"
+
 - files: ["vending_restock_done.ogg"]
   license: "CC-BY-3.0"
   copyright: "https://freesound.org/people/felipelnv/"

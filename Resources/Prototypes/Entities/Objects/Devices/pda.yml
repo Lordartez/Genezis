@@ -112,13 +112,13 @@
   id: BaseMedicalPDA
   abstract: true
   components:
-  - type: ItemToggle
-    toggleLight: false
-    onUse: false
-  - type: HealthAnalyzer
-    scanDelay: 1
-    scanningEndSound:
-      path: "/Audio/Items/Medical/healthscanner.ogg"
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NewsReaderCartridge
+      - MedTekCartridge
 
 - type: entity
   parent: BasePDA

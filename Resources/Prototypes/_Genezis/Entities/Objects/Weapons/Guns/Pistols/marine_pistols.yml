@@ -79,8 +79,8 @@
 - type: entity
   parent: CMWeaponPistolBase
   id: CMWeaponPistolM1984
-  name: M1984 service pistol
-  description: An M1984 Service Pistol, once the standard issue sidearm of the Marines but has recently been replaced with the M77 combat pistol. Fires 9mm pistol rounds.
+  name: табельный пистолет образца 1984 года.
+  description: Служебный пистолет M1984, который когда-то был стандартным оружием для отдела контроля, но недавно был заменен боевым пистолетом M77. Стреляет пистолетными патронами калибра 9 мм.
   components:
   - type: RMCSelectiveFire
     scatterWielded: 10
@@ -130,8 +130,8 @@
 - type: entity
   parent: CMWeaponPistolBase
   id: CMWeaponPistolM77
-  name: M77 combat pistol # TODO RMC14 sounds
-  description: Standard issue Marine firearm. Also found in the hands of We-Ya PMC teams. Fires 9mm armor shredding rounds and is capable of 3-round burst.
+  name: боевой пистолет М77 # TODO RMC14 sounds
+  description: Стандартное огнестрельное оружие отдела контроля. Стреляет 9-мм бронебойными снарядами и способен дать очередь по 3 выстрела.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Pistols/m77.rsi
@@ -206,7 +206,7 @@
 - type: entity
   parent: CMWeaponPistolBase
   id: CMWeaponPistolMK80
-  name: MK80 pistol
+  name: пистолет МК80
   description: A massive, formidable semi-automatic handgun chambered in 9mm squash-head rounds. A common sight throughout both UA and 3WE space, often held by both We-Ya PMC units and corporate executives. This weapon is also undergoing limited field testing as part of the Marines' next generation pistol program. The slide is engraved with the We-Ya logo reminding you who's really in charge.
   components:
   - type: Sprite

@@ -1,0 +1,55 @@
+- type: entity
+  name: автомендер для ушибов
+  parent: BaseItem
+  description: Устройство против ушибов.
+  id: AutomenderADV
+  components:
+  - type: Sprite
+    sprite: /Genezis/Objects/Specific/Medical/hypo.rsi
+    state: hypo
+  - type: Item
+    sprite: /Genezis/Objects/Specific/Medical/hypo.rsi
+    size: Normal
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        reagents:
+        - ReagentId: PudriADV
+          Quantity: 200
+        maxVol: 200
+  - type: Hypospray
+    onlyAffectsMobs: false
+    injectOnly: true
+    transferAmount: 10
+  - type: UseDelay
+    delay: 2
+  - type: StaticPrice
+    price: 0
+
+- type: entity
+  name: автомендер для ожогов
+  parent: BaseItem
+  description: Устройство против ожогов.
+  id: AutomenderADVheat
+  components:
+  - type: Sprite
+    sprite: /Genezis/Objects/Specific/Medical/hypomend.rsi
+    state: hypo
+  - type: Item
+    sprite: /Genezis/Objects/Specific/Medical/hypomend.rsi
+    size: Normal
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        reagents:
+        - ReagentId: silverADV
+          Quantity: 200
+        maxVol: 200
+  - type: Hypospray
+    onlyAffectsMobs: false
+    injectOnly: true
+    transferAmount: 10
+  - type: UseDelay
+    delay: 2
+  - type: StaticPrice
+    price: 0

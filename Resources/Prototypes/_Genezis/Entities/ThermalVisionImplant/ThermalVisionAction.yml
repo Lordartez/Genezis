@@ -1,7 +1,7 @@
 - type: entity
   id: ActionActivateThermalVision
-  name: ThermalVision
-  description: I CAN SEE EVERYTYNG
+  name: Термальное зрение
+  description: Вы можете почти всё увидеть.
   noSpawn: true
   components:
   - type: InstantAction

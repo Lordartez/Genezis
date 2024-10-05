@@ -1,0 +1,25 @@
+- type: entity
+  id: CameraBug
+  parent: [ BaseItem, BaseSyndicateContraband ]
+  name: Устройство взлома камер
+  description: Нелегальное устройство синдиката, позволяющее взломать сеть камер.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/camera_bug.rsi
+    layers:
+    - state: camera_bug
+  - type: Item
+  - type: ActivatableUI
+    requireActiveHand: false
+    inHandsOnly: true
+    key: enum.SurveillanceCameraMonitorUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SurveillanceCameraMonitorUiKey.Key:
+        type: SurveillanceCameraMonitorBoundUserInterface
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: SurveillanceCamera
+    transmitFrequencyId: SurveillanceCamera
+  - type: WiredNetworkConnection
+  - type: SurveillanceCameraMonitor

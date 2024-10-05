@@ -59,9 +59,9 @@
 
 - type: entity
   parent: [ RMCBaseWeaponShotgun, RMCBaseAttachableHolder ]
-  name: M42A2 Pump Shotgun
+  name: помповый дробовик M42A2
   id: WeaponShotgunM42A2
-  description: An Aegis Battlefield Armaments classic design, the M42A2 combines close-range firepower with long term reliability. Needs to be pumped.
+  description: Классический дизайн Aegis Battlefield Armaments, M42A2 сочетает в себе огневую мощь ближнего боя с долгосрочной надежностью.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Shotguns/m42a2.rsi

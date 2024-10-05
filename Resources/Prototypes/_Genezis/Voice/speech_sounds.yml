@@ -1,12 +1,3 @@
-- type: speechSounds
-  id: Roxi
-  saySound:
-    path: /Audio/SS220/Voice/Roxi/dog_bark1.ogg
-  askSound:
-    path: /Audio/SS220/Voice/Roxi/dog_bark3.ogg
-  exclaimSound:
-    path: /Audio/SS220/Voice/Roxi/dog_bark3.ogg
-
 #IPC
 - type: speechSounds
   id: IPC

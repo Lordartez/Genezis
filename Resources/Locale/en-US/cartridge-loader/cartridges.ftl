@@ -7,6 +7,8 @@ news-read-program-name = Station news
 crew-manifest-program-name = Crew manifest
 crew-manifest-cartridge-loading = Loading ...
 
+med-tek-program-name = MedTek
+
 net-probe-program-name = NetProbe
 net-probe-scan = Scanned {$device}!
 net-probe-label-name = Name

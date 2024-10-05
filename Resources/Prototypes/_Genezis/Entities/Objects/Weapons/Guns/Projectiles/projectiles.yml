@@ -46,7 +46,7 @@
 
 - type: entity
   id: FireThrowerBall1
-  name: реактивная смесь
+  name: реактивная смесь плазмы
   parent: FoodInjectableBase
   components:
   - type: Sprite
@@ -121,7 +121,7 @@
 # Снаряды для установок
 
 - type: entity
-  name: Laser bolt
+  name: Лазерный болт
   id: LaserBolt
   parent: BaseBullet
   noSpawn: true
@@ -160,7 +160,7 @@
     lifetime: 30
 
 - type: entity
-  name: Kinetic Bolt
+  name: Кинетический болт
   id: KineticBolt
   parent: BaseBullet
   noSpawn: true
@@ -198,7 +198,7 @@
     lifetime: 30
 
 - type: entity
-  name: Bullet Bolt
+  name: Пуля болт
   id: BulletBolt
   parent: BaseBullet
   noSpawn: true
@@ -236,7 +236,7 @@
     lifetime: 30
 
 - type: entity
-  name: Laser bolt small
+  name: Лазерный болт маленький
   id: LaserBoltSmall
   parent: BaseBullet
   noSpawn: true
@@ -274,7 +274,7 @@
     lifetime: 30
 
 - type: entity
-  name: Kinetic Bolt small
+  name: Кинетический болт маленький
   id: KineticBoltSmall
   parent: BaseBullet
   noSpawn: true
@@ -311,7 +311,7 @@
     lifetime: 30
 
 - type: entity
-  name: Bullet Bolt small
+  name: Пуля болт маленький
   id: BulletBoltSmall
   parent: BaseBullet
   noSpawn: true

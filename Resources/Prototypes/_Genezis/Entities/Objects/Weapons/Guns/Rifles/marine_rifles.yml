@@ -56,9 +56,9 @@
 
 - type: entity
   parent: CMBaseWeaponRifle
-  name: M54C assault rifle MK2
+  name: штурмовая винтовка М54С МК2
   id: WeaponRifleM54C
-  description: The standard issue rifle of the Marines. Commonly carried by most combat personnel. Uses 10x24mm caseless ammunition.
+  description: Стандартная винтовка отдела контроля. Обычно носится большинством военнослужащих, используются безгильзовые боеприпасы 10х24 мм.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Rifles/m54c.rsi
@@ -149,10 +149,10 @@
       rmc-aslot-underbarrel: 0.25, -0.343
 
 - type: entity
-  name: M54CE2 heavy assault rifle
+  name: тяжелая штурмовая винтовка M54CE2
   parent: CMBaseWeaponRifle
   id: WeaponRifleM54CE2
-  description: A large squad support weapon capable of laying down sustained suppressing fire from a mounted position. While unstable and less accurate, it can be lugged and shot with two hands.
+  description: Крупное орудие поддержки отделения, способное вести непрерывный подавляющий огонь с позиции. Хотя он нестабилен и менее точен, его можно тащить и стрелять двумя руками.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Rifles/m54ce2.rsi
@@ -242,9 +242,9 @@
 
 - type: entity
   parent: CMBaseWeaponRifle
-  name: M4SPR battle rifle
+  name: боевая винтовка М4СПР
   id: WeaponRifleM4SPR
-  description: The M4SPR battle rifle is a designated marksman rifle in service with the Marine. Sporting a bullpup configuration, the M4SPR battle rifle is perfect for reconnaissance and fire support teams.
+  description: Боевая винтовка M4SPR — это стрелковая винтовка, стоящая на вооружении отдела контроля. Боевая винтовка M4SPR, имеющая конфигурацию булл-пап, идеально подходит для групп разведки и огневой поддержки.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Rifles/m4spr.rsi
@@ -324,9 +324,9 @@
 
 - type: entity
   parent: WeaponRifleM4SPR
-  name: M4SPR custom battle rifle
+  name: кастомная боевая винтовка M4SPR
   id: WeaponRifleM4SPRCustom
-  description: An improvement over the already great M4SPR. Able to take A19 rounds, as well as having better control and accuracy at the cost of being harder to use. Can take traditional M4SPR mags, at lower damage.
+  description: Улучшение по сравнению с и без того отличным M4SPR. Способен выдерживать выстрелы A19, а также имеет лучший контроль и точность, но его сложнее использовать. Можно использовать традиционные магазины M4SPR с меньшим уроном.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Rifles/m4spr.rsi

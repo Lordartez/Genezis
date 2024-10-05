@@ -51,5 +51,5 @@ public sealed partial class HealthAnalyzerComponent : Component
     /// Sound played on scanning end
     /// </summary>
     [DataField]
-    public SoundSpecifier? ScanningEndSound;
+    public SoundSpecifier ScanningEndSound = new SoundPathSpecifier("/Audio/Items/Medical/healthscanner.ogg");
 }

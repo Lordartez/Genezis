@@ -1,0 +1,34 @@
+- type: reagent
+  id: PudriADV
+  name: кровоовосполняющая пудра
+  group: Medicine
+  desc: Используется в автомендерах
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#ab00ff"
+  metabolisms:
+    Medicine:
+      metabolismRate: 3.00
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -3
+            Bloodloss: -2.5
+
+- type: reagent
+  id: silverADV
+  name: сульфадизин серебра
+  group: Medicine
+  desc: Используется в автомендерах
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#00fff3"
+  metabolisms:
+    Medicine:
+      metabolismRate: 3.00
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -3
