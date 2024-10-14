@@ -54,10 +54,10 @@
 
 
 - type: entity
-  name: M83 grenade launcher
+  name: гранатомет M83
   parent: [ RMCBaseWeaponGrenadeLauncher ]
   id: WeaponLauncherM83
-  description: A heavy, 6-shot grenade launcher used by the UNMC for area denial and big explosions.
+  description: Тяжелый 6-зарядный гранатомет, используемый для пресечения огня и больших взрывов.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/GrenadeLaunchers/m83.rsi
@@ -88,10 +88,10 @@
       rmc-aslot-rail: 0.0, 0.185
 
 - type: entity
-  name: M79 grenade launcher
+  name: гранатомет M79
   parent: [ RMCBaseWeaponGrenadeLauncher ]
   id: CMWeaponLauncherM79
-  description: The M79 grenade launcher is a single-shot, shoulder-fired, break-action grenade launcher.
+  description: Гранатомет M79 - это однозарядный гранатомет, стреляющий с плеча с разрывным механизмом.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/GrenadeLaunchers/m79.rsi
@@ -140,7 +140,7 @@
   name: M5-ATL
   parent:  [BaseWeaponLauncher, CMBaseWeaponGun, RMCBaseAttachableHolder]
   id: RMCWeaponLauncherM5ATL
-  description: "The M5 Anti-Tank Launcher is a powerful anti-armor infantry weapon, commonly fielded by the UNMC. Used to take out light-tanks and enemy structures, the M5-ATL is a dangerous weapon with a variety of combat uses, depending on the loaded ammunition, and is capable of firing both shells and rocket-propelled grenades.\n\nThis one is missing its smart optics completely, and seems to be damaged, greatly limiting its range..."
+  description: M5-ATL - это мощное противотанковое оружие пехоты, обычно состоящее на вооружении солдат Триглава. Используется для уничтожения легких танков и вражеских строений. M5-ATL - опасное оружие с разнообразным боевым применением, в зависимости от заряда, и может стрелять как снарядами, так и реактивными гранатами.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/RocketLaunchers/m5spec.rsi
@@ -169,10 +169,6 @@
     proto: RMCRocket84mm
     soundInsert:
       path: /Audio/_RMC14/Weapons/Guns/Cock/m5_ammo.ogg
-  - type: GunUserWhitelist
-    whitelist:
-      components:
-      - DemoSpecWhitelist
   - type: ExplosionResistance
     damageCoefficient: 0
   - type: Wieldable

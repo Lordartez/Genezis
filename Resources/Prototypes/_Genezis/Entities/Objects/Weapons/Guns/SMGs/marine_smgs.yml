@@ -91,7 +91,7 @@
         whitelist:
           tags:
           - RMCAttachmentBarrelCharger
-          - RMCAttachmentExtendedBarrel
+          - RMCAttachmentрасширенныеBarrel
           - RMCAttachmentRecoilCompensator
           - RMCAttachmentSuppressor
           - RMCM5Bayonet

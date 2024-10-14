@@ -1,5 +1,5 @@
 - type: entity
-  name: Gaussgun
+  name: пистолет гауса
   parent: BaseWeaponBatterySmall
   id: WeaponGaussGun
   description: Оружие, что использует Мародер в боях.

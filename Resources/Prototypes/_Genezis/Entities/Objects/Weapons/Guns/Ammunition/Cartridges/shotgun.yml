@@ -2,8 +2,8 @@
   abstract: true
   parent: BaseCartridge
   id: CMShellShotgunBase
-  name: handful of shotgun shell
-  description: A handful of rounds to reload on the go.
+  name: горсть дробовых патронов
+  description: Горсть патронов для перезарядки на ходу.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi
@@ -24,7 +24,7 @@
 - type: entity
   parent: CMShellShotgunBase
   id: CMShellShotgunBuckshot
-  name: handful of buckshot shells
+  name: горсть картечи
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi
@@ -38,7 +38,7 @@
 - type: entity
   parent: CMShellShotgunBase
   id: CMShellShotgunSlugs
-  name: handful of shotgun slugs
+  name: горсть дробовых пуль
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi
@@ -52,7 +52,7 @@
 - type: entity
   parent: CMShellShotgunBase
   id: CMShellShotgunIncendiary
-  name: handful of incendiary slugs
+  name: горсть зажигательных пуль
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi
@@ -66,7 +66,7 @@
 - type: entity
   parent: CMShellShotgunBase
   id: CMShellShotgunBeanbag
-  name: handful of beanbag slugs
+  name: горсть бобовой дроби
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi
@@ -80,7 +80,7 @@
 - type: entity
   parent: CMShellShotgunBase
   id: CMShellShotgunFlechette
-  name: handful of flechette shells
+  name: горсть потрон с флашеттой
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi
@@ -93,7 +93,7 @@
 - type: entity
   parent: CMShellShotgunBuckshot
   id: CMShellShotgunIncendiaryBuckshot
-  name: handful of incendiary buckshot shells
+  name: горсть зажигательных картечных снарядов
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Handfuls/shotgun_handfuls.rsi

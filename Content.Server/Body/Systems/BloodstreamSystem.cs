@@ -187,52 +187,46 @@ public sealed class BloodstreamSystem : EntitySystem
         bloodSolution.AddReagent(entity.Comp.BloodReagent, entity.Comp.BloodMaxVolume - bloodSolution.Volume);
     }
 
-    private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChangedEvent args)
+private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChangedEvent args)
+{
+    // Проверка на null и увеличение урона
+    if (args.DamageDelta is null || !args.DamageIncreased)
     {
-        if (args.DamageDelta is null || !args.DamageIncreased)
-        {
-            return;
-        }
-
-        // TODO probably cache this or something. humans get hurt a lot
-        if (!_prototypeManager.TryIndex<DamageModifierSetPrototype>(ent.Comp.DamageBleedModifiers, out var modifiers))
-            return;
-
-        var bloodloss = DamageSpecifier.ApplyModifierSet(args.DamageDelta, modifiers);
-
-        if (bloodloss.Empty)
-            return;
-
-        // Does the calculation of how much bleed rate should be added/removed, then applies it
-        var oldBleedAmount = ent.Comp.BleedAmount;
-        var total = bloodloss.GetTotal();
-        var totalFloat = total.Float();
-        TryModifyBleedAmount(ent, totalFloat, ent);
-
-        /// <summary>
-        ///     Critical hit. Causes target to lose blood, using the bleed rate modifier of the weapon, currently divided by 5
-        ///     The crit chance is currently the bleed rate modifier divided by 25.
-        ///     Higher damage weapons have a higher chance to crit!
-        /// </summary>
-        var prob = Math.Clamp(totalFloat / 25, 0, 1);
-        if (totalFloat > 0 && _robustRandom.Prob(prob))
-        {
-            TryModifyBloodLevel(ent, (-total) / 5, ent);
-            _audio.PlayPvs(ent.Comp.InstantBloodSound, ent);
-        }
-
-        // Heat damage will cauterize, causing the bleed rate to be reduced.
-        else if (totalFloat < 0 && oldBleedAmount > 0)
-        {
-            // Magically, this damage has healed some bleeding, likely
-            // because it's burn damage that cauterized their wounds.
-
-            // We'll play a special sound and popup for feedback.
-            _audio.PlayPvs(ent.Comp.BloodHealedSound, ent);
-            _popupSystem.PopupEntity(Loc.GetString("bloodstream-component-wounds-cauterized"), ent,
-                ent, PopupType.Medium);
-        }
+        return;
     }
+
+    // Проверка и получение модификаторов
+    if (!_prototypeManager.TryIndex<DamageModifierSetPrototype>(ent.Comp.DamageBleedModifiers, out var modifiers))
+        return; // Выход, если не удалось получить модификаторы
+
+    // Применение модификаторов к урону
+    var bloodloss = DamageSpecifier.ApplyModifierSet(args.DamageDelta, modifiers);
+
+    // Проверка, есть ли урон на кровотечение
+    if (bloodloss.Empty)
+        return;
+
+    var oldBleedAmount = ent.Comp.BleedAmount;
+    var total = bloodloss.GetTotal();
+    var totalFloat = total.Float();
+
+    // Изменение количества кровотечения
+    TryModifyBleedAmount(ent, totalFloat, ent);
+
+    // Рассчитываем вероятности критического удара
+    var prob = Math.Clamp(totalFloat / 25, 0, 1);
+    if (totalFloat > 0 && _robustRandom.Prob(prob))
+    {
+        TryModifyBloodLevel(ent, (-total) / 5, ent);
+        _audio.PlayPvs(ent.Comp.InstantBloodSound, ent);
+    }
+    else if (totalFloat < 0 && oldBleedAmount > 0)
+    {
+        // Обработка случая, когда тепловой урон остановил кровотечение
+        _audio.PlayPvs(ent.Comp.BloodHealedSound, ent);
+        _popupSystem.PopupEntity(Loc.GetString("bloodstream-component-wounds-cauterized"), ent, ent, PopupType.Medium);
+    }
+}
     /// <summary>
     ///     Shows text on health examine, based on bleed rate and blood level.
     /// </summary>

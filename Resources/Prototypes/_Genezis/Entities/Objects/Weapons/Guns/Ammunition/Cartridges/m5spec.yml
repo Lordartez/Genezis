@@ -2,9 +2,9 @@
 
 - type: entity
   id: RMCRocket84mm
-  name: 84mm high-explosive rocket
+  name: 84-мм фугасная ракета
   parent: BaseItem
-  description: A rocket tube compatible with the M5-ATL loaded with a HE warhead. Deals high damage to soft targets on direct hit and splashes other targets in a 5-meter-wide area. Has decreased effect on heavily armored targets.
+  description: Фугасная ракета, совместимая с M5-ATL, заряженная боеголовкой HE. Наносит большой урон мягким целям при прямом попадании и разбрасывает брызги по другим целям в зоне шириной 5 метров. Снижает эффект по тяжелобронированным целям.
   components:
   - type: Tag
     tags:
@@ -28,9 +28,9 @@
 
 - type: entity
   id: RMCProjectileRocket84mm
-  name: 84mm high-explosive rocket
+  name: 84-мм фугасная ракета
   noSpawn: true
-  description: Uh oh.
+  description: Аох.
   components:
   - type: TriggerOnCollide
   # TODO RMC14 Make TriggerOnCollide spawn the explosion on the OtherEntity tile more consistently, so the explosion is centered properly
@@ -77,9 +77,9 @@
 
 - type: entity
   id: RMCRocket84mmAntiArmor
-  name: 84mm anti-armor rocket
+  name: 84-мм противотанковая ракета
   parent: RMCRocket84mm
-  description: A rocket tube compatible with the M5-ATL loaded with an AP warhead. Capable of piercing and downing heavily armored targets. Deals very little to no splash damage. Inflicts guaranteed stun to most targets. Has high accuracy within 7 meters.
+  description: Ракетная совместимая с M5-ATL, заряженная боеголовкой AP. Способна пробивать и уничтожать тяжелобронированные цели. Практически не наносит урона по площади. Наносит гарантированное оглушение большинству целей. Обладает высокой точностью в пределах 7 метров.
   components:
   - type: CartridgeAmmo
     proto: RMCProjectileRocket84mmAntiArmor
@@ -97,7 +97,7 @@
 
 - type: entity
   id: RMCProjectileRocket84mmAntiArmor
-  name: 84mm anti-armor rocket
+  name: 84-мм пробивная ракета
   parent: RMCProjectileRocket84mm
   noSpawn: true
   components:

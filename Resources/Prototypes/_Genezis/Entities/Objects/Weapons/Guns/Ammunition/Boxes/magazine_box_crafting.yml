@@ -3,13 +3,13 @@
 # M54C
 - type: construction
   parent: RMC
-  name: Magazine Box (M54C Reg)
+  name: Ящик магазинов (M54C Reg)
   id: CMBoxMagazineRifleM54C
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineRifleM54CEmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain regular M54C mags.
+  description: Ящик в котором могут находится магазины для M54C.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m54
@@ -17,13 +17,13 @@
 
 - type: construction
   parent: RMC
-  name: Magazine Box (M54C AP)
+  name: Ящик магазинов (M54C AP)
   id: CMBoxMagazineRifleM54CAP
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineRifleM54CAPEmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain armor piercing M54C mags.
+  description:  Ящик в котором могут находится пробивные магазины для M54C.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m54
@@ -31,13 +31,13 @@
 
 - type: construction
   parent: RMC
-  name: Magazine Box (M54C Ext)
+  name: Ящик магазинов (M54C Ext)
   id: CMBoxMagazineRifleM54CExt
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineRifleM54CExtEmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain extended M54C mags.
+  description:  Ящик в котором могут находится расширенные магазины для M54C.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m54
@@ -46,13 +46,13 @@
 # M63
 - type: construction
   parent: RMC
-  name: Magazine Box (M63 Reg)
+  name: Ящик магазинов (M63 Reg)
   id: CMBoxMagazineSMGM63
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineSMGM63Empty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain regular M63 mags.
+  description: Ящик в котором могут находится магазины для M63.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m63
@@ -60,13 +60,13 @@
 
 - type: construction
   parent: RMC
-  name: Magazine Box (M63 AP)
+  name: Ящик магазинов (M63 AP)
   id: CMBoxMagazineSMGM63AP
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineSMGM63APEmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain armor piercing M63 mags.
+  description: Ящик в котором могут находится пробивные магазины для M63.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m63
@@ -74,13 +74,13 @@
 
 - type: construction
   parent: RMC
-  name: Magazine Box (M63 Ext)
+  name: Ящик магазинов (M63 Ext)
   id: CMBoxMagazineSMGM63Ext
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineSMGM63ExtEmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain extended M63 mags.
+  description: Ящик в котором могут находится расширенные магазины для M63.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m63
@@ -89,13 +89,13 @@
 # M4SPR
 - type: construction
   parent: RMC
-  name: Magazine Box (M4SPR Reg)
+  name: Ящик магазинов (M4SPR Reg)
   id: CMBoxMagazineRifleM4SPR
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineRifleM4SPREmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain regular M4SPR mags.
+  description: Ящик в котором могут находится магазины для M4SPR.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m4spr
@@ -103,13 +103,13 @@
 
 - type: construction
   parent: RMC
-  name: Magazine Box (M4SPR AP)
+  name: Ящик магазинов (M4SPR AP)
   id: CMBoxMagazineRifleM4SPRAP
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineRifleM4SPRAPEmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain armor piercing M4SPR mags.
+  description: Ящик в котором могут находится пробивные магазины для M4SPR.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m4spr
@@ -117,13 +117,13 @@
 
 - type: construction
   parent: RMC
-  name: Magazine Box (M4SPR Ext)
+  name: Ящик магазинов (M4SPR Ext)
   id: CMBoxMagazineRifleM4SPRExt
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazineRifleM4SPRExtEmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain extended M4SPR mags.
+  description: Ящик в котором могут находится расширенные магазины для M4SPR.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m4spr
@@ -132,13 +132,13 @@
 # M1984
 - type: construction
   parent: RMC
-  name: Magazine Box (M1984 Reg)
+  name: Ящик магазинов (M1984 Reg)
   id: CMBoxMagazinePistolM1984
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazinePistolM1984Empty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain regular M1984 mags.
+  description: Ящик в котором могут находится расширенные магазины для M1984.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m1984
@@ -146,13 +146,13 @@
 
 #- type: construction
 #  parent: RMC
-#  name: Magazine Box (M1984 AP)
+#  name: Ящик магазинов (M1984 AP)
 #  id: CMBoxMagazinePistolM1984AP
 #  graph: CMBoxMagazine
 #  startNode: start
 #  targetNode: CMBoxMagazinePistolM1984APEmpty
 #  category: construction-category-cm-box-magazine
-#  description: A magazine box that can contain armor piercing M1984 mags.
+#  description: A Ящик магазинов that can contain пробивные M1984 mags.
 #  icon:
 #    sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
 #    state: base_m1984
@@ -161,13 +161,13 @@
 # 88 mod 4 / 88m4
 - type: construction
   parent: RMC
-  name: Magazine Box (M77 AP)
+  name: Ящик магазинов (M77 AP)
   id: CMBoxMagazinePistolM77AP
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazinePistolM77APEmpty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain armor piercing M77 mags.
+  description: Ящик в котором могут находится пробивные магазины для M77.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m77
@@ -176,13 +176,13 @@
 # MK80
 - type: construction
   parent: RMC
-  name: Magazine Box (MK80 Reg)
+  name: Ящик магазинов (MK80 Reg)
   id: CMBoxMagazinePistolMK80
   graph: CMBoxMagazine
   startNode: start
   targetNode: CMBoxMagazinePistolMK80Empty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain regular MK80 mags.
+  description: Ящик в котором могут находится магазины для MK80.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_mk80
@@ -191,13 +191,13 @@
 # SU-6 Smart pistol
 - type: construction
   parent: RMC
-  name: Magazine Box (SU-6 Reg)
+  name: Ящик магазинов (SU-6 Reg)
   id: RMCBoxMagazinePistolSU6
   graph: CMBoxMagazine
   startNode: start
   targetNode: RMCBoxMagazinePistolSU6Empty
   category: construction-category-cm-box-magazine
-  description: A magazine box that can contain regular SU-6 mags.
+  description: Ящик в котором могут находится магазины для SU-6.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_su6
@@ -206,13 +206,13 @@
 # M44
 - type: construction
   parent: RMC
-  name: Magazine Box (M44 Reg)
+  name: Ящик спидлоадеров (M44 Reg)
   id: RMCBoxMagazineRevolverM44Empty
   graph: CMBoxMagazine
   startNode: start
   targetNode: RMCBoxMagazineRevolverM44Empty
   category: construction-category-cm-box-magazine
-  description: A box for holding many speedloaders with a carrying handle.
+  description: Ящик в котором могу находится спидлоадеры.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m54
@@ -220,13 +220,13 @@
 
 - type: construction
   parent: RMC
-  name: Magazine Box (M44 Mark)
+  name: Ящик спидлоадеров (M44 Mark)
   id: RMCBoxMagazineRevolverM44MarksmanEmpty
   graph: CMBoxMagazine
   startNode: start
   targetNode: RMCBoxMagazineRevolverM44MarksmanEmpty
   category: construction-category-cm-box-magazine
-  description: A box for holding many marksman speedloaders with a carrying handle.
+  description: Ящик в котором могу находится спидлоадеры с снайперскими патронами.
   icon:
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Boxes/magazine_boxes.rsi
     state: base_m54
@@ -340,7 +340,7 @@
       - material: RMCSheetCardboard
         amount: 1
         doAfter: 1
-    
+
 
   # Why the fuck do you even need these nodes???
 

@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseMagazineRifle
   id: CMMagazineSMGM63
-  name: "M63 magazine (10x20mm)"
+  name: магазин M63 (10x20 мм)
   components:
   - type: Tag
     tags:
@@ -35,7 +35,7 @@
 - type: entity
   parent: CMMagazineSMGM63
   id: CMMagazineSMGM63AP
-  name: "M63 AP magazine (10x20mm)"
+  name: магазин M63 AP (10x20 мм)
   components:
   - type: BallisticAmmoProvider
     whitelist:
@@ -56,7 +56,7 @@
     - CMMagazineSmg
     - CMMagazineSMGM63AP
 
-# M63 Extended
+# M63 расширенные
 
 - type: Tag
   id: CMMagazineSMGM63Ext
@@ -64,7 +64,7 @@
 - type: entity
   parent: CMMagazineSMGM63
   id: CMMagazineSMGM63Ext
-  name: "M63 extended magazine (10x20mm)"
+  name: расширенный магазин M63 (10x20 мм)
   components:
   - type: BallisticAmmoProvider
     capacity: 72

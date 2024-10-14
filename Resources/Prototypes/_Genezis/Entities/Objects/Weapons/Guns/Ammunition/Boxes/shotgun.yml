@@ -2,7 +2,7 @@
   abstract: true
   parent: AmmoProviderShotgunShell
   id: CMBoxShotgunBase
-  name: box of shotgun shells
+  name: коробка с патронами для дробовика
   components:
   - type: Item
     size: Large
@@ -29,8 +29,8 @@
 - type: entity
   parent: CMBoxShotgunBase
   id: CMBoxShotgunBuckshot
-  name: box of buckshot shells
-  description: A box filled with buckshot spread shotgun shells. 12 Gauge.
+  name: коробка с патронами для картечи
+  description: Ящик, наполненный патронами для дробовика с картечью. 12 калибр.
   components:
   - type: BallisticAmmoProvider
     proto: CMShellShotgunBuckshot
@@ -43,8 +43,8 @@
 - type: entity
   parent: CMBoxShotgunBase
   id: CMBoxShotgunSlugs
-  name: box of shotgun slugs
-  description: A box filled with heavy shotgun shells. A timeless classic. 12 Gauge.
+  name: коробка пуль для дробовика
+  description: Ящик, наполненный тяжелыми дробовыми патронами. Нестареющая классика. 12 калибр.
   components:
   - type: BallisticAmmoProvider
     proto: CMShellShotgunSlugs
@@ -57,8 +57,8 @@
 - type: entity
   parent: CMBoxShotgunBase
   id: CMBoxShotgunIncendiary
-  name: box of incendiary slugs
-  description: A box filled with self-detonating incendiary shotgun rounds. 12 Gauge.
+  name: ящик зажигательных пуль
+  description: Коробка с самодельными зажигательными патронами для дробовика. 12 калибр.
   components:
   - type: BallisticAmmoProvider
     proto: CMShellShotgunIncendiary
@@ -71,8 +71,8 @@
 - type: entity
   parent: CMBoxShotgunBase
   id: CMBoxShotgunBeanbag
-  name: box of beanbag slugs
-  description: A box filled with beanbag shotgun shells used for non-lethal crowd control. 12 Gauge.
+  name: коробка с бабовыми пулями
+  description: Коробка, наполненная снарядами для дробовика с бобами, используемыми для нелетального подавления толпы. 12 калибр.
   components:
   - type: BallisticAmmoProvider
     proto: CMShellShotgunBeanbag
@@ -85,8 +85,8 @@
 - type: entity
   parent: CMBoxShotgunBase
   id: CMBoxShotgunFlechette
-  name: box of flechette shells
-  description: A box filled with flechette shotgun shells. 12 Gauge.
+  name: коробка с флашеттами
+  description: Коробка с флашеттами для дробовика. 12 калибр.
   components:
   - type: BallisticAmmoProvider
     proto: CMShellShotgunFlechette
@@ -99,8 +99,8 @@
 - type: entity
   parent: CMBoxShotgunBase
   id: CMBoxShotgunIncendiaryBuckshot
-  name: box of incendiary buckshots
-  description: A box filled with self-detonating buckshot incendiary shotgun rounds. 12 Gauge.
+  name: Коробка с зажигательными патронами
+  description: Коробка с зажигательными патронами для дробовика. 12 калибр.
   components:
   - type: BallisticAmmoProvider
     proto: CMShellShotgunIncendiaryBuckshot

@@ -4,7 +4,7 @@
 - type: entity
   parent: CMBaseCartridgeRifle
   id: CMCartridgeSmartGun10x30mm
-  name: cartridge (10x30mm)
+  name: картридж (10x30 мм)
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
@@ -20,7 +20,7 @@
 - type: entity
   parent: BaseBullet
   id: CMBulletSmartGun10x30mm
-  name: bullet (10x30mm)
+  name: пуля (10x30 мм)
   noSpawn: true
   components:
   - type: Sprite

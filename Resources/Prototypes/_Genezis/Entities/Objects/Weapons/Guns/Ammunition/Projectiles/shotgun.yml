@@ -15,7 +15,7 @@
 - type: entity
   parent: CMPelletShotgunBase
   id: CMPelletShotgunBuckshot
-  name: buckshot
+  name: картечь
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/shotgun_projectiles.rsi
@@ -30,7 +30,7 @@
 - type: entity
   parent: CMPelletShotgunBase
   id: CMPelletShotgunSlug
-  name: slug
+  name: дробовая пуля
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/shotgun_projectiles.rsi
@@ -47,7 +47,7 @@
 - type: entity
   parent: CMPelletShotgunBase
   id: CMPelletShotgunIncendiary
-  name: incendiary slug
+  name: зажигательная пуля
   components:
   - type: CMArmorPiercing
     amount: 20
@@ -60,7 +60,7 @@
 - type: entity
   parent: CMPelletShotgunBase
   id: CMPelletShotgunBeanbag
-  name: beanbag slug
+  name: бобовая пуля
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/shotgun_projectiles.rsi
@@ -75,7 +75,7 @@
 - type: entity
   parent: CMPelletShotgunBase
   id: CMPelletShotgunFlechette
-  name: flechette shell
+  name: флешетта
   components:
   - type: CMArmorPiercing
     amount: 35
@@ -92,6 +92,6 @@
 - type: entity
   parent: CMPelletShotgunBuckshot
   id: CMPelletShotgunIncendiaryBuckshot
-  name: incendiary buckshot shell
+  name: зажигательная картечь
   #components: #TODO RMC14 add burning
 

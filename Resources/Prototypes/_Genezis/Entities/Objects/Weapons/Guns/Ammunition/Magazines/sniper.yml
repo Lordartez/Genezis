@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: BaseMagazineRifle
   id: CMMagazineSniperM96S
-  name: "M96S marksman magazine (10x28mm)"
-  description: A magazine of sniper rifle ammo. An aimed shot with it will deal significant damage.
+  name: магазин с снайперскими патронами M96S (10x28mm)
+  description: Магазин с патронами для снайперской винтовки. Прицельный выстрел из него нанесет значительный урон.
   components:
   - type: Tag
     tags:
@@ -32,8 +32,8 @@
 - type: entity
   parent: CMMagazineSniperM96S
   id: CMMagazineSniperM96SIncendiary
-  name: "M96S incendiary magazine (10x28mm)"
-  description: A magazine of sniper rifle ammo. An aimed shot with it will temporarily blind the targe and kindle the blaze further.
+  name: магазин с зажигательными патронами M96S (10x28 мм)
+  description: Магазин с патронами для снайперской винтовки. Прицельный выстрел из него обожжет цель.
   components:
   - type: BallisticAmmoProvider
     proto: CMCartridgeSniper10x28mmIncendiary
@@ -51,8 +51,8 @@
 - type: entity
   parent: CMMagazineSniperM96S
   id: CMMagazineSniperM96SFlak
-  name: "M96S flak magazine (10x28mm)"
-  description: A magazine of sniper rifle ammo. An aimed shot with it will temporarily slow the target and minimize the backlash.
+  name: магазин с зенитными патронами M96S (10x28mm)"
+  description: Магазин с патронами для снайперской винтовки. Прицельный выстрел из него временно замедлит цель и сведет к минимуму отдачу.
   components:
   - type: BallisticAmmoProvider
     proto: CMCartridgeSniper10x28mmFlak
@@ -70,8 +70,8 @@
 - type: entity
   parent: CMMagazineSniperM96S
   id: CMMagazineSniperM96SAntiMateriel
-  name: "XM43E1 marksman magazine (10x99mm)"
-  description: A magazine of 10x99mm anti-materiel rounds.
+  name: магазин с противотанковыми патронами XM43E1 (10x99 мм)
+  description: Магазин с противотанковыми патронами 10x99 мм.
   components:
   - type: Tag
     tags:

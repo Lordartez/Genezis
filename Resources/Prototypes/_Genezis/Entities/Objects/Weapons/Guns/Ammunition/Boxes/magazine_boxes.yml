@@ -2,8 +2,8 @@
   abstract: true
   parent: BaseItem
   id: CMBoxMagazineBase
-  name: generic magazine box (? x ?)"
-  description: A box of magazines.
+  name: обычный ящик магазинов (? x ?)"
+  description: Ящик магазинов.
   components:
   - type: Item
     size: Huge
@@ -41,8 +41,8 @@
   abstract: true
   parent: CMBoxMagazineBase
   id: CMBoxMagazineAPBase
-  name: generic magazine box (? x ?)"
-  description: A box of magazines.
+  name: обычный ящик магазинов (? x ?)"
+  description: Ящик магазинов.
   components:
   - type: GenericVisualizer
     visuals:
@@ -65,8 +65,8 @@
   abstract: true
   parent: CMBoxMagazineBase
   id: CMBoxMagazineHVBase
-  name: generic magazine box (? x ?)"
-  description: A box of magazines.
+  name: обычный ящик магазинов (? x ?)"
+  description: Ящик магазинов.
   components:
   - type: GenericVisualizer
     visuals:
@@ -89,7 +89,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id: CMBoxMagazineRifleM54CEmpty
-  name: magazine box (M54C x 10)
+  name: ящик магазинов (M54C x 10)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -128,7 +128,7 @@
 - type: entity
   parent: CMBoxMagazineAPBase
   id: CMBoxMagazineRifleM54CAPEmpty
-  name: magazine box (AP M54C x 10)
+  name: ящик магазинов (AP M54C x 10)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -154,7 +154,7 @@
 - type: entity
   parent: CMBoxMagazineRifleM54CAPEmpty
   id: CMBoxMagazineRifleM54CAP
-  name: magazine box (AP M54C x 10)
+  name: ящик магазинов (AP M54C x 10)
   suffix: Filled
   components:
   - type: CMItemSlots
@@ -168,7 +168,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id: CMBoxMagazineRifleM54CExtEmpty
-  name: magazine box (Ext M54C x 8)
+  name: ящик магазинов (Ext M54C x 8)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -195,7 +195,7 @@
   parent: CMBoxMagazineRifleM54CExtEmpty
   id: CMBoxMagazineRifleM54CExt
   suffix: Filled
-  name: magazine box (Ext M54C x 8)
+  name: ящик магазинов (Ext M54C x 8)
   components:
   - type: CMItemSlots
     startingItem: CMMagazineRifleM54CExt
@@ -209,7 +209,7 @@
 - type: entity
   parent: CMBoxMagazineHVBase
   id: CMBoxMagazineSMGM63Empty
-  name: magazine box (M63 x 12)
+  name: ящик магазинов (M63 x 12)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -235,7 +235,7 @@
 - type: entity
   parent: CMBoxMagazineSMGM63Empty
   id: CMBoxMagazineSMGM63
-  name: magazine box (M63 x 12)
+  name: ящик магазинов (M63 x 12)
   components:
   - type: CMItemSlots
     startingItem: CMMagazineSMGM63
@@ -248,7 +248,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id: CMBoxMagazineSMGM63APEmpty
-  name: magazine box (AP M63 x 12)
+  name: ящик магазинов (AP M63 x 12)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -275,7 +275,7 @@
   parent: CMBoxMagazineSMGM63APEmpty
   id: CMBoxMagazineSMGM63AP
   suffix: Full
-  name: magazine box (AP M63 x 12)
+  name: ящик магазинов (AP M63 x 12)
   components:
   - type: CMItemSlots
     startingItem: CMMagazineSMGM63AP
@@ -288,7 +288,7 @@
 - type: entity
   parent: CMBoxMagazineHVBase
   id: CMBoxMagazineSMGM63ExtEmpty
-  name: magazine box (Ext M63 x 10)
+  name: ящик магазинов (Ext M63 x 10)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -314,7 +314,7 @@
 - type: entity
   parent: CMBoxMagazineSMGM63ExtEmpty
   id: CMBoxMagazineSMGM63Ext
-  name: magazine box (Ext M63 x 10)
+  name: ящик магазинов (Ext M63 x 10)
   suffix: Full
   components:
   - type: CMItemSlots
@@ -329,7 +329,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id: CMBoxMagazineRifleM4SPREmpty
-  name: magazine box (M4SPR x 16)
+  name: ящик магазинов (M4SPR x 16)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -355,7 +355,7 @@
 - type: entity
   parent: CMBoxMagazineRifleM4SPREmpty
   id: CMBoxMagazineRifleM4SPR
-  name: magazine box (M4SPR x 16)
+  name: ящик магазинов (M4SPR x 16)
   suffix: Filled
   components:
   - type: CMItemSlots
@@ -369,7 +369,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id: CMBoxMagazineRifleM4SPRAPEmpty
-  name: magazine box (AP M4SPR x 16)
+  name: ящик магазинов (AP M4SPR x 16)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -395,7 +395,7 @@
 - type: entity
   parent: CMBoxMagazineRifleM4SPRAPEmpty
   id: CMBoxMagazineRifleM4SPRAP
-  name: magazine box (AP M4SPR x 16)
+  name: ящик магазинов (AP M4SPR x 16)
   components:
   - type: CMItemSlots
     startingItem: CMMagazineRifleM4SPRAP
@@ -408,7 +408,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id: CMBoxMagazineRifleM4SPRExtEmpty
-  name: magazine box (Ext M4SPR x 12)
+  name: ящик магазинов (Ext M4SPR x 12)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -434,7 +434,7 @@
 - type: entity
   parent: CMBoxMagazineRifleM4SPRExtEmpty
   id: CMBoxMagazineRifleM4SPRExt
-  name: magazine box (Ext M4SPR x 12)
+  name: ящик магазинов (Ext M4SPR x 12)
   components:
   - type: CMItemSlots
     startingItem: CMMagazineRifleM4SPRExt
@@ -448,7 +448,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id: CMBoxMagazinePistolM1984Empty
-  name: magazine box (M1984 x 16)
+  name: ящик магазинов (M1984 x 16)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -474,7 +474,7 @@
 - type: entity
   parent: CMBoxMagazinePistolM1984Empty
   id: CMBoxMagazinePistolM1984
-  name: magazine box (M1984 x 16)
+  name: ящик магазинов (M1984 x 16)
   components:
   - type: CMItemSlots
     startingItem: CMMagazinePistolM1984
@@ -487,7 +487,7 @@
 #- type: entity # TODO RMC14 this box is done but needs mags made, dont forget to add it to crafting and cargo
 #  parent: CMBoxMagazineBase
 #  id: CMBoxMagazinePistolM1984AP
-#  name: magazine box (AP M1984 x 16)
+#  name: ящик магазинов (AP M1984 x 16)
 #  components:
 #  - type: Construction
 #    graph: CMBoxMagazine
@@ -515,7 +515,7 @@
 - type: entity
   parent: CMBoxMagazineAPBase
   id: CMBoxMagazinePistolM77APEmpty
-  name: magazine box (M77 AP x 16)
+  name: ящик магазинов (M77 AP x 16)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -541,7 +541,7 @@
 - type: entity
   parent: CMBoxMagazinePistolM77APEmpty
   id: CMBoxMagazinePistolM77AP
-  name: magazine box (M77 AP x 16)
+  name: ящик магазинов (M77 AP x 16)
   components:
   - type: CMItemSlots
     startingItem: CMMagazinePistolM77AP
@@ -555,7 +555,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id:  CMBoxMagazinePistolMK80Empty
-  name: magazine box (MK80 x 16)
+  name: ящик магазинов (MK80 x 16)
   components:
   - type: Construction
     graph: CMBoxMagazine
@@ -581,7 +581,7 @@
 - type: entity
   parent: CMBoxMagazinePistolMK80Empty
   id:  CMBoxMagazinePistolMK80
-  name: magazine box (MK80 x 16)
+  name: ящик магазинов (MK80 x 16)
   components:
   - type: CMItemSlots
     startingItem: CMMagazinePistolMK80
@@ -595,7 +595,7 @@
 - type: entity
   parent: CMBoxMagazineBase
   id: RMCBoxMagazinePistolSU6Empty
-  name: magazine box (SU-6 x 16)
+  name: ящик магазинов (SU-6 x 16)
   components:
   - type: Construction
     graph: CMBoxMagazine

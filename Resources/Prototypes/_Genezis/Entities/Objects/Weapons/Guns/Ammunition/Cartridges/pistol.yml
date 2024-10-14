@@ -8,7 +8,7 @@
 
 - type: entity
   id: CMCartridgePistol9mm
-  name: cartridge (9mm)
+  name: картридж (9 мм)
   parent: CMCartridgePistolBase
   components:
   - type: Tag
@@ -20,7 +20,7 @@
 
 - type: entity
   id: RCMCartridgePistol9mmSquashHead
-  name: cartridge (9mm Squash-Head)
+  name: картридж (9 мм с тупой головкой)
   parent: CMCartridgePistolBase
   components:
   - type: Tag
@@ -32,7 +32,7 @@
 
 - type: entity
   id: CMCartridgePistolM77AP
-  name: cartridge (9mm AP)
+  name: картридж (9mm AP)
   parent: CMCartridgePistolBase
   components:
   - type: Tag
@@ -44,7 +44,7 @@
 
 - type: entity
   id: RMCCartridgeRevolver44
-  name: cartridge (.44)
+  name: картридж (.44)
   parent: CMCartridgePistolBase
   components:
   - type: Tag
@@ -56,7 +56,7 @@
 
 - type: entity
   id: RMCCartridgeRevolver44Marksman
-  name: cartridge (.44)
+  name: картридж (.44)
   parent: CMCartridgePistolBase
   components:
   - type: Tag
@@ -68,7 +68,7 @@
 
 - type: entity
   id: RMCCartridgePistol45ACP
-  name: cartridge (.45 ACP)
+  name: картридж (.45 ACP)
   parent: CMCartridgePistolBase
   components:
   - type: Tag

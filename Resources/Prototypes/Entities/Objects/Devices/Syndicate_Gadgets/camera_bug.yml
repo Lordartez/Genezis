@@ -1,7 +1,7 @@
 - type: entity
   id: CameraBug
-  parent: [ BaseItem, BaseSyndicateContraband ]
-  name: Устройство взлома камер
+  parent: [ BaseItem ]
+  name: устройство взлома камер
   description: Нелегальное устройство синдиката, позволяющее взломать сеть камер.
   components:
   - type: Sprite

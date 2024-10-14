@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseBullet
   id: CMProjectileShrapnel
-  name: shrapnel
+  name: шрапнель
   noSpawn: true
   categories:
   - HideSpawnMenu

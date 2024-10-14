@@ -2,7 +2,7 @@
   parent: BaseBullet
   id: RMCProjectileTaser
   noSpawn: true
-  name: taser bolt
+  name: снаряд тайзера
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/Projectiles/stun_projectiles.rsi

@@ -216,6 +216,71 @@
           Quantity: 30
 
 - type: entity
+  id: PotassiumChemistryBottle
+  name: бутылка с калием
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Potassium
+          Quantity: 30
+
+- type: entity
+  id: NitrogenChemistryBottle
+  name: бутылка с азотом
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nitrogen
+          Quantity: 30
+
+- type: entity
+  id: PhosphorusChemistryBottle
+  name: бутылка с фосфором
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Phosphorus
+          Quantity: 30
+
+- type: entity
+  id: HydrogenChemistryBottle
+  name: бутылка с водородом
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Hydrogen
+          Quantity: 30
+
+- type: entity
+  id: EthanolChemistryBottle
+  name: бутылка с этанолом
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Ethanol
+          Quantity: 30
+
+- type: entity
   id: NocturineChemistryBottle
   name: nocturine bottle
   description: This will make someone fall down almost immediately. Hard to overdose on.

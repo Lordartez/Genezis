@@ -23,3 +23,12 @@
         type: PaperBoundUserInterface
   - type: Paper
     content: book-text-holoparasite-info
+
+- type: entity
+  id: PaperAgrichemManual
+  name: инструкция по "Химия это весело"
+  description: Инструкция, что прилагалась к набору.
+  parent: Paper
+  components:
+  - type: Paper
+    content: book-text-agrichemkit-manual

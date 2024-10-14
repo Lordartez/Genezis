@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseCartridgeRifle
   id: CMBaseCartridgeRifle
-  name: cartridge
+  name: картридж
   abstract: true
   components:
   - type: CartridgeAmmo
@@ -10,8 +10,8 @@
 - type: entity
   parent: CMBaseCartridgeRifle
   id: CMCartridgeRifle10x24mm
-  name: cartridge (10x24mm)
-  description: A 10x24mm cartridge. Fits in 10x24mm magazines.
+  name: картридж (10x24 мм)
+  description: Картридж с патроном калибра 10х24 мм. Устанавливается в магазины калибра 10х24 мм.
   components:
   - type: Tag
     tags:
@@ -26,8 +26,8 @@
 - type: entity
   parent: CMCartridgeRifle10x24mm
   id: CMCartridgeRifle10x24mmAP
-  name: AP cartridge (10x24mm)
-  description: An armor piercing 10x24mm cartridge. Fits in 10x24mm AP magazines.
+  name: картридж AP (10x24 мм)
+  description: Бронебойный патрон калибра 10х24 мм. Устанавливается в магазины 10x24 мм AP.
   components:
   - type: Tag
     tags:
@@ -39,8 +39,8 @@
 - type: entity
   parent: CMBaseCartridgeRifle
   id: RMCCartridgeRifleM4SPRA19
-  name: cartridge (A19 high-velocity)
-  description: A high-velocity A19 cartridge. Fits in M4SPR custom magazines.
+  name: картридж (A19 высокоскоростной)
+  description: Высокоскоростной патрон A19. Подходит к магазинам M4SPR.
   components:
   - type: Tag
     tags:

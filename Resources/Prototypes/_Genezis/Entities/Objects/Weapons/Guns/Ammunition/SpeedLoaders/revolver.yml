@@ -1,6 +1,6 @@
 - type: entity
   id: RMCBaseSpeedLoader44
-  name: "M44 speed loader (.44)"
+  name: M44 спидлоадер (.44)
   parent: BaseItem
   abstract: true
   components:
@@ -25,8 +25,8 @@
 - type: entity
   parent: RMCBaseSpeedLoader44
   id: RMCSpeedLoaderM44
-  name: "M44 speed loader (.44)"
-  description: A revolver speed loader.
+  name: M44 спидлоадер (.44)
+  description: Револьверный спидлоадер.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/SpeedLoaders/m44.rsi
@@ -47,8 +47,8 @@
 - type: entity
   parent: RMCBaseSpeedLoader44
   id: RMCSpeedLoader44Marksman
-  name: "M44 marksman speed loader (.44)"
-  description: A revolver speed loader filled with Marksman ammo.
+  name: M44 спидлоадер с стрелковыми патронами (.44)
+  description: Револьверный спидлоадер заряженный стрелковыми патронами.
   components:
   - type: Sprite
     sprite: _RMC14/Objects/Weapons/Guns/Ammunition/SpeedLoaders/m44.rsi

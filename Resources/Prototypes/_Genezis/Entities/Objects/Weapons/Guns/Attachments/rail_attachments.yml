@@ -12,8 +12,8 @@
 - type: entity
   parent: [ RMCRailAttachmentBase, RMCAttachableToggleableBase ]
   id: RMCAttachmentRailFlashlight
-  name: rail flashlight
-  description: A flashlight, for rails, on guns. Can be toggled on and off. A better light source than standard M3 pattern armor lights.
+  name: планочный фонарь
+  description: Фонарик для планки на оружие. Можно включать и выключать.
   components:
   - type: ToggleableLightVisuals
     spriteLayer: light
@@ -73,8 +73,8 @@
     iconActive:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/rail.rsi
       state: flashlight-on
-    actionName: Toggle Rail Flashlight
-    actionDesc: Can be toggled on and off. A better light source than standard M3 pattern armor lights.
+    actionName: Переключить планочный фонарь
+    actionDesc: Можно включать и выключать.
   - type: AttachableVisuals
     showActive: true
   - type: AttachableToggleableSimpleActivate
@@ -87,8 +87,8 @@
 - type: entity
   parent: RMCRailAttachmentBase
   id: RMCAttachmentMagneticHarness
-  name: magnetic harness
-  description: A magnetically attached harness kit that attaches to the rail mount of a weapon. When dropped, the weapon will sling to any set of Marine armor.
+  name: магнитные ремни
+  description: Магнитный комплект ремней, который крепится к рельсовому креплению оружия. При падении оружие прикрепляется к любому комплекту брони Триглава.
   components:
   - type: Sprite
     state: magnetic
@@ -105,8 +105,8 @@
 - type: entity
   parent: RMCRailAttachmentBase
   id: RMCAttachmentS5RedDotSight
-  name: S5 red-dot sight
-  description: An all-weather collimator sight, designated as the AN/PVQ-64 Dot Sight. Equipped with a sunshade to increase clarity in bright conditions and resist weathering. Compact and efficient, a marvel of military design, until you realize that this is actually just an off-the-shelf design that got a military designation slapped on.
+  name: прицел S5 с красной точкой
+  description: Всепогодный коллиматорный прицел, обозначаемый как AN/PVQ-64 Dot Sight. Оснащен солнцезащитным козырьком для повышения четкости изображения в ярких условиях и устойчивости к атмосферным воздействиям. Компактный и эффективный, чудо военного дизайна, пока вы не поймете, что на самом деле это просто готовая конструкция, на которую нанесли военное обозначение.
   components:
   - type: Sprite
     state: reddot
@@ -128,8 +128,8 @@
 - type: entity
   parent: RMCRailAttachmentBase
   id: RMCAttachmentS6ReflexSight
-  name: S6 reflex sight
-  description: An AEGIS S6 reflex sight. A zero-magnification alternative to iron sights with a more open optic window when compared to the S5 red-dot. Helps to reduce scatter during automated fire.
+  name: рефлекторный прицел S6
+  description: Рефлекторный прицел AEGIS S6 - это альтернатива железным прицелам. Имеет более открытым оптическим окном по сравнению с S5 red-dot. Помогает уменьшить рассеивание при автоматической стрельбе.
   components:
   - type: Sprite
     state: reflex
@@ -169,15 +169,15 @@
     icon:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/rail.rsi
       state: sniperscope
-    actionName: Look through Scope
-    actionDesc: Scope in. If you're seeing this, someone forgot to set the description properly.
+    actionName: Посмотреть в прицел
+    actionDesc: Если вы это видите значит кто-от забыл вставить описание.
   - type: AttachableToggleableSimpleActivate
 
 - type: entity
   parent: RMCAttachmentScopeBase
   id: RMCAttachmentS84xTelescopicScope
-  name: S8 4x telescopic scope
-  description: An AEGIS S8 telescopic eye piece. Fixed at 4x zoom.
+  name: телескопический прицел S8 4x
+  description: Телескопический прицел AEGIS S8. Фиксированное 4-кратное увеличение.
   components:
   - type: Sprite
     state: sniperscope
@@ -187,8 +187,8 @@
     - RMCAttachmentS84xTelescopicScope
   - type: AttachableVisuals
   - type: AttachableToggleable
-    actionName: Look through the S8 4x Telescopic Scope
-    actionDesc: An AEGIS S8 telescopic eye piece. Fixed at 4x zoom.
+    actionName: Посмотреть через оптический прицел S8 4x
+    actionDesc: Телескопический прицел AEGIS S8. Фиксированное 4-кратное увеличение.
   - type: AttachableToggleableSimpleActivate
     offset: 14
   - type: AttachableSpeedMods
@@ -219,8 +219,8 @@
 - type: entity
   parent: RMCAttachmentS84xTelescopicScope
   id: RMCAttachmentSlavicScope
-  name: 4x telescopic scope
-  description: Oppa! How did you get this off glorious Stalin weapon? Blyat, put back on and do job tovarish. Yankee is not shoot self no?
+  name: 4x оптический прицел
+  description: Оппа! Товарищь, зачем ты снял прицел с оружия? Бляха-муха, надень обратно и делай свое дело. Враги славян сами себя не убьют.
   components:
   - type: Sprite
     state: slavicscope
@@ -234,14 +234,14 @@
     icon:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/rail.rsi
       state: slavicscope
-    actionName: Look through the 4x Telescopic Scope
-    actionDesc: A slavic scope. Fixed at 4x zoom.
+    actionName: Посмотреть в 4х телескопический прицел
+    actionDesc: Славянский прицел. Фиксированный 4х зуме.
 
 - type: entity
   parent: RMCAttachmentScopeBase
   id: RMCAttachmentS42xTelescopicMiniscope
-  name: S4 2x telescopic mini-scope
-  description: An AEGIS S4 telescoping eye piece. Fixed at a modest 2x zoom.
+  name: S4 2x телескопический мини-прицел
+  description: телескопический прицел AEGIS S4. Фиксируется на скромном 2х зуме.
   components:
   - type: Sprite
     state: miniscope
@@ -255,8 +255,8 @@
     icon:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/rail.rsi
       state: miniscope
-    actionName: Look through the S4 2x Telescopic Mini-Scope
-    actionDesc: An AEGIS S4 telescoping eye piece. Fixed at a modest 2x zoom.
+    actionName: Посмотреть в телескопический мини-прицел S4 2x
+    actionDesc: Телескопический прицел AEGIS S4. Фиксируется на скромном 2х зуме.
   - type: AttachableToggleableSimpleActivate
     allowMovement: true
   - type: AttachableSpeedMods
@@ -286,8 +286,8 @@
 - type: entity
   parent: RMCAttachmentS42xTelescopicMiniscope
   id: RMCAttachmentS42xAdvancedTelescopicMiniscope
-  name: WeYa S4 2x advanced telescopic mini-scope
-  description: An AEGIS S4 telescoping eye piece, custom-tuned by WeYa scientists to be as ergonomic as possible.
+  name: продвинутый телескопический мини-прицел S4 2x
+  description: Телескопический прицел AEGIS S4, специально настроенный учеными Триглава для максимальной эргономичности.
   components:
   - type: Sprite
     state: miniscope-nsg23
@@ -299,16 +299,16 @@
     icon:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/rail.rsi
       state: miniscope-nsg23
-    actionName: Look through WeYa S4 2x Advanced Telescopic Mini-Scope
-    actionDesc: An AEGIS S4 telescoping eye piece, custom-tuned by WeYa scientists to be as ergonomic as possible.
+    actionName: Посмотреть в продвинутый телескопический мини-прицел S4 2x
+    actionDesc: Телескопический прицел AEGIS S4, специально настроенный учеными Триглава для максимальной эргономичности.
   - type: AttachableSpeedMods
     modifiers: []
 
 - type: entity
   parent: RMCAttachmentS42xTelescopicMiniscope
   id: RMCAttachmentMiniscopeHunting
-  name: 2x hunting mini-scope
-  description: This civilian-grade scope is a common sight on hunting rifles due to its cheap price and great optics. Fixed at a modest 2x zoom.
+  name: 2x охотничий мини-прицел
+  description: Этот прицел гражданского класса часто встречается на охотничьих винтовках благодаря своей дешевой цене и отличной оптике. Прицел имеет скромное 2-кратное увеличение.
   components:
   - type: Sprite
     state: huntingscope
@@ -322,14 +322,14 @@
     icon:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/rail.rsi
       state: huntingscope
-    actionName: Look through 2x Hunting Mini-Scope
-    actionDesc: This civilian-grade scope is a common sight on hunting rifles due to its cheap price and great optics. Fixed at a modest 2x zoom.
+    actionName: Посмотреть в охотничий мини-прицел 2x
+    actionDesc: Этот прицел гражданского класса часто встречается на охотничьих винтовках благодаря своей дешевой цене и отличной оптике. Прицел имеет скромное 2-кратное увеличение.
 
 - type: entity
   parent: RMCAttachmentS42xTelescopicMiniscope
   id: RMCAttachmentB8SmartScope
-  name: B8 smart-scope
-  description: An experimental B8 Smart-Scope. Based on the technologies used in the Smart Gun by AEGIS, this sight has integrated IFF systems. It can only attach to the M4SPR Battle Rifle. # TODO RMC14 and M44 Combat Revolver.
+  name: B8 умный-прицел
+  description: Экспериментальный «умный» прицел B8. Основанный на технологиях, использованных в Smart Gun компании AEGIS, этот прицел имеет встроенную систему IFF. Он может устанавливаться только на боевую винтовку M4SPR. # TODO RMC14 и боевой револьвер M44.
   components:
   - type: Sprite
     state: iffbarrel
@@ -342,8 +342,8 @@
     icon:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/rail.rsi
       state: huntingscope
-    actionName: Look through B8 Smart-Scope
-    actionDesc: Lets you see further and shoot through your fellow marines without harming them.
+    actionName: Посмотреть в B8 умный-прицел
+    actionDesc: Позволяет видеть дальше и стрелять сквозь своих товарищей по оружию, не причиняя им вреда.
   - type: AttachableIFF
   - type: AttachableWeaponRangedMods
     modifiers:
@@ -356,8 +356,8 @@
 - type: entity
   parent: RMCAttachmentScopeBase
   id: RMCM96SIntegratedScope
-  name: M96S integrated scope
-  description: This isn't supposed to come off the gun. How did you get it?
+  name: M96S интегрированный прицел
+  description: Вы не можете снять ИНТЕГРИРОВАННЫЙ прицел. Как вы его сняли то..?
   components:
   - type: Sprite
     state: m96s-scope
@@ -369,8 +369,8 @@
     icon:
       sprite: _RMC14/Objects/Weapons/Guns/Attachments/rail.rsi
       state: m96s-scope
-    actionName: Look through M96S Integrated Scope
-    actionDesc: Lets you see further.
+    actionName: Посмотреть в M96S интегрированный прицел
+    actionDesc: Позволяет видеть дальше.
 
 - type: Tag
   id: RMCAttachmentRail
