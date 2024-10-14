@@ -166,10 +166,16 @@ namespace Content.Shared.GameTicking
 
             public string Role;
 
-            [DataField, NonSerialized]
+            // SS220 Round End Titles begin
+            //[DataField, NonSerialized]
+            [DataField]
+            // SS220 Round End Titles end
             public string[] JobPrototypes;
 
-            [DataField, NonSerialized]
+            // SS220 Round End Titles begin
+            //[DataField, NonSerialized]
+            [DataField]
+            // SS220 Round End Titles end
             public string[] AntagPrototypes;
 
             public NetEntity? PlayerNetEntity;

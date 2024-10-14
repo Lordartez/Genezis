@@ -145,6 +145,20 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+        // SS220 Round End Titles begin
+        /// <summary>
+        /// This role will not be displayed in these department sections.
+        /// </summary>
+        [DataField]
+        public List<ProtoId<DepartmentPrototype>>? DepartmentsToIgnoreInTitles;
+
+        /// <summary>
+        /// If <see langword="true"/>, round end titles will not use name from this job.
+        /// </summary>
+        [DataField]
+        public bool DontUseNameForTitles;
+        // SS220 Round End Titles end
     }
 
     /// <summary>

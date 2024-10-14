@@ -9,6 +9,12 @@ public sealed partial class DepartmentPrototype : IPrototype
     public string ID { get; } = string.Empty;
 
     /// <summary>
+    /// The name LocId of the department that will be displayed in the various menus.
+    /// </summary>
+    [DataField(required: true)]
+    public LocId Name = string.Empty;
+
+    /// <summary>
     /// A description string to display in the character menu as an explanation of the department's function.
     /// </summary>
     [DataField(required: true)]
@@ -45,6 +51,20 @@ public sealed partial class DepartmentPrototype : IPrototype
     /// </summary>
     [DataField]
     public bool EditorHidden;
+
+    // SS220 Round End Titles begin
+    /// <summary>
+    /// Toggles the display of the department in the round end titles.
+    /// </summary>
+    [DataField]
+    public bool RoundEndTitlesHidden;
+
+    /// <summary>
+    /// Optional color that UI may use to make role label readable on dark background.
+    /// </summary>
+    [DataField]
+    public Color? LightColor;
+    // SS220 Round End Titles end
 }
 
 /// <summary>

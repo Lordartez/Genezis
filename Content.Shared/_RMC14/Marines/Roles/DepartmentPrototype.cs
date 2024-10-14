@@ -23,4 +23,9 @@ public sealed partial class DepartmentPrototype : IInheritingPrototype, ICMSpeci
 
     [DataField]
     public bool Hidden;
+
+    public static implicit operator int(DepartmentPrototype v)
+    {
+        throw new NotImplementedException();
+    }
 }
