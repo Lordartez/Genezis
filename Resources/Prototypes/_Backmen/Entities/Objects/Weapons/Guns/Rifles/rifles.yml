@@ -1,42 +1,42 @@
 - type: entity
-  noSpawn: true
-  parent: WeaponAKMSRifle
-  id: WeaponAKMSRifleAI
+  name: AUG
+  parent: BaseWeaponRifle
+  id: WeaponRifleAUG
+  suffix: Автомат
+  description: A bullpup rifle used as a reserve assault rifle for the UEG. It has a built-in handguard and sight for increased accuracy and reduced recoil. Chambered for .25 rifle cartridge.
   components:
-  - type: ChamberMagazineAmmoProvider
-    boltClosed: null
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/aug/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/aug/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/aug/tiny.rsi
+  - type: BkmGunWieldBonus
+    cameraRecoilScalar: -4.5
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: 0
+    angleIncrease: -6
+  - type: Gun
+    angleDecay: 60
+    angleIncrease: 8
+    cameraRecoilScalar: 5
+    minAngle: 24
+    maxAngle: 45
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/famas.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightRifleAI
-        insertSound: /Audio/Weapons/Guns64/Rifles/ak47_reload.ogg
-        ejectSound: /Audio/Weapons/Guns64/Rifles/ak47_unload.ogg
-        priority: 2
-        whitelist:
-          tags:
-            - MagazineLightRifle
-      gun_chamber:
-        name: Chamber
-        startingItem: CartridgeCaselessRifle
-        priority: 1
-        whitelist:
-          tags:
-            - CartridgeCaselessRifle
-
-- type: entity
-  suffix: Дисковый
-  parent: WeaponRifleM28Tactical
-  id: WeaponRifleLecterPan
-  description: Первоклассная армейская штурмовая винтовка. Использует патроны калибра .20 винтовочный.
-  components:
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: MagazineRiflePan
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns64/Rifles/m16_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/m16_unload.ogg
         priority: 2
         whitelist:
           tags:
@@ -48,27 +48,136 @@
         whitelist:
           tags:
             - CartridgeRifle
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1
+  - type: Telescope # Ataraxia
 
 - type: entity
-  suffix: Зажигательные
-  parent: WeaponRifleG36
-  id: WeaponRifleLecterFire
+  name: SCARAB
+  parent: BaseWeaponRifle
+  id: WeaponRifleSCARAB
+  suffix: Автомат
+  description: The Mk.21 Superior Combat Assault Rifle is a light specialized scout rifle, mostly used by light infantry and scouts. It's designed to be useable at all ranges by being very adaptable to different situations due.
   components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/scar/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/scar/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/scar/tiny.rsi
+  - type: BkmGunWieldBonus
+    cameraRecoilScalar: -4
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: 0
+    angleIncrease: -7
+  - type: Gun
+    angleDecay: 50
+    angleIncrease: 10
+    cameraRecoilScalar: 5
+    minAngle: 24
+    maxAngle: 45
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Rifles/T64.ogg
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineRifleFire
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns64/Rifles/m4ra_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/m4ra_unload.ogg
         priority: 2
         whitelist:
           tags:
             - MagazineRifle
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeRifleFire
+        startingItem: CartridgeRifle
         priority: 1
         whitelist:
           tags:
             - CartridgeRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.5
+
+- type: entity
+  name: UTAP Mark 1
+  parent: BaseWeaponRifle
+  id: WeaponRifleUTAPM1
+  suffix: Автомат
+  description: Штурмовая винтовка производства "Interdyne", облегченный вариант Марк 2, используется зачастую частными охранными организациями.
+  components:
+  - type: Sprite
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/utap-mark1/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/utap-mark1/tiny.rsi
+  - type: Item
+    sprite: Backmen/Objects/Weapons/Gunsx64/Rifles/utap-mark1/tiny.rsi
+  - type: BkmGunWieldBonus
+    cameraRecoilScalar: -4.5
+  - type: GunWieldBonus
+    minAngle: -23
+    maxAngle: 0
+    angleIncrease: -6
+  - type: Gun
+    fireRate: 6
+    angleDecay: 60
+    angleIncrease: 8
+    cameraRecoilScalar: 5
+    minAngle: 24
+    maxAngle: 45
+    soundGunshot:
+      path: /Audio/Weapons/Guns64/Snipers/garand.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineRifle
+        insertSound: /Audio/Weapons/Guns64/Rifles/m4ra_reload.ogg
+        ejectSound: /Audio/Weapons/Guns64/Rifles/m4ra_unload.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeRifle
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Wieldable
+  - type: UseDelay
+    delay: 1

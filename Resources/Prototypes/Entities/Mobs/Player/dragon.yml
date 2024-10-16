@@ -178,6 +178,9 @@
     soundEmpty: null
     projectileSpeed: 5
 
+  - type: Puller
+    needsHands: false
+
 - type: entity
   parent: BaseMobDragon
   id: MobDragonDungeon

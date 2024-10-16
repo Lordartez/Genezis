@@ -251,7 +251,7 @@ public abstract partial class SharedBuckleSystem
             return false;
         }
 
-        if (buckleComp.Buckled)
+        if (buckleComp.Buckled && !TryUnbuckle(buckleUid, user, buckleComp))
         {
             if (_netManager.IsClient || popup || user == null)
                 return false;

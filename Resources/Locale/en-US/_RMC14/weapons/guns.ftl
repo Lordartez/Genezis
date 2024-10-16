@@ -9,16 +9,16 @@ rmc-breech-loaded-open-shoot-attempt = Сначала нужно закрыть 
 rmc-breech-loaded-not-ready-to-shoot = Сначала нужно открыть и закрыть затвор!
 rmc-breech-loaded-closed-load-attempt = Сначала нужно открыть затвор!
 
-rmc-wield-use-delay = Вам нужно подождать {$seconds} секунд перед тем как взять в обе руки {THE($wieldable)}!
-rmc-shoot-use-delay = Вам нужно подождать {$seconds} секунд перед тем как начать стрелять {THE($wieldable)}!
+rmc-wield-use-delay = Вам нужно подождать {$seconds} секунд перед тем как взять в обе руки {$wieldable}!
+rmc-shoot-use-delay = Вам нужно подождать {$seconds} секунд перед тем как начать стрелять {$wieldable}!
 
 rmc-shoot-harness-required = Требуется ремни.
 rmc-wear-smart-gun-required = Вам нужно иметь снаряжение с поддержкой умного-оружия для этого.
 
 rmc-revolver-spin = Вы вращаете цилиндр.
 
-rmc-examine-text-scatter-max = Текущий максимальный разброс составляет [color={$colour}]{TOSTRING($scatter, "F1")}[/color] градусов.
-rmc-examine-text-scatter-min = Текущий минимальный разброс составляет [color={$colour}]{TOSTRING($scatter, "F1")}[/color] градусов.
+rmc-examine-text-scatter-max = Текущий максимальный разброс составляет [color={$colour}]{$scatter}[/color] градуса.
+rmc-examine-text-scatter-min = Текущий минимальный разброс составляет [color={$colour}]{$scatter}[/color] градуса.
 rmc-examine-text-shots-to-max-scatter = Вам потребуется [color={$colour}]{$shots}[/color] выстрелов для достижения максимального разброса.
 rmc-examine-text-iff = [color=cyan]Это оружие будет игнорировать союзников и стрелять мимо них![/color]
 

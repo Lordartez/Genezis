@@ -63,6 +63,11 @@
      Plastic: 300
 
 - type: latheRecipe
+  parent: BaseCheapElectronicsRecipe
+  id: FreezerElectronics
+  result: FreezerElectronics
+
+- type: latheRecipe
   id: AirAlarmElectronics
   result: AirAlarmElectronics
   category: Circuitry

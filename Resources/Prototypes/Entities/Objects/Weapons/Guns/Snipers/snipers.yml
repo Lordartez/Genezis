@@ -37,6 +37,7 @@
         ents: []
   - type: StaticPrice
     price: 500
+  - type: Telescope # WD EDIT
 
 - type: entity
   name: Kardashev-Mosin

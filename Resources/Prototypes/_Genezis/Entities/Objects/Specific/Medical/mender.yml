@@ -8,8 +8,7 @@
     sprite: /Genezis/Objects/Specific/Medical/hypo.rsi
     state: hypo
   - type: Item
-    sprite: /Genezis/Objects/Specific/Medical/hypo.rsi
-    size: Normal
+    size: Small
   - type: SolutionContainerManager
     solutions:
       hypospray:
@@ -36,8 +35,7 @@
     sprite: /Genezis/Objects/Specific/Medical/hypomend.rsi
     state: hypo
   - type: Item
-    sprite: /Genezis/Objects/Specific/Medical/hypomend.rsi
-    size: Normal
+    size: Small
   - type: SolutionContainerManager
     solutions:
       hypospray:

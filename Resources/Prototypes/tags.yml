@@ -1368,5 +1368,8 @@
 - type: Tag
   id: GatewayChip
 
+- type: Tag
+  id: FreezerElectronics
+
 
 # ALPHABETICAL
