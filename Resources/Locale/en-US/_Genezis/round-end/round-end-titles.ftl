@@ -1,7 +1,6 @@
 round-end-titles-round-id-template = Episode { $roundId }
 round-end-titles-gamemode-template = "{ $gamemode }"
 round-end-titles-roles-header = Cast
-round-end-titles-sponsors-header = Sponsors
 round-end-titles-antag-section = Antagonists
 round-end-titles-observers-section = Observers
 round-end-titles-observer-role = Observer

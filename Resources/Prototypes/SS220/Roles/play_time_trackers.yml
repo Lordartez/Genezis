@@ -1,53 +1,57 @@
 - type: playTimeTracker
-  id: JobCentralCommandOperator
+  id: JobGhostRole
 
 - type: playTimeTracker
-  id: JobCentralCommandSecGavna
+  id: AdminTime
 
 - type: playTimeTracker
-  id: JobCentralCommandSecOfficer
+  id: AGhostTime
 
 - type: playTimeTracker
-  id: JobCentralCommandCargo
+  id: ObserverTime
 
 - type: playTimeTracker
-  id: JobCentralCommandAssistant
+  id: EventRole
 
 - type: playTimeTracker
-  id: JobBrigmedic
+  id: JobMagistrate
 
 - type: playTimeTracker
-  id: BPLATech
+  id: JobSeniorEngineer
 
 - type: playTimeTracker
-  id: BPLAMED
+  id: JobSeniorOfficer
 
 - type: playTimeTracker
-  id: JobCentralCommandAdmiral
+  id: JobSeniorPhysician
 
 - type: playTimeTracker
-  id: JobDeliveryman
+  id: JobSeniorResearcher
 
 - type: playTimeTracker
-  id: JobPrisoner
+  id: JobSeniorService
 
 - type: playTimeTracker
-  id: JobFugitive
+  id: Prisoner
+
+# Antags
+- type: playTimeTracker
+  id: AntagNukeops
 
 - type: playTimeTracker
-  id: JobStudent
+  id: AntagNukeopsMedic
 
 - type: playTimeTracker
-  id: JobExplorer
+  id: AntagNukeopsCommander
 
 - type: playTimeTracker
-  id: JobFreelancerGear
+  id: AntagHeadRev
 
 - type: playTimeTracker
-  id: JobSAI
+  id: AntagTraitor
 
 - type: playTimeTracker
-  id: JobSAIShip
+  id: AntagThief
 
 - type: playTimeTracker
-  id: JobRoboticist
+  id: AntagInitialInfected

@@ -476,6 +476,36 @@
   - type: Sprite
     state: butter
 
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Butter
+          Quantity: 15
+  - type: SliceableFood
+    count: 3
+    slice: FoodButterSlice
+
+- type: entity
+  name: кусочек масла
+  parent: FoodBakingBase
+  id: FoodButterSlice
+  description: Вкусный, золотистый, жирный кусочек масла.
+  components:
+  - type: Sprite
+    state: butter-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Butter
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Slice
+
 - type: entity
   name: stick of cannabis butter
   parent: FoodBakingBase

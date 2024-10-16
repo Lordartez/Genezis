@@ -457,7 +457,7 @@
   time: 5
   solids:
     FoodBreadPlainSlice: 1
-    FoodButter: 1
+    FoodButterSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeFrenchToast
@@ -478,7 +478,7 @@
   solids:
     FoodBreadPlainSlice: 1
     FoodGarlic: 1
-    FoodButter: 1
+    FoodButterSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeJellyToast
@@ -601,7 +601,7 @@
     Flour: 15
     Egg: 6
   solids:
-    FoodButter: 1
+    FoodButterSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipePastaTomato
@@ -628,7 +628,7 @@
   time: 10
   solids:
     FoodNoodlesBoiled: 1
-    FoodButter: 1
+    FoodButterSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeChowMein
@@ -1215,7 +1215,7 @@
     Flour: 5
     Sugar: 5
   solids:
-    FoodButter: 1
+    FoodButterSlice: 1
     FoodSnackChocolateBar: 1
 
 - type: microwaveMealRecipe
@@ -1227,7 +1227,7 @@
     Flour: 5
     Sugar: 10
   solids:
-    FoodButter: 1
+    FoodButterSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeRaisinCookie
@@ -1249,7 +1249,7 @@
     Oats: 5
     Sugar: 5
   solids:
-    FoodButter: 1
+    FoodButterSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipeChocolateChipPancake
@@ -1447,7 +1447,7 @@
     Flour: 15
     Sugar: 30
   solids:
-    FoodButter: 2
+    FoodButterSlice: 2
     FoodSnackChocolateBar: 2
     FoodEgg: 3
 
@@ -1875,7 +1875,7 @@
   result: FoodCannabisButter
   time: 15
   solids:
-    FoodButter: 1
+    FoodButterSlice: 1
     LeavesCannabis: 6
 
 - type: microwaveMealRecipe
@@ -1899,7 +1899,7 @@
   solids:
     FoodCorn: 1
     FoodPlate: 1
-    FoodButter: 1
+    FoodButterSlice: 1
 
 - type: microwaveMealRecipe
   id: RecipePeaSoup

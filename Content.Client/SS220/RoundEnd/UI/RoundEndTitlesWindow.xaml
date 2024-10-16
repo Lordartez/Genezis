@@ -26,11 +26,6 @@
 
             </BoxContainer>
 
-            <Label Text="{Loc 'round-end-titles-sponsors-header'}" StyleClasses="RoundEndTitlesHeader1" HorizontalAlignment="Center" Margin="0 8 0 8" />
-            <BoxContainer Name="SponsorsContainer" Orientation="Vertical" HorizontalExpand="True">
-
-            </BoxContainer>
-
             <Label Text="{Loc 'round-end-titles-thanks-for-playing'}" StyleClasses="RoundEndTitlesHeader1" HorizontalAlignment="Center" Margin="0 64 0 128" />
         </BoxContainer>
     </roundend:RoundEndTitlesWindowScrollContainer>

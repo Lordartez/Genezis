@@ -1,5 +1,6 @@
 - type: department
   id: CentCom
+  name: department-Centcom
   description: department-CentCom-description
   color: "#13db0f"
   primary: true
@@ -15,7 +16,21 @@
   accountNumber: 1350  #backmen: currency
 
 - type: department
+  id: Shipwrecked
+  name: department-Shipwrecked
+  description: department-Shipwrecked-description
+  color: "#191e9e"
+  roles:
+    - SAIShip
+    - Freelancer
+    - Explorer
+    - Student
+  accountNumber: 1359  #backmen: currency
+
+
+- type: department
   id: Silicons
+  name: department-Silicons
   description: department-Silicons-description
   color: "#191e9e"
   primary: true

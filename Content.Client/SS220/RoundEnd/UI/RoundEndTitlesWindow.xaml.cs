@@ -249,32 +249,43 @@ public sealed partial class RoundEndTitlesWindow : BaseWindow
 
     private void DisplayWorkers(IReadOnlyList<PlayerInfo> players)
     {
-        var departments = _prototypeManager.GetInstances<DepartmentPrototype>();
+        var departments = _prototypeManager.GetInstances<DepartmentPrototype>().Values.ToList(); // Получаем значения и преобразуем в список
         var jobs = _prototypeManager.GetInstances<JobPrototype>();
 
         var jobColors = new Dictionary<JobPrototype, Color>();
         var departmentsWorkers = new Dictionary<DepartmentPrototype, List<WorkerInfo>>();
-        foreach (var department in departments.OrderBy(x => x.Value.Sort))
+
+        // Сортируем департаменты по свойству Sort
+
+        foreach (var department in departments)
         {
             if (department.RoundEndTitlesHidden)
                 continue;
+
             var departmentWorkers = new List<WorkerInfo>();
-            departmentsWorkers.Add(department, departmentWorkers);
+            departmentsWorkers[department] = departmentWorkers; // Используем индексатор для добавления в словарь
+
             foreach (var jobPrototypeId in department.Roles)
             {
-                var job = jobs[jobPrototypeId];
+                if (!jobs.TryGetValue(jobPrototypeId, out var job)) // Проверяем наличие работы
+                    continue;
+
                 jobColors.TryAdd(job, department.LightColor ?? department.Color);
                 if (job.DepartmentsToIgnoreInTitles?.Contains(department.ID) ?? false)
                     continue;
+
                 foreach (var player in players)
                 {
                     if (!player.JobPrototypes.Contains(jobPrototypeId.Id))
                         continue;
-                    departmentWorkers.Add(new(player, job));
+
+                    departmentWorkers.Add(new WorkerInfo(player, job));
                 }
             }
+
             departmentWorkers.Sort((a, b) => b.Job.RealDisplayWeight.CompareTo(a.Job.RealDisplayWeight));
         }
+
         foreach (var (department, workers) in departmentsWorkers.OrderByDescending(x => x.Key.Weight))
         {
             CreateDepartment(department, workers, jobColors);
