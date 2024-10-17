@@ -1,6 +1,9 @@
 ﻿zombie-title = Zombies
 zombie-description = The undead have been unleashed on the station! Work with the crew to survive the outbreak and secure the station.
 
+zombieteors-title = Зомбитеоры
+zombieteors-description = На военном объекте Триглава во время катаклизмического метеоритного дождя появилась нежить! Работайте вместе с членами персонала и сделайте все возможное, чтобы выжить!
+
 zombie-not-enough-ready-players = Not enough players readied up for the game! There were {$readyPlayersCount} players readied up out of {$minimumPlayers} needed. Can't start Zombies.
 zombie-no-one-ready = No players readied up! Can't start Zombies.
 

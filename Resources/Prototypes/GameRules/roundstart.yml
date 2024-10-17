@@ -261,12 +261,16 @@
   parent: BaseGameRule
   components:
   - type: BasicStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTable
 
 - type: entity
   id: RampingStationEventScheduler
   parent: BaseGameRule
   components:
   - type: RampingStationEventScheduler
+    scheduledGameRules: !type:NestedSelector
+      tableId: BasicGameRulesTable
 
 # variation passes
 - type: entity
