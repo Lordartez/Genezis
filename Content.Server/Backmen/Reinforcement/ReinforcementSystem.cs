@@ -1,9 +1,10 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Backmen.Reinforcement.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
+using Content.Shared.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Raffles;
 using Content.Server.Mind;
@@ -187,10 +188,6 @@ public sealed class ReinforcementSystem : SharedReinforcementSystem
         var ev = new PlayerSpawnCompleteEvent(mob, args.Player, args.Proto.Job, true, 0, station.Value, character);
         RaiseLocalEvent(ev);
 
-        EnsureComp<GhostRoleComponent>(ent).Taken = true;
-        args.Row.Name = Name(mob);
-        args.Row.Owner = mob;
-
         UpdateUserInterface(ent.Comp.Linked);
         QueueDel(ent);
     }
@@ -297,12 +294,6 @@ public sealed class ReinforcementSystem : SharedReinforcementSystem
             ghost.RoleDescription = Loc.GetString("reinforcement-ghostrole-desc", ("job", Loc.GetString(job.Name)));
             ghost.RoleRules = Loc.GetString("reinforcement-ghostrole-rule", ("brief", ent.Comp.Brief));
 
-            if (job.Requirements != null)
-            {
-                ghost.Requirements = new HashSet<JobRequirement>(job.Requirements);
-            }
-
-            ghost.WhitelistRequired = job.Whitelisted;
         }
 
         UpdateUserInterface(ent);

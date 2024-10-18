@@ -206,6 +206,15 @@ ghost-role-information-syndicate-reinforcement-name = Syndicate Agent
 ghost-role-information-syndicate-reinforcement-description = Someone needs reinforcements. You, the first person the syndicate could find, will help them.
 ghost-role-information-syndicate-reinforcement-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with the agent who summoned you.
 
+
+ghost-role-information-syndicate-reinforcement-medic-name = Медик синдиката
+ghost-role-information-syndicate-reinforcement-medic-description = Кто-то запрашивает подкрепление! Ваша задача не дать умереть тому кто вас вызвал.
+ghost-role-information-syndicate-reinforcement-spy-name = Шпион синдиката
+ghost-role-information-syndicate-reinforcement-spy-description = Кто-то запрашивает подкрепление! Ваша задача вызнать всё, что нужно вашему заказчику.
+ghost-role-information-syndicate-reinforcement-thief-name = Вор синидката
+ghost-role-information-syndicate-reinforcement-thief-description = Кто-то запрашивает подкрепление! Ваша задача принести всё то, что запросит заказчик.
+
+
 ghost-role-information-syndicate-monkey-reinforcement-name = Syndicate Monkey Agent
 ghost-role-information-syndicate-monkey-reinforcement-description = Someone needs reinforcements. You, a trained monkey, will help them.
 ghost-role-information-syndicate-monkey-reinforcement-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with the agent who summoned you.

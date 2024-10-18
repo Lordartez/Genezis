@@ -4,12 +4,19 @@
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
   requirements:
+    - !type:AgeRequirement
+      requiredAge: 40
+    - !type:SpeciesRequirement
+      inverted: true
+      species:
+      - Vox
+      - Diona
     - !type:OverallPlaytimeRequirement
       time: 36000 #10 hrs # Corvax-RoleTime
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 72000 #20 hrs # Corvax-RoleTime
-      inverted: true # stop playing intern if you're good at security!
+    # - !type:DepartmentTimeRequirement
+      # department: Security
+      # time: 72000 #20 hrs # Corvax-RoleTime
+      # inverted: true # stop playing intern if you're good at security!
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security

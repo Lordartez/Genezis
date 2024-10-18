@@ -128,7 +128,8 @@ uplink-reinforcement-radio-ancestor-name = Genetic Ancestor Reinforcement Telepo
 uplink-reinforcement-radio-ancestor-desc =  Call in a trained ancestor of your choosing to assist you. Comes with a single syndicate cigarette.
 
 uplink-reinforcement-radio-name = Reinforcement Teleporter
-uplink-reinforcement-radio-desc =  Radio in a reinforcement agent of extremely questionable quality. No off button, buy this if you're ready to party. They have a pistol with no reserve ammo, and a knife. That's it.
+uplink-reinforcement-radio-traitor-desc =  Радио вызова подкрепления крайне сомнительного качества. Кнопка выключения отсутствует, покупайте его, если готовы веселиться. Вызовите медика, шпиона или вора, чтобы они помогли вам. Удачи.
+uplink-reinforcement-radio-nukeops-desc =  Радио вызова подкрепления крайне сомнительного качества. Нет кнопки выключения, покупайте его, если готовы веселиться. У подкрепления есть пистолет без резервных патронов и нож. Вот и все.
 
 uplink-reinforcement-radio-cyborg-assault-name = Syndicate Assault Cyborg Teleporter
 uplink-reinforcement-radio-cyborg-assault-desc =  A lean, mean killing machine with access to an Energy Sword, LMG, Cryptographic Sequencer, and a Pinpointer.

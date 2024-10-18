@@ -85,12 +85,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             var requirementsManager = IoCManager.Resolve<JobRequirementsManager>();
 
             var groupedRoles = ghostState.GhostRoles.GroupBy(
-                role => (role.Name, role.Description, role.Requirements, role.WhitelistRequired)); //backmen: whitelist
-
-            //start-backmen: whitelist
-            var cfg = IoCManager.Resolve<Robust.Shared.Configuration.IConfigurationManager>();
-            //end-backmen: whitelist
-
+                role => (role.Name, role.Description, role.Requirements));
             foreach (var group in groupedRoles)
             {
                 var name = group.Key.Name;
@@ -98,18 +93,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
                 bool hasAccess = true;
                 FormattedMessage? reason;
 
-                //start-backmen: whitelist
-                if (
-                    group.Key.WhitelistRequired &&
-                    cfg.GetCVar(Shared.Backmen.CCVar.CCVars.WhitelistRolesEnabled) &&
-                    !requirementsManager.IsWhitelisted()
-                    )
-                {
-                    hasAccess = false;
-                    reason = FormattedMessage.FromMarkup(Loc.GetString("playtime-deny-reason-not-whitelisted"));
-                } else
-                //end-backmen: whitelist
-                if (!requirementsManager.CheckRoleTime(group.Key.Requirements, out reason))
+                if (!requirementsManager.CheckRoleRequirements(group.Key.Requirements, null, out reason))
                 {
                     hasAccess = false;
                 }

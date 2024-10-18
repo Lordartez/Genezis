@@ -57,7 +57,6 @@
 - type: entity
   id: RandomHumanoidSpawnerERTLeader
   name: ERT leader
-  noSpawn: true
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -81,8 +80,10 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGear ]
+      roleLoadout: [ RoleSurvivalExtended ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitaryLeader
@@ -92,7 +93,6 @@
   id: RandomHumanoidSpawnerERTLeaderEVA
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT leader
-  noSpawn: true
   suffix: ERTRole, Armored EVA
   components:
     - type: Sprite
@@ -111,13 +111,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
+      roleLoadout: [ RoleSurvivalEVA ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVALecter
   parent: RandomHumanoidSpawnerERTLeaderEVA
-  noSpawn: true
   suffix: ERTRole, Lecter, EVA
   components:
     - type: RandomHumanoidSpawner
@@ -133,8 +134,10 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTLeader
     - type: Loadout
       prototypes: [ ERTLeaderGearEVALecter ]
+      roleLoadout: [ RoleSurvivalEVA ]
 
 ## ERT Chaplain
 
@@ -164,12 +167,15 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTChaplain
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
+      roleLoadout: [ RoleSurvivalExtended ]
+    - type: BibleUser
 
 - type: entity
   id: RandomHumanoidSpawnerERTChaplainEVA
@@ -193,8 +199,11 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTChaplain
     - type: Loadout
       prototypes: [ ERTChaplainGearEVA ]
+      roleLoadout: [ RoleSurvivalEVA ]
+    - type: BibleUser
 
 ## ERT Janitor
 
@@ -202,7 +211,6 @@
   id: RandomHumanoidSpawnerERTJanitor
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT janitor
-  noSpawn: true
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -225,18 +233,19 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTJanitor
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
+      roleLoadout: [ RoleSurvivalExtended ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTJanitorEVA
   parent: RandomHumanoidSpawnerERTJanitor
   name: ERT janitor
-  noSpawn: true
   suffix: ERTRole, Enviro EVA
   components:
     - type: Sprite
@@ -255,8 +264,10 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTJanitor
     - type: Loadout
       prototypes: [ ERTJanitorGearEVA ]
+      roleLoadout: [ RoleSurvivalEVA ]
 
 ## ERT Engineer
 
@@ -264,7 +275,6 @@
   id: RandomHumanoidSpawnerERTEngineer
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT engineer
-  noSpawn: true
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -287,18 +297,19 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTEngineer
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
+      roleLoadout: [ RoleSurvivalExtended ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTEngineerEVA
   parent: RandomHumanoidSpawnerERTEngineer
   name: ERT engineer
-  noSpawn: true
   suffix: ERTRole, Enviro EVA
   components:
     - type: Sprite
@@ -317,8 +328,10 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTEngineer
     - type: Loadout
       prototypes: [ ERTEngineerGearEVA ]
+      roleLoadout: [ RoleSurvivalEVA ]
 
 ## ERT Security
 
@@ -326,7 +339,6 @@
   id: RandomHumanoidSpawnerERTSecurity
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT security
-  noSpawn: true
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -341,8 +353,6 @@
 
 - type: randomHumanoidSettings
   id: ERTSecurity
-  speciesBlacklist: # Corvax-MRP
-    - Diona
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -351,18 +361,19 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTSecurity
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
+      roleLoadout: [ RoleSurvivalExtended ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVA
   parent: RandomHumanoidSpawnerERTSecurity
   name: ERT security
-  noSpawn: true
   suffix: ERTRole, Armored EVA
   components:
     - type: Sprite
@@ -381,13 +392,14 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTSecurity
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
+      roleLoadout: [ RoleSurvivalEVA ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVALecter
   parent: RandomHumanoidSpawnerERTSecurityEVA
-  noSpawn: true
   suffix: ERTRole, Lecter, EVA
   components:
     - type: RandomHumanoidSpawner
@@ -403,8 +415,10 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTSecurity
     - type: Loadout
       prototypes: [ ERTSecurityGearEVALecter ]
+      roleLoadout: [ RoleSurvivalEVA ]
 
 ## ERT Medic
 
@@ -412,7 +426,6 @@
   id: RandomHumanoidSpawnerERTMedical
   parent: RandomHumanoidSpawnerERTLeader
   name: ERT medic
-  noSpawn: true
   suffix: ERTRole, Basic
   components:
     - type: Sprite
@@ -435,18 +448,19 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTMedical
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
+      roleLoadout: [ RoleSurvivalExtended ]
 
 - type: entity
   id: RandomHumanoidSpawnerERTMedicalEVA
   parent: RandomHumanoidSpawnerERTMedical
   name: ERT medic
-  noSpawn: true
   suffix: ERTRole, Armored EVA
   components:
     - type: Sprite
@@ -465,8 +479,10 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
+      job: ERTMedical
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
+      roleLoadout: [ RoleSurvivalEVA ]
 
 ## CBURN
 

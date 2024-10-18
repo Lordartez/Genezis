@@ -16,7 +16,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
-using Content.Shared.Mood;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -30,7 +29,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     [Dependency] private readonly MindSystem _mindSystem = default!;
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly SharedJobSystem _jobs = default!;
-    [Dependency] private readonly ObjectivesSystem _objectives = default!;
 
     public override void Initialize()
     {
@@ -44,7 +42,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     protected override void Added(EntityUid uid, TraitorRuleComponent component, GameRuleComponent gameRule, GameRuleAddedEvent args)
     {
         base.Added(uid, component, gameRule, args);
-        MakeCodewords(component);
+        SetCodewords(component);
     }
 
     private void AfterEntitySelected(Entity<TraitorRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
@@ -52,17 +50,23 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         MakeTraitor(args.EntityUid, ent);
     }
 
-    private void MakeCodewords(TraitorRuleComponent component)
+    private void SetCodewords(TraitorRuleComponent component)
+    {
+        component.Codewords = GenerateTraitorCodewords(component);
+    }
+
+    public string[] GenerateTraitorCodewords(TraitorRuleComponent component)
     {
         var adjectives = _prototypeManager.Index(component.CodewordAdjectives).Values;
         var verbs = _prototypeManager.Index(component.CodewordVerbs).Values;
         var codewordPool = adjectives.Concat(verbs).ToList();
         var finalCodewordCount = Math.Min(component.CodewordCount, codewordPool.Count);
-        component.Codewords = new string[finalCodewordCount];
+        string[] codewords = new string[finalCodewordCount];
         for (var i = 0; i < finalCodewordCount; i++)
         {
-            component.Codewords[i] = _random.PickAndTake(codewordPool);
+            codewords[i] = _random.PickAndTake(codewordPool);
         }
+        return codewords;
     }
 
     public bool MakeTraitor(EntityUid traitor, TraitorRuleComponent component, bool giveUplink = true)

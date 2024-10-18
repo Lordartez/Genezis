@@ -24,7 +24,7 @@
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   minBankBalance: 150
-  maxBankBalance: 250
+  maxBankBalance: 350
   wageDepartment: Cargo
   wage: 50
 

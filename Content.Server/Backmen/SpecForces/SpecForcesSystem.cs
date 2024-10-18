@@ -17,6 +17,7 @@ using Content.Server.Actions;
 using Content.Server.Backmen.Blob.Components;
 using Content.Server.Backmen.Blob.Rule;
 using Content.Server.Backmen.GameTicking.Rules.Components;
+using Content.Shared.Ghost.Roles.Components;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.RandomMetadata;
 using Content.Shared.Backmen.CCVar;
