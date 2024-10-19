@@ -165,6 +165,16 @@ public sealed class CCVars
 
 
     /*
+     * Ghost Respawn
+     */
+
+    public static readonly CVarDef<float> GhostRespawnTime =
+        CVarDef.Create("ghost.respawn_time", 10f, CVar.SERVER | CVar.REPLICATED);
+
+    public static readonly CVarDef<int> GhostRespawnMaxPlayers =
+        CVarDef.Create("ghost.respawn_max_players", 100, CVar.SERVERONLY);
+
+    /*
      * enabling a roll to enter a ghost role for one player from the vote
      */
     public static readonly CVarDef<bool>

@@ -450,6 +450,7 @@
     - !type:GroupSelector
       weight: 2
       children:
+      - id: SpectralLocator      
       - !type:EntSelector
         id: LanternFlash
       - !type:EntSelector

@@ -146,6 +146,7 @@
        - id: ClothingUniformJumpsuitChaplain
        - id: ClothingShoesColorBlack
        - id: ClothingUniformJumpskirtChaplain
+       - id: SpectralLocatorUnpowered
 
  - type: entity
    id: WardrobeSecurityFilled

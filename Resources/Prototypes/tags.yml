@@ -1371,5 +1371,7 @@
 - type: Tag
   id: FreezerElectronics
 
+- type: Tag
+  id: Ring
 
 # ALPHABETICAL

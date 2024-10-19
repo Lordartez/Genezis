@@ -1,0 +1,104 @@
+- type: entity
+  parent: RingBase
+  id: GoldRing
+  name: золотое кольцо
+  description: Драгоценное кольцо.
+  components:
+    - type: Sprite
+      sprite: Clothing/Hands/Rings/basic.rsi
+      layers:
+        - state: ring
+          color: "#ffc833"
+    - type: StaticPrice
+      price: 300
+    - type: Appearance
+
+- type: entity
+  parent: RingBase
+  id: SilverRing
+  name: серебряное кольцо
+  description: Выглядит чуть менее ценным, чем золотое.
+  components:
+    - type: Sprite
+      sprite: Clothing/Hands/Rings/basic.rsi
+      layers:
+        - state: ring
+    - type: StaticPrice
+      price: 275
+    - type: Appearance
+
+- type: entity
+  parent: RingBase
+  id: GoldRingDiamond
+  name: золотое кольцо с бриллиантом
+  description: Изготовлено из этично добытых алмазов.
+  components:
+    - type: Sprite
+      sprite: Clothing/Hands/Rings/basic.rsi
+      layers:
+        - state: ring
+          color: "#ffc833"
+        - state: gem
+          color: "#c1ffff"
+    - type: StaticPrice
+      price: 1500
+    - type: Appearance
+
+- type: entity
+  parent: RingBase
+  id: SilverRingDiamond
+  name: серебряное кольцо с бриллиантом
+  description: Изготовлено из этично добытых алмазов.
+  components:
+    - type: Sprite
+      sprite: Clothing/Hands/Rings/basic.rsi
+      layers:
+        - state: ring
+        - state: gem
+          color: "#c1ffff"
+    - type: StaticPrice
+      price: 1400
+    - type: Appearance
+
+- type: entity
+  parent: RingBase
+  id: GoldRingGem
+  name: золотое кольцо с драгоценным камнем
+  description: Блестящие и ценное!
+  components:
+    - type: Sprite
+      sprite: Clothing/Hands/Rings/basic.rsi
+      layers:
+        - state: ring
+          color: "#ffc833"
+        - state: gem
+          map: [ "gemColor" ]
+    - type: StaticPrice
+      price: 2100
+    - type: Appearance
+    - type: RandomSprite
+      getAllGroups: true
+      available:
+        - gemColor:
+            gem: Rainbow
+
+- type: entity
+  parent: RingBase
+  id: SilverRingGem
+  name: серебряное кольцо с драгоценным камнем
+  description: Блестящий и не такой ценный!
+  components:
+    - type: Sprite
+      sprite: Clothing/Hands/Rings/basic.rsi
+      layers:
+        - state: ring
+        - state: gem
+          map: [ "gemColor" ]
+    - type: StaticPrice
+      price: 2000
+    - type: Appearance
+    - type: RandomSprite
+      getAllGroups: true
+      available:
+        - gemColor:
+            gem: Rainbow
