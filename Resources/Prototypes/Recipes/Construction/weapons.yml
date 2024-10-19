@@ -153,6 +153,28 @@
   objectType: Item
 
 - type: construction
+  name: стрела из осколка стекла плазмы
+  id: ImprovisedArrowPlasma
+  graph: ImprovisedArrowPlasma
+  startNode: start
+  targetNode: ImprovisedArrowPlasma
+  category: construction-category-weapons
+  description: Стрела с наконечником из осколка плазменного стекла, предназначенная для использования с луком.
+  icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: wielded-arrow }
+  objectType: Item
+
+- type: construction
+  name: Стрела из осколка уранового стекла
+  id: ImprovisedArrowUranium
+  graph: ImprovisedArrowUranium
+  startNode: start
+  targetNode: ImprovisedArrowUranium
+  category: construction-category-weapons
+  description: Стрела с наконечником из осколков уранового стекла, предназначенная для использования с луком.
+  icon: { sprite: Objects/Weapons/Guns/Bow/bow.rsi, state: wielded-arrow }
+  objectType: Item  
+
+- type: construction
   name: improvised bow
   id: ImprovisedBow
   graph: ImprovisedBow

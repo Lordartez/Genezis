@@ -6,9 +6,9 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Science
-      time: 54000 #15 hrs # Corvax-RoleTime
-#    - !type:OverallPlaytimeRequirement
-#      time: 144000 #40 hrs
+      time: 36000 #10 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 144000 #40 hrs
     - !type:AgeRequirement
       requiredAge: 20
   weight: 10
@@ -24,20 +24,7 @@
   - ResearchDirector
   - Brig
   - Cryogenics
-  #start-backmen: currency
-  minBankBalance: 400
-  maxBankBalance: 600
-  wageDepartment: Command
-  wage: 100
-  #end-backmen: currency
   special:
-  - !type:AddComponentSpecial
-    components:
-      - type: PsionicBonusChance
-        multiplier: 3
-      - type: NpcFactionMember
-        factions:
-          - CentralCommand
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial

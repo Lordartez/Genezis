@@ -40,6 +40,7 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
             SubscribeLocalEvent<GasPressurePumpComponent, AtmosDeviceDisabledEvent>(OnPumpLeaveAtmosphere);
             SubscribeLocalEvent<GasPressurePumpComponent, ExaminedEvent>(OnExamined);
             SubscribeLocalEvent<GasPressurePumpComponent, ActivateInWorldEvent>(OnPumpActivate);
+            SubscribeLocalEvent<GasPressurePumpComponent, PowerChangedEvent>(OnPowerChanged);
             // Bound UI subscriptions
             SubscribeLocalEvent<GasPressurePumpComponent, GasPressurePumpChangeOutputPressureMessage>(OnOutputPressureChangeMessage);
             SubscribeLocalEvent<GasPressurePumpComponent, GasPressurePumpToggleStatusMessage>(OnToggleStatusMessage);
@@ -62,6 +63,11 @@ namespace Content.Server.Atmos.Piping.Binary.EntitySystems
             {
                 args.PushMarkup(str);
             }
+        }
+
+        private void OnPowerChanged(EntityUid uid, GasPressurePumpComponent component, ref PowerChangedEvent args)
+        {
+            UpdateAppearance(uid, component);
         }
 
         private void OnPumpUpdated(EntityUid uid, GasPressurePumpComponent pump, ref AtmosDeviceUpdateEvent args)

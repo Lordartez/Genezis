@@ -1,30 +1,28 @@
-﻿- type: job
+- type: job
   id: Captain
   name: job-name-captain
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 72000 #20 hrs # Corvax-RoleTime
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 72000 #20 hrs # Corvax-RoleTime
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 72000 #20 hrs # Corvax-RoleTime
-#    - !type:DepartmentTimeRequirement
-#      department: Command
-#      time: 54000 # 15 hours
-    - !type:OverallPlaytimeRequirement
-      time: 504000 #140 hrs # Corvax-RoleTime
-    - !type:AgeRequirement
-      requiredAge: 40
     - !type:SpeciesRequirement
-      inverted: true
+      inverted: false
       species:
       - Vox
       - Diona
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 # 15 hours
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 54000 # 15 hours
+    - !type:AgeRequirement
+      requiredAge: 20
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
@@ -34,20 +32,7 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
-  #start-backmen: currency
-  minBankBalance: 400
-  maxBankBalance: 600
-  wageDepartment: Command
-  wage: 100
-  #end-backmen: currency
   special:
-  - !type:AddComponentSpecial
-    components:
-      - type: PsionicBonusChance
-        flatBonus: 0.025
-      - type: NpcFactionMember
-        factions:
-          - CentralCommand
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
@@ -59,7 +44,6 @@
   equipment:
     shoes: ClothingShoesBootsLaceup
     eyes: ClothingEyesGlassesSunglasses
-    belt: ClothingBroadswordBeltSheathFilled
     gloves: ClothingHandsGlovesCaptain
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand

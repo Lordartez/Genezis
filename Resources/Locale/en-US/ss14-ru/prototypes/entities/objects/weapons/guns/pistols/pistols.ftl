@@ -1,6 +1,6 @@
 ent-BaseWeaponPistol = BasePistol
     .desc = A rooty tooty point and shooty.
-ent-WeaponPistolViper = viper
+ent-WeaponPistolHIB88M4 = viper
     .desc = A small, easily concealable, but somewhat underpowered gun. Retrofitted with a fully automatic receiver. Uses .35 auto ammo.
 ent-WeaponPistolCobra = cobra
     .desc = A rugged, robust operator handgun with inbuilt silencer. Uses .25 caseless ammo.

@@ -35,7 +35,7 @@
   storage:
     back:
     - BoxSurvivalSyndicate
-    - WeaponPistolViper
+    - WeaponPistolHIB88M4
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
 
@@ -51,7 +51,7 @@
   id: SyndicateReinforcementMedic
   parent: SyndicateOperativeClothing
   equipment:
-    pocket1: WeaponPistolViper
+    pocket1: WeaponPistolHIB88M4
   inhand:
     - MedkitCombatFilled
   storage:
@@ -64,7 +64,7 @@
   equipment:
     id: AgentIDCard
     mask: ClothingMaskGasVoiceChameleon
-    pocket1: WeaponPistolViper
+    pocket1: WeaponPistolHIB88M4
   storage:
     back:
     - BoxSurvivalSyndicate
@@ -73,7 +73,7 @@
   id: SyndicateReinforcementThief
   parent: SyndicateOperativeClothing
   equipment:
-    pocket1: WeaponPistolViper
+    pocket1: WeaponPistolHIB88M4
   inhand:
     - ToolboxSyndicateFilled
   storage:

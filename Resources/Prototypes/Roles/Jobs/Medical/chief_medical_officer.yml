@@ -8,15 +8,15 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobChemist
-      time: 18000 #5 hrs # Corvax-RoleTime
-#    - !type:RoleTimeRequirement
-#      role: JobMedicalDoctor
-#      time: 21600 #6 hrs
+      time: 10800 #3 hrs
+    - !type:RoleTimeRequirement
+      role: JobMedicalDoctor
+      time: 21600 #6 hrs
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 54000 #15 hrs # Corvax-RoleTime
-#    - !type:OverallPlaytimeRequirement
-#      time: 144000 #40 hrs
+      time: 36000 #10 hrs
+    - !type:OverallPlaytimeRequirement
+      time: 144000 #40 hrs
     - !type:AgeRequirement
       requiredAge: 20
   weight: 10
@@ -33,20 +33,7 @@
   - ChiefMedicalOfficer
   - Brig
   - Cryogenics
-  #start-backmen: currency
-  minBankBalance: 400
-  maxBankBalance: 600
-  wageDepartment: Command
-  wage: 100
-  #end-backmen: currency
   special:
-  - !type:AddComponentSpecial
-    components:
-      - type: PsionicBonusChance
-        flatBonus: 0.025
-      - type: NpcFactionMember
-        factions:
-          - CentralCommand
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial

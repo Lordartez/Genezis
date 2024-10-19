@@ -11,7 +11,7 @@
   - id: WeaponRifleLecter
     amount: 0
     maxAmount: 5
-  - id: WeaponPistolViper
+  - id: WeaponPistolHIB88M4
     amount: 0
     maxAmount: 5
   - id: WeaponPistolCobra

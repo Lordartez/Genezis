@@ -45881,7 +45881,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -11.399197,18.488335
       parent: 2
-- proto: WeaponPistolViper
+- proto: WeaponPistolHIB88M4
   entities:
   - uid: 6627
     components:

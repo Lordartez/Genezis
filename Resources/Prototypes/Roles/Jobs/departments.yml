@@ -18,7 +18,6 @@
   weight: -10
   roles:
   - Bartender
-  - Psychologist
   - Borg
   - Botanist
   - Boxer
@@ -33,8 +32,6 @@
   - Reporter
   - Visitor
   - ServiceWorker
-  #- TechnicalAssistant "The job TechnicalAssistant has more than 1 primary department!"
-  #- ResearchAssistant
   accountNumber: 1316 #backmen: currency
 
 - type: department
@@ -78,6 +75,7 @@
   - ChiefMedicalOfficer
   - MedicalDoctor
   - MedicalIntern
+  - Psychologist
   - Paramedic
   accountNumber: 1319 #backmen: currency
 
@@ -119,21 +117,9 @@
   roles:
   - Boxer
   - Reporter
-  - Psychologist
   - Prisoner #backmen
   - SAI #backmen
   - Pilot # Corvax-Pilot
   accountNumber: 1322  #backmen: currency
   primary: false
   roundEndTitlesHidden: true # SS220 Round End Titles
-
-- type: department
-  id: GhostRoles
-  name: ghost-roles
-  sort: 0
-  description: ghost-roles
-  color: "#A9A9A9"
-  roles:
-  - GhostRole
-  primary: false
-  weight: -100

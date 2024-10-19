@@ -4,8 +4,6 @@
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
   requirements:
-    - !type:AgeRequirement
-      requiredAge: 40
     - !type:SpeciesRequirement
       inverted: true
       species:

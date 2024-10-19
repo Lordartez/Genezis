@@ -3663,7 +3663,7 @@ entities:
     - pos: 2.2819533,11.578648
       parent: 11
       type: Transform
-- proto: WeaponPistolViper
+- proto: WeaponPistolHIB88M4
   entities:
   - uid: 480
     components:
