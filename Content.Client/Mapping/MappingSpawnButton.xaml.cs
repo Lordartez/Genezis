@@ -2,7 +2,7 @@
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client._RMC14.Mapping;
+namespace Content.Client.Mapping;
 
 [GenerateTypedNameReferences]
 public sealed partial class MappingSpawnButton : Control

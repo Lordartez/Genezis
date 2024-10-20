@@ -1,11 +1,13 @@
 ﻿using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Client.Input;
 using Robust.Client.Player;
+using Robust.Client.UserInterface;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using static Content.Client._RMC14.Mapping.MappingState;
+using static Content.Client.Mapping.MappingState;
 
-namespace Content.Client._RMC14.Mapping;
+namespace Content.Client.Mapping;
 
 public sealed class MappingOverlay : Overlay
 {
