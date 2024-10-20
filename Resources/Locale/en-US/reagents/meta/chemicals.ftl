@@ -28,3 +28,5 @@ reagent-desc-sodium-polyacrylate = A super-absorbent polymer with assorted indus
 reagent-name-cellulose = cellulose fibers
 reagent-desc-cellulose = A crystaline polydextrose polymer, plants swear by this stuff.
 
+reagent-name-rororium = ророриум
+reagent-desc-rororium = Странное вещество, наполняющее ядра повелителей, которые бродят по астероидам. Считается, что это источник их регенеративных способностей.

@@ -193,7 +193,7 @@
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     layers:
-    - state: folder-centcomm
+    - state: folder-centcom
     - state: folder-base
 
 - type: entity

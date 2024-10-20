@@ -10,7 +10,7 @@
       - !type:SnapToGrid
         southRotation: true
       steps:
-      - material: CMSteel
+      - material: Steel
         amount: 2
         doAfter: 6
 
@@ -38,7 +38,7 @@
       conditions:
       - !type:EntityAnchored {}
       steps:
-      - material: CMSteel
+      - material: Steel
         amount: 5
         doAfter: 4
       - tool: Screwing

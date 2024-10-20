@@ -6,12 +6,12 @@
       edges:
         - to: tubeLight # TODO RMC14: Needs CMCable/CMWire for further 1:1
           steps:
-            - material: CMSteel
+            - material: Steel
               amount: 2
               doAfter: 2.0
         - to: bulbLight
           steps:
-            - material: CMSteel
+            - material: Steel
               amount: 1
               doAfter: 2.0
 

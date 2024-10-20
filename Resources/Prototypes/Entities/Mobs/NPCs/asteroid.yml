@@ -1,0 +1,336 @@
+- type: entity
+  id: BaseMobAsteroid
+  parent:
+  - BaseMob
+  - MobDamageable
+  - MobAtmosExposed
+  - MobCombat
+  abstract: true
+  components:
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+      Acidic: [Touch, Ingestion]
+  - type: Body
+    prototype: Animal
+  - type: Climbing
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: StatusEffects
+    allowed:
+    - SlowedDown
+    - Stutter
+    - Stun
+    - Electrocution
+    - TemporaryBlindness
+    - RadiationProtection
+    - Drowsiness
+    - Adrenaline
+  - type: StandingState
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  id: MobGoliath
+  parent: BaseMobAsteroid
+  name: голиаф
+  description: Массивное чудовище, которое использует длинные щупальца, чтобы заманить в ловушку свою жертву, угрожать ей не рекомендуется ни при каких условиях.
+  components:
+  - type: Sprite
+    sprite: Mobs/Aliens/Asteroid/goliath.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: goliath
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: goliath
+      Dead:
+        Base: goliath_dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.50
+    baseSprintSpeed : 2.50
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+    angle: 0
+    attackRate: 0.75
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Slash: 5
+        Piercing: 5
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: GoliathCompound
+    blackboard:
+      VisionRadius: !type:Single
+        6
+      AggroVisionRadius: !type:Single
+        10
+  - type: NPCUseActionOnTarget
+    actionId: ActionGoliathTentacle
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - Goliath
+    - FootstepSound
+  - type: NoSlip
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatGoliath
+      amount: 3
+    - id: MaterialGoliathHide1
+
+- type: entity
+  id: ActionGoliathTentacle
+  name: "[color=red]Tentacle Slam[/color]"
+  description: Используйте свои щупальца, чтобы схватить и оглушить игрока!
+  components:
+  - type: EntityWorldTargetAction
+    raiseOnUser: true
+    icon:
+      sprite: Mobs/Aliens/Asteroid/goliath.rsi
+      state: goliath_tentacle_spawn
+    iconOn:
+      sprite: Mobs/Aliens/Asteroid/goliath.rsi
+      state: goliath_tentacle_wiggle
+    sound:
+      path: "/Audio/Weapons/slash.ogg"
+    event: !type:GoliathSummonTentacleAction
+    useDelay: 8
+    range: 10
+
+- type: entity
+  id: GoliathTentacle
+  name: tentacle
+  components:
+  - type: Transform
+    anchored: True
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: Mobs/Aliens/Asteroid/goliath.rsi
+    layers:
+    - state: goliath_tentacle_wiggle
+  - type: StunOnContact
+    blacklist:
+      tags:
+      - Goliath
+  - type: Fixtures
+    fixtures:
+      fix:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        mask:
+        - Impassable
+        layer:
+        - Impassable
+        hard: false
+  - type: TimedDespawn #do this shit by hand because of fucking course.
+    lifetime: 0.4
+  - type: SpawnOnDespawn
+    prototype: EffectGoliathTentacleRetract
+
+- type: entity
+  id: BaseEffectGoliathTentacleSpawn
+  categories: [ HideSpawnMenu ]
+  name: щупальца
+  abstract: true
+  components:
+  - type: Transform
+    anchored: True
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Sprite
+    sprite: Mobs/Aliens/Asteroid/goliath.rsi
+  - type: InteractionOutline
+  - type: TimedDespawn
+    lifetime: 0.7
+
+- type: entity
+  id: EffectGoliathTentacleSpawn
+  parent: BaseEffectGoliathTentacleSpawn
+  categories: [ HideSpawnMenu ]
+  name: щупальца
+  components:
+    - type: Sprite
+      state: goliath_tentacle_spawn
+    - type: SpawnOnDespawn
+      prototype: GoliathTentacle
+
+- type: entity
+  id: EffectGoliathTentacleRetract
+  parent: BaseEffectGoliathTentacleSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    state: goliath_tentacle_retract
+  - type: EffectVisuals
+  - type: AnimationPlayer
+
+- type: entity
+  id: MobHivelord
+  parent: [ BaseMobAsteroid, FlyingMobBase ]
+  name: повелитель
+  description: Это поистине инопланетное существо представляет собой массу неизвестного органического материала, постоянно колеблющуюся. При нападении его части отделяются и атакуют одновременно с оригиналом.
+  components:
+  - type: Sprite
+    sprite: Mobs/Aliens/Asteroid/hivelord.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: hivelord
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: hivelord
+      Dead:
+        Base: hivelord_dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 4.0
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      75: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+  - type: Gun
+    fireRate: 0.66
+    selectedMode: SemiAuto
+    showExamineText: false
+    availableModes:
+    - SemiAuto
+    soundGunshot: null
+  - type: RechargeBasicEntityAmmo
+    showExamineText: false
+    rechargeCooldown: 0
+    rechargeSound: null
+  - type: BasicEntityAmmoProvider
+    proto: MobHivelordBrood
+    capacity: 1
+    count: 1
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        4
+      AggroVisionRadius: !type:Single
+        9
+  - type: Butcherable
+    spawned:
+    - id: FoodHivelordRemains
+
+- type: entity
+  id: MobHivelordBrood
+  parent: [ BaseMobAsteroid, FlyingMobBase ]
+  name: выводок повелителя
+  description: Осколок оригинального повелителя, сплотившийся вокруг своего оригинала. Один не представляет особой угрозы, но...
+  components:
+  - type: Sprite
+    sprite: Mobs/Aliens/Asteroid/hivelord.rsi
+    layers:
+    - state: hivelordbrood
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 4.0
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      5: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    angle: 0
+    attackRate: 1.0
+    range: 0.75
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Slash: 7
+  - type: Ammo
+    muzzleFlash: null
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 5
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard: # highly aggressive
+      VisionRadius: !type:Single
+        15
+      AggroVisionRadius: !type:Single
+        15
+  - type: TimedDespawn
+    lifetime: 100
+
+- type: entity
+  id: FoodHivelordRemains
+  parent: FoodBase
+  name: остатки повелителя
+  description: Все, что осталось от повелителя ульев, похоже, то, что повзволяло существу регенирировать не повреждено... его целебные свойства скоро станут недействительными, если их не использовать быстро. Постарайтесь не думать о том, что вы едите.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Rororium
+          Quantity: 5
+  - type: Sprite
+    sprite: Objects/Consumable/Food/rorocore.rsi
+    state: boiled
+  - type: Item
+    size: Normal
+  - type: Perishable
+    rotAfter: 120 # rot after 2 minutes
+    molsPerSecondPerUnitMass: 0
+    forceRotProgression: true
+  - type: RotInto
+    entity: FoodHivelordRemainsInert
+    stage: 1
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  id: FoodHivelordRemainsInert
+  parent: BaseItem
+  name: инертные останки повелителя улья
+  description: Все, что осталось от повелителя улья... Теперь его свойства потеряны.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/rorocore.rsi
+    state: boiled
+    color: "#664444"
+  - type: SpaceGarbage
+  - type: Item
+    size: Normal
+  - type: StaticPrice
+    price: 500

@@ -11,7 +11,7 @@
       completed:
       - !type:SnapToGrid
       steps:
-      - material: CMSteel
+      - material: Steel
         amount: 6
         doAfter: 3
 

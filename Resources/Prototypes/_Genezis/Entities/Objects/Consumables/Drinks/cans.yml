@@ -22,7 +22,7 @@
         maxVol: 50
   - type: PhysicalComposition # TODO RMC14 add cm materials
     materialComposition:
-      CMSteel: 50
+      Steel: 50
 
 - type: entity
   parent: CMDrinkCanBase

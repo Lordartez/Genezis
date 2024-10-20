@@ -10,7 +10,7 @@
       - !type:SetStackCount
         amount: 2
       steps:
-      - material: CMSteel
+      - material: Steel
         amount: 1
     - to: CMRodPlasteel
       completed:

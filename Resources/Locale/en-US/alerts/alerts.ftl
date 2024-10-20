@@ -96,6 +96,9 @@ alerts-bleed-desc = You're [color=red]bleeding[/color].
 alerts-pacified-name = [color=green]Pacified[/color]
 alerts-pacified-desc = You're pacified; you won't be able to harm living creatures.
 
+alerts-adrenaline-name = [color=red]Адреналин[/color]
+alerts-adrenaline-desc = Вы полны андреналином: боль не может замедлить вас.
+
 alerts-suit-power-name = Suit Power
 alerts-suit-power-desc = How much power your space ninja suit has.
 

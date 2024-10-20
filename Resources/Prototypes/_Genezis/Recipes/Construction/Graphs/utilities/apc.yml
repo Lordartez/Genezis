@@ -7,7 +7,7 @@
     edges:
     - to: apcFrame
       steps:
-      - material: CMSteel
+      - material: Steel
         amount: 2
         doAfter: 0
       - material: Cable

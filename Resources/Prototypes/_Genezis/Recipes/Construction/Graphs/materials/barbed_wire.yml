@@ -10,7 +10,7 @@
             - !type:SetStackCount
               amount: 1
           steps:
-            - material: CMSteel
+            - material: Steel
               amount: 1
 
     - node: nodeBarbedWire

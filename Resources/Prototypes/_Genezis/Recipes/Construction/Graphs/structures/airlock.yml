@@ -10,7 +10,7 @@
       - !type:SetAnchor
         value: false
       steps:
-      - material: CMSteel
+      - material: Steel
         amount: 5
         doAfter: 2
 

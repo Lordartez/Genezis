@@ -730,3 +730,40 @@
       Gunpowder: 100
   - type: Item
     size: Tiny
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialGoliathHide
+  name: Пластины из шкуры голиафа
+  description: Куски каменной шкуры голиафа могут сделать ваш костюм более устойчивым к атакам местной фауны.
+  suffix: Full
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/hide.rsi
+    layers:
+    - state: goliath_hide
+      map: [ "base" ]
+  - type: StaticPrice
+    price: 0
+  - type: StackPrice
+    price: 1500
+  - type: Appearance
+  - type: Stack
+    stackType: GoliathHide
+    baseLayer: base
+    layerStates:
+    - goliath_hide
+    - goliath_hide_2
+    - goliath_hide_3
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,2
+
+- type: entity
+  parent: MaterialGoliathHide
+  id: MaterialGoliathHide1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1

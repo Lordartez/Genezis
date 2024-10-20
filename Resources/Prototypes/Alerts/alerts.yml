@@ -96,6 +96,13 @@
   name: alerts-on-fire-name
   description: alerts-on-fire-desc
 
+- type: alert
+  id: Adrenaline
+  icons:
+  - sprite: Mobs/Species/Human/organs.rsi
+    state: heart-on
+  name: alerts-adrenaline-name
+  description: alerts-adrenaline-desc
 
 - type: alert
   id: Cold

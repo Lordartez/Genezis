@@ -27,6 +27,7 @@
     - Pacified
     - SeeAll
     - Flashed
+    - Adrenaline
   - type: Buckle
   - type: StandingState
   - type: Tag
@@ -106,6 +107,7 @@
       - PsionicallyInsulated
       - SeeAll
       - Flashed
+      - Adrenaline
   - type: Bloodstream
     bloodMaxVolume: 150
   - type: MobPrice

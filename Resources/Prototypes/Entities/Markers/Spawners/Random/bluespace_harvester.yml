@@ -271,7 +271,7 @@
     layers:
       - state: red
       - sprite: Objects/Misc/module.rsi
-        state: datadisk5
+        state: cddrive
   - type: RandomSpawner
     prototypes:
       - TechnologyDisk
@@ -292,7 +292,7 @@
     layers:
       - state: red
       - sprite: Objects/Misc/module.rsi
-        state: datadisk5
+        state: cddrive
   - type: RandomSpawner
     prototypes:
       - DeviceQuantumSpinInverter

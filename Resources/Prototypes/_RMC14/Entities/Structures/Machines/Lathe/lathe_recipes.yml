@@ -4,28 +4,28 @@
   result: Bucket # TODO RMC14
   completetime: 4
   materials:
-    CMSteel: 67 # 2500
+    Steel: 67 # 2500
 
 - type: latheRecipe
   id: CMFireExtinguisher
   result: CMFireExtinguisher
   completetime: 4
   materials:
-    CMSteel: 3 # 112
+    Steel: 3 # 112
 
 - type: latheRecipe
   id: CMCrowbar
   result: CMCrowbar
   completetime: 4
   materials:
-    CMSteel: 2 # 62
+    Steel: 2 # 62
 
 - type: latheRecipe
   id: CMMultitool
   result: CMMultitool
   completetime: 4
   materials:
-    CMSteel: 2 # 62
+    Steel: 2 # 62
     CMGlass: 1 # 25
 
 - type: latheRecipe
@@ -33,14 +33,14 @@
   result: trayScanner # TODO RMC14
   completetime: 4
   materials:
-    CMSteel: 5 # 187
+    Steel: 5 # 187
 
 - type: latheRecipe
   id: CMWelderSmall
   result: CMWelderSmall
   completetime: 4
   materials:
-    CMSteel: 2 # 87
+    Steel: 2 # 87
     CMGlass: 1 # 37
 
 - type: latheRecipe
@@ -48,28 +48,28 @@
   result: CMScrewdriver
   completetime: 4
   materials:
-    CMSteel: 3 # 93
+    Steel: 3 # 93
 
 - type: latheRecipe
   id: CMWirecutter
   result: CMWirecutter
   completetime: 4
   materials:
-    CMSteel: 3 # 100
+    Steel: 3 # 100
 
 - type: latheRecipe
   id: CMWrench
   result: CMWrench
   completetime: 4
   materials:
-    CMSteel: 5 # 187
+    Steel: 5 # 187
 
 - type: latheRecipe
   id: CMSheetGlassReinforced
   result: CMSheetGlassReinforced1
   completetime: 4
   materials:
-    CMSteel: 50 # 1875
+    Steel: 50 # 1875
     CMGlass: 100 # 3750
 
 - type: latheRecipe
@@ -77,14 +77,14 @@
   result: CMRodMetal1
   completetime: 4
   materials:
-    CMSteel: 62 # 2343
+    Steel: 62 # 2343
 
 - type: latheRecipe
   id: CMScalpel
   result: CMScalpel
   completetime: 4
   materials:
-    CMSteel: 333 # 12500
+    Steel: 333 # 12500
     CMGlass: 167 # 6250
 
 - type: latheRecipe
@@ -92,7 +92,7 @@
   result: CMCircularSaw
   completetime: 4
   materials:
-    CMSteel: 667 # 25000
+    Steel: 667 # 25000
     CMGlass: 333 # 12500
 
 - type: latheRecipe
@@ -100,7 +100,7 @@
   result: CMSurgicalDrill
   completetime: 4
   materials:
-    CMSteel: 500 # 18750
+    Steel: 500 # 18750
     CMGlass: 333 # 12500
 
 - type: latheRecipe
@@ -108,7 +108,7 @@
   result: CMRetractor
   completetime: 4
   materials:
-    CMSteel: 333 # 12500
+    Steel: 333 # 12500
     CMGlass: 167 # 6250
 
 - type: latheRecipe
@@ -116,7 +116,7 @@
   result: CMCautery
   completetime: 4
   materials:
-    CMSteel: 167 # 6250
+    Steel: 167 # 6250
     CMGlass: 83 # 3125
 
 - type: latheRecipe
@@ -124,7 +124,7 @@
   result: CMHemostat
   completetime: 4
   materials:
-    CMSteel: 167 # 6250
+    Steel: 167 # 6250
     CMGlass: 83 # 3125
 
 - type: latheRecipe

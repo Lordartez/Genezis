@@ -9,27 +9,27 @@
       edges:
         - to: chair
           steps:
-            - material: CMSteel
+            - material: Steel
               amount: 1
               doAfter: 1
         - to: stool
           steps:
-            - material: CMSteel
+            - material: Steel
               amount: 1
               doAfter: 1
         - to: chairComfy
           steps:
-            - material: CMSteel
+            - material: Steel
               amount: 2
               doAfter: 1
         - to: chairOfficeDark
           steps:
-            - material: CMSteel
+            - material: Steel
               amount: 5
               doAfter: 1
         - to: chairOfficeWhite
           steps:
-            - material: CMSteel
+            - material: Steel
               amount: 5
               doAfter: 1
 

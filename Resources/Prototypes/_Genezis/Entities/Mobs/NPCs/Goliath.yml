@@ -2,9 +2,9 @@
 - type: entity
   parent:
   - MobFleshJaredSalvage
-  id: MobGoliath
+  id: MobDogAsh
   name: голиаф
-  description: Кто это?
+  description: Одна из тварей пепельных земель, существо напоминает отдалённо собаку.
   components:
   - type: Sprite
     sprite: Genezis/Mobs/Monster/goliath.rsi
@@ -67,16 +67,16 @@
 
 - type: entity
   name: Спавнер голиафа
-  id: SpawnMobGoliath
+  id: SpawnMobDogAsh
   parent: SpawnMobLegion
   components:
   - type: ConditionalSpawner
     prototypes:
-    - MobGoliath
+    - MobDogAsh
 
 - type: entity
   name: периодический спавнер голиафа
-  id: WallRockBasaltSpawnerLavaGoliath
+  id: WallRockBasaltSpawnerMobDogAsh
   parent: MarkerBase
   components:
     - type: Sprite
@@ -88,7 +88,7 @@
     - type: Timer
     - type: TimedSpawner
       prototypes:
-        - MobGoliath
+        - MobDogAsh
       # round ~90m
       # one spawner should only spawn ~5 mice for sanity reasons
       # therefore 18m
