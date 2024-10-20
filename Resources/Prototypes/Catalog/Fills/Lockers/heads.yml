@@ -23,6 +23,7 @@
       - id: RubberStampApproved
       - id: ClothingHeadsetAltCargo
       - id: BoxEncryptionKeyCargo
+      - id: AstroNavCartridge
       - id: AntiPsychicKnife # backmen
       - id: ClothingHeadCage # backmen
       - id: PrinterDocFlatpack # Corvax-Printer

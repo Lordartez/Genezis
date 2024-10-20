@@ -21,3 +21,5 @@ log-probe-scan = Downloaded logs from {$device}!
 log-probe-label-time = Time
 log-probe-label-accessor = Accessed by
 log-probe-label-number = #
+
+astro-nav-program-name = АстроНав

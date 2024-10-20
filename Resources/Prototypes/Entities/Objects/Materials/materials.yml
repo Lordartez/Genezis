@@ -374,7 +374,7 @@
   - type: Material
   - type: PhysicalComposition
     materialComposition:
-      Diamond: 100          
+      Diamond: 100
 
 - type: entity
   parent: MaterialDiamond
@@ -593,6 +593,83 @@
 - type: entity
   parent: MaterialWebSilk
   id: MaterialWebSilk1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialToothSpaceCarp
+  name: зубы космического карпа
+  description: Довольно маленькие, но очень острые. Больше всего они нравятся, когда не погружаются в вас.
+  suffix: Full
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/Mob/carptooth.rsi
+    layers:
+    - state: tooth
+      map: [ "base" ]
+  - type: Item
+    sprite: Objects/Materials/Mob/carptooth.rsi
+    size: Normal
+  - type: Appearance
+  - type: Stack
+    stackType: SpaceCarpTooth
+    count: 30
+    baseLayer: base
+    layerStates:
+    - tooth
+    - tooth_2
+    - tooth_3
+  - type: StackPrice
+    price: 50
+  - type: Tag
+    tags:
+    - ToothSpaceCarp
+
+- type: entity
+  parent: MaterialToothSpaceCarp
+  id: MaterialToothSpaceCarp1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: [ MaterialBase, BaseKnife ]
+  id: MaterialToothSharkminnow
+  name: зубы карп-акулы
+  description: Выглядит остро. Достаточно острый, чтобы выколоть кому-нибудь глаз. Черт возьми, он большой.
+  suffix: Full
+  components:
+  - type: Sprite
+    sprite: Objects/Materials/Mob/sharktooth.rsi
+    layers:
+    - state: tooth
+      map: [ "base" ]
+  - type: Item
+    sprite: Objects/Materials/Mob/sharktooth.rsi
+    size: Normal
+  - type: Appearance
+  - type: Stack
+    stackType: SharkMinnowTooth
+    count: 30
+    baseLayer: base
+    layerStates:
+    - tooth
+    - tooth_2
+    - tooth_3
+  - type: StackPrice
+    price: 150
+  - type: Tag
+    tags:
+    - Knife
+    - ToothSharkminnow
+
+- type: entity
+  parent: MaterialToothSharkminnow
+  id: MaterialToothSharkminnow1
   suffix: 1
   components:
   - type: Stack

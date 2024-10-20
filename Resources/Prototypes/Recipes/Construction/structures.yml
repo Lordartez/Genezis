@@ -1643,6 +1643,23 @@
     - !type:TileNotBlocked
 
 - type: construction
+  name: статуя карпа
+  id: CarpStatue
+  graph: CarpStatue
+  startNode: start
+  targetNode: statue
+  category: construction-category-structures
+  placementMode: SnapgridCenter
+  description: Статуя одного из храбрых карпов, которые привели нас туда, где мы сейчас находимся. Сделана с настоящими зубами!
+  objectType: Structure
+  canBuildInImpassable: false
+  icon:
+    sprite: Structures/Specific/carp_statue.rsi
+    state: icon
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
   name: bananium clown statue
   id: BananiumClownStatue
   graph: BananiumStatueClown
