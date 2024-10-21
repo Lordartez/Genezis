@@ -1,6 +1,4 @@
-﻿ui-options-header-rmc = RMC14
-
-ui-options-function-rmc-activate-attachable-barrel = Activate barrel attachment
+﻿ui-options-function-rmc-activate-attachable-barrel = Activate barrel attachment
 ui-options-function-rmc-activate-attachable-rail = Activate rail attachment
 ui-options-function-rmc-activate-attachable-stock = Activate stock attachment
 ui-options-function-rmc-activate-attachable-underbarrel = Activate underbarrel attachment

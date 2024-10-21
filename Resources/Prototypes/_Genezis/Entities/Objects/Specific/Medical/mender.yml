@@ -32,7 +32,7 @@
   id: AutomenderADVheat
   components:
   - type: Sprite
-    sprite: /Genezis/Objects/Specific/Medical/hypomend.rsi
+    sprite: /Genezis/Objects/Specific/Medical/hypo.rsi
     state: hypo
   - type: Item
     size: Small

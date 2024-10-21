@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Client.Stylesheets;
+using Content.Shared._RMC14.Input;
 using Content.Shared._White;
 using Content.Shared.CCVar;
 using Content.Shared.Input;
@@ -157,6 +158,12 @@ namespace Content.Client.Options.UI.Tabs
                 KeybindsContainer.AddChild(newCheckBox);
             }
 
+            AddHeader("Настройки Триглава");
+            AddButton(CMKeyFunctions.CMUniqueAction);
+            AddButton(ContentKeyFunctions.ToggleCrawling);///ADT Crawling
+            AddButton(ContentKeyFunctions.LookUp); // WD EDIT
+            AddCheckBox("ui-options-function-hold-look-up", _cfg.GetCVar(WhiteCVars.HoldLookUp), HandleHoldLookUp); // WD EDIT
+
             AddHeader("ui-options-header-general");
             AddCheckBox("ui-options-hotkey-keymap", _cfg.GetCVar(CVars.DisplayUSQWERTYHotkeys), HandleToggleUSQWERTYCheckbox);
 
@@ -190,8 +197,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.MoveStoredItem);
             AddButton(ContentKeyFunctions.RotateStoredItem);
             AddButton(ContentKeyFunctions.SaveItemLocation);
-            AddButton(ContentKeyFunctions.LookUp); // WD EDIT
-            AddCheckBox("ui-options-function-hold-look-up", _cfg.GetCVar(WhiteCVars.HoldLookUp), HandleHoldLookUp); // WD EDIT
 
             AddHeader("ui-options-header-interaction-adv");
             AddButton(ContentKeyFunctions.SmartEquipBackpack);
@@ -203,7 +208,6 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.MovePulledObject);
             AddButton(ContentKeyFunctions.ReleasePulledObject);
             AddButton(ContentKeyFunctions.Point);
-            AddButton(ContentKeyFunctions.ToggleCrawling);///ADT Crawling
 
             AddHeader("ui-options-header-ui");
             AddButton(ContentKeyFunctions.FocusChat);
