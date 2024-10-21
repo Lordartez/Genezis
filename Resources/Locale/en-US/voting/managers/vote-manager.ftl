@@ -20,3 +20,15 @@ ui-vote-map-tie = Tie for map vote! Picking... { $picked }
 ui-vote-map-win = { $winner } won the map vote!
 ui-vote-map-notlobby = Voting for maps is only valid in the pre-round lobby!
 ui-vote-map-notlobby-time = Voting for maps is only valid in the pre-round lobby with { $time } remaining!
+
+# Votekick votes
+ui-vote-votekick-unknown-initiator = Игрок
+ui-vote-votekick-unknown-target = Неизвестный игрок
+ui-vote-votekick-title = { $initiator } начал голосование за кик: { $targetEntity }. причина: { $reason }
+ui-vote-votekick-yes = Да
+ui-vote-votekick-no = Нет
+ui-vote-votekick-abstain = Воздержаться
+ui-vote-votekick-success = Голосование за { $target } успешно. Причина кика: { $reason }
+ui-vote-votekick-failure = Голосование за { $target } провалилось.Причина кика: { $reason }
+ui-vote-votekick-not-enough-eligible = Недостаточно игрков, чтобы начать голосование: { $voters }/{ $requirement }
+ui-vote-votekick-server-cancelled = Голосование за { $target } был отменено сервером.

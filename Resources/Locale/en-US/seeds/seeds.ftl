@@ -118,3 +118,5 @@ seeds-cotton-name = cotton
 seeds-cotton-display-name = cotton plant
 seeds-pyrotton-name = pyrotton
 seeds-pyrotton-display-name = pyrotton plant
+seeds-anomaly-berry-name = аномальная ягода
+seeds-anomaly-berry-display-name = аномальные ягоды
