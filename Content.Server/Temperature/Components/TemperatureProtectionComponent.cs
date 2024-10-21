@@ -1,6 +1,6 @@
 ﻿using Content.Server.Temperature.Systems;
 
-namespace Content.Server.Atmos.Components;
+namespace Content.Server.Temperature.Components;
 
 [RegisterComponent]
 [Access(typeof(TemperatureSystem))]
@@ -10,7 +10,13 @@ public sealed partial class TemperatureProtectionComponent : Component
     ///     How much to multiply temperature deltas by.
     /// </summary>
     [DataField]
-    public float Coefficient = 1.0f;
+    public float HeatingCoefficient = 1.0f;
+
+    /// <summary>
+    ///     Multiplier for the transferred heat when cooling down
+    /// </summary>
+    [DataField]
+    public float CoolingCoefficient = 1.0f;
 }
 
 /// <summary>

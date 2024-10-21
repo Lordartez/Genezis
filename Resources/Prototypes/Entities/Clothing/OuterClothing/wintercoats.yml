@@ -9,7 +9,8 @@
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
   - type: TemperatureProtection
-    coefficient: 0.1
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
   - type: Item
     size: Normal
   - type: Armor
@@ -38,7 +39,7 @@
   parent: ClothingOuterWinterCoat
   id: ClothingOuterWinterCoatToggleable
   name: winter coat with hood
-  noSpawn: True
+  categories: [ HideSpawnMenu ]
   components:
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterDefault

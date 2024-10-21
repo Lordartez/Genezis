@@ -12,9 +12,10 @@
   recipeUnlocks:
   - WeaponPlasmaCutter
   - MiningDrill
-  - WeaponGrapplingGun  
+  - MineralScannerEmpty
+  - WeaponGrapplingGun
   - BorgModuleMining
-  - BorgModuleGrapplingGun  
+  - BorgModuleGrapplingGun
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
 
@@ -180,7 +181,8 @@
   cost: 12500
   recipeUnlocks:
     - OreBagOfHolding
-    - MiningDrillDiamond    
+    - MiningDrillDiamond
+    - AdvancedMineralScannerEmpty
 
 # Tier 3
 

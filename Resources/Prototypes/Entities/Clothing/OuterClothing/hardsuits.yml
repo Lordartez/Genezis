@@ -21,7 +21,6 @@
         Slash: 0.9
         Piercing: 0.9
         Caustic: 0.9
-        Stun: 0.9
   - type: ClothingSpeedModifier
     walkModifier: 0.80
     sprintModifier: 0.80
@@ -44,7 +43,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: FireProtection
     reduction: 0.8
   - type: ExplosionResistance
@@ -57,8 +57,6 @@
         Piercing: 0.9
         Heat: 0.8
         Radiation: 0.5
-        Caustic: 0.5
-        Stun: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -91,7 +89,6 @@
         Shock: 0.8
         Caustic: 0.5
         Radiation: 0.2
-        Stun: 0.7
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -121,7 +118,6 @@
         Piercing: 0.9
         Radiation: 0.3 #salv is supposed to have radiation hazards in the future
         Caustic: 0.8
-        Stun: 0.8
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.8
@@ -153,7 +149,6 @@
         Piercing: 0.5
         Radiation: 0.3
         Caustic: 0.7
-        Stun: 0.7
   - type: ClothingSpeedModifier
     walkModifier: 0.75
     sprintModifier: 0.75
@@ -188,7 +183,8 @@
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitMaxim
 
@@ -215,7 +211,6 @@
         Slash: 0.6
         Piercing: 0.6
         Caustic: 0.7
-        Stun: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.75
     sprintModifier: 0.75
@@ -239,16 +234,13 @@
     lowPressureMultiplier: 1000
   - type: Armor
     modifiers:
-      coefficients: # backmen brigmedic's hardsuit rebalance
-        Blunt: 0.7
+      coefficients:
+        Blunt: 0.8
         Slash: 0.8
         Piercing: 0.7
-        Heat: 0.8
-        Caustic: 0.5
-        Stun: 0.7
-  - type: ClothingSpeedModifier # backmen brigmedic's hardsuit rebalance
-    walkModifier: 0.85
-    sprintModifier: 0.85
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.65
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitBrigmedic
@@ -276,7 +268,6 @@
         Slash: 0.6
         Piercing: 0.6
         Caustic: 0.7
-        Stun: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.7
     sprintModifier: 0.7
@@ -309,7 +300,6 @@
         Heat: 0.5
         Radiation: 0.5
         Caustic: 0.6
-        Stun: 0.6
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -344,7 +334,6 @@
         Heat: 0.4
         Radiation: 0.0
         Caustic: 0.7
-        Stun: 0.7
   - type: ClothingSpeedModifier
     walkModifier: 0.75
     sprintModifier: 0.8
@@ -400,7 +389,6 @@
         Heat: 0.3
         Radiation: 0.1
         Caustic: 0.2
-        Stun: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: ClothingSpeedModifier
@@ -446,7 +434,6 @@
         Piercing: 0.5
         Radiation: 0.5
         Caustic: 0.6
-        Stun: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -478,7 +465,6 @@
         Piercing: 0.8
         Radiation: 0.5
         Caustic: 0.8
-        Stun: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 0.85
     sprintModifier: 0.9
@@ -495,11 +481,11 @@
   description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/syndicate.rsi #backmen resprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: Item
     size: Huge
   - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/syndicate.rsi #backmen resprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -514,7 +500,6 @@
         Heat: 0.5
         Radiation: 0.5
         Caustic: 0.5
-        Stun: 0.2
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -553,14 +538,15 @@
   description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/syndieelite.rsi #backmen resprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
   - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/syndieelite.rsi #backmen resprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: FireProtection
@@ -574,7 +560,6 @@
         Heat: 0.2
         Radiation: 0.01
         Caustic: 0.5
-        Stun: 0.2
   - type: Item
     size: Huge
   - type: ClothingSpeedModifier
@@ -592,9 +577,9 @@
   description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
   - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/syndiecommander.rsi #backmen resprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
   - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/syndiecommander.rsi #backmen resprite
+    sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.05
     lowPressureMultiplier: 1000
@@ -609,7 +594,6 @@
         Heat: 0.5
         Radiation: 0.25
         Caustic: 0.4
-        Stun: 0.2
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -625,9 +609,9 @@
   description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
   components:
   - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/cybersun.rsi #backmen resprite
+    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
   - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/cybersun.rsi #backmen resprite
+    sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.2
     lowPressureMultiplier: 1000
@@ -642,7 +626,6 @@
         Heat: 0.2
         Radiation: 0.2
         Caustic: 0.2
-        Stun: 0.1
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.65
@@ -675,7 +658,6 @@
         Heat: 0.25
         Radiation: 0.25
         Caustic: 0.75
-        Stun: 0.4
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -706,7 +688,6 @@
         Slash: 0.95
         Piercing: 1
         Heat: 0.5
-        Stun: 0.7
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -737,7 +718,6 @@
         Piercing: 0.9
         Heat: 0.4
         Caustic: 0.75
-        Stun: 0.8
   - type: ClothingSpeedModifier
     walkModifier: 0.6
     sprintModifier: 0.6
@@ -771,7 +751,6 @@
         Piercing: 0.85
         Heat: 0.4
         Caustic: 0.75
-        Stun: 0.4
   - type: ClothingSpeedModifier
     walkModifier: 0.8
     sprintModifier: 0.8
@@ -815,7 +794,6 @@
   parent: ClothingOuterHardsuitCBURN
   id: ClothingOuterHardsuitERTEngineer
   name: ERT engineer's hardsuit
-  noSpawn: true
   description: A protective hardsuit worn by the engineers of an emergency response team.
   components:
   - type: Sprite
@@ -886,7 +864,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: FireProtection
@@ -900,7 +879,6 @@
         Heat: 0.1
         Radiation: 0.1
         Caustic: 0.1
-        Stun: 0.1
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -923,7 +901,8 @@
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: Armor
@@ -937,7 +916,6 @@
         Shock: 0.1
         Radiation: 0.1
         Caustic: 0.1
-        Stun: 0.1
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
@@ -969,7 +947,6 @@
         Slash: 0.9
         Piercing: 0.9
         Caustic: 0.8
-        Stun: 1.3
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -988,9 +965,9 @@
   description: A custom-made mime hardsuit.
   components:
   - type: Sprite
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/mime.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
   - type: Clothing
-    sprite: Backmen/Clothing/OuterClothing/Hardsuits/mime.rsi
+    sprite: Clothing/OuterClothing/Hardsuits/mime.rsi
   - type: Construction
     graph: MimeHardsuit
     node: mimeHardsuit
@@ -1026,34 +1003,3 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSanta
-
-- type: entity
-  parent: ClothingOuterBaseLarge
-  id: ChangelingClothingOuterHardsuit
-  name: organic space suit
-  description: A spaceworthy biomass of pressure and temperature resistant tissue.
-  suffix: Unremoveable
-  components:
-  - type: Sprite
-    sprite: Changeling/ling_spacesuit.rsi
-  - type: Clothing
-    sprite: Changeling/ling_spacesuit.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.225
-    lowPressureMultiplier: 1000
-  - type: TemperatureProtection
-    coefficient: 0.01
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.95
-        Slash: 0.95
-        Piercing: 1
-        Heat: 0.5
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
-  - type: HeldSpeedModifier
-  - type: Unremoveable
