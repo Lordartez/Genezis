@@ -22,9 +22,15 @@
 - Chocolate = 6 Cocoa Powder, 2 Milk, 2 Sugar
 - Непрожаренные животные протеины: измельчить сырое мясо
 
+Жужжание! Не забывайте о ниановой диете!
+- Хлопковое тесто = 5 Flour, 10 Fabric, 10 Water
+- Хлопковый хлеб: выпекается так же, как и по умолчанию, но вместо него используется хлопковое тесто
+- Хлопковая пицца: запекайте в микроволновке 1 плоское хлопковое тесто и 4 хлопковых шарика в течение 30 секунд
+
 <Box>
 <GuideEntityEmbed Entity="FoodDough"/>
 <GuideEntityEmbed Entity="FoodDoughCornmeal"/>
+<GuideEntityEmbed Entity="FoodDoughCotton"/>
 <GuideEntityEmbed Entity="FoodTofu"/>
 <GuideEntityEmbed Entity="FoodDoughPie"/>
 <GuideEntityEmbed Entity="FoodCakeBatter"/>

@@ -408,6 +408,38 @@
     node: flat
 
 - type: entity
+  name: хлопковое тесто
+  parent: FoodBakingBase
+  id: FoodDoughCotton
+  description: Кусок теста с тканью.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - dough
+    - cotton
+  - type: Sprite
+    state: cotton-dough
+  # - type: SliceableFood # TODO add it
+  #   count: 3
+  #   slice: FoodDoughCottonSlice
+  - type: Construction
+    graph: CottonPizza
+    node: start
+  - type: Tag
+    tags:
+    - Ingredient
+    - ClothMade
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Fiber
+          Quantity: 10
+
+- type: entity
   name: raw pastry base
   parent: FoodBakingBase
   id: FoodDoughPastryBaseRaw

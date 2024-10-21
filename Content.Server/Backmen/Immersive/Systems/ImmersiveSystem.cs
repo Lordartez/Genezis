@@ -28,10 +28,10 @@ public sealed class ImmersiveSystem : EntitySystem
     public float EyeModifier = 0.9f;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public float TelescopeDivisor = 0.25f;
+    public float TelescopeDivisor = 0.6f;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public float TelescopeLerpAmount = 0.15f;
+    public float TelescopeLerpAmount = 0.1f;
 
     public override void Initialize()
     {
@@ -40,7 +40,7 @@ public sealed class ImmersiveSystem : EntitySystem
 
         Subs.CVar(_configurationManager, CCVars.ImmersiveEnabled, OnValueChanged, true);
 
-        _console.RegisterCommand("setImmersive_bkm", SetImmersiveCommand);
+        _console.RegisterCommand("setImmersive_change", SetImmersiveCommand);
     }
 
     private void OnValueChanged(bool value)
