@@ -5,9 +5,10 @@
   id: AutomenderADV
   components:
   - type: Sprite
-    sprite: /Genezis/Objects/Specific/Medical/hypo.rsi
+    sprite: Genezis/Objects/Specific/Medical/hypo.rsi
     state: hypo
   - type: Item
+    sprite: Genezis/Objects/Specific/Medical/hypo.rsi
   - type: SolutionContainerManager
     solutions:
       hypospray:
@@ -31,9 +32,10 @@
   id: AutomenderADVheat
   components:
   - type: Sprite
-    sprite: /Genezis/Objects/Specific/Medical/hypo.rsi
+    sprite: Genezis/Objects/Specific/Medical/hypo.rsi
     state: hypo
   - type: Item
+    sprite: Genezis/Objects/Specific/Medical/hypo.rsi
   - type: SolutionContainerManager
     solutions:
       hypospray:
