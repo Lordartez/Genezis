@@ -175,6 +175,13 @@ public sealed class CCVars
         CVarDef.Create("ghost.respawn_max_players", 100, CVar.SERVERONLY);
 
     /*
+     * Immersive
+     */
+
+    public static readonly CVarDef<bool> ImmersiveEnabled =
+        CVarDef.Create("immersive.enabled", true, CVar.SERVERONLY);
+
+    /*
      * enabling a roll to enter a ghost role for one player from the vote
      */
     public static readonly CVarDef<bool>
