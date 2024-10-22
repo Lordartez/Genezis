@@ -831,6 +831,7 @@
       - ClothingHeadHelmetInsulated
       - ShellSoulbreaker
       - WeaponXrayCannon
+      - ClothingBackpackElectropack
       - ClothingEyesThermalGlassesSecurity #SS220 Thermals
   - type: MaterialStorage
     whitelist:

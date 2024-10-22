@@ -21,8 +21,8 @@
 - type: entity
   parent: BaseComputerCircuitboard
   id: AlertsComputerCircuitboard
-  name: alerts computer board
-  description: A computer printed circuit board for an alerts computer.
+  name: компьютерная плата атмосферных предупреждений
+  description: Печатная плата для компьютера атмосферных оповещений.
   components:
     - type: ComputerBoard
       prototype: ComputerAlert

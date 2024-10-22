@@ -20,6 +20,10 @@
       - id: ClothingOuterHardsuitWarden
       - id: HoloprojectorSecurity
       - id: ClothingEyesHudSecurity
+      - id: ClothingNeckShockCollar
+        amount: 2
+      - id: RemoteSignaller
+        amount: 2
       - id: AntiPsychicKnife # backmen
         amount: 3
       - id: ClothingHeadCage # backmen
@@ -52,6 +56,10 @@
       - id: DoorRemoteArmory
       - id: HoloprojectorSecurity
       - id: ClothingEyesHudSecurity
+      - id: ClothingNeckShockCollar
+        amount: 2
+      - id: RemoteSignaller
+        amount: 2
       - id: AntiPsychicKnife # backmen
         amount: 3
       - id: ClothingHeadCage # backmen

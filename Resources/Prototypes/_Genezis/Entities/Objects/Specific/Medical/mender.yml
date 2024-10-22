@@ -5,10 +5,10 @@
   id: AutomenderADV
   components:
   - type: Sprite
-    sprite: Genezis/Objects/Specific/Medical/hypo.rsi
+    sprite: Genezis/Objects/Specific/Medical/hypomend.rsi
     state: hypo
   - type: Item
-    sprite: Genezis/Objects/Specific/Medical/hypo.rsi
+    sprite: Genezis/Objects/Specific/Medical/hypomend.rsi
   - type: SolutionContainerManager
     solutions:
       hypospray:
@@ -16,6 +16,8 @@
         - ReagentId: PudriADV
           Quantity: 200
         maxVol: 200
+  - type: ExaminableSolution
+    solution: hypospray
   - type: Hypospray
     onlyAffectsMobs: false
     injectOnly: true
@@ -32,10 +34,10 @@
   id: AutomenderADVheat
   components:
   - type: Sprite
-    sprite: Genezis/Objects/Specific/Medical/hypo.rsi
+    sprite: Genezis/Objects/Specific/Medical/hypomend.rsi
     state: hypo
   - type: Item
-    sprite: Genezis/Objects/Specific/Medical/hypo.rsi
+    sprite: Genezis/Objects/Specific/Medical/hypomend.rsi
   - type: SolutionContainerManager
     solutions:
       hypospray:
@@ -43,6 +45,8 @@
         - ReagentId: silverADV
           Quantity: 200
         maxVol: 200
+  - type: ExaminableSolution
+    solution: hypospray
   - type: Hypospray
     onlyAffectsMobs: false
     injectOnly: true

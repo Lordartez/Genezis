@@ -1935,8 +1935,8 @@
 - type: entity
   name: аномальная ягода
   description: Странный синий фрукт. Что-то в нем не так.
-  parent: FoodProduceBase
   id: FoodAnomalyBerry
+  parent: FoodProduceBase
   components:
   - type: FlavorProfile
     flavors:
@@ -1947,19 +1947,17 @@
   - type: Produce
     seedId: anomalyBerry
   - type: Food
-    trash:
-    - EffectAnomalyFloraBulb # Random loot
   - type: SolutionContainerManager
     solutions:
       food:
         maxVol: 5
         reagents:
         - ReagentId: Nutriment
-          Quantity: 2
+          Quantity: 14
         - ReagentId: Vitamin
-          Quantity: 2
+          Quantity: 19
         - ReagentId: Artifexium
-          Quantity: 1
+          Quantity: 2
   - type: Tag
     tags:
     - Fruit
