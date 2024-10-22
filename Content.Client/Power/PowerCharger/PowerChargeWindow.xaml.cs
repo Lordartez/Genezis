@@ -11,17 +11,14 @@ public sealed partial class PowerChargeWindow : FancyWindow
 {
     private readonly ButtonGroup _buttonGroup = new();
 
-    public PowerChargeWindow()
+    public PowerChargeWindow(PowerChargeBoundUserInterface bui, string title)
     {
         RobustXamlLoader.Load(this);
 
+        Title = title;
+
         OnButton.Group = _buttonGroup;
         OffButton.Group = _buttonGroup;
-    }
-
-    public void UpdateWindow(PowerChargeBoundUserInterface bui, string title)
-    {
-        Title = title;
 
         OnButton.OnPressed += _ => bui.SetPowerSwitch(true);
         OffButton.OnPressed += _ => bui.SetPowerSwitch(false);
