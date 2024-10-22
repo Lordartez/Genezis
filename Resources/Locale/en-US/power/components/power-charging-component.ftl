@@ -19,4 +19,4 @@ power-charge-window-power-label = { $draw } / { $max } W
 ## UI ETA label
 
 power-charge-window-eta-none = N/A
-power-charge-window-eta-value = { TOSTRING($left, "m\\:ss") }
+power-charge-window-eta-value = Разрядка
