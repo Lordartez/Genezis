@@ -216,8 +216,6 @@
       - CMOintment
       - CMAutoInjector
       - Brutepack
-      # TODO RMC14 splint
-      - PillPacket
   - type: FixedItemSizeStorage
 
 

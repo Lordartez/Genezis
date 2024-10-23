@@ -147,13 +147,6 @@ public sealed class SmokeSystem : EntitySystem
         {
             var coords = _map.GridTileToLocal(neighbor.Tile.GridUid, neighbor.Grid, neighbor.Tile.GridIndices);
             var ent = Spawn(prototype.ID, coords);
-            // start-backmen: smoke color
-            if (TryComp<Shared.Backmen.Blob.Chemistry.BlobSmokeColorComponent>(entity, out var smokeColorComponent))
-            {
-                EnsureComp<Shared.Backmen.Blob.Chemistry.BlobSmokeColorComponent>(ent).Color =
-                    smokeColorComponent.Color;
-            }
-            // end-backmen: smoke color
             var spreadAmount = Math.Max(0, smokePerSpread);
             entity.Comp.SpreadAmount -= args.NeighborFreeTiles.Count;
 
@@ -322,7 +315,7 @@ public sealed class SmokeSystem : EntitySystem
                 continue;
 
             var reagent = _prototype.Index<ReagentPrototype>(reagentQuantity.Reagent.Prototype);
-            reagent.ReactionTile(tile, reagentQuantity.Quantity, EntityManager);
+            reagent.ReactionTile(tile, reagentQuantity.Quantity, EntityManager, reagentQuantity.Reagent.Data);
         }
     }
 

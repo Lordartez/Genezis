@@ -8,10 +8,12 @@ using Content.Shared.Alert;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reaction;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Drunk;
 using Content.Shared.FixedPoint;
+using Content.Shared.Forensics;
 using Content.Shared.HealthExaminable;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
@@ -54,6 +56,7 @@ public sealed class BloodstreamSystem : EntitySystem
         SubscribeLocalEvent<BloodstreamComponent, ReactionAttemptEvent>(OnReactionAttempt);
         SubscribeLocalEvent<BloodstreamComponent, SolutionRelayEvent<ReactionAttemptEvent>>(OnReactionAttempt);
         SubscribeLocalEvent<BloodstreamComponent, RejuvenateEvent>(OnRejuvenate);
+        SubscribeLocalEvent<BloodstreamComponent, GenerateDnaEvent>(OnDnaGenerated);
     }
 
     private void OnMapInit(Entity<BloodstreamComponent> ent, ref MapInitEvent args)
@@ -183,50 +186,66 @@ public sealed class BloodstreamSystem : EntitySystem
         bloodSolution.MaxVolume = entity.Comp.BloodMaxVolume;
         tempSolution.MaxVolume = entity.Comp.BleedPuddleThreshold * 4; // give some leeway, for chemstream as well
 
+        // Ensure blood that should have DNA has it; must be run here, in case DnaComponent has not yet been initialized
+
+        if (TryComp<DnaComponent>(entity.Owner, out var donorComp) && donorComp.DNA == String.Empty)
+        {
+            donorComp.DNA = _forensicsSystem.GenerateDNA();
+
+            var ev = new GenerateDnaEvent { Owner = entity.Owner, DNA = donorComp.DNA };
+            RaiseLocalEvent(entity.Owner, ref ev);
+        }
+
         // Fill blood solution with BLOOD
-        bloodSolution.AddReagent(entity.Comp.BloodReagent, entity.Comp.BloodMaxVolume - bloodSolution.Volume);
+        bloodSolution.AddReagent(new ReagentId(entity.Comp.BloodReagent, GetEntityBloodData(entity.Owner)), entity.Comp.BloodMaxVolume - bloodSolution.Volume);
     }
 
-private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChangedEvent args)
-{
-    // Проверка на null и увеличение урона
-    if (args.DamageDelta is null || !args.DamageIncreased)
+    private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChangedEvent args)
     {
-        return;
+        if (args.DamageDelta is null || !args.DamageIncreased)
+        {
+            return;
+        }
+
+        // TODO probably cache this or something. humans get hurt a lot
+        if (!_prototypeManager.TryIndex<DamageModifierSetPrototype>(ent.Comp.DamageBleedModifiers, out var modifiers))
+            return;
+
+        var bloodloss = DamageSpecifier.ApplyModifierSet(args.DamageDelta, modifiers);
+
+        if (bloodloss.Empty)
+            return;
+
+        // Does the calculation of how much bleed rate should be added/removed, then applies it
+        var oldBleedAmount = ent.Comp.BleedAmount;
+        var total = bloodloss.GetTotal();
+        var totalFloat = total.Float();
+        TryModifyBleedAmount(ent, totalFloat, ent);
+
+        /// <summary>
+        ///     Critical hit. Causes target to lose blood, using the bleed rate modifier of the weapon, currently divided by 5
+        ///     The crit chance is currently the bleed rate modifier divided by 25.
+        ///     Higher damage weapons have a higher chance to crit!
+        /// </summary>
+        var prob = Math.Clamp(totalFloat / 25, 0, 1);
+        if (totalFloat > 0 && _robustRandom.Prob(prob))
+        {
+            TryModifyBloodLevel(ent, (-total) / 5, ent);
+            _audio.PlayPvs(ent.Comp.InstantBloodSound, ent);
+        }
+
+        // Heat damage will cauterize, causing the bleed rate to be reduced.
+        else if (totalFloat < 0 && oldBleedAmount > 0)
+        {
+            // Magically, this damage has healed some bleeding, likely
+            // because it's burn damage that cauterized their wounds.
+
+            // We'll play a special sound and popup for feedback.
+            _audio.PlayPvs(ent.Comp.BloodHealedSound, ent);
+            _popupSystem.PopupEntity(Loc.GetString("bloodstream-component-wounds-cauterized"), ent,
+                ent, PopupType.Medium);
+        }
     }
-
-    // Проверка и получение модификаторов
-    if (!_prototypeManager.TryIndex<DamageModifierSetPrototype>(ent.Comp.DamageBleedModifiers, out var modifiers))
-        return; // Выход, если не удалось получить модификаторы
-
-    // Применение модификаторов к урону
-    var bloodloss = DamageSpecifier.ApplyModifierSet(args.DamageDelta, modifiers);
-
-    // Проверка, есть ли урон на кровотечение
-    if (bloodloss.Empty)
-        return;
-
-    var oldBleedAmount = ent.Comp.BleedAmount;
-    var total = bloodloss.GetTotal();
-    var totalFloat = total.Float();
-
-    // Изменение количества кровотечения
-    TryModifyBleedAmount(ent, totalFloat, ent);
-
-    // Рассчитываем вероятности критического удара
-    var prob = Math.Clamp(totalFloat / 25, 0, 1);
-    if (totalFloat > 0 && _robustRandom.Prob(prob))
-    {
-        TryModifyBloodLevel(ent, (-total) / 5, ent);
-        _audio.PlayPvs(ent.Comp.InstantBloodSound, ent);
-    }
-    else if (totalFloat < 0 && oldBleedAmount > 0)
-    {
-        // Обработка случая, когда тепловой урон остановил кровотечение
-        _audio.PlayPvs(ent.Comp.BloodHealedSound, ent);
-        _popupSystem.PopupEntity(Loc.GetString("bloodstream-component-wounds-cauterized"), ent, ent, PopupType.Medium);
-    }
-}
     /// <summary>
     ///     Shows text on health examine, based on bleed rate and blood level.
     /// </summary>
@@ -343,7 +362,7 @@ private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChanged
         }
 
         if (amount >= 0)
-            return _solutionContainerSystem.TryAddReagent(component.BloodSolution.Value, component.BloodReagent, amount, out _);
+            return _solutionContainerSystem.TryAddReagent(component.BloodSolution.Value, component.BloodReagent, amount, null, GetEntityBloodData(uid));
 
         // Removal is more involved,
         // since we also wanna handle moving it to the temporary solution
@@ -364,10 +383,7 @@ private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChanged
                 tempSolution.AddSolution(temp, _prototypeManager);
             }
 
-            if (_puddleSystem.TrySpillAt(uid, tempSolution, out var puddleUid, sound: false))
-            {
-                _forensicsSystem.TransferDna(puddleUid, uid, canDnaBeCleaned: false);
-            }
+            _puddleSystem.TrySpillAt(uid, tempSolution, out var puddleUid, sound: false);
 
             tempSolution.RemoveAllSolution();
         }
@@ -430,10 +446,7 @@ private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChanged
             _solutionContainerSystem.RemoveAllSolution(component.TemporarySolution.Value);
         }
 
-        if (_puddleSystem.TrySpillAt(uid, tempSol, out var puddleUid))
-        {
-            _forensicsSystem.TransferDna(puddleUid, uid, canDnaBeCleaned: false);
-        }
+        _puddleSystem.TrySpillAt(uid, tempSol, out var puddleUid);
     }
 
     /// <summary>
@@ -458,6 +471,40 @@ private void OnDamageChanged(Entity<BloodstreamComponent> ent, ref DamageChanged
         component.BloodReagent = reagent;
 
         if (currentVolume > 0)
-            _solutionContainerSystem.TryAddReagent(component.BloodSolution.Value, component.BloodReagent, currentVolume, out _);
+            _solutionContainerSystem.TryAddReagent(component.BloodSolution.Value, component.BloodReagent, currentVolume, null, GetEntityBloodData(uid));
+    }
+
+    private void OnDnaGenerated(Entity<BloodstreamComponent> entity, ref GenerateDnaEvent args)
+    {
+        if (_solutionContainerSystem.ResolveSolution(entity.Owner, entity.Comp.BloodSolutionName, ref entity.Comp.BloodSolution, out var bloodSolution))
+        {
+            foreach (var reagent in bloodSolution.Contents)
+            {
+                List<ReagentData> reagentData = reagent.Reagent.EnsureReagentData();
+                reagentData.RemoveAll(x => x is DnaData);
+                reagentData.AddRange(GetEntityBloodData(entity.Owner));
+            }
+        }
+    }
+
+    /// <summary>
+    /// Get the reagent data for blood that a specific entity should have.
+    /// </summary>
+    public List<ReagentData> GetEntityBloodData(EntityUid uid)
+    {
+        var bloodData = new List<ReagentData>();
+        var dnaData = new DnaData();
+
+        if (TryComp<DnaComponent>(uid, out var donorComp))
+        {
+            dnaData.DNA = donorComp.DNA;
+        } else
+        {
+            dnaData.DNA = Loc.GetString("forensics-dna-unknown");
+        }
+
+        bloodData.Add(dnaData);
+
+        return bloodData;
     }
 }
