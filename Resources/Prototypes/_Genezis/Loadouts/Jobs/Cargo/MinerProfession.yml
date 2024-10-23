@@ -1,59 +1,84 @@
+
+- type: startingGear
+  id: LavaMinerProfessionGear
+  equipment:
+    id: MinerPDA
+    shoes: ClothingShoesBootsSalvage #Ботинки
+    eyes: ClothingEyesGlassesCheapSunglasses    #Очки
+    gloves: ClothingHandsGlovesColorBlack #Перчатки
+    ears: ClothingHeadsetMining #Уши
+    pocket1: LavaPhoneInstrument
+
 # Back
 - type: loadout
   id: MinerSatchel
-  equipment: ClothingBackpackSatchelSalvage
+  equipment:
+    back: ClothingBackpackSatchelSalvage
 
 - type: loadout
   id: MinerBackpackDuffel
-  equipment: ClothingBackpackDuffelSalvage
+  equipment:
+    back: ClothingBackpackDuffelSalvage
 
 - type: loadout
   id: MinerBackpack
-  equipment: ClothingBackpackSalvage
+  equipment:
+    back: ClothingBackpackSalvage
 
 # Head
 - type: loadout
   id: MinerHeadHatUshanka
-  equipment: ClothingHeadHatUshanka
+  equipment:
+    head: ClothingHeadHatUshanka
 
 - type: loadout
   id: MinerHeadHatHardhatOrange
-  equipment: ClothingHeadHatHardhatOrange
+  equipment:
+    head: ClothingHeadHatHardhatOrange
 
 - type: loadout
   id: MinerHeadHatHardhatBlue
-  equipment: ClothingHeadHatHardhatBlue
+  equipment:
+    head: ClothingHeadHatHardhatBlue
 
 - type: loadout
   id: MinerHeadHatHardhatRed
-  equipment: ClothingHeadHatHardhatRed
+  equipment:
+    head: ClothingHeadHatHardhatRed
 
 - type: loadout
   id: MinerHeadHatHardhatWhite
-  equipment: ClothingHeadHatHardhatWhite
+  equipment:
+    head: ClothingHeadHatHardhatWhite
 
 - type: loadout
   id: MinerHeadHatHardhatYellow
-  equipment: ClothingHeadHatHardhatYellow
+  equipment:
+    head: ClothingHeadHatHardhatYellow
 
 - type: loadout
   id: MinerHeadHatHardhatYellowDark
-  equipment: ClothingHeadHatHardhatYellowDark
+  equipment:
+    head: ClothingHeadHatHardhatYellowDark
 
 # OuterClothing
 - type: loadout
   id: MinerOuterWinterMiner
-  equipment: ClothingOuterWinterMiner
+  equipment:
+    outerClothing: ClothingOuterWinterMiner
 
 - type: loadout
   id: MinerOuterCoatBomber
-  equipment: ClothingOuterCoatBomber
+  equipment:
+    outerClothing: ClothingOuterCoatBomber
 
 # Jumpsuit
 - type: loadout
   id: MinerUniformJumpsuitSalvageSpecialist
-  equipment: ClothingUniformJumpsuitSalvageSpecialist
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
 
 - type: loadout
   id: MinerUniformJumpsuitAncient
-  equipment: ClothingUniformJumpsuitAncient
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient

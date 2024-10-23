@@ -26,16 +26,6 @@
   wageDepartment: Cargo
   wage: 80
 
-- type: startingGear
-  id: LavaMinerProfessionGear
-  equipment:
-    id: MinerPDA
-    shoes: ClothingShoesBootsSalvage #Ботинки
-    eyes: ClothingEyesGlassesCheapSunglasses    #Очки
-    gloves: ClothingHandsGlovesColorBlack #Перчатки
-    ears: ClothingHeadsetMining #Уши
-    pocket1: LavaPhoneInstrument
-
 #СПАВНЕРЫ
 
 - type: randomHumanoidSettings
