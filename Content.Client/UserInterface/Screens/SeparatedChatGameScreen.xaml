@@ -23,13 +23,12 @@
             <BoxContainer Name="TopLeftContainer" Orientation="Vertical">
                 <actions:ActionsBar Name="Actions" Access="Protected" />
                 <BoxContainer Name="VoteMenu" Access="Public" Orientation="Vertical"/>
-                <BoxContainer Name="RollerMenu" Access="Public" Orientation="Vertical"/> <!-- backmen: GhostRoller -->
             </BoxContainer>
             <alerts:AlertsUI Name="Alerts" Access="Protected" />
         </LayoutContainer>
         <PanelContainer HorizontalExpand="True" MinWidth="300">
             <PanelContainer.PanelOverride>
-                <graphics:StyleBoxFlat BackgroundColor="#2B2C3B" />
+                <graphics:StyleBoxFlat BackgroundColor="#1e1e22" />
             </PanelContainer.PanelOverride>
 
             <BoxContainer Orientation="Vertical" HorizontalExpand="True" SeparationOverride="10" Margin="10">

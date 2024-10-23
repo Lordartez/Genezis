@@ -1,23 +1,43 @@
 - type: animatedLobbyScreen
-  id: SeaLobbyScreen
-  path: /Textures/ADT/LobbyScreens/backgrounds/sea.rsi
-
-- type: animatedLobbyScreen
-  id: RocketLobbyScreen
-  path: /Textures/ADT/LobbyScreens/backgrounds/rocket.rsi
+  id: CentcommLobbyScreen
+  path: /Textures/_White/LobbyScreens/centcomm.rsi
 
 - type: animatedLobbyScreen
   id: CubeLobbyScreen
-  path: /Textures/ADT/LobbyScreens/backgrounds/cube.rsi
+  path: /Textures/_White/LobbyScreens/cube.rsi
+
+- type: animatedLobbyScreen
+  id: MilkywayLobbyScreen
+  path: /Textures/_White/LobbyScreens/milkyway.rsi
 
 #- type: animatedLobbyScreen
 #  id: NativeLobbyScreen
-#  path: /Textures/ADT/LobbyScreens/backgrounds/native.rsi
-
-#- type: animatedLobbyScreen
-#  id: CentcommLobbyScreen
-#  path: /Textures/ADT/LobbyScreens/backgrounds/centcomm.rsi
+#  path: /Textures/_White/LobbyScreens/native.rsi
 
 - type: animatedLobbyScreen
-  id: syndicateLobbyScreen
-  path: /Textures/ADT/LobbyScreens/backgrounds/syndicate.rsi
+  id: RocketLobbyScreen
+  path: /Textures/_White/LobbyScreens/rocket.rsi
+
+- type: animatedLobbyScreen
+  id: SeaLobbyScreen
+  path: /Textures/_White/LobbyScreens/sea.rsi
+
+- type: animatedLobbyScreen
+  id: SyndicateLobbyScreen
+  path: /Textures/_White/LobbyScreens/syndicate.rsi
+
+- type: animatedLobbyScreen
+  id: VangoghLobbyScreen
+  path: /Textures/_White/LobbyScreens/vangogh.rsi
+
+- type: animatedLobbyScreen
+  id: HoleLobbyScreen
+  path: /Textures/_White/LobbyScreens/Hole.rsi
+
+- type: animatedLobbyScreen
+  id: GachiLobbyScreen
+  path: /Textures/_White/LobbyScreens/Gachi.rsi
+
+- type: animatedLobbyScreen
+  id: BochiLobbyScreen
+  path: /Textures/_White/LobbyScreens/Bochi.rsi

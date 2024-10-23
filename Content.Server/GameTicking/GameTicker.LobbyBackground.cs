@@ -1,8 +1,6 @@
-using Content.Server.GameTicking.Prototypes;
 using Robust.Shared.Random;
-using Content.Shared.ADT;
-using Robust.Shared.Utility;
 using System.Linq;
+using Content.Shared._White;
 
 namespace Content.Server.GameTicking;
 
@@ -12,12 +10,12 @@ public sealed partial class GameTicker
     public string? LobbyBackground { get; private set; }
 
     [ViewVariables]
-    private List<string>? _lobbyBackgrounds; // ADT Tweak
+    private List<string>? _lobbyBackgrounds; // WD EDIT
 
     private void InitializeLobbyBackground()
     {
-        _lobbyBackgrounds = _prototypeManager.EnumeratePrototypes<AnimatedLobbyScreenPrototype>() // ADT Tweak
-            .Select(x => x.Path)
+        _lobbyBackgrounds = _prototypeManager.EnumeratePrototypes<AnimatedLobbyScreenPrototype>() // WD EDIT
+            .Select(x => x.Path) // WD EDIT
             .ToList();
 
         RandomizeLobbyBackground();
@@ -25,6 +23,6 @@ public sealed partial class GameTicker
 
     private void RandomizeLobbyBackground()
     {
-        LobbyBackground = _lobbyBackgrounds!.Any() ? _robustRandom.Pick(_lobbyBackgrounds!) : null; // ADT Tweak
+        LobbyBackground = _lobbyBackgrounds!.Any() ? _robustRandom.Pick(_lobbyBackgrounds!) : null; // WD EDIT
     }
 }
