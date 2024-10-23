@@ -9,7 +9,6 @@
   - CaptainBackpack
   - CaptainOuterClothing
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
@@ -26,10 +25,14 @@
   - HoPOuterClothing
   - Glasses
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+
+# Silicons
+- type: roleLoadout
+  id: JobStationAi
+  nameDataset: names_ai
 
 # Civilian
 - type: roleLoadout
@@ -39,13 +42,13 @@
   - GroupTankHarness
   - PassengerJumpsuit
   - CommonBackpack
+  - PassengerNeck
   - PassengerFace
   - PassengerGloves
   - PassengerOuterClothing
   - PassengerShoes
   - Glasses
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
@@ -61,7 +64,6 @@
   - BartenderOuterClothing
   - Glasses
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
@@ -75,7 +77,6 @@
   - CommonBackpack
   - Glasses
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
@@ -92,7 +93,6 @@
   - ChefOuterClothing
   - Glasses
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
@@ -106,7 +106,6 @@
   - CommonBackpack
   - Glasses
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
@@ -121,7 +120,7 @@
   - CommonBackpack
   - Glasses
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
+  - Survival
   - Trinkets
   - GroupSpeciesBreathTool
 
@@ -138,7 +137,6 @@
   - ChaplainOuterClothing
   - Glasses
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Trinkets
   - GroupSpeciesBreathTool
 
@@ -364,6 +362,7 @@
   - Medals #backmen
   - SurvivalSecurity
   - Trinkets
+  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -381,6 +380,7 @@
   - Medals #backmen
   - SurvivalSecurity
   - Trinkets
+  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -397,7 +397,9 @@
   - SecurityPocket #Backmen
   - SecurityPocket2 #Backmen
   - Medals #backmen
+  - SurvivalSecurity
   - Trinkets
+  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -415,6 +417,7 @@
   - Medals #backmen
   - SurvivalSecurity
   - Trinkets
+  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -424,6 +427,7 @@
   - SecurityCadetJumpsuit
   - SecurityBackpack
   - Medals #backmen
+  - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
 
@@ -522,6 +526,7 @@
   - CommonBackpack
   - Glasses
   - Medals #backmen
+  - Survival
   - Trinkets
   - GroupSpeciesBreathTool
 
@@ -541,8 +546,8 @@
 - type: roleLoadout
   id: JobPsychologist
   groups:
-  - PsychologistJumpsuit #backmen
   - Inventory # Corvax-Loadouts
+  - PsychologistJumpsuit #backmen
   - GroupTankHarness
   - MedicalBackpack
   - Glasses
@@ -570,10 +575,22 @@
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
 
 - type: roleLoadout
+  id: RoleSurvivalVoxSupport
+  groups:
+  - GroupSpeciesBreathTool
+  - GroupTankHarness
+
+- type: roleLoadout
   id: RoleSurvivalStandard
   groups:
   - Survival
   - GroupSpeciesBreathTool
+  - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalClown
+  groups:
+  - SurvivalClown
   - GroupTankHarness
 
 - type: roleLoadout
@@ -603,3 +620,16 @@
   - SurvivalSyndicate
   - GroupSpeciesBreathTool
   - GroupTankHarness
+
+- type: roleLoadout
+  id: RoleSurvivalNukie
+  groups:
+  - SurvivalSyndicate
+  - GroupSpeciesBreathTool
+  - GroupPocketTankDouble
+
+- type: roleLoadout
+  id: RoleSurvivalEVA
+  groups:
+  - GroupEVATank
+  - SurvivalExtended

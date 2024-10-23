@@ -1,11 +1,12 @@
 - type: roleLoadout
   id: JobMinerProfession
   groups:
+  - Inventory # Corvax-Loadouts
   - LavaMinerHead
   - LavaMinerJumpsuit
   - LavaMinerBackpack
   - LavaMinerOuterClothing
   - Trinkets
   - Medals #backmen
-  - Inventory # Corvax-Loadouts
   - Survival
+  - GroupSpeciesBreathTool

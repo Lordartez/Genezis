@@ -11,10 +11,8 @@
   startingGear: LavaMinerProfessionGear
   supervisors: job-supervisors-qm
   requireAdminNotify: true
-  joinNotifyCrew: true
   setPreference: true
   canBeAntag: false
-  weight: 1
   access:
   - Cargo
   - Salvage
@@ -26,7 +24,17 @@
   minBankBalance: 150
   maxBankBalance: 350
   wageDepartment: Cargo
-  wage: 50
+  wage: 80
+
+- type: startingGear
+  id: LavaMinerProfessionGear
+  equipment:
+    id: MinerPDA
+    shoes: ClothingShoesBootsSalvage #Ботинки
+    eyes: ClothingEyesGlassesCheapSunglasses    #Очки
+    gloves: ClothingHandsGlovesColorBlack #Перчатки
+    ears: ClothingHeadsetMining #Уши
+    pocket1: LavaPhoneInstrument
 
 #СПАВНЕРЫ
 

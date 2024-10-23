@@ -4,32 +4,33 @@
   id: LavaMinerHead
   name: Выбор головного убора
   loadouts:
-  - ClothingHeadHatHardhatOrange
-  - ClothingHeadHatHardhatBlue
-  - ClothingHeadHatHardhatRed
-  - ClothingHeadHatHardhatWhite
-  - ClothingHeadHatHardhatYellow
-  - ClothingHeadHatHardhatYellowDark
-  - ClothingHeadHatUshanka
+  - MinerHeadHatUshanka
+  - MinerHeadHatHardhatOrange
+  - MinerHeadHatHardhatBlue
+  - MinerHeadHatHardhatRed
+  - MinerHeadHatHardhatWhite
+  - MinerHeadHatHardhatYellow
+  - MinerHeadHatHardhatYellowDark
 
 - type: loadoutGroup
   id: LavaMinerJumpsuit
   name: Выбор комбинезона
+  minLimit: 0
   loadouts:
-  - ClothingUniformJumpsuitSalvageSpecialist
-  - ClothingUniformJumpsuitAncient
+  - MinerUniformJumpsuitSalvageSpecialist
+  - MinerUniformJumpsuitAncient
 
 - type: loadoutGroup
   id: LavaMinerBackpack
   name: Выбор рюкзака
   loadouts:
-  - ClothingBackpackDuffelSalvage
-  - ClothingBackpackSalvage
-  - ClothingBackpackSatchelSalvage
+  - MinerSatchel
+  - MinerBackpackDuffel
+  - MinerBackpack
 
 - type: loadoutGroup
   id: LavaMinerOuterClothing
   name: Выбор куртки
   loadouts:
-  - ClothingOuterWinterMiner
-  - ClothingOuterCoatBomber
+  - MinerOuterWinterMiner
+  - MinerOuterCoatBomber
