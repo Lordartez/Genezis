@@ -1,0 +1,15 @@
+- type: entity
+  id: ExplosionInstant
+  name: моментальный взрыв
+  description: Bскусство - это взрыв!
+  parent: AdminInstantEffectBase
+  components:
+  - type: Transform
+    anchored: true
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 120 # about a ~4 tile radius
+    canCreateVacuum: false
