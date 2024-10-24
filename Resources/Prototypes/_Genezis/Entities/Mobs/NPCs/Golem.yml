@@ -31,15 +31,15 @@
           collection: GlassBreak
       - !type:SpawnEntitiesBehavior
         spawn:
-          MaterialDiamond:
-            min: 1
-            max: 2
           SteelOre1:
             min: 3
-            max: 8
+            max: 32
           ArtifactFragment:
             min: 2
             max: 4
+          IngotGold:
+            min: 4
+            max: 18
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
 

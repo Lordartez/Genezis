@@ -1,0 +1,11 @@
+- files: ["arachnid.ogg",]
+  license: "CC-BY-4.0"
+  copyright: "Some site in the internet"
+
+- files: [
+    "wawa_chatter.ogg",
+    "wawa_chillin.ogg",
+    "wawa_exclaim.ogg",
+    "wawa_question.ogg",
+    "wawa_statement.ogg",
+  ]

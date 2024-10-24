@@ -352,6 +352,7 @@
       - SapphireRing
       - GoldenRing
       - DeviceQuantumSpinInverter
+      - EnergyDomeDirectionalTurtle # cats-shield energy_barrier
       - ThermalVisorRND # SS220 Thermals
   - type: EmagLatheRecipes
     emagDynamicRecipes:

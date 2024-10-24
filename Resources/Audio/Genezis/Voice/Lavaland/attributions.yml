@@ -1,0 +1,14 @@
+- files: ["arachnid.ogg",]
+  license: "CC-BY-4.0"
+  copyright: "Some site in the internet"
+
+- files: [
+    "explosion1.ogg",
+    "meteorimpact.ogg",
+    "monsters-breath_g1bqzbeu.ogg",
+    "pop_expl.ogg",
+    "space_dragon_roar.ogg",
+    "tendril_destroyed.ogg",
+    "the-lava-bubble-gurgled.ogg",
+    "wall-of-flesh-terraria.ogg",
+  ]
