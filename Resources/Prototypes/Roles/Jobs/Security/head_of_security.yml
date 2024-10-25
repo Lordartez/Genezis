@@ -48,8 +48,22 @@
     id: HoSPDA
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltSecurity
-    pocket1: WeaponPistolMk58
+    pocket1: CMWeaponPistolMK80
   storage:
     back:
     - Flash
-    - MagazinePistol
+    - CMMagazinePistolMK80
+
+# Pocket #Backmen
+
+- type: loadout
+  id: WeaponRevolverMatebaNew
+  equipment:
+    pocket1: WeaponRevolverMatebaNew
+
+# Pocket 2 #Backmen
+
+- type: loadout
+  id: SpeedLoaderMagnum
+  equipment:
+    pocket2: SpeedLoaderMagnum

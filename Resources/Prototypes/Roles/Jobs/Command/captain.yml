@@ -7,8 +7,7 @@
     - !type:SpeciesRequirement
       inverted: false
       species:
-      - Vox
-      - Diona
+      - Human
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 54000 # 15 hours
@@ -23,7 +22,7 @@
       time: 54000 # 15 hours
     - !type:AgeRequirement
       requiredAge: 20
-  weight: 20
+  weight: 25
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   requireAdminNotify: true

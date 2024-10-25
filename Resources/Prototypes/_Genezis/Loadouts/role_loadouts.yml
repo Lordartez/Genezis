@@ -10,3 +10,30 @@
   - Medals #backmen
   - Survival
   - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBKCCCargo
+  groups:
+  - Inventory # Corvax-Loadouts
+  - BKCCCargoJumpsuit
+  - BKCCCargoNeck
+  - BKCCCargoBackpack
+  - Trinkets
+  - Medals #backmen
+  - Survival
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+  - Inventory # Corvax-Loadouts
+  - ClothingUniformJumpsuitBrigmedic
+  - ClothingBackpackBrigmedic
+  - ClothingHeadHatBrigmedic
+  - ClothingOuterBrigmedic
+  - ClothingEarBrigmedic
+  - ClothingMaskBrigmedic
+  - Trinkets
+  - Medals #backmen
+  - SurvivalMedical
+  - GroupSpeciesBreathTool

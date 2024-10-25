@@ -362,7 +362,6 @@
   - Medals #backmen
   - SurvivalSecurity
   - Trinkets
-  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -380,7 +379,6 @@
   - Medals #backmen
   - SurvivalSecurity
   - Trinkets
-  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -399,7 +397,6 @@
   - Medals #backmen
   - SurvivalSecurity
   - Trinkets
-  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -417,7 +414,6 @@
   - Medals #backmen
   - SurvivalSecurity
   - Trinkets
-  - SecurityStar
   - GroupSpeciesBreathToolSecurity
 
 - type: roleLoadout
@@ -426,6 +422,7 @@
   - Inventory # Corvax-Loadouts
   - SecurityCadetJumpsuit
   - SecurityBackpack
+  - SecurityShoes
   - Medals #backmen
   - SurvivalSecurity
   - Trinkets

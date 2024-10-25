@@ -4,11 +4,6 @@
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
   requirements:
-    - !type:SpeciesRequirement
-      inverted: true
-      species:
-      - Vox
-      - Diona
     - !type:OverallPlaytimeRequirement
       time: 36000 #10 hrs # Corvax-RoleTime
     # - !type:DepartmentTimeRequirement

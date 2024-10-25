@@ -138,3 +138,45 @@
     proto: SeniorOfficer
   equipment:
     id: SeniorOfficerPDA
+
+# Pocket #Backmen
+- type: loadout
+  id: CMWeaponPistolM1984
+  equipment:
+    pocket1: CMWeaponPistolM1984
+
+- type: loadout
+  id: CMWeaponPistolM77
+  equipment:
+    pocket1: CMWeaponPistolM77
+
+- type: loadout
+  id: WeaponPlasmaGun
+  equipment:
+    pocket1: WeaponPlasmaGun
+
+# Pocket 2 #Backmen
+
+- type: loadout
+  id: CMMagazinePistolM1984
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+  equipment:
+    pocket2: CMMagazinePistolM1984
+
+- type: loadout
+  id: CMMagazinePistolM77AP
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+  equipment:
+    pocket2: CMMagazinePistolM77AP
+
+- type: loadout
+  id: PlasmaTank
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorOfficer
+  equipment:
+    pocket2: PlasmaTank
