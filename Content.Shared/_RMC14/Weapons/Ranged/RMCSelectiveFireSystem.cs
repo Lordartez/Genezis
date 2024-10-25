@@ -1,7 +1,9 @@
+using System.Numerics;
 using Content.Shared._RMC14.Attachable.Systems;
 using Content.Shared._RMC14.Input;
 using Content.Shared.Examine;
 using Content.Shared.Weapons.Ranged.Components;
+using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable;
 using Content.Shared.Wieldable.Components;
@@ -19,6 +21,8 @@ public sealed class RMCSelectiveFireSystem : EntitySystem
 
     public override void Initialize()
     {
+        SubscribeAllEvent<RequestStopShootEvent>(OnStopShootRequest);
+
         SubscribeLocalEvent<RMCSelectiveFireComponent, ExaminedEvent>(OnExamine);
         SubscribeLocalEvent<RMCSelectiveFireComponent, ItemWieldedEvent>(SelectiveFireRefreshWield,
             after: new[] { typeof(AttachableHolderSystem) });
@@ -38,6 +42,26 @@ public sealed class RMCSelectiveFireSystem : EntitySystem
                     },
                     handle: false))
             .Register<RMCSelectiveFireSystem>();
+    }
+
+    private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)
+    {
+        var gunUid = GetEntity(ev.Gun);
+
+        if (args.SenderSession.AttachedEntity == null ||
+            !TryComp(gunUid, out GunComponent? gunComponent) ||
+            !_gunSystem.TryGetGun(args.SenderSession.AttachedEntity.Value, out _, out var userGun))
+        {
+            return;
+        }
+
+        if (userGun != gunComponent)
+            return;
+
+#pragma warning disable RA0002 // Invalid access
+        gunComponent.CurrentAngle = gunComponent.MinAngleModified;
+#pragma warning restore RA0002 // Invalid access
+        Dirty(gunUid, gunComponent);
     }
 
     private void OnExamine(Entity<RMCSelectiveFireComponent> gun, ref ExaminedEvent args)
@@ -75,13 +99,24 @@ public sealed class RMCSelectiveFireSystem : EntitySystem
     {
         RefreshWieldableFireModeValues(gun);
     }
-#endregion
+    #endregion
 
-#region Refresh methods
+    #region Refresh methods
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0002:Invalid access", Justification = "<ќжидание>")]
     public void RefreshFireModeGunValues(Entity<RMCSelectiveFireComponent> gun)
     {
         if (!TryComp(gun.Owner, out GunComponent? gunComponent))
             return;
+
+        gunComponent.AngleIncrease = gun.Comp.ScatterIncrease;
+        gunComponent.AngleDecay = gun.Comp.ScatterDecay;
+        gunComponent.FireRate = gunComponent.SelectedMode == SelectiveFire.Burst ? gun.Comp.BaseFireRate * 2 : gun.Comp.BaseFireRate;
+
+        if (ContainsMods(gun, gunComponent.SelectedMode))
+        {
+            var mods = gun.Comp.Modifiers[gunComponent.SelectedMode];
+            gunComponent.FireRate = 1f / (1f / gunComponent.FireRate + mods.FireDelay);
+        }
 
         RefreshWieldableFireModeValues(gun);
     }
@@ -91,12 +126,22 @@ public sealed class RMCSelectiveFireSystem : EntitySystem
         return gun.Comp.Modifiers.ContainsKey(mode);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0002:Invalid access", Justification = "<ќжидание>")]
     public void RefreshWieldableFireModeValues(Entity<RMCSelectiveFireComponent> gun)
     {
         if (!TryComp(gun.Owner, out GunComponent? gunComponent))
             return;
 
         bool wielded = TryComp(gun.Owner, out WieldableComponent? wieldableComponent) && wieldableComponent.Wielded;
+
+        gunComponent.CameraRecoilScalar = wielded ? gun.Comp.RecoilWielded : gun.Comp.RecoilUnwielded;
+        gunComponent.MinAngle = wielded ? gun.Comp.ScatterWielded : gun.Comp.ScatterUnwielded;
+        gunComponent.MaxAngle = gunComponent.MinAngle;
+
+        RefreshBurstScatter((gun.Owner, gun.Comp));
+
+        _gunSystem.RefreshModifiers(gun.Owner);
+        gunComponent.CurrentAngle = gunComponent.MinAngleModified;
     }
 
     public void RefreshFireModes(Entity<RMCSelectiveFireComponent?> gun, bool forceValueRefresh = false)
@@ -128,6 +173,7 @@ public sealed class RMCSelectiveFireSystem : EntitySystem
         RefreshWieldableFireModeValues((gun.Owner, gun.Comp));
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0002:Invalid access", Justification = "<ќжидание>")]
     private void RefreshBurstScatter(Entity<RMCSelectiveFireComponent> gun)
     {
         if (!TryComp(gun.Owner, out GunComponent? gunComponent))
@@ -139,20 +185,41 @@ public sealed class RMCSelectiveFireSystem : EntitySystem
         {
             var mods = gun.Comp.Modifiers[gunComponent.SelectedMode];
             var mult = mods.UseBurstScatterMult ? gun.Comp.BurstScatterMultModified : 1.0;
+            gunComponent.MaxAngle = wielded
+                ? Angle.FromDegrees(Math.Max(gunComponent.MinAngle.Degrees + mods.MaxScatterModifier * mult, gunComponent.MinAngle.Degrees))
+                : Angle.FromDegrees(Math.Max(gunComponent.MinAngle.Degrees + mods.MaxScatterModifier * mult * mods.UnwieldedScatterMultiplier, gunComponent.MinAngle.Degrees));
+
+            if (mods.ShotsToMaxScatter != null)
+                gunComponent.AngleIncrease = new Angle(((double)(gunComponent.MaxAngle - gunComponent.MinAngle)) / mods.ShotsToMaxScatter.Value);
         }
     }
-#endregion
+    #endregion
 
-#region Firemode changes
+    #region Firemode changes
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0002:Invalid access", Justification = "<ќжидание>")]
     public void AddFireMode(Entity<GunComponent?> gun, SelectiveFire newMode)
     {
         if (gun.Comp == null && !TryComp(gun.Owner, out gun.Comp))
             return;
+
+        gun.Comp.AvailableModes |= newMode;
+        Dirty(gun);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0002:Invalid access", Justification = "<ќжидание>")]
     public void SetFireModes(Entity<GunComponent?> gun, SelectiveFire modes, bool dirty = true)
     {
         if (gun.Comp == null && !TryComp(gun.Owner, out gun.Comp) || (modes & allFireModes) != SelectiveFire.Invalid)
+            return;
+
+        gun.Comp.AvailableModes = allFireModes;
+
+        while ((gun.Comp.SelectedMode & modes) != gun.Comp.SelectedMode)
+            _gunSystem.CycleFire(gun.Owner, gun.Comp);
+
+        gun.Comp.AvailableModes = modes;
+
+        if (!dirty)
             return;
 
         Dirty(gun);

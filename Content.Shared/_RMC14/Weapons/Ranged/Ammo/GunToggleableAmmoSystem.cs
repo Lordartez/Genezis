@@ -1,4 +1,4 @@
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using Content.Shared._RMC14.Armor;
 using Content.Shared._RMC14.Weapons.Common;
 using Content.Shared.Actions;
@@ -92,6 +92,7 @@ public sealed class GunToggleableAmmoSystem : EntitySystem
         {
             action.Icon = setting.Icon;
             Dirty(ent.Comp.Action.Value, action);
+            _actions.UpdateAction(ent.Comp.Action, action);
         }
 
         Dirty(ent);

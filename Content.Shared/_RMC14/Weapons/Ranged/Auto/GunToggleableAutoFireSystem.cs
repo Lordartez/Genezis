@@ -133,6 +133,7 @@ public sealed class GunToggleableAutoFireSystem : EntitySystem
             pos = pos + rotation.ToWorldVec() * auto.Range.Y / 2;
             var box = new Box2Rotated(Box2.CenteredAround(pos, auto.Range), rotation, pos);
             var shapeTransform = Robust.Shared.Physics.Transform.Empty;
+
         }
     }
 }
