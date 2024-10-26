@@ -13,6 +13,14 @@
     Plastic: 200
 
 - type: latheRecipe
+  id: EnergyBola
+  result: EnergyBola
+  completetime: 2
+  materials:
+    Steel: 100
+    Plastic: 200
+
+- type: latheRecipe
   id: Stunbaton
   result: Stunbaton
   category: Weapons
