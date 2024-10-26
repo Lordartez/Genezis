@@ -40,6 +40,20 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: Skills
+        skills:
+          RMCSkillFirearms: 2
+          RMCSkillJtac: 3
+          RMCSkillSmartGun: 2
+          RMCSkillCqc: 2
+          RMCSkillConstruction: 2
+          RMCSkillEndurance: 2
+          RMCSkillEngineer: 2
+          RMCSkillMeleeWeapons: 2
+          RMCSkillSpecialistWeapons: 2
+      - type: SquadArmorWearer
+      - type: MarineOrders
+
 
 - type: startingGear
   id: HoSGear

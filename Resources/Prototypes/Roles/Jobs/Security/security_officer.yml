@@ -27,6 +27,15 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills
+      skills:
+        RMCSkillFirearms: 1
+        RMCSkillJtac: 1
+        RMCSkillSmartGun: 1
+        RMCSkillMeleeWeapons: 1
+    - type: SquadArmorWearer
 
 - type: startingGear
   id: SecurityOfficerGear

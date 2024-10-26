@@ -27,6 +27,20 @@
   wage: 50
   #end-backmen: currency
   special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills
+      skills:
+        RMCSkillFirearms: 2
+        RMCSkillJtac: 1
+        RMCSkillSmartGun: 2
+        RMCSkillCqc: 1
+        RMCSkillConstruction: 1
+        RMCSkillEndurance: 2
+        RMCSkillEngineer: 2
+        RMCSkillMeleeWeapons: 1
+        RMCSkillSpecialistWeapons: 1
+    - type: SquadArmorWearer
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
 

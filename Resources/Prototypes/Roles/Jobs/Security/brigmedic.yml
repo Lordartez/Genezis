@@ -27,9 +27,16 @@
   wage: 50
   #end-backmen: currency
   special:
-    - !type:AddComponentSpecial
-      components:
-        - type: PsionicBonusChance
-          flatBonus: 0.025
-    - !type:AddImplantSpecial
-      implants: [ MindShieldImplant ]
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills
+      skills:
+        RMCSkillFirearms: 1
+        RMCSkillMedical: 3
+        RMCSkillSurgery: 2
+    - type: RMCUserBulkyArmorIncapable
+    - type: PsionicBonusChance
+      flatBonus: 0.025
+
