@@ -142,13 +142,13 @@ namespace Content.Shared.CCVar
         ///     Controls the default game preset.
         /// </summary>
         public static readonly CVarDef<string>
-            GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "secret", CVar.ARCHIVE);
+            GameLobbyDefaultPreset = CVarDef.Create("game.defaultpreset", "GenezisSecret", CVar.ARCHIVE);
 
         /// <summary>
         ///     Controls if the game can force a different preset if the current preset's criteria are not met.
         /// </summary>
         public static readonly CVarDef<bool>
-            GameLobbyFallbackEnabled = CVarDef.Create("game.fallbackenabled", true, CVar.ARCHIVE);
+            GameLobbyFallbackEnabled = CVarDef.Create("game.fallbackenabled", false, CVar.ARCHIVE);
 
         /// <summary>
         ///     The preset for the game to fall back to if the selected preset could not be used, and fallback is enabled.
@@ -160,13 +160,13 @@ namespace Content.Shared.CCVar
         ///     Controls if people can win the game in Suspicion or Deathmatch.
         /// </summary>
         public static readonly CVarDef<bool>
-            GameLobbyEnableWin = CVarDef.Create("game.enablewin", true, CVar.ARCHIVE);
+            GameLobbyEnableWin = CVarDef.Create("game.enablewin", false, CVar.ARCHIVE);
 
         /// <summary>
         ///     Controls the maximum number of character slots a player is allowed to have.
         /// </summary>
         public static readonly CVarDef<int>
-            GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 30, CVar.ARCHIVE | CVar.SERVERONLY);
+            GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 12, CVar.ARCHIVE | CVar.SERVERONLY);
 
         /// <summary>
         ///     Controls the game map prototype to load. SS14 stores these prototypes in Prototypes/Maps.
@@ -191,7 +191,7 @@ namespace Content.Shared.CCVar
         ///     Prototype to use for map pool.
         /// </summary>
         public static readonly CVarDef<string>
-            GameMapPool = CVarDef.Create("game.map_pool", "DefaultMapPool", CVar.SERVERONLY);
+            GameMapPool = CVarDef.Create("game.map_pool", "GenezisDefaultMapPool", CVar.SERVERONLY);
 
         /// <summary>
         /// The depth of the queue used to calculate which map is next in rotation.
@@ -1492,7 +1492,7 @@ namespace Content.Shared.CCVar
         /// Should we pre-load all of the procgen atlasses.
         /// </summary>
         public static readonly CVarDef<bool> ProcgenPreload =
-            CVarDef.Create("procgen.preload", false, CVar.SERVERONLY);
+            CVarDef.Create("procgen.preload", true, CVar.SERVERONLY);
 
         /*
          * Shuttles
@@ -1536,7 +1536,7 @@ namespace Content.Shared.CCVar
         /// Are players allowed to return on the arrivals shuttle.
         /// </summary>
         public static readonly CVarDef<bool> ArrivalsReturns =
-            CVarDef.Create("shuttle.arrivals_returns", false, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.arrivals_returns", true, CVar.SERVERONLY);
 
         /// <summary>
         /// Should all players be forced to spawn at departures, even on roundstart, even if their loadout says they spawn in cryo?
@@ -1548,19 +1548,19 @@ namespace Content.Shared.CCVar
         /// Should all players who spawn at arrivals have godmode until they leave the map?
         /// </summary>
         public static readonly CVarDef<bool> GodmodeArrivals =
-            CVarDef.Create("shuttle.godmode_arrivals", false, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.godmode_arrivals", true, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether to automatically spawn escape shuttles.
         /// </summary>
         public static readonly CVarDef<bool> GridFill =
-            CVarDef.Create("shuttle.grid_fill", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.grid_fill", false, CVar.SERVERONLY);
 
         /// <summary>
         /// Whether to automatically preloading grids by GridPreloaderSystem
         /// </summary>
         public static readonly CVarDef<bool> PreloadGrids =
-            CVarDef.Create("shuttle.preload_grids", true, CVar.SERVERONLY);
+            CVarDef.Create("shuttle.preload_grids", false, CVar.SERVERONLY);
 
         /// <summary>
         /// How long the warmup time before FTL start should be.

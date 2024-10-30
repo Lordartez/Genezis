@@ -97,6 +97,7 @@ namespace Content.Server.Explosion.EntitySystems
             SubscribeLocalEvent<TriggerOnStepTriggerComponent, StepTriggeredOffEvent>(OnStepTriggered);
             SubscribeLocalEvent<TriggerOnSlipComponent, SlipEvent>(OnSlipTriggered);
             SubscribeLocalEvent<TriggerWhenEmptyComponent, OnEmptyGunShotEvent>(OnEmptyTriggered);
+            SubscribeLocalEvent<TriggerOnParentChangeComponent, EntParentChangedMessage>(OnParentChange);
             SubscribeLocalEvent<RepeatingTriggerComponent, MapInitEvent>(OnRepeatInit);
 
             SubscribeLocalEvent<SpawnOnTriggerComponent, TriggerEvent>(OnSpawnTrigger);
@@ -231,6 +232,14 @@ namespace Content.Server.Explosion.EntitySystems
         {
             if (args.OurFixtureId == component.FixtureID && (!component.IgnoreOtherNonHard || args.OtherFixture.Hard))
                 Trigger(uid);
+        }
+
+        private void OnParentChange(EntityUid uid, TriggerOnParentChangeComponent component,
+            ref EntParentChangedMessage args)
+        {
+            if (args.OldMapId is not { Valid: true })
+                return;
+            Trigger(uid, args.Transform.GridUid);
         }
 
         private void OnSpawnTriggered(EntityUid uid, TriggerOnSpawnComponent component, MapInitEvent args)

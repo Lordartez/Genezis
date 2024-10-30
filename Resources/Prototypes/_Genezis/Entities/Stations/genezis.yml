@@ -1,0 +1,17 @@
+- type: entity
+  id: GenezisStation
+  parent:
+    - BaseStation
+    - BaseStationNanotrasen    
+    - BaseStationGoal # Corvax
+    - BaseStationNews
+    - BaseStationJobsSpawning
+    - BaseStationRecords
+    - BaseStationGateway
+    - BaseStationCentcomm
+    - BaseStationAlertLevels
+    - BaseStationSiliconLawCrewsimov
+    - BaseStationAllEventsEligible
+  noSpawn: true
+  components:
+    - type: Transform

@@ -1,0 +1,47 @@
+[game]
+hostname = "[RU][LRP+]\u041F\u0440\u043E\u0435\u043A\u0442\u0020\u0433\u0435\u043D\u0435\u0437\u0438\u0441"
+desc = "TEST"
+map_pool = "GenezisDefaultMapPool"
+maxplayers = 70
+soft_max_players = 60
+map_rotation = true
+role_timers = true
+peaceful_end = false
+lobbyduration = 180
+lobbyenabled = true
+fallbackpreset = "extended"
+secret_weight_prototype = "CorvaxSecretDefault"
+
+[worldgen]
+enabled = true
+
+[ic]
+flavor_text = true
+punctuation = false
+
+[ooc]
+enable_during_round = false
+
+[atmos]
+space_wind = true
+space_wind_max_velocity = 22.0
+
+
+[vote]
+restart_required_ratio = 0.85
+same_type_timeout = 300.0
+timerrestart = 30
+preset_enabled = false
+restart_enabled = false
+
+[discord]
+rich_main_icon_id = "corvax"
+
+[shuttle]
+grid_fill = true
+auto_call_time = 1800
+emergency = true
+emergency_early_launch_allowed = true
+arrivals = true
+arrivals_map = "/Maps/Misc/kosmoport.yml"
+preload_grids = true

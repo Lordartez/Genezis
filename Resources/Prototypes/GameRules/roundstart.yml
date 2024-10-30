@@ -279,7 +279,6 @@
   components:
   - type: RoundstartStationVariationRule
     rules:
-    - id: ImmersiveRule # Ataraxia    
     - id: BasicPoweredLightVariationPass
     - id: BasicTrashVariationPass
     - id: SolidWallRustingVariationPass

@@ -30,5 +30,6 @@
     <inventory:InventoryGui Name="Inventory" Access="Protected" />
     <hotbar:HotbarGui Name="Hotbar" Access="Protected" />
     <chat:ResizableChatBox Name="Chat" Access="Protected" />
+    <Control Name="Radar" Access="Public" />
     <alerts:AlertsUI Name="Alerts" Access="Protected" />
 </screens:DefaultGameScreen>

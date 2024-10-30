@@ -242,6 +242,8 @@ namespace Content.IntegrationTests.Tests
                 "Eftpos", // attach to bank account on mapinit
                 // makes an announcement on mapInit.
                 "AnnounceOnSpawn",
+                //spawns audio ents probably
+                "EmpPulse",
             };
 
             Assert.That(server.CfgMan.GetCVar(CVars.NetPVS), Is.False);

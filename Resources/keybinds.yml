@@ -578,3 +578,10 @@ binds:
 - function: CMUniqueAction
   type: State
   key: Space
+#Theta-Start
+- function: PingOnRadar
+  type: State
+  key: MouseRight
+  canFocus: true
+  priority: -1
+#Theta-End

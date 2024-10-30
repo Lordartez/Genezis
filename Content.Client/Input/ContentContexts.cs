@@ -84,6 +84,7 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.Arcade3);
             human.AddFunction(ContentKeyFunctions.ToggleCrawling);///ADT crawling
             human.AddFunction(ContentKeyFunctions.LookUp); // WD EDIT
+            human.AddFunction(ContentKeyFunctions.PingOnRadar);
 
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);

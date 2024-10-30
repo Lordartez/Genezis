@@ -35,8 +35,8 @@
     key: enum.ShuttleConsoleUiKey.Key
   - type: UserInterface
     interfaces:
-        enum.ShuttleConsoleUiKey.Key:
-          type: ShuttleConsoleBoundUserInterface
+      enum.ShuttleConsoleUiKey.Key:
+        type: ModularRadarShuttleConsoleBoundUserInterface
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: RadarConsole

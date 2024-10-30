@@ -5,15 +5,13 @@
   minPlayers: 0
   stations:
     Underground:
-      stationProto: StandardNanotrasenStation
+      stationProto: GenezisStation
       components:
         - type: StationNameSetup
           mapNameTemplate: 'Underground {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
-        - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Backmen/Shuttles/emergency_rook.yml
         - type: StationJobs
           availableJobs:
             # service

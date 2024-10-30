@@ -1,4 +1,4 @@
-using Robust.Shared.Map;
+﻿using Robust.Shared.Map;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Shuttles.BUIStates;
@@ -20,8 +20,6 @@ public sealed class NavInterfaceState
 
     public Dictionary<NetEntity, List<DockingPortState>> Docks;
 
-    public bool RotateWithEntity = true;
-
     public NavInterfaceState(
         float maxRange,
         NetCoordinates? coordinates,
@@ -33,10 +31,4 @@ public sealed class NavInterfaceState
         Angle = angle;
         Docks = docks;
     }
-}
-
-[Serializable, NetSerializable]
-public enum RadarConsoleUiKey : byte
-{
-    Key
 }

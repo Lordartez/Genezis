@@ -159,6 +159,7 @@ namespace Content.Client.Options.UI.Tabs
             }
 
             AddHeader("Настройки Триглава");
+            AddButton(ContentKeyFunctions.PingOnRadar);
             AddButton(CMKeyFunctions.CMUniqueAction);
             AddButton(ContentKeyFunctions.ToggleCrawling);///ADT Crawling
             AddButton(ContentKeyFunctions.LookUp); // WD EDIT

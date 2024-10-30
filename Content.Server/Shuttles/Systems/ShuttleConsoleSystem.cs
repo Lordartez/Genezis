@@ -3,6 +3,7 @@ using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Station.Systems;
+using Content.Server.Theta.RadarRenderable;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Alert;
 using Content.Shared.Popups;
@@ -12,7 +13,6 @@ using Content.Shared.Shuttles.Events;
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.Tag;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Power;
 using Content.Shared.Shuttles.UI.MapObjects;
 using Content.Shared.Timing;
 using Robust.Server.GameObjects;
@@ -36,7 +36,10 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly TagSystem _tags = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly RadarConsoleSystem _radarConsoleSystem = default!;
     [Dependency] private readonly SharedContentEyeSystem _eyeSystem = default!;
+    [Dependency] private readonly RadarRenderableSystem _radarRenderable = default!;
+    [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
 
     private EntityQuery<MetaDataComponent> _metaQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -56,6 +59,7 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         SubscribeLocalEvent<ShuttleConsoleComponent, ActivatableUIOpenAttemptEvent>(OnConsoleUIOpenAttempt);
         Subs.BuiEvents<ShuttleConsoleComponent>(ShuttleConsoleUiKey.Key, subs =>
         {
+            subs.Event<ShuttleConsoleChangeShipNameMessage>(OnChangeShipName);
             subs.Event<ShuttleConsoleFTLBeaconMessage>(OnBeaconFTLMessage);
             subs.Event<ShuttleConsoleFTLPositionMessage>(OnPositionFTLMessage);
             subs.Event<BoundUIClosedEvent>(OnConsoleUIClose);
@@ -87,6 +91,24 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     private void OnFtlDestShutdown(EntityUid uid, FTLDestinationComponent component, ComponentShutdown args)
     {
         RefreshShuttleConsoles();
+    }
+
+    private void OnChangeShipName(EntityUid uid, ShuttleConsoleComponent component,
+        ShuttleConsoleChangeShipNameMessage args)
+    {
+        if (string.IsNullOrWhiteSpace(args.NewShipName))
+            return;
+        if (args.NewShipName.Length is > 25 or < 3)
+            return;
+        if(!TryComp<TransformComponent>(uid, out var transform) || transform.GridUid == null)
+            return;
+        _metaDataSystem.SetEntityName(transform.GridUid.Value, args.NewShipName);
+        DockingInterfaceState? dockState = null;
+        var shuttleComponent = EntityQueryEnumerator<ShuttleConsoleComponent>();
+        while (shuttleComponent.MoveNext(out var uidS, out var _))
+        {
+            UpdateState(uidS, ref dockState);
+        }
     }
 
     private void OnDock(DockEvent ev)
@@ -267,7 +289,12 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
 
         if (_ui.HasUi(consoleUid, ShuttleConsoleUiKey.Key))
         {
-            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key, new ShuttleBoundUserInterfaceState(navState, mapState, dockState));
+            _ui.SetUiState(consoleUid, ShuttleConsoleUiKey.Key,
+                new ThetaShuttleConsoleBoundInterfaceState(
+                    navState,
+                    mapState,
+                    dockState,
+                    _radarRenderable.GetObjectsAround(consoleUid)));
         }
     }
 
@@ -292,6 +319,15 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
         foreach (var (uid, comp) in toRemove)
         {
             RemovePilot(uid, comp);
+        }
+
+        DockingInterfaceState? dockState = null;
+        var shuttleComponent = EntityQueryEnumerator<ShuttleConsoleComponent>();
+        while (shuttleComponent.MoveNext(out var uid, out var _))
+        {
+            if (!_ui.IsUiOpen(uid, ShuttleConsoleUiKey.Key))
+                continue;
+            UpdateState(uid, ref dockState);
         }
     }
 
