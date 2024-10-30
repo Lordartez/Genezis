@@ -8,7 +8,7 @@
       captainHudPrototypeId: "ShipeventHUDCaptain"
 
       #time
-      roundDuration: 0
+      roundDuration: -1
       teamCheckInterval: 5
       playerCheckInterval: 2
       respawnDelay: 60
