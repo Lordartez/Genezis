@@ -7,7 +7,7 @@
       hudPrototypeId: "ShipeventHUD"
       captainHudPrototypeId: "ShipeventHUDCaptain"
 
-      #time
+      #время раунда
       roundDuration: -1
       teamCheckInterval: 5
       playerCheckInterval: 2
@@ -22,21 +22,21 @@
       outOfBoundsPenalty: 2000
 
       #map gen
-      initialObstacleAmount: 200
+      initialObstacleAmount: 250
       minFieldSize: 1000
       maxFieldSize: 3000
       metersPerPlayer: 100
       roundFieldSizeTo: 1000
       useNoise: true
       noiseGenerator: !type:FastNoiseLite
-        frequency: 2
-      noiseThreshold: 0.1
+        frequency: 9
+      noiseThreshold: 0.8
 
-      #bounds
+      #граница
       boundsCompressionInterval: 0
       boundsCompressionDistance: 0
 
-      #obstacles
+      #метеориты
       obstacleTypes:
         - "asteroid_small"
         - "asteroid_large"
@@ -49,9 +49,9 @@
       pickupMinDistance: 100
       pickupPrototype: ShipEventPickupPrototype
 
-      #anomalies
+      #аномалии
       anomalyUpdateInterval: 2
-      anomalySpawnInterval: 60
+      anomalySpawnInterval: 30
       anomalyPrototypes:
         - "ShipEventRadiationAnomaly"
         - "ShipEventIonAnomaly"
