@@ -2193,7 +2193,7 @@ namespace Content.Shared.CCVar
         ///     The maximum amount of time the entity GC can process, in ms.
         /// </summary>
         public static readonly CVarDef<int> GCMaximumTimeMs =
-            CVarDef.Create("entgc.maximum_time_ms", 5, CVar.SERVERONLY);
+            CVarDef.Create("entgc.maximum_time_ms", 15, CVar.SERVERONLY);
 
         /*
          * Replays
