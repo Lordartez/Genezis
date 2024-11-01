@@ -1,17 +1,3 @@
-- type: weightedRandom
-  id: AsteroidOre
-  weights:
-    OreIron: 1.0
-    OreQuartz: 1.0
-    OreCoal: 1.0
-    OreSalt: 1.0
-    OreGold: 0.25
-    OreDiamond: 0.05
-    OreSilver: 0.25
-    OrePlasma: 0.15
-    OreUranium: 0.15
-    OreArtifactFragment: 0.15
-
 # Large asteroids, typically 1
 - type: dungeonConfig
   id: BlobAsteroid
@@ -34,10 +20,6 @@
   # Generate biome
   - !type:BiomeDunGen
     biomeTemplate: Asteroid
-
-  # Generate ore veins
-  - !type:BiomeMarkerLayerDunGen
-    markerTemplate: AsteroidOre
 
 # Multiple smaller asteroids
 # This is a pain so we generate fewer tiles
@@ -62,10 +44,6 @@
   - !type:BiomeDunGen
     biomeTemplate: Asteroid
 
-  # Generate ore veins
-  - !type:BiomeMarkerLayerDunGen
-    markerTemplate: AsteroidOre
-
 # Long and spindly, less smooth than blob
 - type: dungeonConfig
   id: SpindlyAsteroid
@@ -89,10 +67,6 @@
   - !type:BiomeDunGen
     biomeTemplate: Asteroid
 
-  # Generate ore veins
-  - !type:BiomeMarkerLayerDunGen
-    markerTemplate: AsteroidOre
-
 # Lots of holes in it
 - type: dungeonConfig
   id: SwissCheeseAsteroid
@@ -115,6 +89,3 @@
   - !type:BiomeDunGen
     biomeTemplate: Asteroid
 
-  # Generate ore veins
-  - !type:BiomeMarkerLayerDunGen
-    markerTemplate: AsteroidOre

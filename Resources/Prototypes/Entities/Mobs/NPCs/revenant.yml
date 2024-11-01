@@ -8,7 +8,7 @@
   - type: MobMover
   - type: Input
     context: "ghost"
-  - type: Spectral    
+  - type: Spectral
   - type: MovementSpeedModifier
     baseWalkSpeed: 6
     baseSprintSpeed: 6
@@ -83,6 +83,8 @@
     interfaces:
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
   - type: Visibility
     layer: 2 #ghost vis layer
   - type: Store
