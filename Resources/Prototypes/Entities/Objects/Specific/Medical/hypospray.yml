@@ -466,3 +466,100 @@
     - id: Hypopen
     sound:
       path: /Audio/Effects/unwrap.ogg
+
+
+- type: entity
+  name: автоинъектор для пунктуразы
+  parent: ChemicalMedipen
+  id: PunctAutoInjector
+  description: Быстродействующая доза пунктуразы и транексамовой кислоты, предназначенная для боевого применения.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: punctpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: punctpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 15
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 15
+        reagents:
+        - ReagentId: Puncturase
+          Quantity: 10
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Tag
+    tags: []
+
+- type: entity
+  name: автоинъектор пиразина
+  parent: ChemicalMedipen
+  id: PyraAutoInjector
+  description: Быстродействующая доза пиразина и дермалина, предназначенная для боевого применения.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: pyrapen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: pyrapen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 20
+        reagents:
+        - ReagentId: Pyrazine
+          Quantity: 10
+        - ReagentId: Dermaline
+          Quantity: 10
+  - type: Tag
+    tags: []
+
+- type: entity
+  name: автоинъектор для лечения нехватки воздуха
+  parent: ChemicalMedipen
+  id: AirlossAutoInjector
+  description: Быстрая доза физраствора и дексалина плюс, предназначенная для быстрого приведения человека в чувство.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: dexpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: dexpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 40
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 40
+        reagents:
+        - ReagentId: Saline
+          Quantity: 20
+        - ReagentId: DexalinPlus
+          Quantity: 20
+  - type: Tag
+    tags: []

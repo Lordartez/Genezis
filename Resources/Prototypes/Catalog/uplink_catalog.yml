@@ -587,7 +587,7 @@
   description: uplink-meds-bundle-desc
   productEntity: ClothingBackpackDuffelSyndicateMedicalBundleBackmenFilled
   cost:
-    Telecrystal: 15
+    Telecrystal: 24
   categories:
   - UplinkChemicals
   conditions:
