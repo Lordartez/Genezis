@@ -78,11 +78,10 @@ namespace Content.Server.Body.Components
         [ViewVariables]
         public RespiratorStatus Status = RespiratorStatus.Inhaling;
 
-        /// <summary>
-        /// Whether the entity is immuned to pressure (i.e possess the PressureImmunity component)
-        /// </summary>
-        [ViewVariables, Access(typeof(Backmen.Blob.ZombieBlobSystem))]
+        // Sunrise-Start
+        [ViewVariables]
         public bool HasImmunity = false;
+        // Sunrise-End
     }
 }
 

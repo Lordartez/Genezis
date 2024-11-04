@@ -1,5 +1,4 @@
-# Alphabetically Ordered
-- type: moodCategory
+﻿- type: moodCategory
   id: Health
 
 - type: moodCategory
@@ -7,4 +6,3 @@
 
 - type: moodCategory
   id: Thirst
-

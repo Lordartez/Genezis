@@ -1,17 +1,17 @@
+using Content.Shared._Sunrise.Mood;
 using Content.Shared.Alert;
+using Content.Shared.CCVar;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusIcon;
 using JetBrains.Annotations;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Mood;
-using Robust.Shared.Configuration;
-using Content.Shared.CCVar;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -26,18 +26,18 @@ public sealed class ThirstSystem : EntitySystem
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
-    [ValidatePrototypeId<StatusIconPrototype>]
+    [ValidatePrototypeId<SatiationIconPrototype>]
     private const string ThirstIconOverhydratedId = "ThirstIconOverhydrated";
 
-    [ValidatePrototypeId<StatusIconPrototype>]
+    [ValidatePrototypeId<SatiationIconPrototype>]
     private const string ThirstIconThirstyId = "ThirstIconThirsty";
 
-    [ValidatePrototypeId<StatusIconPrototype>]
+    [ValidatePrototypeId<SatiationIconPrototype>]
     private const string ThirstIconParchedId = "ThirstIconParched";
 
-    private StatusIconPrototype? _thirstIconOverhydrated = null;
-    private StatusIconPrototype? _thirstIconThirsty = null;
-    private StatusIconPrototype? _thirstIconParched = null;
+    private SatiationIconPrototype? _thirstIconOverhydrated = null;
+    private SatiationIconPrototype? _thirstIconThirsty = null;
+    private SatiationIconPrototype? _thirstIconParched = null;
 
     public override void Initialize()
     {
@@ -133,7 +133,7 @@ public sealed class ThirstSystem : EntitySystem
         }
     }
 
-    public bool TryGetStatusIconPrototype(ThirstComponent component, out StatusIconPrototype? prototype)
+    public bool TryGetStatusIconPrototype(ThirstComponent component, out SatiationIconPrototype? prototype)
     {
         switch (component.CurrentThirstThreshold)
         {

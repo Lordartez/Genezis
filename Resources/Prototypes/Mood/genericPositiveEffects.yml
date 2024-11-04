@@ -22,19 +22,3 @@
   id: SavedLife
   moodChange: 7
   timeout: 480
-
-- type: moodEffect
-  id: TraitorFocused # Used for traitors to boost their goals completion.
-  moodChange: 7
-
-- type: moodEffect
-  id: RevolutionFocused # Used for revolution
-  moodChange: 7
-
-- type: moodEffect
-  id: CultFocused
-  moodChange: 10
-
-- type: moodEffect
-  id: TraitSanguine
-  moodChange: 15

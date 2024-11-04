@@ -114,8 +114,3 @@
   id: Cataracts
   kind: source
   path: "/Textures/Shaders/cataracts.swsl"
-
-- type: shader
-  id: SaturationScale
-  kind: source
-  path: "/Textures/Shaders/saturationscale.swsl"
