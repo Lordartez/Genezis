@@ -9,11 +9,3 @@
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: 10
-  metabolisms:
-    Poison:
-      effects:
-      - !type:ChemBloodSucker
-        conditions:
-        - !type:ReagentThreshold
-          reagent: BloodSuckerToxin
-          min: 10

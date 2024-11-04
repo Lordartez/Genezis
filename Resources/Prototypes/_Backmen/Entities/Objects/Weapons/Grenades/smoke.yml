@@ -9,10 +9,6 @@
   - type: SmokeOnTrigger
     duration: 10
     spreadAmount: 30
-    solution:
-      reagents:
-      - ReagentId: BloodSuckerToxin
-        Quantity: 50
 
 - type: entity
   name: psi mine
