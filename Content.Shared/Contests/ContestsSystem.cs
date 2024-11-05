@@ -2,7 +2,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Mood;
+using Content.Shared._Sunrise.Mood;
 using Robust.Shared.Configuration;
 using Robust.Shared.Physics.Components;
 

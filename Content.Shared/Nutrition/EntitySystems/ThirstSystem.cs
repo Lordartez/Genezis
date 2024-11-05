@@ -1,17 +1,17 @@
+using Content.Shared._Sunrise.Mood;
 using Content.Shared.Alert;
+using Content.Shared.CCVar;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusIcon;
 using JetBrains.Annotations;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Mood;
-using Robust.Shared.Configuration;
-using Content.Shared.CCVar;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 

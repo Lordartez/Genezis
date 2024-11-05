@@ -114,3 +114,17 @@ public sealed partial class AlertPrototype : IPrototype
         return Icons[severity.Value - _minSeverity];
     }
 }
+
+[ImplicitDataDefinitionForInheritors]
+public abstract partial class BaseAlertEvent : HandledEntityEventArgs
+{
+    public EntityUid User;
+
+    public ProtoId<AlertPrototype> AlertId;
+
+    protected BaseAlertEvent(EntityUid user, ProtoId<AlertPrototype> alertId)
+    {
+        User = user;
+        AlertId = alertId;
+    }
+}

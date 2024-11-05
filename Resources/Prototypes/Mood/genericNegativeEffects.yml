@@ -37,9 +37,5 @@
   timeout: 10
 
 - type: moodEffect
-  id: TraitSaturnine
-  moodChange: -20
-
-- type: moodEffect
   id: Dead
   moodChange: -1000

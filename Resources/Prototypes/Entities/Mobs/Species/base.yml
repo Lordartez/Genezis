@@ -87,9 +87,9 @@
     defaultRotation: 90
     horizontalRotation: 90
   - type: RadarRenderable
-    viewProtos: 
+    viewProtos:
     - genericMob
-    group: enum.RadarRenderableGroup.ShipEventTeammate    
+    group: enum.RadarRenderableGroup.ShipEventTeammate
   - type: HumanoidAppearance
     species: Human
   - type: SlowOnDamage
@@ -109,7 +109,6 @@
         layer:
         - MobLayer
   - type: FloorOcclusion
-  - type: Mood
   - type: RangedDamageSound
     soundGroups:
       Brute:
@@ -243,6 +242,7 @@
   abstract: true
   components:
   - type: DiseaseCarrier # backmen
+  - type: Mood
   - type: Barotrauma
     damage:
       types:

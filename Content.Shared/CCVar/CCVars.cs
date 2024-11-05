@@ -2273,6 +2273,7 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> DebugPow3rDisableParallel =
             CVarDef.Create("debug.pow3r_disable_parallel", true, CVar.SERVERONLY);
 
+
         #region Mood System
 
         public static readonly CVarDef<bool> MoodEnabled =
