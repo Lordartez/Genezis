@@ -1459,13 +1459,6 @@ entities:
     - type: Transform
       pos: 15.5,1.5
       parent: 1
-- proto: SignMaterials
-  entities:
-  - uid: 136
-    components:
-    - type: Transform
-      pos: 14.5,1.5
-      parent: 1
 - proto: SignRadiationMed
   entities:
   - uid: 193

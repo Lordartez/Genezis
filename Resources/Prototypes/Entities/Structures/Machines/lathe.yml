@@ -352,6 +352,9 @@
       - SapphireRing
       - GoldenRing
       - DeviceQuantumSpinInverter
+      - PKAUpgradeDamage
+      - PKAUpgradeRange
+      - PKAUpgradeFireRate
       - EnergyDomeDirectionalTurtle # cats-shield energy_barrier
       - ThermalVisorRND # SS220 Thermals
   - type: EmagLatheRecipes
