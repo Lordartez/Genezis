@@ -1,19 +1,21 @@
 using System.Diagnostics.CodeAnalysis;
-using Content.Shared._Sunrise.Mood;
 using Content.Shared.Alert;
-using Content.Shared.CCVar;
 using Content.Shared.Damage;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusIcon;
-using Robust.Shared.Configuration;
-using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.Mood;
+using Robust.Shared.Network;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -30,18 +32,18 @@ public sealed class HungerSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string HungerIconOverfedId = "HungerIconOverfed";
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string HungerIconPeckishId = "HungerIconPeckish";
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string HungerIconStarvingId = "HungerIconStarving";
 
-    private SatiationIconPrototype? _hungerIconOverfed;
-    private SatiationIconPrototype? _hungerIconPeckish;
-    private SatiationIconPrototype? _hungerIconStarving;
+    private StatusIconPrototype? _hungerIconOverfed;
+    private StatusIconPrototype? _hungerIconPeckish;
+    private StatusIconPrototype? _hungerIconStarving;
 
     public override void Initialize()
     {
@@ -72,7 +74,7 @@ public sealed class HungerSystem : EntitySystem
 
     private void OnRefreshMovespeed(EntityUid uid, HungerComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (_config.GetCVar(CCVars.MoodEnabled) // Sunrise Edit
+        if (_config.GetCVar(CCVars.MoodEnabled)
             || component.CurrentThreshold > HungerThreshold.Starving
             || _jetpack.IsUserFlying(uid))
             return;
@@ -138,7 +140,6 @@ public sealed class HungerSystem : EntitySystem
 
         if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
         {
-            // Sunrise Edit
             if (!_config.GetCVar(CCVars.MoodEnabled))
                 _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
             else if (_net.IsServer)
@@ -146,7 +147,6 @@ public sealed class HungerSystem : EntitySystem
                 var ev = new MoodEffectEvent("Hunger" + component.CurrentThreshold);
                 RaiseLocalEvent(uid, ev);
             }
-            // Sunrise Edit
         }
 
         if (component.HungerThresholdAlerts.TryGetValue(component.CurrentThreshold, out var alertId))
@@ -229,7 +229,7 @@ public sealed class HungerSystem : EntitySystem
         }
     }
 
-    public bool TryGetStatusIconPrototype(HungerComponent component, [NotNullWhen(true)] out SatiationIconPrototype? prototype)
+    public bool TryGetStatusIconPrototype(HungerComponent component, [NotNullWhen(true)] out StatusIconPrototype? prototype)
     {
         switch (component.CurrentThreshold)
         {

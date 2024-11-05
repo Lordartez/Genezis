@@ -1,11 +1,10 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Forensics;
 using Content.Server.Popups;
 using Content.Server.Stunnable;
-using Content.Shared._Sunrise.Mood;
-using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.IdentityManagement;
@@ -26,7 +25,7 @@ namespace Content.Server.Medical
         [Dependency] private readonly HungerSystem _hunger = default!;
         [Dependency] private readonly PopupSystem _popup = default!;
         [Dependency] private readonly PuddleSystem _puddle = default!;
-        [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+        [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
         [Dependency] private readonly StunSystem _stun = default!;
         [Dependency] private readonly ThirstSystem _thirst = default!;
         [Dependency] private readonly ForensicsSystem _forensics = default!;
@@ -38,7 +37,7 @@ namespace Content.Server.Medical
         public void Vomit(EntityUid uid, float thirstAdded = -40f, float hungerAdded = -40f)
         {
             // Main requirement: You have a stomach
-            var stomachList = _body.GetBodyOrganEntityComps<StomachComponent>(uid);
+            var stomachList = _body.GetBodyOrganComponents<StomachComponent>(uid);
             if (stomachList.Count == 0)
                 return;
 
@@ -61,11 +60,11 @@ namespace Content.Server.Medical
             // Empty the stomach out into it
             foreach (var stomach in stomachList)
             {
-                if (_solutionContainer.ResolveSolution(stomach.Owner, StomachSystem.DefaultSolutionName, ref stomach.Comp1.Solution, out var sol))
+                if (_solutionContainer.ResolveSolution(stomach.Comp.Owner, StomachSystem.DefaultSolutionName, ref stomach.Comp.Solution, out var sol))
                 {
                     solution.AddSolution(sol, _proto);
                     sol.RemoveAllSolution();
-                    _solutionContainer.UpdateChemicals(stomach.Comp1.Solution.Value);
+                    _solutionContainer.UpdateChemicals(stomach.Comp.Solution.Value);
                 }
             }
             // Adds a tiny amount of the chem stream from earlier along with vomit
@@ -82,7 +81,7 @@ namespace Content.Server.Medical
                     vomitChemstreamAmount.ScaleSolution(chemMultiplier);
                     solution.AddSolution(vomitChemstreamAmount, _proto);
 
-                    vomitAmount -= (float)vomitChemstreamAmount.Volume;
+                    vomitAmount -= (float) vomitChemstreamAmount.Volume;
                 }
 
                 // Makes a vomit solution the size of 90% of the chemicals removed from the chemstream
@@ -97,8 +96,6 @@ namespace Content.Server.Medical
             // Force sound to play as spill doesn't work if solution is empty.
             _audio.PlayPvs("/Audio/Effects/Fluids/splat.ogg", uid, AudioParams.Default.WithVariation(0.2f).WithVolume(-4f));
             _popup.PopupEntity(Loc.GetString("disease-vomit", ("person", Identity.Entity(uid, EntityManager))), uid);
-
-            RaiseLocalEvent(uid, new MoodEffectEvent("MobVomit"));
         }
     }
 }

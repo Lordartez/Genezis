@@ -4,6 +4,7 @@ using Content.Server.Movement.Systems;
 using Content.Shared.Actions.Events;
 using Content.Shared.Administration.Components;
 using Content.Shared.CombatMode;
+using Content.Shared.Contests;
 using Content.Shared.Damage.Events;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
@@ -35,6 +36,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
     [Dependency] private readonly LagCompensationSystem _lag = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
+    [Dependency] private readonly ContestsSystem _contests = default!;
 
     public override void Initialize()
     {
@@ -56,14 +58,8 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         _damageExamine.AddDamageExamine(args.Message, damageSpec, Loc.GetString("damage-melee"));
     }
 
-    protected override bool ArcRaySuccessful(EntityUid targetUid,
-        Vector2 position,
-        Angle angle,
-        Angle arcWidth,
-        float range,
-        MapId mapId,
-        EntityUid ignore,
-        ICommonSession? session)
+    protected override bool ArcRaySuccessful(EntityUid targetUid, Vector2 position, Angle angle, Angle arcWidth, float range, MapId mapId,
+        EntityUid ignore, ICommonSession? session)
     {
         // Originally the client didn't predict damage effects so you'd intuit some level of how far
         // in the future you'd need to predict, but then there was a lot of complaining like "why would you add artifical delay" as if ping is a choice.
@@ -135,7 +131,7 @@ public sealed class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (attemptEvent.Cancelled)
             return false;
 
-        var chance = CalculateDisarmChance(user, target, inTargetHand, combatMode);
+        var chance = CalculateDisarmChance(user, target, inTargetHand, combatMode) * _contests.MassContest(user, target);
 
         if (_random.Prob(chance))
         {

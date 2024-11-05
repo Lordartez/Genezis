@@ -34,6 +34,13 @@
   - type: BloodsuckerRule
 
 - type: entity
+  id: VampireObjective
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: BloodsuckerObjective
+
+- type: entity
   id: VampireOutbreak
   parent: BaseGameRule
   noSpawn: true

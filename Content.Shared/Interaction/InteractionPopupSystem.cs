@@ -1,11 +1,10 @@
-using Content.Shared._Sunrise.Mood;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Components;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Mood;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
@@ -94,31 +93,27 @@ public sealed class InteractionPopupSystem : EntitySystem
 
         if (_random.Prob(component.SuccessChance))
         {
-            // Sunrise Edit
             if (component.InteractSuccessString != null)
             {
                 msg = Loc.GetString(component.InteractSuccessString, ("target", Identity.Entity(uid, EntityManager))); // Success message (localized).
+
                 if (component.InteractSuccessString == "hugging-success-generic")
                 {
-                    var moodEffectEvent = new MoodEffectEvent("BeingHugged");
-                    RaiseLocalEvent(target, moodEffectEvent);
+                    var ev = new MoodEffectEvent("BeingHugged");
+                    RaiseLocalEvent(target, ev);
                 }
                 else if (component.InteractSuccessString.Contains("petting-success-"))
                 {
-                    var moodEffectEvent = new MoodEffectEvent("PetAnimal");
-                    RaiseLocalEvent(user, moodEffectEvent);
+                    var ev = new MoodEffectEvent("PetAnimal");
+                    RaiseLocalEvent(user, ev);
                 }
             }
-            // Sunrise Edit
 
             if (component.InteractSuccessSound != null)
                 sfx = component.InteractSuccessSound;
 
             if (component.InteractSuccessSpawn != null)
                 Spawn(component.InteractSuccessSpawn, _transform.GetMapCoordinates(uid));
-
-            var ev = new InteractionSuccessEvent(user);
-            RaiseLocalEvent(target, ref ev);
         }
         else
         {
@@ -130,12 +125,9 @@ public sealed class InteractionPopupSystem : EntitySystem
 
             if (component.InteractFailureSpawn != null)
                 Spawn(component.InteractFailureSpawn, _transform.GetMapCoordinates(uid));
-
-            var ev = new InteractionFailureEvent(user);
-            RaiseLocalEvent(target, ref ev);
         }
 
-        if (!string.IsNullOrEmpty(component.MessagePerceivedByOthers))
+        if (component.MessagePerceivedByOthers != null)
         {
             var msgOthers = Loc.GetString(component.MessagePerceivedByOthers,
                 ("user", Identity.Entity(user, EntityManager)), ("target", Identity.Entity(uid, EntityManager)));
@@ -153,7 +145,7 @@ public sealed class InteractionPopupSystem : EntitySystem
             return;
         }
 
-        _popupSystem.PopupClient(msg, uid, user);
+        _popupSystem.PopupPredicted(msg, uid, user);
 
         if (sfx == null)
             return;
