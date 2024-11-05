@@ -2221,9 +2221,6 @@
   - type: Arachne
   - type: Puller
     needsHands: false
-  - type: BloodSucker
-    unitsToSucc: 15
-    webRequired: true
   - type: Fixtures
     fixtures:
       fix1:

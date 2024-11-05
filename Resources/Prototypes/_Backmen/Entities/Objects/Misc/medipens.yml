@@ -18,8 +18,6 @@
       pen:
         maxVol: 20
         reagents:
-        - ReagentId: BloodSuckerToxin
-          Quantity: 15
         - ReagentId: SyntheticBlood
           Quantity: 5
   - type: Tag

@@ -1,4 +1,4 @@
-﻿//start-backmen: antag
+//start-backmen: antag
 using Content.Server.Backmen.Blob.Roles;
 using Content.Server.Backmen.EvilTwin;
 using Content.Server.Backmen.Flesh;
@@ -33,7 +33,6 @@ public sealed class RoleSystem : SharedRoleSystem
         SubscribeAntagEvents<EvilTwinRoleComponent>();
         SubscribeAntagEvents<FugitiveRoleComponent>();
         SubscribeAntagEvents<FleshCultistRoleComponent>();
-        SubscribeAntagEvents<Backmen.Vampiric.Role.VampireRoleComponent>();
         //end-backmen: antag
         SubscribeAntagEvents<ThiefRoleComponent>();
     }
