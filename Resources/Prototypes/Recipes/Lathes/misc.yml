@@ -143,6 +143,15 @@
     Silver: 500
 
 - type: latheRecipe
+  id: ClothingShoesBootsJump
+  result: ClothingShoesBootsJump
+  completetime: 2
+  materials:
+    Steel: 1000
+    Plastic: 400
+    Plasma: 200
+
+- type: latheRecipe
   id: ModularReceiver
   result: ModularReceiver
   completetime: 12

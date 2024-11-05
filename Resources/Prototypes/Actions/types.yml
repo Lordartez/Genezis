@@ -339,3 +339,15 @@
       itemIconStyle: NoItem
       useDelay: 1 # emote spam
       event: !type:ToggleActionEvent
+
+- type: entity
+  id: ActionGravityJump
+  name: Прыжок
+  description: Включая прыжковые системы ботинок, вы прыгаете на небольшое расстояние в направлении взгляда.
+  components:
+  - type: InstantAction
+    useDelay: 8
+    icon:
+      sprite: Interface/Actions/jump.rsi
+      state: icon
+    event: !type:GravityJumpEvent {}

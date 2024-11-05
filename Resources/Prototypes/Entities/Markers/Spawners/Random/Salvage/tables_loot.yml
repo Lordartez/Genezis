@@ -84,7 +84,7 @@
         range: 3, 5
     - id: ResearchDisk
     - id: DrinkGoldenCup
-    - id: TreasureSampleTube
+    - id: ArabianLamp
     - !type:NestedSelector
       tableId: TreasureCoinPile
       rolls: !type:RangeNumberSelector
@@ -240,8 +240,6 @@
   table: !type:GroupSelector
     children:
     - id: AdvancedMineralScanner
-    - id: BlueprintFulton
-    - id: BlueprintSeismicCharge
     - id: WeaponCrusherGlaive
     - id: ClothingOuterHardsuitSalvage
     - id: OmnizineChemistryBottle

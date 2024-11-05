@@ -149,3 +149,29 @@
     price: 75
   - type: Tag
     tags: [ ]
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingShoesBootsJump
+  name: прыжковые ботинки
+  description: Технологические ботинки, используемые исследователями новых миров для защиты от различных нежелательных препятствий.
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Boots/jumpboots.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: Clothing/Shoes/Boots/jumpboots.rsi
+  - type: JumpAbility
+    jumpPower: 3
+    soundJump: /Audio/Effects/stealthoff.ogg
+  - type: ActionGrant
+    actions:
+    - ActionGravityJump
+  - type: ItemActionGrant
+    actions:
+    - ActionGravityJump
+  - type: StaticPrice
+    price: 220
+  - type: Tag
+    tags: []
