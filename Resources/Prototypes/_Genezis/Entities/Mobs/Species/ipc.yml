@@ -3,8 +3,6 @@
   name: Урист МсАвтоматон
   parent: # технически нам требуется несколько веток из-за повторной реализации BaseMobSpeciesOrganic, но без органики
   - MobBloodstream
-  - MobRespirator
-  - MobAtmosStandard
   - MobFlammable
   - BaseMobSpecies
   id: BaseMobIPC
@@ -85,15 +83,6 @@
         types:
           Heat: 2
           Cold: 0
-    - type: Respirator
-      damage:
-        types:
-          Heat: 0.0 # нет воздуха для охлаждения
-          Asphyxiation: -1 # TODO FIX DEATHGASPS
-      damageRecovery:
-        types:
-          Heat: -0.25
-          Asphyxiation: -1
     - type: Repairable
       fuelcost: 7 # потому что большая часть топлива расходуется, как долго он включен
       doAfterDelay: 14

@@ -4,7 +4,7 @@
   id: RipleyCentralElectronics
   parent: BaseElectronics
   name: ripley central control module
-  description: The electrical control center for the ripley mech.
+  description: The electrical control center for the Ripley mech.
   components:
     - type: Item
       storedRotation: 0
@@ -22,11 +22,11 @@
   id: RipleyPeripheralsElectronics
   parent: BaseElectronics
   name: ripley peripherals control module
-  description: The electrical peripherals control for the ripley mech.
+  description: The electrical peripherals control for the Ripley mech.
   components:
     - type: Sprite
       sprite: Objects/Misc/module.rsi
-      state: id_mod
+      state: mcontroller
     - type: Tag
       tags:
       - RipleyPeripheralsControlModule

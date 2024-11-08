@@ -86,10 +86,6 @@
     - id: DrinkGoldenCup
     - id: ArabianLamp
     - !type:NestedSelector
-      tableId: TreasureCoinPile
-      rolls: !type:RangeNumberSelector
-        range: 1, 2
-    - !type:NestedSelector
       tableId: RandomInstrumentTable
 
 - type: entityTable
@@ -102,14 +98,8 @@
     - id: IngotGold1
       amount: !type:RangeNumberSelector
         range: 3, 5
-    - id: TreasureDatadiskEncrypted
-    - !type:GroupSelector
-      children:
-      - id: TreasureCDDrive
-      - id: TreasureHardDiskDrive
-      - id: TreasureFlopDiskDrive
     - !type:NestedSelector
-      tableId: TreasureCoinPile
+      tableId: RingTableCommon
       rolls: !type:RangeNumberSelector
         range: 4, 7
     - id: SpaceCash1000
@@ -129,7 +119,7 @@
       weight: 0.5
     - id: ArabianLamp
     - !type:NestedSelector
-      tableId: TreasureCoinPileRare
+      tableId: RingTableCommon
       rolls: !type:RangeNumberSelector
         range: 2, 5
     - !type:AllSelector

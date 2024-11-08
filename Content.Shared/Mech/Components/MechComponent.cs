@@ -13,6 +13,14 @@ namespace Content.Shared.Mech.Components;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class MechComponent : Component
 {
+
+    /// <summary>
+    /// Whether or not an emag disables it.
+    /// </summary>
+    [DataField("breakOnEmag")]
+    [AutoNetworkedField]
+    public bool BreakOnEmag = true;
+
     /// <summary>
     /// How much "health" the mech has left.
     /// </summary>
