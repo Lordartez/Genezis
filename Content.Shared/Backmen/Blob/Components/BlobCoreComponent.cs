@@ -172,6 +172,9 @@ public sealed partial class BlobCoreComponent : Component
      DataField("ghostPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string ObserverBlobPrototype = "MobObserverBlob";
 
+    [DataField]
+    public EntProtoId MindRoleBlobPrototypeId = "MindRoleBlob";
+
     [DataField("greetSoundNotification")]
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Effects/clang.ogg");
 

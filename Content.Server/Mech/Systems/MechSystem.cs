@@ -20,6 +20,7 @@ using Content.Server.Body.Systems;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Tag;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
@@ -42,6 +43,7 @@ public sealed partial class MechSystem : SharedMechSystem
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedToolSystem _toolSystem = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly TagSystem _tag = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -87,7 +89,7 @@ public sealed partial class MechSystem : SharedMechSystem
         if (TryComp<WiresPanelComponent>(uid, out var panel) && !panel.Open)
             return;
 
-        if (component.BatterySlot.ContainedEntity == null && TryComp<BatteryComponent>(args.Used, out var battery))
+        if (component.BatterySlot.ContainedEntity == null && TryComp<BatteryComponent>(args.Used, out var battery) && _tag.HasTag(args.Used, "PowerCage"))
         {
             InsertBattery(uid, args.Used, component, battery);
             _actionBlocker.UpdateCanMove(uid);
@@ -214,8 +216,11 @@ public sealed partial class MechSystem : SharedMechSystem
                         return;
                     }
 
-                    var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.ExitDelay,
-                        new MechExitEvent(), uid, target: uid);
+                    var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.ExitDelay, new MechExitEvent(), uid, target: uid)
+                    {
+                        BreakOnMove = true,
+                    };
+                    _popup.PopupEntity(Loc.GetString("mech-eject-pilot-alert", ("item", uid), ("user", args.User)), uid, PopupType.Large);
 
                     _doAfter.TryStartDoAfter(doAfterEventArgs);
                 }
@@ -234,10 +239,10 @@ public sealed partial class MechSystem : SharedMechSystem
             _popup.PopupEntity(Loc.GetString("mech-no-enter", ("item", uid)), args.User);
             return;
         }
-
+        
         if (!TryComp<HandsComponent>(args.Args.User, out var handsComponent))
             return;
-
+        
         foreach (var hand in _hands.EnumerateHands(args.Args.User, handsComponent))
         {
             _hands.DoDrop(args.Args.User, hand, true, handsComponent);

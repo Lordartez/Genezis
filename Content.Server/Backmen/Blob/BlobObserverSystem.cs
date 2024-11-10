@@ -177,7 +177,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
             isNewMind = true;
         }
 
-        _roleSystem.MindAddRole(mindId, new BlobRoleComponent{ PrototypeId = core.AntagBlobPrototypeId });
+        _roleSystem.MindAddRole(mindId, core.MindRoleBlobPrototypeId.Id);
         SendBlobBriefing(mindId);
 
         _alerts.ShowAlert(observer, BlobHealth, (short) Math.Clamp(Math.Round(core.CoreBlobTotalHealth.Float() / 10f), 0, 20));

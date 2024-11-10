@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Text;
-using Content.Server.Paper;
 using Content.Server.Popups;
 using Content.Shared.UserInterface;
 using Content.Shared.DoAfter;
@@ -8,6 +7,7 @@ using Content.Shared.Fluids.Components;
 using Content.Shared.Forensics;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Paper;
 using Content.Shared.Verbs;
 using Content.Shared.Tag;
 using Robust.Shared.Audio.Systems;
@@ -31,7 +31,6 @@ namespace Content.Server.Forensics
         [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
         [Dependency] private readonly MetaDataSystem _metaData = default!;
         [Dependency] private readonly ForensicsSystem _forensicsSystem = default!;
-        [Dependency] private readonly SolutionContainerSystem _solutionContainerSystem = default!;
         [Dependency] private readonly TagSystem _tag = default!;
 
         public override void Initialize()
@@ -197,7 +196,7 @@ namespace Content.Server.Forensics
             var printed = EntityManager.SpawnEntity(component.MachineOutput, Transform(uid).Coordinates);
             _handsSystem.PickupOrDrop(args.Actor, printed, checkActionBlocker: false);
 
-            if (!HasComp<PaperComponent>(printed))
+            if (!TryComp<PaperComponent>(printed, out var paperComp))
             {
                 Log.Error("Printed paper did not have PaperComponent.");
                 return;
@@ -238,7 +237,7 @@ namespace Content.Server.Forensics
                 text.AppendLine(residue);
             }
 
-            _paperSystem.SetContent(printed, text.ToString());
+            _paperSystem.SetContent((printed, paperComp), text.ToString());
             _audioSystem.PlayPvs(component.SoundPrint, uid,
                 AudioParams.Default
                 .WithVariation(0.25f)

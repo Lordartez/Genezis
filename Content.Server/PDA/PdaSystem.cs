@@ -94,9 +94,10 @@ namespace Content.Server.PDA
             UpdatePdaUi(uid, pda);
         }
 
-        public void SetOwner(EntityUid uid, PdaComponent pda, string ownerName)
+        public void SetOwner(EntityUid uid, PdaComponent pda, EntityUid owner, string ownerName)
         {
             pda.OwnerName = ownerName;
+            pda.PdaOwner = owner;
             UpdatePdaUi(uid, pda);
         }
 

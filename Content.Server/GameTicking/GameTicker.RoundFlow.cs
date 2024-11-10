@@ -4,6 +4,7 @@ using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
 using Content.Server.Maps;
+using Content.Server.Roles;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
@@ -26,6 +27,7 @@ namespace Content.Server.GameTicking
     public sealed partial class GameTicker
     {
         [Dependency] private readonly DiscordWebhook _discord = default!;
+        [Dependency] private readonly RoleSystem _role = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
@@ -171,7 +173,7 @@ namespace Content.Server.GameTicking
 
             var gridIds = _map.LoadMap(targetMapId, ev.GameMap.MapPath.ToString(), ev.Options);
 
-            _metaData.SetEntityName(_mapManager.GetMapEntityId(targetMapId), $"station map - {map.MapName}");
+            _metaData.SetEntityName(_mapManager.GetMapEntityId(targetMapId), map.MapName);
 
             var gridUids = gridIds.ToList();
             RaiseLocalEvent(new PostGameMapLoad(map, targetMapId, gridUids, stationName));
@@ -293,7 +295,6 @@ namespace Content.Server.GameTicking
             AnnounceRound();
             UpdateInfoText();
             SendRoundStartedDiscordMessage();
-            RaiseLocalEvent(new RoundStartedEvent(RoundId)); // Corvax
 
 #if EXCEPTION_TOLERANCE
             }
@@ -350,10 +351,7 @@ namespace Content.Server.GameTicking
             _adminLogger.Add(LogType.EmergencyShuttle, LogImpact.High, $"Round ended, showing summary");
 
             //Tell every client the round has ended.
-            // SS220 Round End Titles begin
-            //var gamemodeTitle = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty;
-            var gamemodeTitle = CurrentPreset != null ? CurrentPresetTitleOverride ?? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty;
-            // SS220 Round End Titles end
+            var gamemodeTitle = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty;
 
             // Let things add text here.
             var textEv = new RoundEndTextAppendEvent();
@@ -368,7 +366,7 @@ namespace Content.Server.GameTicking
             var listOfPlayerInfo = new List<RoundEndMessageEvent.RoundEndPlayerInfo>();
             // Grab the great big book of all the Minds, we'll need them for this.
             var allMinds = EntityQueryEnumerator<MindComponent>();
-            var pvsOverride = _configurationManager.GetCVar(CCVars.RoundEndPVSOverrides);
+            var pvsOverride = _cfg.GetCVar(CCVars.RoundEndPVSOverrides);
             while (allMinds.MoveNext(out var mindId, out var mind))
             {
                 // TODO don't list redundant observer roles?
@@ -377,7 +375,7 @@ namespace Content.Server.GameTicking
                 var userId = mind.UserId ?? mind.OriginalOwnerUserId;
 
                 var connected = false;
-                var observer = HasComp<ObserverRoleComponent>(mindId);
+                var observer = _role.MindHasRole<ObserverRoleComponent>(mindId);
                 // Continuing
                 if (userId != null && _playerManager.ValidSessionId(userId.Value))
                 {
@@ -404,7 +402,7 @@ namespace Content.Server.GameTicking
                     _pvsOverride.AddGlobalOverride(GetNetEntity(entity.Value), recursive: true);
                 }
 
-                var roles = _roles.MindGetAllRoles(mindId);
+                var roles = _roles.MindGetAllRoleInfo(mindId);
 
                 var playerEndRoundInfo = new RoundEndMessageEvent.RoundEndPlayerInfo()
                 {
@@ -442,7 +440,6 @@ namespace Content.Server.GameTicking
             );
             RaiseNetworkEvent(roundEndMessageEvent);
             RaiseLocalEvent(roundEndMessageEvent);
-            RaiseLocalEvent(new RoundEndedEvent(RoundId, roundDuration)); // Corvax
 
             _replayRoundPlayerInfo = listOfPlayerInfoFinal;
             _replayRoundText = roundEndText;

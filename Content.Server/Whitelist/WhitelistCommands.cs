@@ -7,11 +7,9 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Network;
 
-using Content.Server.Players; // backmen: whitelist
-
 namespace Content.Server.Whitelist;
 
-[AdminCommand(AdminFlags.WhiteList)]
+[AdminCommand(AdminFlags.Ban)]
 public sealed class AddWhitelistCommand : LocalizedCommands
 {
     public override string Command => "whitelistadd";
@@ -29,8 +27,7 @@ public sealed class AddWhitelistCommand : LocalizedCommands
         var loc = IoCManager.Resolve<IPlayerLocator>();
 
         var name = string.Join(' ', args).Trim();
-        var data = await loc.LookupIdByNameAsync(name);
-        var wlSystem = IoCManager.Resolve<EntityManager>().System<Backmen.RoleWhitelist.WhitelistSystem>(); // backmen: whitelist
+        var data = await loc.LookupIdByNameOrIdAsync(name);
 
         if (data != null)
         {
@@ -43,7 +40,6 @@ public sealed class AddWhitelistCommand : LocalizedCommands
             }
 
             await db.AddToWhitelistAsync(guid);
-            wlSystem.AddWhitelist(guid); // backmen: whitelist
             shell.WriteLine(Loc.GetString("cmd-whitelistadd-added", ("username", data.Username)));
             return;
         }
@@ -62,7 +58,7 @@ public sealed class AddWhitelistCommand : LocalizedCommands
     }
 }
 
-[AdminCommand(AdminFlags.WhiteList)]
+[AdminCommand(AdminFlags.Ban)]
 public sealed class RemoveWhitelistCommand : LocalizedCommands
 {
     public override string Command => "whitelistremove";
@@ -80,8 +76,7 @@ public sealed class RemoveWhitelistCommand : LocalizedCommands
         var loc = IoCManager.Resolve<IPlayerLocator>();
 
         var name = string.Join(' ', args).Trim();
-        var data = await loc.LookupIdByNameAsync(name);
-        var wlSystem = IoCManager.Resolve<EntityManager>().System<Backmen.RoleWhitelist.WhitelistSystem>(); // backmen: whitelist
+        var data = await loc.LookupIdByNameOrIdAsync(name);
 
         if (data != null)
         {
@@ -94,7 +89,6 @@ public sealed class RemoveWhitelistCommand : LocalizedCommands
             }
 
             await db.RemoveFromWhitelistAsync(guid);
-            wlSystem.RemoveWhitelist(guid); // backmen: whitelist
             shell.WriteLine(Loc.GetString("cmd-whitelistremove-removed", ("username", data.Username)));
             return;
         }
@@ -113,7 +107,7 @@ public sealed class RemoveWhitelistCommand : LocalizedCommands
     }
 }
 
-[AdminCommand(AdminFlags.Host)]
+[AdminCommand(AdminFlags.Ban)]
 public sealed class KickNonWhitelistedCommand : LocalizedCommands
 {
     public override string Command => "kicknonwhitelisted";
@@ -136,14 +130,12 @@ public sealed class KickNonWhitelistedCommand : LocalizedCommands
         var db = IoCManager.Resolve<IServerDbManager>();
         var net = IoCManager.Resolve<IServerNetManager>();
 
-        var wlSystem = IoCManager.Resolve<EntityManager>().System<Backmen.RoleWhitelist.WhitelistSystem>(); // backmen: whitelist
-
         foreach (var session in player.NetworkedSessions)
         {
             if (await db.GetAdminDataForAsync(session.UserId) is not null)
                 continue;
 
-            if (!wlSystem.IsInWhitelist(session.UserId))
+            if (!await db.GetWhitelistStatusAsync(session.UserId))
             {
                 net.DisconnectChannel(session.Channel, Loc.GetString("whitelist-not-whitelisted"));
             }

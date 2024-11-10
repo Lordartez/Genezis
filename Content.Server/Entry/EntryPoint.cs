@@ -166,6 +166,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IGameMapManager>().Initialize();
                 IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<GameTicker>().PostInitialize();
                 IoCManager.Resolve<IBanManager>().Initialize();
+                IoCManager.Resolve<IConnectionManager>().PostInit();
                 // start-backmen: IoC
                 IoCManager.Resolve<Content.Corvax.Interfaces.Server.IServerJoinQueueManager>().PostInitialize();
                 // end-backmen: IoC

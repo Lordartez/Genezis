@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using Content.Client.Lobby;
 using Content.Shared.CCVar;
 using Content.Shared.Players;
@@ -25,9 +26,14 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
 
+    [Dependency] private readonly Content.Corvax.Interfaces.Shared.ISharedSponsorsManager _sponsorsManager = default!; // backmen: allRoles
+    [Dependency] private readonly Content.Corvax.Interfaces.Client.IClientDiscordAuthManager _discordManager = default!; // backmen: discord
+
     private readonly Dictionary<string, TimeSpan> _roles = new();
     private readonly List<string> _roleBans = new();
     private readonly List<string> _jobWhitelists = new();
+
+    public ImmutableList<string> RoleBans => _roleBans.ToImmutableList(); // backmen: antag
 
     private ISawmill _sawmill = default!;
 
@@ -45,21 +51,27 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         _client.RunLevelChanged += ClientOnRunLevelChanged;
     }
 
+    //start-backmen: whitelist
+    public bool IsWhitelisted()
+    {
+        return _entManager.SystemOrNull<Backmen.WL.WhitelistSystem>()?.Whitelisted ?? false;
+    }
+    //end-backmen: whitelist
+
     private void ClientOnRunLevelChanged(object? sender, RunLevelChangedEventArgs e)
     {
         if (e.NewLevel == ClientRunLevel.Initialize)
         {
             // Reset on disconnect, just in case.
             _roles.Clear();
+            _jobWhitelists.Clear();
+            _roleBans.Clear();
         }
     }
 
     private void RxRoleBans(MsgRoleBans message)
     {
         _sawmill.Debug($"Received roleban info containing {message.Bans.Count} entries.");
-
-        if (_roleBans.Equals(message.Bans))
-            return;
 
         _roleBans.Clear();
         _roleBans.AddRange(message.Bans);
@@ -101,6 +113,11 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
             return false;
         }
 
+        //start-backmen: allRoles
+        if (_sponsorsManager.IsClientAllRoles())
+            return true;
+        //end-backmen
+
         if (!CheckWhitelist(job, out reason))
             return false;
 
@@ -124,6 +141,11 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         if (requirements == null || !_cfg.GetCVar(CCVars.GameRoleTimers))
             return true;
 
+        //start-backmen: allRoles
+        if (_sponsorsManager.IsClientAllRoles())
+            return true;
+        //end-backmen
+
         var reasons = new List<string>();
         foreach (var requirement in requirements)
         {
@@ -133,7 +155,7 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
             reasons.Add(jobReason.ToMarkup());
         }
 
-        reason = reasons.Count == 0 ? null : FormattedMessage.FromMarkup(string.Join('\n', reasons));
+        reason = reasons.Count == 0 ? null : FormattedMessage.FromMarkupOrThrow(string.Join('\n', reasons));
         return reason == null;
     }
 

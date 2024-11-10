@@ -1,0 +1,22 @@
+player-panel-title = Информация по {$player}
+player-panel-username = Юзернейм: {$player}
+player-panel-whitelisted = Вайтлисты:
+player-panel-bans = Общее кол-во банов: {$totalBans}
+player-panel-rolebans = Общее кол-во банов ролей: {$totalRoleBans}
+player-panel-notes = Общее кол-во заметок: {$totalNotes}
+player-panel-playtime = Общее кол-во игрового времени: {$days}д:{$hours}ч:{$minutes}м
+player-panel-shared-connections = Shared Connections: {$sharedConnections}
+
+player-panel-copy-username = Копировать юзернейм
+player-panel-show-notes = Заметки
+player-panel-show-bans = Показать баны
+player-panel-help = Ahelp
+player-panel-freeze-and-mute = Заморозить и отключить звук
+player-panel-freeze = Заморозить
+player-panel-unfreeze = Разморозить
+player-panel-kick = Кик
+player-panel-ban = Бан
+player-panel-logs = Логи
+player-panel-delete = Удалить
+player-panel-rejuvenate = Восстановить
+player-panel-false = Неверно
