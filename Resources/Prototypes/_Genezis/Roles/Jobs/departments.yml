@@ -36,8 +36,7 @@
   primary: true
   weight: 10
   roles:
-    - SAI
-    - Borg    
+    - Borg
     - BKBPLATech
     - BKBPLAMED
   accountNumber: 1351  #backmen: currency

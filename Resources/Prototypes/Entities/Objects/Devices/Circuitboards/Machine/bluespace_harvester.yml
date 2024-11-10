@@ -5,7 +5,9 @@
   description: A machine board for a Bluespace Harvester
   components:
     - type: Sprite
-      state: bluespace
+      sprite: /Textures/Objects/Misc/module.rsi
+      layers:
+      - state: bluespace
     - type: MachineBoard
       prototype: BluespaceHarvester
       stackRequirements:

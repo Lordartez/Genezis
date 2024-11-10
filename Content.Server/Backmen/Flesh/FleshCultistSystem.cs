@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server.Actions;
 using Content.Server.Atmos.Components;
 using Content.Server.Body.Components;
@@ -76,10 +76,10 @@ public sealed partial class FleshCultistSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
 
-
     public override void Initialize()
     {
         base.Initialize();
+
 
         SubscribeLocalEvent<FleshCultistComponent, MapInitEvent>(OnStartup);
         SubscribeLocalEvent<FleshCultistComponent, FleshCultistShopActionEvent>(OnShop);
@@ -222,6 +222,7 @@ public sealed partial class FleshCultistSystem : EntitySystem
         _action.AddAction(uid, ref component.FleshCultistShop, FleshCultistShop);
         _action.AddAction(uid, ref component.FleshCultistDevour, FleshCultistDevour);
         _action.AddAction(uid, ref component.FleshCultistAbsorbBloodPool, FleshCultistAbsorbBloodPool);
+
     }
 
     private void OnInsulatedImmunityMutation(EntityUid uid, FleshCultistComponent component,

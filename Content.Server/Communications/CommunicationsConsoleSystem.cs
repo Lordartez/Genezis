@@ -9,13 +9,11 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Interaction;
 using Content.Server.Popups;
 using Content.Server.RoundEnd;
-using Content.Server.Screens;
 using Content.Server.Screens.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
-using Content.Shared.Backmen.StationAI;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Communications;
@@ -23,6 +21,7 @@ using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.Emag.Components;
 using Content.Shared.Popups;
+using Content.Shared.Silicons.Borgs.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 
@@ -183,10 +182,6 @@ namespace Content.Server.Communications
 
         private bool CanUse(EntityUid user, EntityUid console)
         {
-            // This shouldn't technically be possible because of BUI but don't trust client.
-            if (!_interaction.InRangeUnobstructed(console, user))
-                return false;
-
             if (TryComp<AccessReaderComponent>(console, out var accessReaderComponent) && !HasComp<EmaggedComponent>(console))
             {
                 return _accessReaderSystem.IsAllowed(user, console, accessReaderComponent);
@@ -256,17 +251,19 @@ namespace Content.Server.Communications
                     return;
                 }
 
+                // User has an id
                 if (_idCardSystem.TryFindIdCard(mob, out var id))
                 {
                     author = $"{id.Comp.FullName} ({CultureInfo.CurrentCulture.TextInfo.ToTitleCase(id.Comp.JobTitle ?? string.Empty)})".Trim();
                 }
 
-                //start-backmen: sai
-                if (HasComp<StationAIComponent>(mob))
+                // User does not have an id and is a borg, so use the borg's name
+                if (
+                    HasComp<BorgChassisComponent>(mob)
+                    )
                 {
-                    author = MetaData(mob).EntityName;
+                    author = Name(mob).Trim();
                 }
-                //end-backmen: sai
             }
 
             comp.AnnouncementCooldownRemaining = comp.Delay;

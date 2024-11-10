@@ -45,7 +45,6 @@
   - type: Polymorphable
   - type: StatusIcon
   - type: TTS # Corvax-TTS
-  - type: CanBeBorgNTEnemy
   - type: RequireProjectileTarget
     active: False
 

@@ -3,31 +3,15 @@
   alias:
     - secret
     - Основа генезиса
-  name: Основая генезиса
+  name: Основа генезиса
   showInVote: true
   description: secret-description
   rules:
     - BasicRoundstartVariation
     - BasicStationEventScheduler
     - WageScheduler #backmen: currency
-    - Secret
   supportedMaps: GenezisDefaultMapPool
   forceMap: true
-
-# - type: gamePreset
-#   id: Vampires
-#   alias:
-#   - vamp
-#   - bloodsucker
-#   name: vampires-title
-#   description: vampires-description
-#   showInVote: false
-#   rules:
-#   - VampiresGameRule
-#   - BasicStationEventScheduler
-#   - WageScheduler #backmen: currency
-#   - SubGamemodesRule
-#   - BasicRoundstartVariation
 
 # - type: gamePreset
 #   id: Blob

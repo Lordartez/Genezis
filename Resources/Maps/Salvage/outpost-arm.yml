@@ -1812,13 +1812,6 @@ entities:
     - type: Transform
       pos: 3.5,13.5
       parent: 1
-- proto: WeaponTurretLaserNanoTrasenAI
-  entities:
-  - uid: 197
-    components:
-    - type: Transform
-      pos: 3.5,15.5
-      parent: 1
 - proto: WetFloorSign
   entities:
   - uid: 79
