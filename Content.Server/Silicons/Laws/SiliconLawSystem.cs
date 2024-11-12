@@ -283,6 +283,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         component.Lawset.Laws = newLaws;
         NotifyLawsChanged(target, cue);
     }
+
 }
 
 [ToolshedCommand, AdminCommand(AdminFlags.Admin)]

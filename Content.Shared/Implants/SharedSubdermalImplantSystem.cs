@@ -4,7 +4,6 @@ using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Mobs;
-using Content.Shared.SS220.Thermals;
 using Content.Shared.Tag;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
@@ -20,10 +19,6 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
     [Dependency] private readonly TagSystem _tag = default!;
 
     public const string BaseStorageId = "storagebase";
-
-    //SS220 thermalvision begin
-    public const string ThermalImplantTag = "ThermalImplant";
-    //SS220 thermalvision end
 
     public override void Initialize()
     {
@@ -77,10 +72,6 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
         if (component.ImplantAction != null)
             _actionsSystem.RemoveProvidedActions(component.ImplantedEntity.Value, uid);
 
-        //SS220 thermalvision begin
-        if (_tag.HasTag(uid, ThermalImplantTag) && TryComp<ThermalVisionComponent>(component.ImplantedEntity.Value, out var thermalVision))
-            RemComp(component.ImplantedEntity.Value, thermalVision);
-        //SS220 thermalvision end
         if (!_container.TryGetContainer(uid, BaseStorageId, out var storageImplant))
             return;
 
@@ -103,20 +94,36 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
     /// </summary>
     public void AddImplants(EntityUid uid, IEnumerable<String> implants)
     {
-        var coords = Transform(uid).Coordinates;
         foreach (var id in implants)
         {
-            var ent = Spawn(id, coords);
-            if (TryComp<SubdermalImplantComponent>(ent, out var implant))
-            {
-                ForceImplant(uid, ent, implant);
-            }
-            else
-            {
-                Log.Warning($"Found invalid starting implant '{id}' on {uid} {ToPrettyString(uid):implanted}");
-                Del(ent);
-            }
+            AddImplant(uid, id);
         }
+    }
+
+    /// <summary>
+    /// Adds a single implant to a person, and returns the implant.
+    /// Logs any implant ids that don't have <see cref="SubdermalImplantComponent"/>.
+    /// </summary>
+    /// <returns>
+    /// The implant, if it was successfully created. Otherwise, null.
+    /// </returns>>
+    public EntityUid? AddImplant(EntityUid uid, String implantId)
+    {
+        var coords = Transform(uid).Coordinates;
+        var ent = Spawn(implantId, coords);
+
+        if (TryComp<SubdermalImplantComponent>(ent, out var implant))
+        {
+            ForceImplant(uid, ent, implant);
+        }
+        else
+        {
+            Log.Warning($"Found invalid starting implant '{implantId}' on {uid} {ToPrettyString(uid):implanted}");
+            Del(ent);
+            return null;
+        }
+
+        return ent;
     }
 
     /// <summary>

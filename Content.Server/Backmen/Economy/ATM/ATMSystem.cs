@@ -1,9 +1,7 @@
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Stack;
-using Content.Server.Store.Components;
 using Content.Server.Store.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Backmen.Economy;
@@ -13,6 +11,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Materials;
 using Content.Shared.Popups;
+using Content.Shared.Power;
 using Content.Shared.Stacks;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
@@ -50,6 +49,7 @@ namespace Content.Server.Backmen.Economy.ATM;
             SubscribeLocalEvent<AtmComponent, EntRemovedFromContainerMessage>((Entity<AtmComponent> uid, ref EntRemovedFromContainerMessage _) => UpdateComponentUserInterface(uid));
 
             // change state
+            SubscribeLocalEvent<AtmComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<AtmComponent, AfterActivatableUIOpenEvent>(OnInteract);
 
             Subs.BuiEvents<AtmComponent>(ATMUiKey.Key,
@@ -118,6 +118,11 @@ namespace Content.Server.Backmen.Economy.ATM;
             var msg = Loc.GetString("store-currency-inserted", ("used", args.Used), ("target", args.Target));
             _popup.PopupEntity(msg, args.Target.Value);
             Del(args.Used);
+        }
+
+        private void OnPowerChanged(EntityUid uid, AtmComponent component, ref PowerChangedEvent args)
+        {
+            TryUpdateVisualState(uid, component);
         }
 
         public void TryUpdateVisualState(EntityUid uid, AtmComponent? component = null)

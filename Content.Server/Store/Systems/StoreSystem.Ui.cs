@@ -30,7 +30,6 @@ public sealed partial class StoreSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly StackSystem _stack = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private void InitializeUi()
     {
@@ -91,7 +90,8 @@ public sealed partial class StoreSystem
         //this is the person who will be passed into logic for all listing filtering.
         if (user != null) //if we have no "buyer" for this update, then don't update the listings
         {
-            component.LastAvailableListings = GetAvailableListings(component.AccountOwner ?? user.Value, store, component).ToHashSet();
+            component.LastAvailableListings = GetAvailableListings(component.AccountOwner ?? user.Value, store, component)
+                .ToHashSet();
         }
 
         //dictionary for all currencies, including 0 values for currencies on the whitelist
@@ -109,6 +109,7 @@ public sealed partial class StoreSystem
 
         // only tell operatives to lock their uplink if it can be locked
         var showFooter = HasComp<RingerUplinkComponent>(store);
+
         var state = new StoreUpdateState(component.LastAvailableListings, allCurrency, showFooter, component.RefundAllowed);
         _ui.SetUiState(store, StoreUiKey.Key, state);
     }
@@ -128,7 +129,7 @@ public sealed partial class StoreSystem
     /// </summary>
     private void OnBuyRequest(EntityUid uid, StoreComponent component, StoreBuyListingMessage msg)
     {
-        var listing = component.Listings.FirstOrDefault(x => x.Equals(msg.Listing));
+        var listing = component.FullListingsCatalog.FirstOrDefault(x => x.ID.Equals(msg.Listing.Id));
 
         if (listing == null) //make sure this listing actually exists
         {
@@ -228,7 +229,7 @@ public sealed partial class StoreSystem
 
                 if (listing.ProductUpgradeId != null)
                 {
-                    foreach (var upgradeListing in component.Listings)
+                    foreach (var upgradeListing in component.FullListingsCatalog)
                     {
                         if (upgradeListing.ID == listing.ProductUpgradeId)
                         {
@@ -272,12 +273,18 @@ public sealed partial class StoreSystem
         //log dat shit.
         _admin.Add(LogType.StorePurchase,
             LogImpact.Low,
-            $"{ToPrettyString(buyer):player} purchased listing \"{ListingLocalisationHelpers.GetLocalisedNameOrEntityName(listing, _prototypeManager)}\" from {ToPrettyString(uid)}");
+            $"{ToPrettyString(buyer):player} purchased listing \"{ListingLocalisationHelpers.GetLocalisedNameOrEntityName(listing, _proto)}\" from {ToPrettyString(uid)}");
 
         listing.PurchaseAmount++; //track how many times something has been purchased
         _audio.PlayEntity(component.BuySuccessSound, msg.Actor, uid); //cha-ching!
 
         _PlayEject(uid); // backmen: currency
+        var buyFinished = new StoreBuyFinishedEvent
+        {
+            PurchasedItem = listing,
+            StoreUid = uid
+        };
+        RaiseLocalEvent(ref buyFinished);
 
         UpdateUserInterface(buyer, uid, component);
     }
@@ -291,6 +298,9 @@ public sealed partial class StoreSystem
     /// </remarks>
     private void OnRequestWithdraw(EntityUid uid, StoreComponent component, StoreRequestWithdrawMessage msg)
     {
+        if (msg.Amount <= 0)
+            return;
+
         //make sure we have enough cash in the bank and we actually support this currency
         if (!component.Balance.TryGetValue(msg.Currency, out var currentAmount) || currentAmount < msg.Amount)
             return;
@@ -314,7 +324,8 @@ public sealed partial class StoreSystem
             var cashId = proto.Cash[value];
             var amountToSpawn = (int) MathF.Floor((float) (amountRemaining / value));
             var ents = _stack.SpawnMultiple(cashId, amountToSpawn, coordinates);
-            _hands.PickupOrDrop(buyer, ents.First());
+            if (ents.FirstOrDefault() is {} ent)
+                _hands.PickupOrDrop(buyer, ent);
             amountRemaining -= value * amountToSpawn;
         }
 
@@ -363,6 +374,7 @@ public sealed partial class StoreSystem
         {
             component.Balance[currency] += value;
         }
+
         // Reset store back to its original state
         RefreshAllListings(component);
         component.BalanceSpent = new();
@@ -393,3 +405,14 @@ public sealed partial class StoreSystem
         component.RefundAllowed = false;
     }
 }
+
+/// <summary>
+/// Event of successfully finishing purchase in store (<see cref="StoreSystem"/>.
+/// </summary>
+/// <param name="StoreUid">EntityUid on which store is placed.</param>
+/// <param name="PurchasedItem">ListingItem that was purchased.</param>
+[ByRefEvent]
+public readonly record struct StoreBuyFinishedEvent(
+    EntityUid StoreUid,
+    ListingDataWithCostModifiers PurchasedItem
+);
