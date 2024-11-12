@@ -342,7 +342,7 @@
       #- QSI
       - InsulativeHeadcage
       - HandTeleporter1
-      - BluespacePillCanister # Backmen
+      - BluespacePillCanister
       - FauxTileAstroGrass
       - FauxTileMowedAstroGrass
       - FauxTileJungleAstroGrass
@@ -356,8 +356,11 @@
       - PKAUpgradeDamage
       - PKAUpgradeRange
       - PKAUpgradeFireRate
-      - EnergyDomeDirectionalTurtle # cats-shield energy_barrier
-      - ThermalVisorRND # SS220 Thermals
+      - EnergyDomeDirectionalTurtle
+      - ThermalVisorRND
+      - PowerCageHigh
+      - PowerCageMedium
+      - PowerCageSmall
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag

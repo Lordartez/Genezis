@@ -27,6 +27,7 @@
     - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/smg.ogg
+    defaultDirection: 1, 0
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/smg_cock.ogg
@@ -102,7 +103,7 @@
     maxAngle: -16
   - type: Gun
     minAngle: 21
-    maxAngle: 32 
+    maxAngle: 32
     shotsPerBurst: 5
     availableModes:
     - SemiAuto
@@ -142,8 +143,8 @@
     - type: Gun
       minAngle: 21
       maxAngle: 32
-      fireRate: 6
-      selectedMode: FullAuto
+      fireRate: 12
+      selectedMode: Burst
       soundGunshot:
         path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
       availableModes:
@@ -252,6 +253,8 @@
     angleDecay: 6
     selectedMode: FullAuto
     shotsPerBurst: 5
+    burstCooldown: 0.2
+    burstFireRateModifier: 1.273
     availableModes:
     - SemiAuto
     - Burst

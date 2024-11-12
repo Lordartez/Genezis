@@ -5,7 +5,7 @@
     - Основа генезиса
   name: Основа генезиса
   showInVote: true
-  description: secret-description
+  description: Основной пресет, сможете ли вы разобраться со всеми трудностями?
   rules:
     - BasicRoundstartVariation
     - BasicStationEventScheduler

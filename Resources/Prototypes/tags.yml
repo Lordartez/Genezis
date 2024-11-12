@@ -908,6 +908,9 @@
 - type: Tag
   id: MacroBomb
 
+- type: Tag
+  id: MagicianHat
+
 # Magazines ordered by slot then caliber
 
 - type: Tag
