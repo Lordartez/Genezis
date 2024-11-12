@@ -5,7 +5,6 @@ using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Access.Components;
 
@@ -32,9 +31,9 @@ public sealed partial class IdCardComponent : Component
     /// <summary>
     /// The state of the job icon rsi.
     /// </summary>
-    [DataField("jobIcon", customTypeSerializer: typeof(PrototypeIdSerializer<StatusIconPrototype>))]
+    [DataField]
     [AutoNetworkedField]
-    public string JobIcon = "JobIconUnknown";
+    public ProtoId<JobIconPrototype> JobIcon = "JobIconUnknown";
 
     /// <summary>
     /// The proto IDs of the departments associated with the job
