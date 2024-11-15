@@ -29,8 +29,6 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-      enum.VoiceMaskUIKey.Key:
-        type: VoiceMaskBoundUserInterface
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
@@ -111,6 +109,15 @@
       types:
         Asphyxiation: -1.0
     maxSaturation: 15
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - TauCetiBasic
+    - Slime
+    understands:
+    - TauCetiBasic
+    - Slime
 
 - type: entity
   parent: MobHumanDummy

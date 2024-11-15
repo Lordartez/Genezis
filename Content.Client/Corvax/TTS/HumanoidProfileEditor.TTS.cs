@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Content.Client.Corvax.TTS;
 using Content.Client.Lobby;
+using Content.Corvax.Interfaces.Client;
 using Content.Corvax.Interfaces.Shared;
 using Content.Shared.Corvax.TTS;
 using Content.Shared.Preferences;
@@ -10,6 +11,7 @@ namespace Content.Client.Lobby.UI;
 public sealed partial class HumanoidProfileEditor
 {
     private ISharedSponsorsManager? _sponsorsMgr;
+
     private List<TTSVoicePrototype> _voiceList = new();
 
     private void InitializeVoice()
@@ -73,6 +75,6 @@ public sealed partial class HumanoidProfileEditor
         if (Profile is null)
             return;
 
-        _entManager.System<TTSSystem>().RequestPreviewTTS(Profile.Voice);
+        _entManager.System<TTSSystem>().RequestGlobalTTS(Shared.Backmen.TTS.VoiceRequestType.Preview,Profile.Voice);
     }
 }

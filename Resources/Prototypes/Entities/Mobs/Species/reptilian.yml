@@ -64,6 +64,15 @@
       types:
         Heat : 1.5 #per second, scales with temperature & other constants
   - type: Wagging
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - TauCetiBasic
+    - Dragon
+    understands:
+    - TauCetiBasic
+    - Dragon
 
 - type: entity
   parent: BaseSpeciesDummy

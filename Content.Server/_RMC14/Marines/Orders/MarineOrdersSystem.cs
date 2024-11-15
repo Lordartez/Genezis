@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Chat.Systems;
+using Content.Shared.Backmen.Chat;
 using Content.Shared._RMC14.Marines.Orders;
 using Robust.Shared.Random;
 

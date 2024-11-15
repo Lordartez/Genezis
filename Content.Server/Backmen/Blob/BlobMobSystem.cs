@@ -8,6 +8,7 @@ using Content.Server.Radio.EntitySystems;
 using Content.Shared.Backmen.Blob;
 using Content.Shared.Backmen.Blob.Chemistry;
 using Content.Shared.Backmen.Blob.Components;
+using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
@@ -49,7 +50,7 @@ public sealed class BlobMobSystem : EntitySystem
         {
             return;
         }
-        args.Name = Loc.GetString(ent.Comp.Name);
+        args.VoiceName = Loc.GetString(ent.Comp.Name);
     }
 
     private void OnSpokeCan(Entity<BlobSpeakComponent> ent, ref SpeakAttemptEvent args)
@@ -86,25 +87,8 @@ public sealed class BlobMobSystem : EntitySystem
     private void OnSpoke(Entity<BlobSpeakComponent> ent, ref EntitySpokeEvent args)
     {
         if (args.Channel == null)
-            args.Channel = _prototypeManager.Index(ent.Comp.Channel);
-
-        if (!TryComp<IntrinsicRadioTransmitterComponent>(ent, out var component) ||
-            !component.Channels.Contains(args.Channel.ID) ||
-            args.Channel.ID != ent.Comp.Channel)
-        {
             return;
-        }
-
-        if (TryComp<BlobObserverComponent>(ent, out var blobObserverComponent) && blobObserverComponent.Core.HasValue)
-        {
-            _radioSystem.SendRadioMessage(blobObserverComponent.Core.Value, args.OriginalMessage, args.Channel, blobObserverComponent.Core.Value);
-        }
-        else
-        {
-            _radioSystem.SendRadioMessage(ent, args.OriginalMessage, args.Channel, ent);
-        }
-
-        args.Channel = null; // prevent duplicate messages from other listeners.
+        _radioSystem.SendRadioMessage(ent, args.Message, ent.Comp.Channel, ent);
     }
 
     private void OnPulsed(EntityUid uid, BlobMobComponent component, BlobMobGetPulseEvent args)

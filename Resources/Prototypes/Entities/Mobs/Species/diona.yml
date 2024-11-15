@@ -103,6 +103,15 @@
     actionPrototype: DionaGibAction
     allowedStates:
     - Dead
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - TauCetiBasic
+    - RootSpeak
+    understands:
+    - TauCetiBasic
+    - RootSpeak
 
 - type: entity
   parent: BaseSpeciesDummy

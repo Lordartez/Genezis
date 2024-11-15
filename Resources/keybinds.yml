@@ -585,3 +585,8 @@ binds:
   canFocus: true
   priority: -1
 #Theta-End
+#start - backmen: languages
+- function: OpenLanguageMenu
+  type: State
+  key: L
+#end - backmen: languages

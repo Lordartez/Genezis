@@ -284,6 +284,15 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         NotifyLawsChanged(target, cue);
     }
 
+    protected override void OnUpdaterInsert(Entity<SiliconLawUpdaterComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        // TODO: Prediction dump this
+        if (!TryComp(args.Entity, out SiliconLawProviderComponent? provider))
+            return;
+
+        var lawset = GetLawset(provider.Laws).Laws;
+
+    }
 }
 
 [ToolshedCommand, AdminCommand(AdminFlags.Admin)]

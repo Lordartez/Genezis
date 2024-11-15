@@ -102,6 +102,15 @@
   - type: FireVisuals
     alternateState: Standing
   - type: FlashImmunity
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - TauCetiBasic
+    - Tradeband
+    understands:
+    - TauCetiBasic
+    - Tradeband
 
 - type: entity
   parent: BaseSpeciesDummy
