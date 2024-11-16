@@ -160,10 +160,11 @@ namespace Content.Client.Options.UI.Tabs
 
             AddHeader("Настройки Триглава");
             AddButton(ContentKeyFunctions.PingOnRadar);
+            AddButton(ContentKeyFunctions.OpenLanguageMenu);
             AddButton(CMKeyFunctions.CMUniqueAction);
-            AddButton(ContentKeyFunctions.ToggleCrawling);///ADT Crawling
-            AddButton(ContentKeyFunctions.LookUp); // WD EDIT
-            AddCheckBox("ui-options-function-hold-look-up", _cfg.GetCVar(WhiteCVars.HoldLookUp), HandleHoldLookUp); // WD EDIT
+            AddButton(ContentKeyFunctions.ToggleCrawling);
+            AddButton(ContentKeyFunctions.LookUp);
+            AddCheckBox("ui-options-function-hold-look-up", _cfg.GetCVar(WhiteCVars.HoldLookUp), HandleHoldLookUp);
 
             AddHeader("ui-options-header-general");
             AddCheckBox("ui-options-hotkey-keymap", _cfg.GetCVar(CVars.DisplayUSQWERTYHotkeys), HandleToggleUSQWERTYCheckbox);

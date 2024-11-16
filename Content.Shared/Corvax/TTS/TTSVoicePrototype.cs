@@ -8,7 +8,7 @@ namespace Content.Shared.Corvax.TTS;
 /// </summary>
 [Prototype("ttsVoice")]
 // ReSharper disable once InconsistentNaming
-public sealed partial class TTSVoicePrototype : IPrototype
+public sealed class TTSVoicePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; } = default!;

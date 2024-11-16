@@ -43,6 +43,8 @@ public abstract class SharedStunSystem : EntitySystem
 
     public override void Initialize()
     {
+        SubscribeLocalEvent<KnockedDownComponent, ComponentInit>(OnKnockInit);
+        SubscribeLocalEvent<KnockedDownComponent, ComponentShutdown>(OnKnockShutdown);
         SubscribeLocalEvent<KnockedDownComponent, StandAttemptEvent>(OnStandAttempt);
 
         SubscribeLocalEvent<SlowedDownComponent, ComponentInit>(OnSlowInit);
@@ -132,6 +134,17 @@ public abstract class SharedStunSystem : EntitySystem
 
         TryStun(args.OtherEntity, ent.Comp.Duration, true, status);
         TryKnockdown(args.OtherEntity, ent.Comp.Duration, true, status);
+    }
+
+    private void OnKnockInit(EntityUid uid, KnockedDownComponent component, ComponentInit args)
+    {
+        _standingState.Down(uid);
+    }
+
+
+    private void OnKnockShutdown(EntityUid uid, KnockedDownComponent component, ComponentShutdown args)
+    {
+
     }
 
     private void OnStandAttempt(EntityUid uid, KnockedDownComponent component, StandAttemptEvent args)

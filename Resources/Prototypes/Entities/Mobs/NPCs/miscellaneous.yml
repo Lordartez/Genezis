@@ -109,6 +109,15 @@
     spawned:
     - id: FoodMeatTomato
       amount: 2
+#  - type: ReplacementAccent
+#    accent: tomatoKiller
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge #backmen: languages
+    speaks:
+    - SpaceMob
+    understands:
+    - SpaceMob
   - type: Destructible
     thresholds:
     - trigger:
