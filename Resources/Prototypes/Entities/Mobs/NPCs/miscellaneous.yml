@@ -74,6 +74,7 @@
   - MobDamageable
   - MobBloodstream
   - MobFlammable
+  - MobPolymorphable
   - MobCombat
   name: tomato killer
   description: it seems today it's not you eating tomatoes, it's the tomatoes eating you.

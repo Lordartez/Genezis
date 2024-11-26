@@ -158,6 +158,11 @@
   loadouts:
   - HoPWintercoat
 
+# Silicons
+- type: roleLoadout
+  id: JobStationAi
+  nameDataset: names_ai
+
 # Civilian
 - type: loadoutGroup
   id: PassengerJumpsuit

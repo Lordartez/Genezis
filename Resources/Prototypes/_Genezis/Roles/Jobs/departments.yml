@@ -36,6 +36,7 @@
   primary: true
   weight: 10
   roles:
+    - StationAi
     - Borg
     - BKBPLATech
     - BKBPLAMED

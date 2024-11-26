@@ -300,6 +300,7 @@
       - id: Eftpos # backmen
         amount: 3 # backmen
       - id: GreySlimeExtract
+      - id: Intellicard
       - id: ClothingOuterReactiveArmor
       - id: ResearchComputerCircuitboard
       - id: ProtolatheMachineCircuitboard

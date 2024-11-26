@@ -1522,4 +1522,12 @@
 - type: Tag
   id: VGRoidInterior
 
+- type: Tag
+  id: Ingredient
+
+- type: Tag
+  id: StationAi
+
+- type: Tag
+  id: NoConsoleSound
 # ALPHABETICAL

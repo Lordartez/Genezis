@@ -9,6 +9,7 @@
   - !type:DoorBoltLightWireAction
   - !type:DoorTimingWireAction
   - !type:DoorSafetyWireAction
+  - !type:AiInteractWireAction
 
 - type: wireLayout
   parent: Airlock
@@ -104,6 +105,7 @@
   dummyWires: 2
   wires:
   - !type:PowerWireAction
+  - !type:AiVisionWireAction
 
 - type: wireLayout
   id: CryoPod

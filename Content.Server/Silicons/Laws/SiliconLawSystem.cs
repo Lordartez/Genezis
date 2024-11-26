@@ -246,8 +246,6 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
         var wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
         _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMessage, default, false, actor.PlayerSession.Channel, colorOverride: Color.Red);
 
-        if (cue != null && _mind.TryGetMind(uid, out var mindId, out _))
-            _roles.MindPlaySound(mindId, cue);
     }
 
     /// <summary>
@@ -291,7 +289,12 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             return;
 
         var lawset = GetLawset(provider.Laws).Laws;
+        var query = EntityManager.CompRegistryQueryEnumerator(ent.Comp.Components);
 
+        while (query.MoveNext(out var update))
+        {
+            SetLaws(lawset, update, provider.LawUploadSound);
+        }
     }
 }
 

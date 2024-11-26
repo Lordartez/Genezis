@@ -479,16 +479,6 @@ public abstract class SharedRoleSystem : EntitySystem
         return (antagonist, exclusiveAntag);
     }
 
-    /// <summary>
-    /// Play a sound for the mind, if it has a session attached.
-    /// Use this for role greeting sounds.
-    /// </summary>
-    public void MindPlaySound(EntityUid mindId, SoundSpecifier? sound, MindComponent? mind = null)
-    {
-        if (Resolve(mindId, ref mind) && mind.Session != null)
-            _audio.PlayGlobal(sound, mind.Session);
-    }
-
     // TODO ROLES Change to readonly.
     // Passing around a reference to a prototype's hashset makes me uncomfortable because it might be accidentally
     // mutated.

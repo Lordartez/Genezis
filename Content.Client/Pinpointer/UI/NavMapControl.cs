@@ -48,6 +48,7 @@ public partial class NavMapControl : MapGridControl
     public List<(Vector2, Vector2)> TileLines = new();
     public List<(Vector2, Vector2)> TileRects = new();
     public List<(Vector2[], Color)> TilePolygons = new();
+    public List<NavMapRegionOverlay> RegionOverlays = new();
 
     // Default colors
     public Color WallColor = new(102, 217, 102);
@@ -319,6 +320,22 @@ public partial class NavMapControl : MapGridControl
             }
         }
 
+        // Draw region overlays
+        if (_grid != null)
+        {
+            foreach (var regionOverlay in RegionOverlays)
+            {
+                foreach (var gridCoords in regionOverlay.GridCoords)
+                {
+                    var positionTopLeft = ScalePosition(new Vector2(gridCoords.Item1.X, -gridCoords.Item1.Y) - new Vector2(offset.X, -offset.Y));
+                    var positionBottomRight = ScalePosition(new Vector2(gridCoords.Item2.X + _grid.TileSize, -gridCoords.Item2.Y - _grid.TileSize) - new Vector2(offset.X, -offset.Y));
+
+                    var box = new UIBox2(positionTopLeft, positionBottomRight);
+                    handle.DrawRect(box, regionOverlay.Color);
+                }
+            }
+        }
+
         // Draw map lines
         if (TileLines.Any())
         {
@@ -521,7 +538,7 @@ public partial class NavMapControl : MapGridControl
                 // North edge
                 var neighborData = 0;
                 if (relativeTile.Y != SharedNavMapSystem.ChunkSize - 1)
-                    neighborData = chunk.TileData[i + 1];
+                    neighborData = chunk.TileData[i+1];
                 else if (_navMap.Chunks.TryGetValue(chunkOrigin + Vector2i.Up, out neighborChunk))
                     neighborData = neighborChunk.TileData[i + 1 - SharedNavMapSystem.ChunkSize];
 

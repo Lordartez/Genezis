@@ -38,7 +38,6 @@ public sealed partial class StationAiMenu : RadialMenu
         }
 
         BuildButtons();
-        UpdatePosition();
     }
 
     private void BuildButtons()
@@ -88,37 +87,6 @@ public sealed partial class StationAiMenu : RadialMenu
             };
             main.AddChild(button);
         }
-    }
-
-    protected override void FrameUpdate(FrameEventArgs args)
-    {
-        base.FrameUpdate(args);
-        UpdatePosition();
-    }
-
-    private void UpdatePosition()
-    {
-        if (!_entManager.TryGetComponent(_tracked, out TransformComponent? xform))
-        {
-            Close();
-            return;
-        }
-
-        if (!xform.Coordinates.IsValid(_entManager))
-        {
-            Close();
-            return;
-        }
-
-        var coords = _entManager.System<SpriteSystem>().GetSpriteScreenCoordinates((_tracked, null, xform));
-
-        if (!coords.IsValid)
-        {
-            Close();
-            return;
-        }
-
-        OpenScreenAt(coords.Position, _clyde);
     }
 }
 

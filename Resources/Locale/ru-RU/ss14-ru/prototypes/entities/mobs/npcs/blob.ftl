@@ -1,4 +1,4 @@
-ent-SpawnPointGhostBlob = Блоб
+ent-SpawnPointGhostBlob = Некромасса
     .suffix = DONTMAP, spawner. Не мапить, не спавнить.
     .desc = { ent-MarkerBase.desc }
 ent-MobBlobPod = Блоб капля

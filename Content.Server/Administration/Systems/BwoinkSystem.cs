@@ -6,7 +6,6 @@ using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Content.Server.Administration.Managers;
-using Content.Server.Backmen.Administration.Bwoink.Gpt;
 using Content.Server.Afk;
 using Content.Server.Database;
 using Content.Server.Discord;
@@ -764,8 +763,6 @@ namespace Content.Server.Administration.Systems
                 );
                 _messageQueues[msg.UserId].Enqueue(GenerateAHelpMessage(messageParams));
             }
-
-            EntityManager.SystemOrNull<GptAhelpSystem>()?.AddUserMessage(message.UserId, personalChannel, escapedText); // backmen: gpt
 
             if (admins.Count != 0 || sendsWebhook)
                 return;

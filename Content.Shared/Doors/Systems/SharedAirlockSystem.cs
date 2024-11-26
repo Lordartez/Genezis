@@ -145,7 +145,7 @@ public abstract class SharedAirlockSystem : EntitySystem
         ent.Comp.EmergencyAccess = value;
         Dirty(ent, ent.Comp); // This only runs on the server apparently so we need this.
         UpdateEmergencyLightStatus(ent, ent.Comp);
-
+		
         var sound = ent.Comp.EmergencyAccess ? ent.Comp.EmergencyOnSound : ent.Comp.EmergencyOffSound;
         if (predicted)
             Audio.PlayPredicted(sound, ent, user: user);

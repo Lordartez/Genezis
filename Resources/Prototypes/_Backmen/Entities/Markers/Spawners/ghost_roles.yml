@@ -88,8 +88,8 @@
 
 - type: entity
   id: SpawnPointGhostBlobRat
-  name: точка спавна мыши блоба
-  suffix: Блоб, роль призрак
+  name: точка спавна мыши некромассы
+  suffix: Некромасса, роль призрак
   parent: MarkerBase
   components:
     - type: GhostRoleMobSpawner

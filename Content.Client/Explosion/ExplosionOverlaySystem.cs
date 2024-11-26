@@ -28,7 +28,6 @@ public sealed class ExplosionOverlaySystem : EntitySystem
         SubscribeLocalEvent<ExplosionVisualsComponent, ComponentInit>(OnExplosionInit);
         SubscribeLocalEvent<ExplosionVisualsComponent, ComponentRemove>(OnCompRemove);
         SubscribeLocalEvent<ExplosionVisualsComponent, ComponentHandleState>(OnExplosionHandleState);
-        _overlayMan.AddOverlay(new ExplosionOverlay());
     }
 
     private void OnExplosionHandleState(EntityUid uid, ExplosionVisualsComponent component, ref ComponentHandleState args)

@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Examine;
 using Content.Shared.Power.Components;
 
 namespace Content.Shared.Power.EntitySystems;

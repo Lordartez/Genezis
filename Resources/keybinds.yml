@@ -150,10 +150,6 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
-  #WD EDIT
-- function: LookUp
-  type: State
-  key: Space
 - function: EditorRotateObject
   type: State
   key: MouseMiddle
@@ -541,10 +537,6 @@ binds:
 - function: Hotbar9
   type: State
   key: Num9
-- function: ToggleCrawling
-  type: State
-  key: C #ADT Crawling
-
 - function: MappingUnselect
   type: State
   key: MouseRight
@@ -575,18 +567,22 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
+
+# Genezis
 - function: CMUniqueAction
   type: State
   key: Space
-#Theta-Start
 - function: PingOnRadar
   type: State
   key: MouseRight
   canFocus: true
   priority: -1
-#Theta-End
-#start - backmen: languages
 - function: OpenLanguageMenu
   type: State
   key: L
-#end - backmen: languages
+- function: ToggleCrawling
+  type: State
+  key: C
+- function: LookUp
+  type: State
+  key: Space
